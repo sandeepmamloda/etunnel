@@ -1,0 +1,57 @@
+.seeussection-wrapper{
+    height:fit-content;
+    width:100%;
+    padding-inline:7vw;
+    padding-block-start:10vw;
+    display:flex;
+    flex-direction: column;
+    row-gap:2vw;
+}
+.seeussection-wrapper-text-content{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    row-gap:0.7vw;
+}
+.seeussection-wrapper-text-content p:first-child{
+    font-size:2vw;
+    font-family: 'NeueHaasGroteskLight';
+}
+.seeussection-wrapper-text-content p:last-child{
+    font-size:1vw;
+    font-family: 'NeueHaasGroteskLight';
+}
+.seeussection-wrapper-video{
+    height:28vw;
+    width:100%;
+    background-color:transparent;
+    border-radius:0.8vw;
+    overflow:hidden;
+    position:relative;
+}
+.seeussection-wrapper-video .play-button{
+    height:6vw;
+    width:6vw;
+    border-radius:50%;
+    background: linear-gradient(#ffd2aa, #fff);
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+.seeussection-wrapper-video .play-button p{
+    font-size:1.3vw;
+    font-family: 'NeueHaasGroteskLight';
+}
+.seeussection-wrapper-video .img{
+    height:100%!important;
+    width:100%!important;
+    object-fit:cover;
+    object-position:100% 50%;
+    position:static!important;
+}

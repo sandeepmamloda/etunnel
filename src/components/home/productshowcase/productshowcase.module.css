@@ -1,0 +1,220 @@
+.productshowcase-wrapper{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    align-items:flex-end;
+    column-gap:8vw;
+    padding-inline:7vw;
+    padding-block-start:8.6vw;
+}
+
+.productshowcase-wrapper .productshowcase-left{
+    height:30vw;
+    flex:1;
+    background-color:transparent;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block-end:2vw;
+}
+.productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper{
+    display:flex;
+    flex-direction: column;
+    row-gap:0.7vw;
+}
+.productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p{
+    font-family: 'NeueHaasGroteskLight';
+}
+.productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p:first-child{
+    font-size: 2vw;
+    letter-spacing: 0.04vw;
+    font-weight: 600;  
+}
+.productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p:last-child{
+    font-size:1vw;  
+}
+/* -------------accordion------------------- */
+.accordion{
+    height:fit-content;
+    width:100%;
+    background-color:transparent;
+}
+
+.header{
+    padding-inline:0.5vw;
+}
+
+.body{
+    padding-inline:0.5vw;
+    padding-block-end:0;
+}
+
+/* ✅ ADD THIS COMMON TRANSITION FOR ALL SECTIONS */
+.p2n2,
+.finger-vein-authentication,
+.kisa-certification{
+    height:fit-content;
+    width:100%;
+    transition: all 0.3s ease;
+}
+
+/* ✅ ACTIVE STATE (MAIN FEATURE) */
+.active{
+    background: linear-gradient(to bottom, rgba(255, 210, 170, 1), rgba(255, 255, 255, 1));
+}
+
+/* ---------------- P2N2 ---------------- */
+.p2n2 .header{
+    height:3.6vw;
+    width:100%;
+    background-color:transparent;
+    border-top:solid 0.1vw rgba(0,0,0,1);
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.p2n2 .header p{
+    font-family: 'NeueHaasGroteskLight';
+    line-height: 100%;
+    font-size:1.2vw;
+}
+
+.p2n2 .body{
+    display:flex;
+    flex-direction: column;
+    row-gap:3vw;
+}
+
+/* ---------------- BUTTON ---------------- */
+.productshowcase-wrapper-toggle{
+    min-height:2.3vw;
+    width:8vw;
+    border-radius:3vw;
+    color:#fff;
+    background-color:rgba(0, 0, 0, 1);
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    position:relative;
+    z-index: 1;
+    margin-bottom:1vw;
+}
+
+.productshowcase-wrapper-toggle::before {
+    content: "";
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    /* changed gradient to top-to-bottom */
+    background: linear-gradient(to right, #b5b5b5, #000);
+    border-radius: 5vw;
+    padding: .1vw;
+    position: absolute;
+    inset: 0;
+    -webkit-mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+    -webkit-mask-position: 0 0, 0 0;
+    -webkit-mask-size: auto, auto;
+    -webkit-mask-repeat: repeat, repeat;
+    -webkit-mask-clip: content-box, border-box;
+    -webkit-mask-origin: content-box, border-box;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    -webkit-mask-source-type: auto, auto;
+    mask-mode: match-source, match-source;
+}
+
+.productshowcase-wrapper-toggle p{
+    font-family: 'NeueHaasGroteskLight';
+    font-size:0.8vw!important;
+}
+
+.p2n2 .body p{
+    font-family: 'NeueHaasGroteskLight';
+    line-height: 160%;
+    font-size:1vw;
+}
+
+/* ---------------- FVA ---------------- */
+.finger-vein-authentication .header{
+    height:3.6vw;
+    width:100%;
+    background-color:transparent;
+    border-top:solid 0.1vw rgba(0,0,0,1);
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.finger-vein-authentication .header p{
+    font-family: 'NeueHaasGroteskLight';
+    line-height: 100%;
+}
+.finger-vein-authentication .body p{
+    font-family: 'NeueHaasGroteskLight';
+    line-height: 160%;
+    font-size:0.8vw;
+}
+/* ---------------- KISA ---------------- */
+.kisa-certification .header{
+    height:3.6vw;
+    width:100%;
+    background-color:transparent;
+    border-top:solid 0.1vw rgba(0,0,0,1);
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.kisa-certification .header p{
+    font-family: 'NeueHaasGroteskLight';
+    line-height: 100%;
+}
+.kisa-certification .body{
+    border-bottom:solid 0.1vw rgba(0,0,0,1);
+}
+.kisa-certification .body p{
+    font-family: 'NeueHaasGroteskLight';
+    line-height: 160%;
+    font-size:0.8vw;
+}
+/* -------------body animation------------------- */
+.body{
+    max-height:0;
+    overflow:hidden;
+    transition: max-height 0.4s ease;
+}
+
+/* ------------productshowcase-right---------------- */
+.productshowcase-wrapper .productshowcase-right{
+    height:28vw;
+    flex:1;
+    border-radius:1vw;
+    overflow:hidden;
+}
+
+.productshowcase-wrapper .productshowcase-right .productshowcase-right-img{
+    height:100%;
+    width:100%;
+    overflow:hidden;
+}
+
+.productshowcase-wrapper .productshowcase-right .productshowcase-right-img img{
+    height:100%!important;
+    width:100%!important;
+    object-fit:cover;
+    position:static!important;
+}
+/* + icon at the right corner */
+.toggle-icon {
+    margin-left: auto;
+    font-size: 1.8vw;
+    font-weight: thin;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* rotate 45deg to become X when active */
+.rotate {
+    transform: rotate(45deg);
+}

@@ -1,0 +1,59 @@
+.header-section{
+    height:fit-content;
+    width:100%;
+    background-color:transparent;
+    position:absolute;
+    z-index:1;
+}
+.header-section-wrapper {
+    justify-content: space-between;
+    align-items: center;
+    padding-block-start: 2vw;
+    padding-inline: 2.1vw;
+    display: flex;
+    position:relative;
+}
+.header-section-left{
+    height:fit-content;
+    width: fit-content;
+}
+.header-section-left-img{
+    width: 7vw !important;
+    height: 1vw !important;
+}
+.header-section-left-img img{
+    width: 100%;
+    height: 100%;
+    position:static!important;
+}
+/* center-navlinks-at navbar */
+.header-section-center{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%);
+}
+.nav-links{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.5vw;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+}
+.nav-links li{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+.nav-links li a{
+    text-decoration:none;
+    color:white;
+    font-family: 'NeueHaasGroteskLight';
+    font-size: 0.95vw;
+    line-height:100%;
+}

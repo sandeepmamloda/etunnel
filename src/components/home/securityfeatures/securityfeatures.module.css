@@ -1,0 +1,343 @@
+.security-feature-wrapper{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    padding-inline:7vw;
+    padding-block-start:3.5vw;
+    row-gap:2vw;
+}
+.security-feature-wrapper .security-feature-top{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    row-gap:1vw;
+}
+.security-feature-wrapper .security-feature-top .security-feature-top-tcontent{
+    height:fit-content;
+    width:100%;
+    font-size:1.5vw;
+    font-family: 'NeueHaasGroteskLight';
+    line-height: 100%;
+    font-weight: 500;
+}
+.security-feature-wrapper .security-feature-top .security-feature-top-mcontent{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+}
+.security-feature-wrapper .security-feature-top .security-feature-top-mcontent p{
+    font-family: 'NeueHaasGroteskLight';
+    font-size:0.83vw;
+}
+.security-feature-wrapper-toggle{
+    height:2vw;
+    width:10vw;
+    border-radius:3vw;
+    color:#fff;
+    background-color:rgba(0, 0, 0, 1);
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    position:relative;
+    z-index: 1;
+}
+.security-feature-wrapper-toggle::before {
+    content: "";
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    background: linear-gradient(#b5b5b5 -111.7%, #000 162.48%);
+    border-radius: 5vw;
+    padding: .1vw;
+    position: absolute;
+    inset: 0;
+    -webkit-mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+    -webkit-mask-position: 0 0, 0 0;
+    -webkit-mask-size: auto, auto;
+    -webkit-mask-repeat: repeat, repeat;
+    -webkit-mask-clip: content-box, border-box;
+    -webkit-mask-origin: content-box, border-box;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    -webkit-mask-source-type: auto, auto;
+    mask-mode: match-source, match-source;
+}
+.security-feature-wrapper-toggle p{
+    font-family: 'NeueHaasGroteskLight';
+    font-size:0.8vw!important;
+}
+.security-feature-cart-wrapper{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    column-gap:0.7vw;
+}
+.security-feature-cart{
+    height:30vw;
+    flex:1;
+    background: rgba(0, 0, 0, 1);
+    border-radius:0.8vw;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    overflow:hidden;
+}
+.security-feature-cart:nth-child(1){
+    height:30vw;
+    flex:1;
+    background: rgba(0, 0, 0, 1);
+    border-radius:0.8vw;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    overflow:hidden;
+}
+.security-feature-cart:nth-child(1) .security-feature-cart-top{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    padding-top:1vw;
+    row-gap:0.5vw;
+}
+.security-feature-cart:nth-child(1) .security-feature-cart-top p{
+    color:white;
+    text-align:center;
+    font-family: 'NeueHaasGroteskLight';
+    font-size:1.4vw;
+    font-weight:550;
+}
+.security-feature-cart:nth-child(1) .security-feature-cart-top div{
+    display:flex;
+    flex-direction: column;
+}
+.security-feature-cart:nth-child(1) .security-feature-cart-top div span{
+    font-size:0.9vw;
+    font-weight:400;
+    color:#fff;
+    text-align:center;
+    font-family: 'NeueHaasGroteskLight';
+    line-height:120%;
+}
+.security-feature-cart:nth-child(1) .security-feature-cart-bottom{
+   height:100%;
+   width:100%;
+}
+.security-feature-cart:nth-child(1) .security-feature-cart-bottom img{
+    height:100%!important;
+    width:100%!important;
+    object-fit: contain;
+    position:static!important;
+}
+/* -----------2---------------- */
+.security-feature-cart:nth-child(2){
+    height:30vw;
+    flex:1;
+    background: rgba(0, 0, 0, 1);
+    border-radius:0.8vw;
+    display:flex;
+    flex-direction:column-reverse;
+    justify-content:space-between;
+    overflow:hidden;
+}
+.security-feature-cart:nth-child(2) .security-feature-cart-top{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    padding-bottom:1vw;
+    row-gap:0.5vw;
+}
+.security-feature-cart:nth-child(2) .security-feature-cart-top p{
+    color:white;
+    text-align:center;
+    font-family: 'NeueHaasGroteskLight';
+    font-size:1.4vw;
+    font-weight:550;
+}
+.security-feature-cart:nth-child(2) .security-feature-cart-top div{
+    display:flex;
+    flex-direction: column;
+}
+.security-feature-cart:nth-child(2) .security-feature-cart-top div span{
+    font-size:0.9vw;
+    color:#fff;
+    font-weight:400;
+    text-align:center;
+    font-family: 'NeueHaasGroteskLight';
+    line-height:120%;
+}
+.security-feature-cart:nth-child(2) .security-feature-cart-bottom {
+  height: 100%;
+  width: 100%;
+  position: relative; /* ✅ ::after ke liye zaroori */
+}
+
+.security-feature-cart:nth-child(2) .security-feature-cart-bottom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: 
+    inset 0 80px 60px -10px #000000f2,
+    inset 0 -80px 60px -10px #000000f2,
+    inset 80px 0 60px -10px #000000b3,
+    inset -80px 0 60px -10px #000000b3;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 1vw;
+}
+.security-feature-cart:nth-child(2) .security-feature-cart-bottom img{
+    height:100%!important;
+    width:100%!important;
+    object-position: center top;     /* ✅ sir/chehra dikhega */
+    object-position: center center;  /* kamar dikhega */
+    object-position: center bottom;  /* pair dikhega */
+    object-fit:cover;
+    position:static!important;
+}
+/* ---------3---------------- */
+.security-feature-cart:nth-child(3){
+    height:30vw;
+    flex:1;
+    background: rgba(0, 0, 0, 1);
+    border-radius:0.8vw;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    overflow:hidden;
+}
+.security-feature-cart:nth-child(3) .security-feature-cart-top{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    padding-top:1vw;
+    row-gap:0.5vw;
+}
+.security-feature-cart:nth-child(3) .security-feature-cart-top p{
+    color:white;
+    text-align:center;
+    font-family: 'NeueHaasGroteskLight';
+    font-size:1.4vw;
+    font-weight:550;
+}
+.security-feature-cart:nth-child(3) .security-feature-cart-top div{
+    display:flex;
+    flex-direction: column;
+}
+.security-feature-cart:nth-child(3) .security-feature-cart-top div span{
+    font-size:0.9vw;
+    color:#fff;
+    font-weight:400;
+    text-align:center;
+    font-family: 'NeueHaasGroteskLight';
+    line-height:120%;
+}
+.security-feature-cart:nth-child(3) .security-feature-cart-bottom {
+  height: 100%;
+  width: 100%;
+  position: relative; /* ✅ ::after ke liye zaroori */
+}
+.security-feature-cart:nth-child(3) .security-feature-cart-bottom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: 
+    inset 0 80px 60px -10px #000000f2,
+    inset 0 -80px 60px -10px #000000f2,
+    inset 80px 0 60px -10px #000000b3,
+    inset -80px 0 60px -10px #000000b3;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 1vw;
+}
+.security-feature-cart:nth-child(3) .security-feature-cart-bottom img{
+    height:100%!important;
+    width:100%!important;
+    object-position: center top;     /* ✅ sir/chehra dikhega */
+    object-position: center center;  /* kamar dikhega */
+    object-position: center bottom;  /* pair dikhega */
+    object-fit:cover;
+    position:static!important;
+}
+.security-feature-cart:nth-child(3) .security-feature-cart-bottom img{
+    height:100%!important;
+    width:100%!important; 
+    object-fit:cover;
+    object-position:center;
+    position:static!important;
+}
+/* ---------4---------------- */
+.security-feature-cart:nth-child(4){
+    height:30vw;
+    flex:1;
+    background: rgba(0, 0, 0, 1);
+    border-radius:0.8vw;
+    display:flex;
+    flex-direction:column-reverse;
+    justify-content:space-between;
+    overflow:hidden;
+}
+.security-feature-cart:nth-child(4) .security-feature-cart-top{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    padding-top:1vw;
+    row-gap:0.5vw;
+}
+.security-feature-cart:nth-child(4) .security-feature-cart-top p{
+    color:white;
+    text-align:center;
+    font-family: 'NeueHaasGroteskLight';
+    font-size:1.4vw;
+    font-weight:550;
+}
+.security-feature-cart:nth-child(4) .security-feature-cart-top div{
+    display:flex;
+    flex-direction: column;
+}
+.security-feature-cart:nth-child(4) .security-feature-cart-top div span{
+    font-size:0.9vw;
+    color:#fff;
+    font-weight:400;
+    text-align:center;
+    font-family: 'NeueHaasGroteskLight';
+    line-height:120%;
+}
+.security-feature-cart:nth-child(4) .security-feature-cart-bottom {
+  height: 100%;
+  width: 100%;
+  position: relative; /* ✅ ::after ke liye zaroori */
+}
+.security-feature-cart:nth-child(4) .security-feature-cart-bottom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: 
+    inset 0 80px 60px -10px #000000f2,
+    inset 0 -80px 60px -10px #000000f2,
+    inset 80px 0 60px -10px #000000b3,
+    inset -80px 0 60px -10px #000000b3;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 1vw;
+}
+.security-feature-cart:nth-child(4) .security-feature-cart-bottom img{
+    height:100%!important;
+    width:100%!important;
+    object-position: center top;     /* ✅ sir/chehra dikhega */
+    object-position: center center;  /* kamar dikhega */
+    object-position: center bottom;  /* pair dikhega */
+    object-fit:cover;
+    position:static!important;
+}
+.security-feature-cart:nth-child(4) .security-feature-cart-bottom img{
+    height:100%!important;
+    width:100%!important; 
+    object-fit:cover;
+    object-position:center;
+    position:static!important;
+}

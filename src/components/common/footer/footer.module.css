@@ -1,0 +1,158 @@
+.footer-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 9vw;
+  border-top:solid 0.1vw rgba(255,255,255,1);
+}
+
+/* ---------------- TOP ---------------- */
+.footer-top {
+  border-bottom: solid 0.1vw rgba(255,255,255,1);
+  display: flex;
+  background-color: black;
+}
+
+.footer-top-links {
+  height: 15vw;
+  flex: 1;
+  border-right: solid 0.1vw rgba(255,255,255,1);
+  padding: 0 1vw 1vw 1vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footer-top-links:last-child {
+  border-right: none;
+}
+
+.footer-top-links span {
+  color: #fff;
+}
+
+.footer-top-links span:first-child {
+  font-size: 2vw;
+  font-family: NeueHaasGroteskLight;
+  letter-spacing: 0.09vw;
+}
+
+.footer-top-links span:last-child{
+    font-size:2vw;
+}
+.footer-top-links:hover {
+  background: linear-gradient(#ffd2aa, #fff);
+}
+
+.footer-top-links:hover span {
+  color: black;
+}
+
+/* ---------------- BOTTOM ---------------- */
+
+.footer-bottom {
+  background-color: black;
+  color: white;
+  padding: 2vw 2vw 0vw 2vw;
+  position: relative;
+  font-family: NeueHaasGroteskLight;  /* ← add */
+}
+
+/* 3 COLUMN LAYOUT */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2vw;
+}
+
+/* LEFT */
+.footer-left {
+  flex: 1;
+  font-size: 0.9vw;
+  font-family: NeueHaasGroteskLight;  /* ← add */
+  display: flex;
+  flex-direction: column;
+  gap: 1.4vw;
+  letter-spacing: 0.08vw;
+}
+
+.footer-left-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7vw;
+}
+
+.footer-left-label {
+  font-weight: bold;
+  font-family: NeueHaasGroteskLight;  /* ← add */
+}
+
+.footer-left-value {
+  font-weight: normal;
+  font-family: NeueHaasGroteskLight;  /* ← add */
+  line-height: 1;
+}
+
+/* CENTER */
+.footer-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 26vw !important;
+  height: auto !important;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+/* RIGHT */
+.footer-right {
+  flex: 1;
+  text-align: right;
+  font-size: 0.9vw;
+  font-family: NeueHaasGroteskLight;  /* ← add */
+  display: flex;
+  flex-direction: column;
+  gap: 1.4vw;
+  letter-spacing: 0.08vw;
+}
+
+.footer-right-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2vw;
+}
+
+.footer-right-label {
+  font-weight: bold;
+  font-family: NeueHaasGroteskLight;  /* ← add */
+}
+
+.footer-right-value {
+  font-weight: normal;
+  font-family: NeueHaasGroteskLight;  /* ← add */
+  line-height: 1.6;
+}
+
+/* BOTTOM BAR */
+.footer-bar {
+  margin-top: 2vw;
+  padding-top: 1vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8vw;
+  font-family: NeueHaasGroteskLight;  /* ← add */
+}
+
+.footer-bar div {
+  display: flex;
+  gap: 2vw;
+}
