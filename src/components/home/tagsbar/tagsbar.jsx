@@ -1,5 +1,9 @@
+"use client";
 import styles from './tagsbar.module.css';
 import Image from 'next/image';
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const logos = [
   { src: '/images/logos/coretrust.png',   alt: 'CoreTrust' },
@@ -12,24 +16,55 @@ const logos = [
 ];
 
 const TagsBar = function () {
-  return (
-    <section className={styles['tagsbar-section']}>
-      <div className={styles['tagsbar-wrapper']}>
-        <div className={styles['tagsbar-track']}>
-          {logos.map((logo) => (
-            <div key={logo.alt} className={styles['tagsbar-item']}>
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                fill={true}
-                className={styles['tagsbar-img']}
-              />
+    const sectionRef = useRef(null);
+    const itemsRef = useRef([]);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+
+            gsap.fromTo(
+                itemsRef.current,
+                { clipPath: "inset(0 100% 0 0)" },
+                {
+                    clipPath: "inset(0 0% 0 0)",
+                    duration: 1.2,
+                    ease: "power2.inOut",
+                    stagger: 0.1,
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top 85%",
+                        once: true,
+                    },
+                }
+            );
+
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
+    return (
+        <section className={styles['tagsbar-section']} ref={sectionRef}>
+            <div className={styles['tagsbar-wrapper']}>
+                <div className={styles['tagsbar-track']}>
+                    {logos.map((logo, i) => (
+                        <div
+                            key={logo.alt}
+                            className={styles['tagsbar-item']}
+                            ref={(el) => (itemsRef.current[i] = el)}
+                        >
+                            <Image
+                                src={logo.src}
+                                alt={logo.alt}
+                                fill={true}
+                                className={styles['tagsbar-img']}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default TagsBar;
