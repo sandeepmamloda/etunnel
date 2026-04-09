@@ -1,0 +1,123 @@
+.companyhistory-wrapper{
+   height:fit-content;
+   width:100%;
+   padding-inline:7vw;
+   margin-top:2vw;
+}
+.companyhistory-img{
+    height:40vw;
+    width:100%;
+    border-radius:0.5vw;
+    overflow:hidden;
+    position:relative;
+}
+.companyhistory-img .img{
+    height:100%!important;
+    width:100%!important;
+    position:static!important;
+    object-fit:cover;
+}
+.companyhistory-img-overlay{
+    position:absolute;
+    inset:0;
+    background: radial-gradient(49.45% 49.45% at 49.04% 45.2%, rgba(0, 0, 0, 0.2) 0%, #000000 100%);
+    z-index:1;
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items:flex-end;
+    padding:2vw;
+}
+/* -----------------------textual-content-------------------- */
+.companyhistory-img-overlay-text{
+    display:flex;
+    flex-direction: column;
+    row-gap:2vw;
+}
+.companyhistory-img-overlay-text-top{
+    display:flex;
+    flex-direction: column;
+    row-gap:1.5vw;
+}
+.companyhistory-img-overlay-text-top .companyhistory-img-overlay-text-top-1{
+    display:flex;
+    flex-direction: column;
+    row-gap:0.8vw;
+}
+.companyhistory-img-overlay-text-top .companyhistory-img-overlay-text-top-1 p:first-child{
+    font-size:0.9vw;
+    line-height: 100%;
+    color:white;
+    font-family: 'NeueHaasGroteskLight2';
+    letter-spacing:0.05vw;
+}
+.companyhistory-img-overlay-text-top .companyhistory-img-overlay-text-top-1 p:last-child{
+    font-size:2vw;
+    line-height: 100%;
+    color:white;
+    font-family: 'NeueHaasGroteskLight2';
+}
+.companyhistory-img-overlay-text-top .companyhistory-img-overlay-text-top-2{
+    display:flex;
+    flex-direction: column;
+    row-gap:1vw;
+}
+.companyhistory-img-overlay-text-top .companyhistory-img-overlay-text-top-2 p{
+    font-size:0.9vw;
+    color:#fff;
+    line-height:100%;
+    font-family: 'NeueHaasGroteskLight2';
+    letter-spacing:0.07vw;
+    font-weight:100;
+}
+.companyhistory-img-overlay-text-top .companyhistory-img-overlay-text-top-2-inner{
+    display:flex;
+    flex-direction: column;
+    row-gap:0.3vw;
+}
+.companyhistory-img-overlay-text-top .companyhistory-img-overlay-text-top-2-inner span{
+    font-size:0.9vw;
+    color:#fff;
+    line-height:100%;
+    font-family: 'NeueHaasGroteskLight2';
+    letter-spacing:0.07vw;
+}
+/* ----------------- */
+.companyhistory-img-overlay-text-bottom {
+    position: relative;
+    border-radius: 5vw;
+    width: 8.5vw;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:transparent;
+    z-index: 1;
+}
+
+.companyhistory-img-overlay-text-bottom::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 0.1vw;
+    border-radius: 5vw;
+    background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
+    
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    z-index: -1;
+}
+.companyhistory-img-overlay-text-bottom p{
+    color:white;
+    font-family: 'NeueHaasGroteskLight';
+    font-size: 0.92vw;
+    line-height:100%;
+    color:#fff;
+    letter-spacing:0.03vw;
+}

@@ -5,12 +5,19 @@
   letter-spacing: 0;
 }
 @font-face {
+  font-family: 'NeueHaasGroteskLight2';
+  src: url('/fonts/NeueHaasDisplayLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+/* }------------------new------------------ */
+@font-face {
   font-family: 'NeueHaasGroteskLight';
   src: url('/fonts/neue-haas-grotesk-display-pro/NeueHaasDisplayLight.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
-
+/* }------------------new------------------ */
 @font-face {
   font-family: 'NeueHaasGroteskMedium';
   src: url('/fonts/neue-haas-grotesk-display-pro/NeueHaasDisplayMedium.ttf') format('truetype');

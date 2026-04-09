@@ -1,4 +1,4 @@
-import Hero from "@/components/home/hero/hero"
+import Hero from "@/components/home/hero/hero";
 import Tagsbar from "@/components/home/tagsbar/tagsbar";
 import SecurityFeatures from '@/components/home/securityfeatures/securityfeatures';
 import Productshowcase from "@/components/home/productshowcase/productshowcase";

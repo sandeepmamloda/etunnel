@@ -1,33 +1,41 @@
-.header-section{
-    height:fit-content;
-    width:100%;
-    background-color:transparent;
-    position:absolute;
-    z-index:1;
+.header-section {
+    height: fit-content;
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    z-index: 2;
 }
+
 .header-section-wrapper {
     justify-content: space-between;
     align-items: center;
     padding-block-start: 2vw;
     padding-inline: 2.1vw;
     display: flex;
-    position:relative;
+    position: relative;
 }
-.header-section-left{
-    height:fit-content;
+
+.header-section-left {
+    height: fit-content;
     width: fit-content;
 }
-.header-section-left-img{
+
+.header-section-left-img {
     width: 7vw !important;
     height: 1vw !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.header-section-left-img img{
+
+.header-section-left-img img {
     width: 100%;
     height: 100%;
-    position:static!important;
+    position: static !important;
 }
+
 /* center-navlinks-at navbar */
-.header-section-center{
+.header-section-center {
     width: fit-content;
     height: fit-content;
     display: flex;
@@ -35,7 +43,8 @@
     position: absolute;
     transform: translate(-50%);
 }
-.nav-links{
+
+.nav-links {
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -44,16 +53,89 @@
     height: fit-content;
     display: flex;
 }
-.nav-links li{
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
+
+.nav-links li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
-.nav-links li a{
-    text-decoration:none;
-    color:white;
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
     font-family: 'NeueHaasGroteskLight';
     font-size: 0.95vw;
-    line-height:100%;
+    line-height: 100%;
+
+    /* Hover underline animation */
+    position: relative;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -0.3vw;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+ 
+.nav-links li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* ── RIGHT SECTION ── */
+.header-section-right {
+    display: flex;
+    align-items: center;
+    gap: 1.2vw;
+}
+
+.lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.4vw;
+    cursor: pointer;
+}
+
+.flag-icon {
+    width: 1.2vw !important;
+    height: 1.2vw !important;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.lang-text {
+    color: white;
+    font-family: 'NeueHaasGroteskLight';
+    font-size: 0.95vw;
+    line-height: 100%;
+}
+
+.lang-arrow {
+    color: white;
+    font-size: 0.7vw;
+    line-height: 100%;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0.3vw;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 1.5vw;
+    height: 0.1vw;
+    background-color: white;
+    border-radius: 0.1vw;
 }
