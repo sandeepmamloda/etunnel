@@ -15,12 +15,16 @@
     row-gap:0.7vw;
 }
 .seeussection-wrapper-text-content p:first-child{
-    font-size:2vw;
-    font-family: 'NeueHaasGroteskLight';
+    font-size: 2vw;
+    letter-spacing: 0.04vw;
+    font-weight: 600;  
+    font-family: 'NeueHaasDisplayThin';
 }
 .seeussection-wrapper-text-content p:last-child{
     font-size:1vw;
-    font-family: 'NeueHaasGroteskLight';
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.01vw;
 }
 .seeussection-wrapper-video{
     height:28vw;

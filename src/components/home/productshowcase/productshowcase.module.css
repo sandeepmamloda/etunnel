@@ -29,9 +29,13 @@
     font-size: 2vw;
     letter-spacing: 0.04vw;
     font-weight: 600;  
+    font-family: 'NeueHaasDisplayThin';
 }
 .productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p:last-child{
-    font-size:1vw;  
+    font-size:1vw;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.01vw;  
 }
 /* -------------accordion------------------- */
 .accordion{
@@ -75,9 +79,11 @@
 }
 
 .p2n2 .header p{
-    font-family: 'NeueHaasGroteskLight';
+    font-family: NeueHaasDisplayThin;
+    font-size: 1.2vw;
     line-height: 100%;
-    font-size:1.2vw;
+    font-weight: 600;
+    letter-spacing: 0.05vw;
 }
 
 .p2n2 .body{
@@ -124,14 +130,19 @@
 }
 
 .productshowcase-wrapper-toggle p{
-    font-family: 'NeueHaasGroteskLight';
     font-size:0.8vw!important;
+    line-height: 160%;
+    font-family: 'NeueHaasDisplayXXThin'!important;
+    font-weight: 600;
+    letter-spacing: 0.01vw;
 }
 
 .p2n2 .body p{
-    font-family: 'NeueHaasGroteskLight';
+    font-size: 1vw;
     line-height: 160%;
-    font-size:1vw;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.01vw;
 }
 
 /* ---------------- FVA ---------------- */
@@ -146,13 +157,18 @@
 }
 
 .finger-vein-authentication .header p{
-    font-family: 'NeueHaasGroteskLight';
+    font-family: NeueHaasDisplayThin;
+    font-size: 1.2vw;
     line-height: 100%;
+    font-weight: 600;
+    letter-spacing: 0.05vw;
 }
 .finger-vein-authentication .body p{
-    font-family: 'NeueHaasGroteskLight';
+    font-size: 1vw;
     line-height: 160%;
-    font-size:0.8vw;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.01vw;
 }
 /* ---------------- KISA ---------------- */
 .kisa-certification .header{
@@ -166,16 +182,21 @@
 }
 
 .kisa-certification .header p{
-    font-family: 'NeueHaasGroteskLight';
+    font-family: NeueHaasDisplayThin;
+    font-size: 1.2vw;
     line-height: 100%;
+    font-weight: 600;
+    letter-spacing: 0.05vw;
 }
 .kisa-certification .body{
     border-bottom:solid 0.1vw rgba(0,0,0,1);
 }
 .kisa-certification .body p{
-    font-family: 'NeueHaasGroteskLight';
+    font-size: 1vw;
     line-height: 160%;
-    font-size:0.8vw;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.01vw;
 }
 /* -------------body animation------------------- */
 .body{

@@ -56,12 +56,12 @@ const Securityfeatures = function () {
       img: "/images/security/tunnel.jpg"
     },
     {
-      title: "Protection Against Fraud and Spoofing",
+      title: `Protection Against Fraud and <br/>Spoofing`,
       spans: ["ETUNNEL's biometric systems are designed to", "prevent impersonation and fraud.", "Technologies such as finger vein recognition", "require a live human presence, making spoofing,", "duplication, or replay attacks extremely difficult."],
       img: "/images/security/fingerprint.png"
     },
     {
-      title: "Seamless Physical and Digital Security",
+      title: "Seamless Physical and <br/>Digital Security",
       spans: ["ETUNNEL solutions work across both physica", "access points and digital systems. The same", "biometric identity can be used for facility access", "system login, secure transactions, and identity", "verification creating a unified and consistent", "security experience."],
       img: "/images/security/globe.png"
     },
@@ -94,7 +94,8 @@ const Securityfeatures = function () {
               ref={(el) => (cardsRef.current[i] = el)}
             >
               <div className={styles["security-feature-cart-top"]}>
-                <p>{card.title}</p>
+                {/* ✅ br tag render karne ke liye dangerouslySetInnerHTML */}
+                <p dangerouslySetInnerHTML={{ __html: card.title }} />
                 <div>
                   {card.spans.map((s, j) => (
                     <span key={j}>{s}</span>
