@@ -1,0 +1,248 @@
+.coretechnology-wrapper{
+    height:fit-content;
+    width:100%;
+    padding-inline:7vw;
+    padding-block-end:5vw;
+    display:flex;
+    flex-direction: column;
+    row-gap: 2.8vw;
+    margin-top:5.5vw;
+}
+.coretechnology-wrapper .coretechnology-top{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    row-gap:1vw;
+}
+.coretechnology-wrapper .coretechnology-top span:first-child{
+    text-align: center;
+    font-size:2vw;
+    text-align:center;
+    font-family: 'NeueHaasDisplayThin';
+    font-weight:600;
+    letter-spacing: 0.08vw;
+    line-height:100%;
+}
+.coretechnology-wrapper .coretechnology-top span:last-child{
+    text-align: center;
+    font-size:0.9vw;
+    text-align:center;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight:600;
+    line-height:100%;
+    letter-spacing:0.05vw;
+}
+.coretechnology-wrapper .coretechnology-bottom{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    column-gap:1.2vw;
+}
+.coretechnology-left{
+    height:32vw;
+    flex:1;
+    background-color:black;
+    border-radius:0.8vw;
+    position:relative;
+    overflow:hidden;
+}
+.img{
+    height:87%!important;
+    width:100%!important;
+    object-fit:contain;
+    object-position:top;
+    position:relative!important;
+    z-index:0;
+}
+.img::after{
+    content:"";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(49.45% 49.45% at 49.04% 45.2%, rgba(0, 0, 0, 0.2) 0%, #000000 100%);
+    z-index: 1;
+}
+.coretechnology-left-text-wrapper{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    position:absolute;
+    bottom:0;
+    z-index:2;
+    padding-block-end:1.5vw;
+    row-gap:1.7vw;
+}
+.coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top{
+    display:flex;
+    flex-direction: column;
+    row-gap:0.8vw;
+    width:100%;
+}
+.coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top>span{
+    font-size:1.7vw;
+    text-align:center;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight:600;
+    line-height:100%;
+    color:#fff;
+}
+.coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top>div{
+    display:flex;
+    flex-direction: column;
+    row-gap:0.2vw;
+}
+.coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top>div span{
+    font-size:0.9vw;
+    text-align:center;
+    font-family: 'NeueHaasDisplayXXThin';
+    line-height: 100%;
+    font-weight:600;
+    letter-spacing: 0.08vw;
+    color:#fff;
+}
+.coretechnology-right{
+    height:32vw;
+    flex:1;
+    background-color:orange;
+    border-radius:0.8vw;
+}
+.coretechnology-left-text-wrapper-bottom {
+    position: relative;
+    border-radius: 5vw;
+    width: 10vw;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:transparent;
+}
+
+.coretechnology-left-text-wrapper-bottom::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 0.1vw;
+    border-radius: 5vw;
+    background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
+    
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    z-index: -1;
+}
+.coretechnology-left-text-wrapper-bottom span{
+    color:white;
+    font-family: 'NeueHaasGroteskLight';
+    font-size: 0.92vw;
+    line-height:100%;
+}
+/* -----------------right---------------------------- */
+.coretechnology-right{
+    height:32vw;
+    flex:1;
+    background-color:black;
+    border-radius:0.8vw;
+    position:relative;
+    overflow:hidden;
+}
+.img{
+    height:87%!important;
+    width:100%!important;
+    object-fit:contain;
+    object-position:top;
+    position:relative!important;
+    z-index:0;
+}
+.img::after{
+    content:"";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(49.45% 49.45% at 49.04% 45.2%, rgba(0, 0, 0, 0.2) 0%, #000000 100%);
+    z-index: 1;
+}
+.coretechnology-right-text-wrapper{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    position:absolute;
+    bottom:0;
+    z-index:2;
+    padding-block-end:1.5vw;
+    row-gap:1.7vw;
+}
+.coretechnology-right-text-wrapper .coretechnology-right-text-wrapper-top{
+    display:flex;
+    flex-direction: column;
+    row-gap:0.8vw;
+    width:100%;
+}
+.coretechnology-right-text-wrapper .coretechnology-right-text-wrapper-top>span{
+    font-size:1.7vw;
+    text-align:center;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight:600;
+    line-height:100%;
+    color:#fff;
+    letter-spacing:0.05vw;
+}
+.coretechnology-right-text-wrapper .coretechnology-right-text-wrapper-top>div{
+    display:flex;
+    flex-direction: column;
+    row-gap:0.2vw;
+}
+.coretechnology-right-text-wrapper .coretechnology-right-text-wrapper-top>div span{
+    font-size:0.9vw;
+    text-align:center;
+    font-family: 'NeueHaasDisplayXXThin';
+    line-height: 100%;
+    font-weight:600;
+    letter-spacing: 0.08vw;
+    color:#fff;
+}
+.coretechnology-right{
+    height:32vw;
+    flex:1;
+    background-color:black;
+    border-radius:0.8vw;
+}
+.coretechnology-right-text-wrapper-bottom {
+    position: relative;
+    border-radius: 5vw;
+    width: 17vw;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:transparent;
+}
+
+.coretechnology-right-text-wrapper-bottom::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 0.1vw;
+    border-radius: 5vw;
+    background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
+    
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    z-index: -1;
+}
+.coretechnology-right-text-wrapper-bottom span{
+    color:white;
+    font-family: 'NeueHaasGroteskLight';
+    font-size: 0.92vw;
+    line-height:100%;
+    letter-spacing:0.001vw;
+}

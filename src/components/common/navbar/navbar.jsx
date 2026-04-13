@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const navLinks = [
-  { label: "Company",            href: "/company/overview" },
+  { label: "Company",            href: "/companyoverview" },
   { label: "Core Technology",    href: "/coretech/p2n2" },
   { label: "Biometric Products", href: "/products" },
   { label: "Solutions",          href: "/solutions" },

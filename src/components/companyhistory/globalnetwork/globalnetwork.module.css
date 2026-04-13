@@ -1,0 +1,33 @@
+.historyinovation-section {
+    width: 100%;
+    background-color: #fff;
+    padding-block-start: 2vw;
+}
+
+/* ------heading area------ */
+.historyinovation-heading-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.historyinovation-heading-title {
+    font-size: 2.4vw;
+    font-family: 'NeueHaasDisplayThin';
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 0.04vw;
+    /* margin: 0 0 1.2vw 0; */
+    padding-block-end:1vw;
+    line-height: 110%;
+}
+.historyinovation-heading-desc {
+    font-size: 1.1vw;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 0.02vw;
+    line-height: 160%;
+    margin: 0;
+}

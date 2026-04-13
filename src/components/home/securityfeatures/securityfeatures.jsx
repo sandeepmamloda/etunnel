@@ -1,6 +1,7 @@
 "use client";
 import styles from "./securityfeatures.module.css";
 import Image from 'next/image';
+import Link from "next/link"; // ✅ add this
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,29 +14,39 @@ const Securityfeatures = function () {
   const cardsRef = useRef([]);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger); // ✅ important
+
     const ctx = gsap.context(() => {
 
-      // Title + desc + toggle - bottom to top reveal
       gsap.fromTo(
         [titleRef.current, descRef.current, toggleRef.current],
         { clipPath: "inset(0 0 100% 0)" },
         {
           clipPath: "inset(0 0 0% 0)",
-          duration: 1.2, ease: "power2.inOut",
+          duration: 1.2,
+          ease: "power2.inOut",
           stagger: 0.15,
-          scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true }
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            once: true
+          }
         }
       );
 
-      // Cards - left to right reveal
       gsap.fromTo(
         cardsRef.current,
         { clipPath: "inset(0 100% 0 0)" },
         {
           clipPath: "inset(0 0% 0 0)",
-          duration: 1.3, ease: "power2.inOut",
+          duration: 1.3,
+          ease: "power2.inOut",
           stagger: 0.18,
-          scrollTrigger: { trigger: sectionRef.current, start: "top 65%", once: true }
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 65%",
+            once: true
+          }
         }
       );
 
@@ -68,48 +79,60 @@ const Securityfeatures = function () {
   ];
 
   return (
-    <>
-      <div className={styles["security-feature-wrapper"]} ref={sectionRef}>
-        <div className={styles["security-feature-top"]}>
-          <div className={styles["security-feature-top-tcontent"]}>
-            <p ref={titleRef}>
-              Biometric Security Built for the Real World
-            </p>
-          </div>
-          <div className={styles["security-feature-top-mcontent"]}>
-            <p ref={descRef}>
-              ETUNNEL replaces weak credentials with secure biometric authentication powered by AI. Our systems verify identity using unique human features<br /> that cannot be copied or transferred.
-            </p>
-            <div ref={toggleRef} className={styles["security-feature-wrapper-toggle"]}>
-              <p>Learn More About Us</p>
-            </div>
-          </div>
+    <div className={styles["security-feature-wrapper"]} ref={sectionRef}>
+      <div className={styles["security-feature-top"]}>
+        
+        <div className={styles["security-feature-top-tcontent"]}>
+          <p ref={titleRef}>
+            Biometric Security Built for the Real World
+          </p>
         </div>
 
-        <div className={styles["security-feature-cart-wrapper"]}>
-          {cards.map((card, i) => (
-            <div
-              key={i}
-              className={styles["security-feature-cart"]}
-              ref={(el) => (cardsRef.current[i] = el)}
-            >
-              <div className={styles["security-feature-cart-top"]}>
-                {/* ✅ br tag render karne ke liye dangerouslySetInnerHTML */}
-                <p dangerouslySetInnerHTML={{ __html: card.title }} />
-                <div>
-                  {card.spans.map((s, j) => (
-                    <span key={j}>{s}</span>
-                  ))}
-                </div>
-              </div>
-              <div className={styles["security-feature-cart-bottom"]}>
-                <Image src={card.img} alt={card.title} fill priority className={styles["img"]} />
-              </div>
-            </div>
-          ))}
+        <div className={styles["security-feature-top-mcontent"]}>
+          
+          <p ref={descRef}>
+            ETUNNEL replaces weak credentials with secure biometric authentication powered by AI. Our systems verify identity using unique human features<br /> that cannot be copied or transferred.
+          </p>
+
+          {/* ✅ Updated Button */}
+          <div ref={toggleRef} className={styles["security-feature-wrapper-toggle"]}>
+            <Link href="/about" className={styles["toggle-link"]}>
+              Learn More About Us
+            </Link>
+          </div>
+
         </div>
       </div>
-    </>
+
+      <div className={styles["security-feature-cart-wrapper"]}>
+        {cards.map((card, i) => (
+          <div
+            key={i}
+            className={styles["security-feature-cart"]}
+            ref={(el) => (cardsRef.current[i] = el)}
+          >
+            <div className={styles["security-feature-cart-top"]}>
+              <p dangerouslySetInnerHTML={{ __html: card.title }} />
+              <div>
+                {card.spans.map((s, j) => (
+                  <span key={j}>{s}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className={styles["security-feature-cart-bottom"]}>
+              <Image
+                src={card.img}
+                alt={card.title}
+                fill
+                priority
+                className={styles["img"]}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

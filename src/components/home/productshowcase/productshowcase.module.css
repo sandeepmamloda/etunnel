@@ -89,13 +89,13 @@
 .p2n2 .body{
     display:flex;
     flex-direction: column;
-    row-gap:3vw;
+    row-gap:4vw;
 }
 
 /* ---------------- BUTTON ---------------- */
 .productshowcase-wrapper-toggle{
-    min-height:2.3vw;
-    width:8vw;
+    min-height:2.5vw;
+    width:10vw;
     border-radius:3vw;
     color:#fff;
     background-color:rgba(0, 0, 0, 1);
@@ -111,8 +111,7 @@
     content: "";
     -webkit-mask-composite: xor;
     z-index: -1;
-    /* changed gradient to top-to-bottom */
-    background: linear-gradient(to right, #b5b5b5, #000);
+    background: linear-gradient(#b5b5b5 -111.7%, #000 162.48%);
     border-radius: 5vw;
     padding: .1vw;
     position: absolute;
@@ -130,11 +129,11 @@
 }
 
 .productshowcase-wrapper-toggle p{
-    font-size:0.8vw!important;
+    font-size:0.9vw!important;
     line-height: 160%;
     font-family: 'NeueHaasDisplayXXThin'!important;
     font-weight: 600;
-    letter-spacing: 0.01vw;
+    letter-spacing: 0.05vw!important;
 }
 
 .p2n2 .body p{
@@ -142,7 +141,7 @@
     line-height: 160%;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
-    letter-spacing: 0.01vw;
+    letter-spacing: 0.03vw;
 }
 
 /* ---------------- FVA ---------------- */

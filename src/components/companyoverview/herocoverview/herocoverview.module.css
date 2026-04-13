@@ -1,0 +1,92 @@
+.heroabout-section{
+    height:42vw;
+    width:100%;
+    background-color:black;
+}
+.heroabout-section-wrapper{
+    height:100%;
+    width:100%;
+    position:relative;
+}
+.heroabout-section-wrapper .heroabout-section-img{
+    height:100%;
+    width:100%;
+    position:relative;
+}
+.heroabout-section-wrapper .heroabout-section-img img{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    object-position:center;
+}
+.heroabout-section-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(49.45% 49.45% at 49.04% 45.2%, rgba(0, 0, 0, 0.2) 0%, #000000 100%);
+    z-index: 1;
+}
+/* ------heroabout-section-text-wrapper------ */
+.heroabout-section-text-wrapper {
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.4vw;
+    display: flex;
+    position: absolute;
+    bottom: 2vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.heroabout-section-text-wrapper p{
+    color:#fff;
+    line-height:100%;
+}
+.heroabout-section-text-wrapper p:first-child{
+    font-size:2.2vw;
+    font-family: 'NeueHaasGroteskLight';
+}
+.heroabout-section-text-wrapper p:nth-child(2){
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    font-family: 'NeueHaasGroteskLight';
+    font-size:2.2vw;
+    row-gap:0.2vw;
+}
+.request-a-demo {
+    position: relative;
+    border-radius: 5vw;
+    width: 15vw;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.7vw;
+    background:transparent;
+    z-index: 1;
+}
+
+.request-a-demo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 0.1vw;
+    border-radius: 5vw;
+    background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
+    
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    z-index: -1;
+}
+.request-a-demo span{
+    color:white;
+    font-family: 'NeueHaasGroteskLight';
+    font-size: 0.92vw;
+    line-height:100%;
+}

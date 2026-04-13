@@ -1,0 +1,193 @@
+.historyinovation-section {
+    width: 100%;
+    background-color: #fff;
+    padding-block: 4vw;
+}
+
+/* ------heading area------ */
+.historyinovation-heading-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-block: 4vw;
+}
+.historyinovation-heading-title {
+    font-size: 2.4vw;
+    font-family: 'NeueHaasDisplayThin';
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 0.04vw;
+    /* margin: 0 0 1.2vw 0; */
+    padding-block-end:1vw;
+    line-height: 110%;
+}
+.historyinovation-heading-desc {
+    font-size: 1.1vw;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 0.02vw;
+    line-height: 160%;
+    margin: 0;
+}
+
+/* ------accordion wrapper------ */
+.historyinovation-section-wrapper {
+    width: 100%;
+    padding-inline: 7vw;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ------accordion-item------ */
+.historyinovation-accordion-item {
+    width: 100%;
+    border-top: 0.05vw solid #c8c8c8;
+}
+.historyinovation-accordion-item:last-child {
+    border-bottom: 0.05vw solid #c8c8c8;
+}
+.historyinovation-accordion-checkbox {
+    display: none;
+}
+
+/* ------accordion-label------ */
+.historyinovation-accordion-label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 0;
+    padding-block: 1.8vw;
+    cursor: pointer;
+}
+.historyinovation-accordion-label-icon {
+    font-size: 1.4vw;
+    color: #c8c8c8;
+    line-height: 100%;
+    display: inline-block;
+    width: 1.4vw;
+    margin-right: 0.2vw;
+    flex-shrink: 0;
+    text-align: center;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.04vw;
+}
+.historyinovation-accordion-label-icon::before {
+    content: "+";
+}
+.historyinovation-accordion-label-year {
+    font-size: 1.4vw;
+    color: #c8c8c8;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.04vw;
+    line-height: 100%;
+}
+
+/* ------checked state label------ */
+.historyinovation-accordion-checkbox:checked
+    ~ .historyinovation-accordion-label
+    .historyinovation-accordion-label-icon {
+    color: #000;
+}
+.historyinovation-accordion-checkbox:checked
+    ~ .historyinovation-accordion-label
+    .historyinovation-accordion-label-icon::before {
+    content: "—";
+}
+.historyinovation-accordion-checkbox:checked
+    ~ .historyinovation-accordion-label
+    .historyinovation-accordion-label-year {
+    color: #000;
+}
+
+/* ------accordion-body------ */
+.historyinovation-accordion-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease;
+    overflow: hidden;
+}
+.historyinovation-accordion-checkbox:checked
+    ~ .historyinovation-accordion-body {
+    grid-template-rows: 1fr;
+}
+
+/* ------accordion-body-inner------ */
+.historyinovation-accordion-body-inner {
+    min-height: 0;
+    overflow: hidden;
+    padding-inline-start: 10vw;
+}
+
+/* ------accordion-body-row------ */
+.historyinovation-accordion-body-row {
+    display: grid;
+    grid-template-columns: 30vw 1fr;
+    column-gap: 2vw;
+    padding-bottom: 3vw;
+}
+
+/* ------img------ */
+.historyinovation-accordion-body-img-wrapper {
+    width: 100%;
+    height: 18vw;
+    border-radius: 1vw;
+    overflow: hidden;
+}
+.historyinovation-accordion-body-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* ------content------ */
+.historyinovation-accordion-body-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1.2vw;
+}
+.historyinovation-accordion-body-content-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5vw;
+}
+.historyinovation-accordion-body-content-text {
+    font-size: 1.2vw;
+    font-family: 'NeueHaasDisplayXThin';
+    color: #000;
+    line-height: 130%;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.04vw;
+}
+.historyinovation-accordion-body-content-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4vw;
+}
+.historyinovation-accordion-body-content-list-item {
+    font-size: 1.2vw;
+    font-family: 'NeueHaasDisplayXThin';
+    color: #000;
+    line-height: 1.5;
+    padding-left: 1.2vw;
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 0.04vw;
+}
+.historyinovation-accordion-body-content-list-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #000;
+}

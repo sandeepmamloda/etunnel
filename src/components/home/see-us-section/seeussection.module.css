@@ -21,10 +21,10 @@
     font-family: 'NeueHaasDisplayThin';
 }
 .seeussection-wrapper-text-content p:last-child{
-    font-size:1vw;
-    font-family: 'NeueHaasDisplayXThin';
+    font-size:0.9vw;
+    font-family: 'NeueHaasDisplayThin';
     font-weight: 600;
-    letter-spacing: 0.01vw;
+    letter-spacing: 0.03vw;
 }
 .seeussection-wrapper-video{
     height:28vw;

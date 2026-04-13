@@ -45,14 +45,55 @@
     height:2.5vw;
     width:11vw;
     border-radius:3vw;
-    color:#fff;
-    background-color:rgba(0, 0, 0, 1);
+    background-color:#000;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    transition:transform 0.2s ease;
+}
+
+/* clickable area */
+.toggle-link{
+    height:100%;
+    width:100%;
     display:flex;
     align-items:center;
-    justify-content: center;
+    justify-content:center;
+    text-decoration:none;
+    color:#fff;
     position:relative;
-    z-index: 1;
+    z-index:2;
+    font-family: 'NeueHaasGroteskLight';
+    font-size:0.9vw;
 }
+
+/* 🔥 Shine Sweep Effect */
+.security-feature-wrapper-toggle::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-120%;
+    height:100%;
+    width:120%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+    transition:all 0.6s ease;
+}
+
+/* Hover pe sweep chalega */
+.security-feature-wrapper-toggle:hover::after{
+    left:120%;
+}
+
+/* subtle glow */
+.security-feature-wrapper-toggle:hover{
+    box-shadow:0 0 20px rgba(255,255,255,0.15);
+}
+
 .security-feature-wrapper-toggle::before {
     content: "";
     position: absolute;
