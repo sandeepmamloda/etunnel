@@ -6,11 +6,11 @@ import Integrate from "@/components/coretech/p2n2/integrate/integrate";
 const P2n2 = () => {
   return (
     <>
-      <Herotech/>
-      <Nextgeneration/>
-      <Authentication/>
-      <Featureoftechnology/>
-      <Integrate/>
+      <Herotech />
+      <Nextgeneration />
+      <Authentication />
+      <Featureoftechnology />
+      <Integrate />
     </>
   );
 };
