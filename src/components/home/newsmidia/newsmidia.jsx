@@ -1,6 +1,7 @@
 "use client";
 import styles from "./newsmidia.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -25,30 +26,26 @@ const Newsmidia = function () {
         }
       });
 
-      // Title + desc + toggle - bottom to top
       tl.fromTo(
         [titleRef.current, descRef.current, toggleRef.current],
         { clipPath: "inset(0 0 100% 0)" },
         { clipPath: "inset(0 0 0% 0)", duration: 1.2, ease: "power2.inOut", stagger: 0.15 }
       )
-      // Left card - left to right
-      .fromTo(leftCardRef.current,
-        { clipPath: "inset(0 100% 0 0)" },
-        { clipPath: "inset(0 0% 0 0)", duration: 1.4, ease: "power2.inOut" },
-        "-=0.6"
-      )
-      // Right top - right to left
-      .fromTo(rightTopRef.current,
-        { clipPath: "inset(0 0 0 100%)" },
-        { clipPath: "inset(0 0 0 0%)", duration: 1.4, ease: "power2.inOut" },
-        "-=1.1"
-      )
-      // Right bottom - right to left
-      .fromTo(rightBottomRef.current,
-        { clipPath: "inset(0 0 0 100%)" },
-        { clipPath: "inset(0 0 0 0%)", duration: 1.4, ease: "power2.inOut" },
-        "-=0.9"
-      );
+        .fromTo(leftCardRef.current,
+          { clipPath: "inset(0 100% 0 0)" },
+          { clipPath: "inset(0 0% 0 0)", duration: 1.4, ease: "power2.inOut" },
+          "-=0.6"
+        )
+        .fromTo(rightTopRef.current,
+          { clipPath: "inset(0 0 0 100%)" },
+          { clipPath: "inset(0 0 0 0%)", duration: 1.4, ease: "power2.inOut" },
+          "-=1.1"
+        )
+        .fromTo(rightBottomRef.current,
+          { clipPath: "inset(0 0 0 100%)" },
+          { clipPath: "inset(0 0 0 0%)", duration: 1.4, ease: "power2.inOut" },
+          "-=0.9"
+        );
 
     }, sectionRef);
 
@@ -64,9 +61,9 @@ const Newsmidia = function () {
           </div>
           <div className={styles["newsmidia-top-mcontent"]}>
             <p ref={descRef}>Introducing our news and media coverage from all over the world</p>
-            <div ref={toggleRef} className={styles["newsmidia-top-toggle"]}>
+            <Link ref={toggleRef} href="/" className={styles["newsmidia-top-toggle"]}>
               <p>See More News</p>
-            </div>
+            </Link>
           </div>
         </div>
 

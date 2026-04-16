@@ -27,18 +27,18 @@ const Seeussection = function () {
         { clipPath: "inset(0 0 100% 0)" },
         { clipPath: "inset(0 0 0% 0)", duration: 1.2, ease: "power2.inOut" }
       )
-      // Video - top to bottom curtain
-      .fromTo(videoRef.current,
-        { clipPath: "inset(100% 0 0 0)" },
-        { clipPath: "inset(0% 0 0 0)", duration: 1.5, ease: "power2.inOut" },
-        "-=0.7"
-      )
-      // Play button - bottom to top
-      .fromTo(playBtnRef.current,
-        { clipPath: "inset(0 0 100% 0)" },
-        { clipPath: "inset(0 0 0% 0)", duration: 0.9, ease: "power2.inOut" },
-        "-=0.5"
-      );
+        // Video - top to bottom curtain
+        .fromTo(videoRef.current,
+          { clipPath: "inset(100% 0 0 0)" },
+          { clipPath: "inset(0% 0 0 0)", duration: 1.5, ease: "power2.inOut" },
+          "-=0.7"
+        )
+        // Play button - bottom to top
+        .fromTo(playBtnRef.current,
+          { clipPath: "inset(0 0 100% 0)" },
+          { clipPath: "inset(0 0 0% 0)", duration: 0.9, ease: "power2.inOut" },
+          "-=0.5"
+        );
 
     }, sectionRef);
 

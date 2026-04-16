@@ -58,7 +58,7 @@ const Securityfeatures = function () {
   const cards = [
     {
       title: "Secure Identity Verification",
-      spans: ["ETUNNEL authenticates users using Biometric", "data such as fingerprint, finger vein, and facial", "recognition. Each identity is verified against", "encrypted biometric templates, ensuring that", "access is granted only to the rightful individua"],
+      spans: ["ETUNNEL authenticates users using biometric", "data such as fingerprint, finger vein, and facial", "recognition. Each identity is verified against", "encrypted biometric templates, ensuring that", "access is granted only to the rightful individual."],
       img: "/images/security/unnamed.png"
     },
     {
@@ -73,7 +73,7 @@ const Securityfeatures = function () {
     },
     {
       title: "Seamless Physical and <br/>Digital Security",
-      spans: ["ETUNNEL solutions work across both physica", "access points and digital systems. The same", "biometric identity can be used for facility access", "system login, secure transactions, and identity", "verification creating a unified and consistent", "security experience."],
+      spans: ["ETUNNEL solutions work across both physical", "access points and digital systems. The same", "biometric identity can be used for facility access,", "system login, secure transactions, and identity", "verification creating a unified and consistent", "security experience."],
       img: "/images/security/globe.png"
     },
   ];
@@ -81,7 +81,7 @@ const Securityfeatures = function () {
   return (
     <div className={styles["security-feature-wrapper"]} ref={sectionRef}>
       <div className={styles["security-feature-top"]}>
-        
+
         <div className={styles["security-feature-top-tcontent"]}>
           <p ref={titleRef}>
             Biometric Security Built for the Real World
@@ -89,7 +89,7 @@ const Securityfeatures = function () {
         </div>
 
         <div className={styles["security-feature-top-mcontent"]}>
-          
+
           <p ref={descRef}>
             ETUNNEL replaces weak credentials with secure biometric authentication powered by AI. Our systems verify identity using unique human features<br /> that cannot be copied or transferred.
           </p>
@@ -119,7 +119,6 @@ const Securityfeatures = function () {
                 ))}
               </div>
             </div>
-
             <div className={styles["security-feature-cart-bottom"]}>
               <Image
                 src={card.img}

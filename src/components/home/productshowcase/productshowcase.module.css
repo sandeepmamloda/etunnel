@@ -1,84 +1,87 @@
-.productshowcase-wrapper{
-    height:fit-content;
-    width:100%;
-    display:flex;
-    align-items:flex-end;
-    column-gap:8vw;
-    padding-inline:7vw;
-    padding-block-start:8.6vw;
+.productshowcase-wrapper {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    column-gap: 8vw;
+    padding-inline: 7vw;
+    padding-block-start: 8.6vw;
 }
 
-.productshowcase-wrapper .productshowcase-left{
-    height:30vw;
-    flex:1;
-    background-color:transparent;
-    display:flex;
+.productshowcase-wrapper .productshowcase-left {
+    height: 30vw;
+    flex: 1;
+    background-color: transparent;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-block-end:2vw;
+    padding-block-end: 2vw;
 }
-.productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper{
-    display:flex;
+
+.productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper {
+    display: flex;
     flex-direction: column;
-    row-gap:0.7vw;
+    row-gap: 0.7vw;
 }
-.productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p{
+
+.productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p {
     font-family: 'NeueHaasGroteskLight';
 }
-.productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p:first-child{
+
+.productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p:first-child {
     font-size: 2vw;
-    letter-spacing: 0.04vw;
-    font-weight: 600;  
+    letter-spacing: 0.08vw;
+    font-weight: 600;
     font-family: 'NeueHaasDisplayThin';
 }
-.productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p:last-child{
-    font-size:1vw;
+
+.productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p:last-child {
+    font-size: 0.9vw;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
-    letter-spacing: 0.01vw;  
-}
-/* -------------accordion------------------- */
-.accordion{
-    height:fit-content;
-    width:100%;
-    background-color:transparent;
+    letter-spacing: 0.05vw;
 }
 
-.header{
-    padding-inline:0.5vw;
+/* ------------- accordion ------------------- */
+.accordion {
+    height: fit-content;
+    width: 100%;
+    background-color: transparent;
 }
 
-.body{
-    padding-inline:0.5vw;
-    padding-block-end:0;
+.header {
+    padding-inline: 0.5vw;
 }
 
-/* ✅ ADD THIS COMMON TRANSITION FOR ALL SECTIONS */
+.body {
+    padding-inline: 0.5vw;
+    padding-block-end: 0;
+}
+
 .p2n2,
 .finger-vein-authentication,
-.kisa-certification{
-    height:fit-content;
-    width:100%;
+.kisa-certification {
+    height: fit-content;
+    width: 100%;
     transition: all 0.3s ease;
 }
 
-/* ✅ ACTIVE STATE (MAIN FEATURE) */
-.active{
+.active {
     background: linear-gradient(to bottom, rgba(255, 210, 170, 1), rgba(255, 255, 255, 1));
 }
 
 /* ---------------- P2N2 ---------------- */
-.p2n2 .header{
-    height:3.6vw;
-    width:100%;
-    background-color:transparent;
-    border-top:solid 0.1vw rgba(0,0,0,1);
-    display:flex;
-    justify-content:flex-start;
+.p2n2 .header {
+    height: 3.6vw;
+    width: 100%;
+    background-color: transparent;
+    border-top: solid 0.1vw rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.p2n2 .header p{
+.p2n2 .header p {
     font-family: NeueHaasDisplayThin;
     font-size: 1.2vw;
     line-height: 100%;
@@ -86,25 +89,27 @@
     letter-spacing: 0.05vw;
 }
 
-.p2n2 .body{
-    display:flex;
+.p2n2 .body {
+    display: flex;
     flex-direction: column;
-    row-gap:4vw;
+    row-gap: 4vw;
 }
 
 /* ---------------- BUTTON ---------------- */
-.productshowcase-wrapper-toggle{
-    min-height:2.5vw;
-    width:10vw;
-    border-radius:3vw;
-    color:#fff;
-    background-color:rgba(0, 0, 0, 1);
-    display:flex;
-    align-items:center;
+.productshowcase-wrapper-toggle {
+    min-height: 2.5vw;
+    width: 10vw;
+    border-radius: 3vw;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 1);
+    display: flex;
+    align-items: center;
     justify-content: center;
-    position:relative;
+    position: relative;
     z-index: 1;
-    margin-bottom:1vw;
+    margin-bottom: 1vw;
+    text-decoration: none;
+    /* Link default underline hatao */
 }
 
 .productshowcase-wrapper-toggle::before {
@@ -128,102 +133,127 @@
     mask-mode: match-source, match-source;
 }
 
-.productshowcase-wrapper-toggle p{
-    font-size:0.9vw!important;
+.productshowcase-wrapper-toggle p {
+    font-size: 0.9vw !important;
     line-height: 160%;
-    font-family: 'NeueHaasDisplayXXThin'!important;
+    font-family: 'NeueHaasDisplayXXThin' !important;
     font-weight: 600;
-    letter-spacing: 0.05vw!important;
+    letter-spacing: 0.05vw !important;
 }
 
-.p2n2 .body p{
-    font-size: 1vw;
+/* P2N2 body content paragraphs */
+.p2n2 .body p {
+    font-size: 0.9vw;
     line-height: 160%;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
-    letter-spacing: 0.03vw;
+    letter-spacing: 0.05vw;
+}
+
+/* Shared body content wrapper — same for all three */
+.productshowcase-body-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.2vw;
 }
 
 /* ---------------- FVA ---------------- */
-.finger-vein-authentication .header{
-    height:3.6vw;
-    width:100%;
-    background-color:transparent;
-    border-top:solid 0.1vw rgba(0,0,0,1);
-    display:flex;
-    justify-content:flex-start;
+.finger-vein-authentication .header {
+    height: 3.6vw;
+    width: 100%;
+    background-color: transparent;
+    border-top: solid 0.1vw rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.finger-vein-authentication .header p{
+.finger-vein-authentication .header p {
     font-family: NeueHaasDisplayThin;
     font-size: 1.2vw;
     line-height: 100%;
     font-weight: 600;
     letter-spacing: 0.05vw;
 }
-.finger-vein-authentication .body p{
-    font-size: 1vw;
+
+.finger-vein-authentication .body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4vw;
+}
+
+/* ✅ FVA body paragraphs — same style as P2N2 */
+.finger-vein-authentication .body p {
+    font-size: 0.9vw;
     line-height: 160%;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
-    letter-spacing: 0.01vw;
+    letter-spacing: 0.05vw;
 }
+
 /* ---------------- KISA ---------------- */
-.kisa-certification .header{
-    height:3.6vw;
-    width:100%;
-    background-color:transparent;
-    border-top:solid 0.1vw rgba(0,0,0,1);
-    display:flex;
-    justify-content:flex-start;
+.kisa-certification .header {
+    height: 3.6vw;
+    width: 100%;
+    background-color: transparent;
+    border-top: solid 0.1vw rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.kisa-certification .header p{
+.kisa-certification .header p {
     font-family: NeueHaasDisplayThin;
     font-size: 1.2vw;
     line-height: 100%;
     font-weight: 600;
     letter-spacing: 0.05vw;
 }
-.kisa-certification .body{
-    border-bottom:solid 0.1vw rgba(0,0,0,1);
+
+.kisa-certification .body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4vw;
+    border-bottom: solid 0.1vw rgba(0, 0, 0, 1);
 }
-.kisa-certification .body p{
-    font-size: 1vw;
+
+/* ✅ KISA body paragraphs — same style as P2N2 */
+.kisa-certification .body p {
+    font-size: 0.9vw;
     line-height: 160%;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
-    letter-spacing: 0.01vw;
+    letter-spacing: 0.05vw;
 }
-/* -------------body animation------------------- */
-.body{
-    max-height:0;
-    overflow:hidden;
+
+/* ------------- body animation ------------------- */
+.body {
+    max-height: 0;
+    overflow: hidden;
     transition: max-height 0.4s ease;
 }
 
-/* ------------productshowcase-right---------------- */
-.productshowcase-wrapper .productshowcase-right{
-    height:28vw;
-    flex:1;
-    border-radius:1vw;
-    overflow:hidden;
+/* ------------ productshowcase-right ---------------- */
+.productshowcase-wrapper .productshowcase-right {
+    height: 28vw;
+    flex: 1;
+    border-radius: 1vw;
+    overflow: hidden;
 }
 
-.productshowcase-wrapper .productshowcase-right .productshowcase-right-img{
-    height:100%;
-    width:100%;
-    overflow:hidden;
+.productshowcase-wrapper .productshowcase-right .productshowcase-right-img {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
-.productshowcase-wrapper .productshowcase-right .productshowcase-right-img img{
-    height:100%!important;
-    width:100%!important;
-    object-fit:cover;
-    position:static!important;
+.productshowcase-wrapper .productshowcase-right .productshowcase-right-img img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover;
+    position: static !important;
 }
+
 /* + icon at the right corner */
 .toggle-icon {
     margin-left: auto;

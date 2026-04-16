@@ -1,0 +1,102 @@
+.integrate-wrapper {
+    width: 100%;
+    padding: 6vw 0;
+    background: linear-gradient(180deg, rgba(255, 210, 170, 0.3) 0%, #FFFFFF 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top:solid 0.1vw rgba(0, 0, 0, 0.1);
+    border-bottom:solid 0.1vw rgba(0, 0, 0, 0.1);
+}
+
+.integrate-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+/* Heading */
+.integrate-content h2 {
+    font-size: 2.3vw;
+    font-family: 'NeueHaasDisplayThin';
+    font-weight:600;
+    letter-spacing: 0.08vw;
+    color: black;
+}
+
+/* Paragraph */
+.integrate-content p {
+    font-size: 0.86vw;
+    font-family: 'NeueHaasDisplayXThin';
+    color: rgba(82, 82, 82, 1);
+    font-weight:600;
+    line-height: 180%;
+    letter-spacing:0.08vw;
+}
+
+/* Buttons Wrapper */
+.integrate-buttons {
+    display: flex;
+    gap: 1vw;
+    margin-top: 1vw;
+}
+
+/* Dark Button */
+.btn-dark {
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    border: 0.13vw solid rgb(0, 0, 0);
+    border-radius: 2.5vw;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.4vw;
+    width: 11vw;
+    height: 3.3vw;
+    display: flex;
+}
+
+.btn-dark span {
+    font-size: 0.9vw;
+    color:white;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.03vw;
+}
+
+.btn-dark svg {
+    width: 1vw;
+    height: 1vw;
+}
+
+.btn-dark:hover {
+    transform: translateY(-2px);
+}
+
+/* Light Button */
+.btn-light {
+    cursor: pointer;
+    background-color: rgba(255,255,255,1);
+    border: 0.13vw solid rgb(0, 0, 0);
+    border-radius: 2.5vw;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.4vw;
+    width: 11vw;
+    height: 3.3vw;
+    display: flex;
+    color:rgba(0,0,0,1);
+}
+
+.btn-light span {
+    font-size: 0.9vw;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight:600;
+    letter-spacing: 0.05vw;
+}
+
+.btn-light:hover {
+    background-color: black;
+    color: white;
+}

@@ -1,415 +1,466 @@
-.security-feature-wrapper{
-    height:fit-content;
-    width:100%;
-    display:flex;
+.security-feature-wrapper {
+    height: fit-content;
+    width: 100%;
+    display: flex;
     flex-direction: column;
-    padding-inline:7vw;
-    padding-block-start:3.5vw;
-    row-gap:1.6vw;
+    padding-inline: 7vw;
+    padding-block-start: 3.5vw;
+    row-gap: 1.6vw;
 }
-.security-feature-wrapper .security-feature-top{
-    height:fit-content;
-    width:100%;
-    display:flex;
+
+.security-feature-wrapper .security-feature-top {
+    height: fit-content;
+    width: 100%;
+    display: flex;
     flex-direction: column;
-    row-gap:1vw;
+    row-gap: 1vw;
 }
-.security-feature-wrapper .security-feature-top .security-feature-top-tcontent{
-    height:fit-content;
-    width:100%;
+
+.security-feature-wrapper .security-feature-top .security-feature-top-tcontent {
+    height: fit-content;
+    width: 100%;
     /* font-family: 'NeueHaasGroteskLight'; */
-    
+
 }
-.security-feature-wrapper .security-feature-top .security-feature-top-tcontent p{
-    letter-spacing:0.08vw;
-    font-size:2vw;
+
+.security-feature-wrapper .security-feature-top .security-feature-top-tcontent p {
+    letter-spacing: 0.08vw;
+    font-size: 2vw;
     font-family: 'NeueHaasDisplayThin';
     line-height: 100%;
     font-weight: 600;
 }
-.security-feature-wrapper .security-feature-top .security-feature-top-mcontent{
-    height:fit-content;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
+
+.security-feature-wrapper .security-feature-top .security-feature-top-mcontent {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
-.security-feature-wrapper .security-feature-top .security-feature-top-mcontent>p{
+
+.security-feature-wrapper .security-feature-top .security-feature-top-mcontent>p {
     /* font-family: 'NeueHaasGroteskLight'; */
     font-family: 'NeueHaasDisplayThin';
-    font-size:0.83vw;
+    font-size: 0.9vw;
     font-weight: 600;
-    letter-spacing:0.07vw;
-    color:rgba(0,0,0,0.8);
+    letter-spacing: 0.06vw;
+    color: rgba(0, 0, 0, 1);
 }
-.security-feature-wrapper-toggle{
-    height:2.5vw;
-    width:11vw;
-    border-radius:3vw;
-    background-color:#000;
-    position:relative;
-    overflow:hidden;
-    cursor:pointer;
-    transition:transform 0.2s ease;
+
+.security-feature-wrapper-toggle {
+    height: 2.5vw;
+    width: 12vw;
+    border-radius: 3vw;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
 /* clickable area */
-.toggle-link{
-    height:100%;
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    color:#fff;
-    position:relative;
-    z-index:2;
+.toggle-link {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    z-index: 2;
     font-family: 'NeueHaasGroteskLight';
-    font-size:0.9vw;
+    font-size: 0.9vw;
+    letter-spacing: 0.03vw;
 }
 
 /* 🔥 Shine Sweep Effect */
-.security-feature-wrapper-toggle::after{
-    content:'';
-    position:absolute;
-    top:0;
-    left:-120%;
-    height:100%;
-    width:120%;
-    background:linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.25),
-        transparent
-    );
-    transition:all 0.6s ease;
+.security-feature-wrapper-toggle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    height: 100%;
+    width: 120%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.25),
+            transparent);
+    transition: all 0.6s ease;
 }
 
 /* Hover pe sweep chalega */
-.security-feature-wrapper-toggle:hover::after{
-    left:120%;
+.security-feature-wrapper-toggle:hover::after {
+    left: 120%;
 }
 
 /* subtle glow */
-.security-feature-wrapper-toggle:hover{
-    box-shadow:0 0 20px rgba(255,255,255,0.15);
+.security-feature-wrapper-toggle:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
 }
 
 .security-feature-wrapper-toggle::before {
     content: "";
     position: absolute;
     inset: 0;
-    padding: 0.1vw; /* border thickness */
+    padding: 0.1vw;
+    /* border thickness */
     border-radius: 5vw;
     background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
-    
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
 
     z-index: -1;
 }
-.security-feature-wrapper-toggle p{
+
+.security-feature-wrapper-toggle p {
     font-family: 'NeueHaasGroteskLight';
-    font-size:0.9vw!important;
+    font-size: 0.9vw !important;
 }
-.security-feature-cart-wrapper{
-    height:fit-content;
-    width:100%;
-    display:flex;
-    column-gap:0.7vw;
+
+.security-feature-cart-wrapper {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    column-gap: 0.7vw;
 }
-.security-feature-cart{
-    height:30vw;
-    flex:1;
+
+.security-feature-cart {
+    height: 30vw;
+    flex: 1;
     background: rgba(0, 0, 0, 1);
-    border-radius:0.8vw;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    overflow:hidden;
-}
-.security-feature-cart:nth-child(1){
-    height:30vw;
-    flex:1;
-    background: rgba(0, 0, 0, 1);
-    border-radius:0.8vw;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    overflow:hidden;
-    position:relative;
-}
-.security-feature-cart:nth-child(1) .security-feature-cart-top{
-    height:fit-content;
-    width:100%;
-    display:flex;
+    border-radius: 0.8vw;
+    display: flex;
     flex-direction: column;
-    padding-top:1vw;
-    row-gap:0.5vw;
-    position:absolute;
+    justify-content: space-between;
+    overflow: hidden;
 }
-.security-feature-cart:nth-child(1) .security-feature-cart-top p{
-    color:white;
-    text-align:center;
+
+.security-feature-cart:nth-child(1) {
+    height: 30vw;
+    flex: 1;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 0.8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+}
+
+.security-feature-cart:nth-child(1) .security-feature-cart-top {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vw;
+    row-gap: 0.5vw;
+    position: absolute;
+}
+
+.security-feature-cart:nth-child(1) .security-feature-cart-top p {
+    color: white;
+    text-align: center;
     /* font-family: 'NeueHaasGroteskLight'; */
     font-family: 'NeueHaasDisplayXXThin';
     font-size: 1.2vw;
     font-weight: 600;
     letter-spacing: 0.07vw;
 }
-.security-feature-cart:nth-child(1) .security-feature-cart-top div{
-    display:flex;
+
+.security-feature-cart:nth-child(1) .security-feature-cart-top div {
+    display: flex;
     flex-direction: column;
 }
-.security-feature-cart:nth-child(1) .security-feature-cart-top div span{
+
+.security-feature-cart:nth-child(1) .security-feature-cart-top div span {
     font-family: 'NeueHaasDisplayThin';
-    font-size: 0.97vw;
+    font-size: 0.9vw;
     font-weight: 400;
     line-height: 120%;
     opacity: 0.9;
-    letter-spacing: 0.01vw;
-    color:#fff;
-    text-align:center;
+    letter-spacing: 0.05vw;
+    color: #fff;
+    text-align: center;
 }
-.security-feature-cart:nth-child(1) .security-feature-cart-bottom{
-   height:100%;
-   width:100%;
+
+.security-feature-cart:nth-child(1) .security-feature-cart-bottom {
+    height: 100%;
+    width: 100%;
 }
-.security-feature-cart:nth-child(1) .security-feature-cart-bottom img{
-    height:100%!important;
-    width:100%!important;
+
+.security-feature-cart:nth-child(1) .security-feature-cart-bottom img {
+    height: 100% !important;
+    width: 100% !important;
     object-fit: contain;
-    position:static!important;
-    object-position:bottom;
+    position: static !important;
+    object-position: bottom;
 }
+
 /* -----------2---------------- */
-.security-feature-cart:nth-child(2){
-    height:30vw;
-    flex:1;
+.security-feature-cart:nth-child(2) {
+    height: 30vw;
+    flex: 1;
     background: rgba(0, 0, 0, 1);
-    border-radius:0.8vw;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    overflow:hidden;
-    position:relative;
-}
-.security-feature-cart:nth-child(2) .security-feature-cart-top{
-    height:fit-content;
-    width:100%;
-    display:flex;
+    border-radius: 0.8vw;
+    display: flex;
     flex-direction: column;
-    padding-bottom:1vw;
-    row-gap:0.5vw;
-    position:absolute;
-    bottom:0;
-    z-index:2;
+    justify-content: flex-start;
+    overflow: hidden;
+    position: relative;
 }
-.security-feature-cart:nth-child(2) .security-feature-cart-top p{
-    color:white;
-    text-align:center;
+
+.security-feature-cart:nth-child(2) .security-feature-cart-top {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1vw;
+    row-gap: 0.5vw;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+
+.security-feature-cart:nth-child(2) .security-feature-cart-top p {
+    color: white;
+    text-align: center;
     /* font-family: 'NeueHaasGroteskLight'; */
     font-family: 'NeueHaasDisplayXXThin';
     font-size: 1.2vw;
     font-weight: 600;
     letter-spacing: 0.07vw;
 }
-.security-feature-cart:nth-child(2) .security-feature-cart-top div{
-    display:flex;
+
+.security-feature-cart:nth-child(2) .security-feature-cart-top div {
+    display: flex;
     flex-direction: column;
 }
-.security-feature-cart:nth-child(2) .security-feature-cart-top div span{
+
+.security-feature-cart:nth-child(2) .security-feature-cart-top div span {
     font-family: 'NeueHaasDisplayThin';
-    font-size: 0.97vw;
+    font-size: 0.9vw;
     font-weight: 400;
     line-height: 120%;
     opacity: 0.9;
-    letter-spacing: 0.01vw;
-    color:#fff;
-    text-align:center;
+    letter-spacing: 0.05vw;
+    color: #fff;
+    text-align: center;
 }
+
 .security-feature-cart:nth-child(2) .security-feature-cart-bottom {
-  height: 70%;
-  width: 100%;
-  position: relative; /* ✅ ::after ke liye zaroori */
+    height: 70%;
+    width: 100%;
+    position: relative;
+    /* ✅ ::after ke liye zaroori */
 }
 
 .security-feature-cart:nth-child(2) .security-feature-cart-bottom::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  box-shadow: 
-    inset 0 80px 60px -10px #000000f2,
-    inset 0 -80px 60px -10px #000000f2,
-    inset 80px 0 60px -10px #000000b3,
-    inset -80px 0 60px -10px #000000b3;
-  z-index: 1;
-  pointer-events: none;
-  border-radius: 1vw;
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow:
+        inset 0 80px 60px -10px #000000f2,
+        inset 0 -80px 60px -10px #000000f2,
+        inset 80px 0 60px -10px #000000b3,
+        inset -80px 0 60px -10px #000000b3;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 1vw;
 }
-.security-feature-cart:nth-child(2) .security-feature-cart-bottom img{
-    height:100%!important;
-    width:100%!important;
-    object-position: center top;     /* ✅ sir/chehra dikhega */
-    object-position: center center;  /* kamar dikhega */
-    object-position: center bottom;  /* pair dikhega */
-    object-fit:cover;
-    position:static!important;
+
+.security-feature-cart:nth-child(2) .security-feature-cart-bottom img {
+    height: 100% !important;
+    width: 100% !important;
+    object-position: center top;
+    /* ✅ sir/chehra dikhega */
+    object-position: center center;
+    /* kamar dikhega */
+    object-position: center bottom;
+    /* pair dikhega */
+    object-fit: cover;
+    position: static !important;
 }
+
 /* ---------3---------------- */
-.security-feature-cart:nth-child(3){
-    height:30vw;
-    flex:1;
+.security-feature-cart:nth-child(3) {
+    height: 30vw;
+    flex: 1;
     background: rgba(0, 0, 0, 1);
-    border-radius:0.8vw;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    overflow:hidden;
-    position:relative;
-}
-.security-feature-cart:nth-child(3) .security-feature-cart-top{
-    height:fit-content;
-    width:100%;
-    display:flex;
+    border-radius: 0.8vw;
+    display: flex;
     flex-direction: column;
-    padding-top:1vw;
-    row-gap:0.5vw;
-    position:absolute;
-    top:0;
-    z-index:2;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
 }
-.security-feature-cart:nth-child(3) .security-feature-cart-top p{
-    color:white;
-    text-align:center;
+
+.security-feature-cart:nth-child(3) .security-feature-cart-top {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vw;
+    row-gap: 0.5vw;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.security-feature-cart:nth-child(3) .security-feature-cart-top p {
+    color: white;
+    text-align: center;
     /* font-family: 'NeueHaasGroteskLight'; */
     font-family: 'NeueHaasDisplayXXThin';
     font-size: 1.2vw;
     font-weight: 600;
     letter-spacing: 0.07vw;
 }
-.security-feature-cart:nth-child(3) .security-feature-cart-top div{
-    display:flex;
+
+.security-feature-cart:nth-child(3) .security-feature-cart-top div {
+    display: flex;
     flex-direction: column;
 }
-.security-feature-cart:nth-child(3) .security-feature-cart-top div span{
+
+.security-feature-cart:nth-child(3) .security-feature-cart-top div span {
     font-family: 'NeueHaasDisplayThin';
-    font-size: 0.97vw;
+    font-size: 0.9vw;
     font-weight: 400;
     line-height: 120%;
     opacity: 0.9;
-    letter-spacing: 0.01vw;
-    color:#fff;
-    text-align:center;
+    letter-spacing: 0.05vw;
+    color: #fff;
+    text-align: center;
 }
+
 .security-feature-cart:nth-child(3) .security-feature-cart-bottom {
-  height: 88%;
-  width: 100%;
-  position: relative; /* ✅ ::after ke liye zaroori */
+    height: 88%;
+    width: 100%;
+    position: relative;
+    /* ✅ ::after ke liye zaroori */
 }
+
 .security-feature-cart:nth-child(3) .security-feature-cart-bottom::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  box-shadow: 
-    inset 0 80px 60px -10px #000000f2,
-    inset 0 -80px 60px -10px #000000f2,
-    inset 80px 0 60px -10px #000000b3,
-    inset -80px 0 60px -10px #000000b3;
-  z-index: 1;
-  pointer-events: none;
-  border-radius: 1vw;
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow:
+        inset 0 80px 60px -10px #000000f2,
+        inset 0 -80px 60px -10px #000000f2,
+        inset 80px 0 60px -10px #000000b3,
+        inset -80px 0 60px -10px #000000b3;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 1vw;
 }
+
 /* .security-feature-cart:nth-child(3) .security-feature-cart-bottom img{
     height:100%!important;
     width:100%!important;
     object-fit:contain;
     position:static!important;
 } */
-.security-feature-cart:nth-child(3) .security-feature-cart-bottom img{
-    height:100%!important;
-    width:100%!important; 
-    object-fit:cover;
-    object-position:center;
-    position:static!important;
+.security-feature-cart:nth-child(3) .security-feature-cart-bottom img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover;
+    object-position: center;
+    position: static !important;
 }
+
 /* ---------4---------------- */
-.security-feature-cart:nth-child(4){
-    height:30vw;
-    flex:1;
+.security-feature-cart:nth-child(4) {
+    height: 30vw;
+    flex: 1;
     background: rgba(0, 0, 0, 1);
-    border-radius:0.8vw;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    overflow:hidden;
-    position:relative;
-}
-.security-feature-cart:nth-child(4) .security-feature-cart-top{
-    height:fit-content;
-    width:100%;
-    display:flex;
+    border-radius: 0.8vw;
+    display: flex;
     flex-direction: column;
-    padding-bottom:1vw;
-    row-gap:0.5vw;
-    position:absolute;
-    bottom:0;
-    z-index:2;
+    justify-content: flex-start;
+    overflow: hidden;
+    position: relative;
 }
-.security-feature-cart:nth-child(4) .security-feature-cart-top p{
-    color:white;
-    text-align:center;
+
+.security-feature-cart:nth-child(4) .security-feature-cart-top {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1vw;
+    row-gap: 0.5vw;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+
+.security-feature-cart:nth-child(4) .security-feature-cart-top p {
+    color: white;
+    text-align: center;
     /* font-family: 'NeueHaasGroteskLight'; */
     font-family: 'NeueHaasDisplayXXThin';
     font-size: 1.2vw;
     font-weight: 600;
     letter-spacing: 0.07vw;
 }
-.security-feature-cart:nth-child(4) .security-feature-cart-top div{
-    display:flex;
+
+.security-feature-cart:nth-child(4) .security-feature-cart-top div {
+    display: flex;
     flex-direction: column;
 }
-.security-feature-cart:nth-child(4) .security-feature-cart-top div span{
-    font-size:0.9vw;
-    color:#fff;
-    font-weight:400;
-    text-align:center;
-    font-family: 'NeueHaasGroteskLight';
-    line-height:120%;
+
+.security-feature-cart:nth-child(4) .security-feature-cart-top div span {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 0.9vw;
+    font-weight: 400;
+    line-height: 120%;
+    opacity: 0.9;
+    letter-spacing: 0.05vw;
+    color: #fff;
+    text-align: center;
 }
+
 .security-feature-cart:nth-child(4) .security-feature-cart-bottom {
-  height: 70%;
-  width: 100%;
-  position: relative; /* ✅ ::after ke liye zaroori */
+    height: 70%;
+    width: 100%;
+    position: relative;
+    /* ✅ ::after ke liye zaroori */
 }
+
 .security-feature-cart:nth-child(4) .security-feature-cart-bottom::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  box-shadow: 
-    inset 0 80px 60px -10px #000000f2,
-    inset 0 -80px 60px -10px #000000f2,
-    inset 80px 0 60px -10px #000000b3,
-    inset -80px 0 60px -10px #000000b3;
-  z-index: 1;
-  pointer-events: none;
-  border-radius: 1vw;
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow:
+        inset 0 80px 60px -10px #000000f2,
+        inset 0 -80px 60px -10px #000000f2,
+        inset 80px 0 60px -10px #000000b3,
+        inset -80px 0 60px -10px #000000b3;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 1vw;
 }
-.security-feature-cart:nth-child(4) .security-feature-cart-bottom img{
-    height:100%!important;
-    width:100%!important;
-    object-position: center top;     /* ✅ sir/chehra dikhega */
-    object-position: center center;  /* kamar dikhega */
-    object-position: center bottom;  /* pair dikhega */
-    object-fit:cover;
-    position:static!important;
+
+.security-feature-cart:nth-child(4) .security-feature-cart-bottom img {
+    height: 100% !important;
+    width: 100% !important;
+    object-position: center top;
+    /* ✅ sir/chehra dikhega */
+    object-position: center center;
+    /* kamar dikhega */
+    object-position: center bottom;
+    /* pair dikhega */
+    object-fit: cover;
+    position: static !important;
 }
-.security-feature-cart:nth-child(4) .security-feature-cart-bottom img{
-    height:100%!important;
-    width:100%!important; 
-    object-fit:cover;
-    object-position:center;
-    position:static!important;
+
+.security-feature-cart:nth-child(4) .security-feature-cart-bottom img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover;
+    object-position: center;
+    position: static !important;
 }

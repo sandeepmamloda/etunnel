@@ -1,0 +1,117 @@
+.featureoftechnology-wrapper {
+    width: 100%;
+    height: fit-content;
+}
+
+.featuretechnology-main {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 18vw;
+    padding-block-start: 4vw;
+    padding-block-end:8vw;
+}
+
+.featuretechnology {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* column-gap: 4.3vw; */
+    padding-block: 1.8vw;
+    padding-inline-start:1.5vw;
+    border-top: 0.01vw solid rgba(0, 0, 0, 1);
+}
+
+.featuretechnology-last {
+    border-bottom: 0.01vw solid rgba(0, 0, 0, 1);
+}
+
+.featureoftechnology-left {
+    width: 23%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1vw;
+}
+
+.icon-wrapper {
+    height: 2vw;
+    width: 2vw;
+    border-radius: 50%;
+    background-color: transparent;
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: contain;
+}
+
+.feature-title {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 0.9vw;
+    font-weight: 600;
+    letter-spacing: 0.05vw;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
+    white-space: nowrap;
+}
+
+.featuretechnology-right {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.feature-desc {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 0.9vw;
+    font-weight: 600;
+    letter-spacing: 0.05vw;
+    line-height: 150%;
+    color: rgba(82, 82, 82, 1);
+}
+
+/* ── Naye add kiye (sirf header ke liye) ── */
+.featuretechnology-header {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.8vw;
+    padding-block-end: 4vw;
+}
+
+.header-sub {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 0.6vw;
+    font-weight: 600;
+    letter-spacing: 0.06vw;
+    line-height: 100%;
+    color: rgba(115, 115, 115, 1);
+    text-transform: uppercase;
+}
+
+.header-title {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 2vw;
+    font-weight: 600;
+    letter-spacing: 0.05vw;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
+}

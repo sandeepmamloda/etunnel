@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./productshowcase.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -39,23 +40,20 @@ const Productshowcase = function () {
         }
       });
 
-      // Text - bottom to top reveal
       tl.fromTo(textRef.current,
         { clipPath: "inset(0 0 100% 0)" },
         { clipPath: "inset(0 0 0% 0)", duration: 1.3, ease: "power2.inOut" }
       )
-      // Accordion - bottom to top reveal
-      .fromTo(accordionRef.current,
-        { clipPath: "inset(0 0 100% 0)" },
-        { clipPath: "inset(0 0 0% 0)", duration: 1.3, ease: "power2.inOut" },
-        "-=0.9"
-      )
-      // Image - left to right reveal
-      .fromTo(imageRef.current,
-        { clipPath: "inset(0 100% 0 0)" },
-        { clipPath: "inset(0 0% 0 0)", duration: 1.4, ease: "power2.inOut" },
-        "-=1.0"
-      );
+        .fromTo(accordionRef.current,
+          { clipPath: "inset(0 0 100% 0)" },
+          { clipPath: "inset(0 0 0% 0)", duration: 1.3, ease: "power2.inOut" },
+          "-=0.9"
+        )
+        .fromTo(imageRef.current,
+          { clipPath: "inset(0 100% 0 0)" },
+          { clipPath: "inset(0 0% 0 0)", duration: 1.4, ease: "power2.inOut" },
+          "-=1.0"
+        );
 
     }, sectionRef);
 
@@ -76,46 +74,67 @@ const Productshowcase = function () {
         </div>
 
         <div ref={accordionRef} className={styles["accordion"]}>
-          {/* P2N2 */}
+
+          {/* ── P2N2 ── */}
           <div className={`${styles["p2n2"]} ${openSection === "p2n2" ? styles["active"] : ""}`}>
             <div className={styles["header"]} onClick={() => toggle("p2n2")}>
               <p>P2N2</p>
               <span className={`${styles["toggle-icon"]} ${openSection === "p2n2" ? styles["rotate"] : ""}`}>+</span>
             </div>
-            <div ref={(el) => (bodyRefs.current["p2n2"] = el)} className={`${styles["body"]} ${openSection === "p2n2" ? styles["open"] : ""}`}>
+            <div
+              ref={(el) => (bodyRefs.current["p2n2"] = el)}
+              className={`${styles["body"]} ${openSection === "p2n2" ? styles["open"] : ""}`}
+            >
               <div className={styles["productshowcase-body-content"]}>
-                <p>At the heart of ETUNNEL is the P2N2 Biometric Authentication Integration Module</p>
+                <p>At the heart of ETUNNEL is the P2N2 Biometric Authentication Integration Module.</p>
                 <p>It is a single AI engine designed to handle multiple biometric methods, without complexity.</p>
               </div>
-              <div className={styles["productshowcase-wrapper-toggle"]}>
+              <Link href="/" className={styles["productshowcase-wrapper-toggle"]}>
                 <p>How P2N2 Works</p>
-              </div>
+              </Link>
             </div>
           </div>
 
-          {/* FVA */}
+          {/* ── FVA ── */}
           <div className={`${styles["finger-vein-authentication"]} ${openSection === "fva" ? styles["active"] : ""}`}>
             <div className={styles["header"]} onClick={() => toggle("fva")}>
               <p>Finger Vein Authentication</p>
               <span className={`${styles["toggle-icon"]} ${openSection === "fva" ? styles["rotate"] : ""}`}>+</span>
             </div>
-            <div ref={(el) => (bodyRefs.current["fva"] = el)} className={`${styles["body"]} ${openSection === "fva" ? styles["open"] : ""}`}>
-              <p>Experimental....</p>
-              <p>content is remaining....</p>
+            <div
+              ref={(el) => (bodyRefs.current["fva"] = el)}
+              className={`${styles["body"]} ${openSection === "fva" ? styles["open"] : ""}`}
+            >
+              <div className={styles["productshowcase-body-content"]}>
+                <p>Finger vein authentication captures the unique vascular pattern beneath the skin using near-infrared light.</p>
+                <p>Internal and invisible, vein patterns cannot be forged or replicated.</p>
+              </div>
+              <Link href="/" className={styles["productshowcase-wrapper-toggle"]}>
+                <p>How FVA Works</p>
+              </Link>
             </div>
           </div>
 
-          {/* KISA */}
+          {/* ── KISA ── */}
           <div className={`${styles["kisa-certification"]} ${openSection === "kisa" ? styles["active"] : ""}`}>
             <div className={styles["header"]} onClick={() => toggle("kisa")}>
               <p>KISA Certification</p>
               <span className={`${styles["toggle-icon"]} ${openSection === "kisa" ? styles["rotate"] : ""}`}>+</span>
             </div>
-            <div ref={(el) => (bodyRefs.current["kisa"] = el)} className={`${styles["body"]} ${openSection === "kisa" ? styles["open"] : ""}`}>
-              <p>Experimental....</p>
-              <p>content is remaining....</p>
+            <div
+              ref={(el) => (bodyRefs.current["kisa"] = el)}
+              className={`${styles["body"]} ${openSection === "kisa" ? styles["open"] : ""}`}
+            >
+              <div className={styles["productshowcase-body-content"]}>
+                <p>ETUNNEL is certified by KISA — Korea's Internet & Security Agency.</p>
+                <p>Meeting government-level standards for digital identity verification and security.</p>
+              </div>
+              <Link href="/" className={styles["productshowcase-wrapper-toggle"]}>
+                <p>View Certification</p>
+              </Link>
             </div>
           </div>
+
         </div>
       </div>
 

@@ -1,53 +1,71 @@
-.hero-section{
-    height:100svh;
-    width:100%;
-    background-color:black;
+.hero-section {
+    height: 100svh;
+    width: 100%;
+    background-color: black;
 }
-.hero-section-wrapper{
-    height:100%;
-    width:100%;
-    position:relative;
+
+.hero-section-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
-.hero-section-wrapper .hero-section-img{
-    height:100%;
-    width:100%;
+
+.hero-section-wrapper .hero-section-img {
+    height: 100%;
+    width: 100%;
 }
-.hero-section-wrapper .hero-section-img img{
-    height:100%;
-    width:100%;
-    object-fit:cover;
-    object-position:top;
+
+.hero-section-wrapper .hero-section-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
 }
+
 /* ------hero-section-text-wrapper------ */
 .hero-section-text-wrapper {
     z-index: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 1vw;
+    row-gap: 1.3vw;
     display: flex;
     position: absolute;
     bottom: 6vw;
     left: 50%;
     transform: translateX(-50%);
 }
-.hero-section-text-wrapper p{
-    color:#fff;
-    line-height:100%;
+
+.hero-section-text-wrapper p {
+    color: #fff;
+    line-height: 100%;
 }
-.hero-section-text-wrapper p:first-child{
-    font-size:2.2vw;
-    font-family: 'NeueHaasDisplayThin';
+
+.hero-section-text-wrapper p:first-child {
+    font-size: 2vw;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
 }
-.hero-section-text-wrapper p:nth-child(2){
-    display:flex;
+
+.hero-section-text-wrapper p:first-child span {
+    letter-spacing: 0.09vw;
+}
+
+.hero-section-text-wrapper p:nth-child(2) {
+    display: flex;
     flex-direction: column;
-    justify-content:center;
-    align-items:center;
-    font-family: 'NeueHaasGroteskLight';
-    font-size: 0.9vw;
-    row-gap:0.2vw;
+    justify-content: center;
+    align-items: center;
+    font-family: 'NeueHaasDisplayXXThin';
+    font-weight: 600;
+    font-size: 0.8vw;
+    row-gap: 0.3vw;
 }
+
+.hero-section-text-wrapper p:nth-child(2) span {
+    letter-spacing: 0.08vw;
+}
+
 .request-a-demo {
     position: relative;
     border-radius: 5vw;
@@ -57,7 +75,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 2vw;
-    background:transparent;
+    background: transparent;
     z-index: 1;
 }
 
@@ -65,21 +83,24 @@
     content: "";
     position: absolute;
     inset: 0;
-    padding: 0.1vw; /* border thickness */
+    padding: 0.1vw;
+    /* border thickness */
     border-radius: 5vw;
     background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
-    
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
 
     z-index: -1;
 }
-.request-a-demo span{
-    color:white;
+
+.request-a-demo span {
+    color: white;
     font-family: 'NeueHaasGroteskLight';
-    font-size: 0.92vw;
-    line-height:100%;
+    font-size: 0.88vw;
+    line-height: 100%;
+    letter-spacing: 0.06vw;
 }

@@ -1,0 +1,51 @@
+.nextgeneration-wrapper{
+    height:fit-content;
+    width:100%;
+    padding-top:7vw;
+    padding-bottom:7vw;
+    border-top:solid 0.1vw rgba(0,0,0,1);
+    display:flex;
+    flex-direction: column;
+    row-gap:1vw;
+}
+.nextgeneration-wrapper .nextgeneration-top{
+    display:flex;
+    flex-direction: column;
+    row-gap:1vw;
+    height:fit-content;
+    width:100%;
+}
+.nextgeneration-wrapper .nextgeneration-top span:first-child{
+    font-size:1.7vw;
+    font-family: 'NeueHaasDisplayThin';
+    font-weight:600;
+    line-height: 100%;
+    color:#000;
+    letter-spacing:0.08vw;
+    text-align:center;
+}
+.nextgeneration-wrapper .nextgeneration-top span:last-child{
+    font-size:1.7vw;
+    font-family: 'NeueHaasDisplayThin';
+    font-weight:600;
+    line-height: 100%;
+    color:#000;
+    text-align:center;
+    letter-spacing:0.08vw;
+}
+.nextgeneration-bottom{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    row-gap: 0.6vw;
+}
+.nextgeneration-bottom span{
+    font-size:0.9vw;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight:600;
+    line-height: 100%;
+    color:rgba(82, 82, 82, 1);
+    letter-spacing:0.05vw;
+    text-align:center;
+}
