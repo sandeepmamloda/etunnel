@@ -1,0 +1,278 @@
+.herotech-fingervein-wrapper {
+    height: 93svh;
+    width: 100%;
+    background: linear-gradient(180deg, #FFE5CE 0%, #FFFFFF 100%);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-block-end: 7vw;
+}
+
+.herotech-fingervein-main {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 6.5vw;
+    align-items: center;
+    padding-inline: 7vw;
+}
+
+.herotech-fingervein-left {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5vw;
+}
+
+.herotech-fingervein-left-top {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5vw;
+}
+
+.core-tech-button {
+    height: fit-content;
+    width: fit-content;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 0.5vw;
+    padding-inline: 0.8vw;
+    padding-block: 0.6vw;
+    border-radius: 2vw;
+    border: solid 0.1vw rgba(0, 0, 0, 1);
+}
+
+.core-tech-button span:first-child {
+    display: block;
+    height: 0.4vw;
+    width: 0.4vw;
+    border-radius: 50%;
+    background: rgba(255, 120, 0, 1);
+}
+
+.core-tech-button span:last-child {
+    line-height: 100%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    letter-spacing: 0.05vw;
+    font-family: 'NeueHaasDisplayXThin';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.biometric-text {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.2vw;
+    display: none;
+}
+
+.biometric-text span {
+    font-size: 3vw;
+    font-family: 'NeueHaasDisplayThin';
+    font-weight: 600;
+    letter-spacing: 0.08vw;
+    line-height: 100%;
+    ;
+}
+
+.herotech-fingervein-left-bottom {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.8vw;
+}
+
+.finger-vein {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    column-gap: 0.6vw;
+}
+
+.finger-vein span {
+    font-size: 3vw;
+    font-family: 'NeueHaasDisplayThin';
+    font-weight: 600;
+    letter-spacing: 0.07vw;
+    line-height: 100%;
+    color: rgba(255, 120, 0, 1);
+}
+
+.finger-vein span:last-child {
+    color: rgba(0, 0, 0, 1);
+}
+
+.simple-text {
+    height: fit-content;
+    width: fit-content;
+}
+
+.simple-text span {
+    line-height: 100%;
+    font-family: 'NeueHaasDisplayThin';
+    letter-spacing: 0.06vw;
+    font-size: 1vw;
+    font-weight: 600;
+    color: rgba(82, 82, 82, 1);
+}
+
+.links {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.8vw;
+    padding-block-start: 0.4vw;
+}
+
+.links .contact-us {
+    height: 3.3vw;
+    width: 9vw;
+    border-radius: 2.5vw;
+    border: solid 0.13vw rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.4vw;
+    /* 👈 space between text & arrow */
+    background-color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+}
+
+.links .contact-us span {
+    font-family: 'NeueHaasDisplayXXThin';
+    font-size: 0.9vw;
+    font-weight: 600;
+    letter-spacing: 0.053vw;
+    color: rgba(255, 255, 255, 1);
+}
+
+/* 👇 Arrow styling */
+.arrow {
+    height: 1vw;
+    width: 1vw;
+    transition: transform 0.3s ease;
+}
+
+/* 👇 Hover animation */
+.links .contact-us:hover .arrow {
+    transform: translateX(4px);
+}
+
+.links .learn-more {
+    height: 3.3vw;
+    width: 9vw;
+    border-radius: 2.5vw;
+    border: solid 0.13vw rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.4vw;
+    /* 👈 space between text & arrow */
+    background-color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+.links .learn-more span {
+    font-family: 'NeueHaasDisplayXThin';
+    font-size: 0.9vw;
+    font-weight: 600;
+    letter-spacing: 0.053vw;
+    color: rgba(0, 0, 0, 1);
+}
+
+/* Arrow */
+.arrow-dark {
+    height: 1vw;
+    width: 1vw;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.links .learn-more:hover .arrow-dark {
+    transform: translateX(4px);
+}
+
+.herotech-fingervein-right {
+    height: 27vw;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    border-radius: 50%;
+    position: relative;
+}
+
+.herotech-fingervein-right .herotech-fingervein-right-inner {
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #DECAB4;
+    z-index: 0;
+    position: absolute;
+    display: none;
+}
+
+.herotech-fingervein-right .herotech-fingervein-right-outer {
+    height: 78%;
+    width: 78%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, #1E4FA3 0%, #123D7A 50%, #0B2A5B 100%);
+    z-index: 0;
+    position: absolute;
+    display: none;
+}
+
+.herotech-fingervein-right .herotech-fingervein-right-img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.ai-powered {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2.5vw;
+    width: 8.05vw;
+    background-color: #000;
+    border-radius: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.ai-powered span {
+    line-height: 100%;
+    font-size: 0.9vw;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.06vw;
+    color: #fff;
+}
+
+.herotech-fingervein-right-img .img {
+    height: 100% !important;
+    width: 100% !important;
+    position: static !important;
+    object-fit: cover;
+    transform: scale(1.3);
+}

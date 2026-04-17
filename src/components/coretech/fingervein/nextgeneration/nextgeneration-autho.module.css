@@ -1,0 +1,69 @@
+.nextgen-wrapper {
+    width: 100%;
+    padding: 7vw 0;
+    padding-bottom: 2.5vw;
+    border-top: solid 0.1vw rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    row-gap: 3vw;
+}
+
+/* 👇 New Wrapper */
+.nextgen-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vw;
+}
+
+/* Heading */
+.nextgen-heading {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vw;
+}
+
+.nextgen-heading span {
+    font-size: 1.7vw;
+    font-family: 'NeueHaasDisplayThin';
+    font-weight: 600;
+    line-height: 100%;
+    color: #000;
+    letter-spacing: 0.08vw;
+    text-align: center;
+}
+
+/* Description */
+.nextgen-description {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.6vw;
+}
+
+.nextgen-description span {
+    font-size: 0.9vw;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    line-height: 100%;
+    color: rgba(82, 82, 82, 1);
+    letter-spacing: 0.05vw;
+    text-align: center;
+}
+
+/* 👇 Extra Direct Child */
+.nextgen-extra {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    ;
+}
+
+.nextgen-extra span {
+    font-size: 0.9vw;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 0.05vw;
+    text-align: center;
+}

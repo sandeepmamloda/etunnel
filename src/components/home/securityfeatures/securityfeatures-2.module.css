@@ -1,7 +1,6 @@
 .security-feature-wrapper {
     height: fit-content;
-    max-width:120rem;
-    margin:0 auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding-inline: 8.4rem;

@@ -7,13 +7,10 @@
 }
 
 .header-section-wrapper {
-    height:fit-content;
-    max-width:120rem;
-    margin:0 auto;
     justify-content: space-between;
     align-items: center;
-    padding-block-start: 2.4rem;
-    padding-inline: 2.52rem;
+    padding-block-start: 2vw;
+    padding-inline: 2.1vw;
     display: flex;
     position: relative;
 }
@@ -24,8 +21,8 @@
 }
 
 .header-section-left-img {
-    width: 8.4rem !important;
-    height: 1.2rem !important;
+    width: 7vw !important;
+    height: 1vw !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +48,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    column-gap: 1.8rem;
+    column-gap: 1.5vw;
     width: fit-content;
     height: fit-content;
     display: flex;
@@ -68,7 +65,7 @@
     text-decoration: none;
     color: white;
     font-family: 'NeueHaasGroteskLight';
-    font-size: 1.14rem;
+    font-size: 0.95vw;
     line-height: 100%;
     position: relative;
 }
@@ -76,7 +73,7 @@
 .nav-links li a::after {
     content: '';
     position: absolute;
-    bottom: -0.36rem;
+    bottom: -0.3vw;
     left: 0;
     right: 0;
     height: 1px;
@@ -94,40 +91,45 @@
 .header-section-right {
     display: flex;
     align-items: center;
-    column-gap: 2.4rem;
+    column-gap: 2vw;
 }
 
-/* Language Selector */
+/* .lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.4vw;
+    cursor: pointer;
+} */
 .lang-selector {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 0.48rem;
+    gap: 0.4vw;
     cursor: pointer;
 }
 
 .lang-dropdown {
     position: absolute;
-    top: 2.4rem;
+    top: 2vw;
     right: 0;
     background-color: white;
-    border-radius: 0.6rem;
-    padding: 0.6rem;
+    border-radius: 0.5vw;
+    padding: 0.5vw;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.1);
+    gap: 0.5vw;
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
     z-index: 10;
 }
 
 .lang-option {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.36rem 0.72rem;
+    gap: 0.5vw;
+    padding: 0.3vw 0.6vw;
     cursor: pointer;
-    border-radius: 0.36rem;
-    font-size: 0.96rem;
+    border-radius: 0.3vw;
+    font-size: 0.8vw;
 }
 
 .lang-option:hover {
@@ -135,8 +137,8 @@
 }
 
 .flag-icon {
-    width: 1.44rem !important;
-    height: 1.44rem !important;
+    width: 1.2vw !important;
+    height: 1.2vw !important;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -144,13 +146,13 @@
 .lang-text {
     color: white;
     font-family: 'NeueHaasGroteskLight';
-    font-size: 1.14rem;
+    font-size: 0.95vw;
     line-height: 100%;
 }
 
 .lang-arrow {
     color: white;
-    font-size: 0.84rem;
+    font-size: 0.7vw;
     line-height: 100%;
 }
 
@@ -159,16 +161,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    gap: 0.36rem;
+    gap: 0.3vw;
     cursor: pointer;
 }
 
 .hamburger span {
     display: block;
-    width: 1.8rem;
-    height: 0.12rem;
+    width: 1.5vw;
+    height: 0.1vw;
     background-color: white;
-    border-radius: 0.12rem;
+    border-radius: 0.1vw;
 }
 
 /* ── DARK THEME (for /coretech routes) ── */
@@ -195,3 +197,4 @@
 .hamburger-dark span {
     background-color: black !important;
 }
+/* ------------------------------------old-css----------------------------

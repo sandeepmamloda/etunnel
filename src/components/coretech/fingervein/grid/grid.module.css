@@ -1,0 +1,17 @@
+.grid-wrapper {
+    height: fit-content;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
+    gap: 1.2vw;
+    margin-inline: auto;
+}
+
+.grid-items {
+    height: 15vw;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    border-radius: 1vw;
+    border: solid 0.1vw rgba(0, 0, 0, 0.1);
+}

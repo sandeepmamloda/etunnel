@@ -1,29 +1,27 @@
 .productshowcase-wrapper {
     height: fit-content;
-    /* width: 100%; */
-    max-width:120rem;
-    margin:0 auto;
+    width: 100%;
     display: flex;
     align-items: flex-end;
-    column-gap: 9.6rem;
-    padding-inline: 8.4rem;
-    padding-block-start: 10.32rem;
+    column-gap: 8vw;
+    padding-inline: 7vw;
+    padding-block-start: 8.6vw;
 }
 
 .productshowcase-wrapper .productshowcase-left {
-    height: 36rem;
+    height: 30vw;
     flex: 1;
     background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-block-end: 2.4rem;
+    padding-block-end: 2vw;
 }
 
 .productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper {
     display: flex;
     flex-direction: column;
-    row-gap: 0.84rem;
+    row-gap: 0.7vw;
 }
 
 .productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p {
@@ -31,17 +29,17 @@
 }
 
 .productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p:first-child {
-    font-size: 2.4rem;
-    letter-spacing: 0.096rem;
+    font-size: 2vw;
+    letter-spacing: 0.08vw;
     font-weight: 600;
     font-family: 'NeueHaasDisplayThin';
 }
 
 .productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p:last-child {
-    font-size: 1.08rem;
+    font-size: 0.9vw;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.05vw;
 }
 
 /* ------------- accordion ------------------- */
@@ -52,11 +50,11 @@
 }
 
 .header {
-    padding-inline: 0.6rem;
+    padding-inline: 0.5vw;
 }
 
 .body {
-    padding-inline: 0.6rem;
+    padding-inline: 0.5vw;
     padding-block-end: 0;
 }
 
@@ -74,10 +72,10 @@
 
 /* ---------------- P2N2 ---------------- */
 .p2n2 .header {
-    height: 4.32rem;
+    height: 3.6vw;
     width: 100%;
     background-color: transparent;
-    border-top: solid 0.12rem rgba(0, 0, 0, 1);
+    border-top: solid 0.1vw rgba(0, 0, 0, 1);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -85,23 +83,23 @@
 
 .p2n2 .header p {
     font-family: NeueHaasDisplayThin;
-    font-size: 1.44rem;
+    font-size: 1.2vw;
     line-height: 100%;
     font-weight: 600;
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.05vw;
 }
 
 .p2n2 .body {
     display: flex;
     flex-direction: column;
-    row-gap: 4.8rem;
+    row-gap: 4vw;
 }
 
 /* ---------------- BUTTON ---------------- */
 .productshowcase-wrapper-toggle {
-    min-height: 3rem;
-    width: 12rem;
-    border-radius: 3.6rem;
+    min-height: 2.5vw;
+    width: 10vw;
+    border-radius: 3vw;
     color: #fff;
     background-color: rgba(0, 0, 0, 1);
     display: flex;
@@ -109,7 +107,7 @@
     justify-content: center;
     position: relative;
     z-index: 1;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1vw;
     text-decoration: none;
     /* Link default underline hatao */
 }
@@ -119,8 +117,8 @@
     -webkit-mask-composite: xor;
     z-index: -1;
     background: linear-gradient(#b5b5b5 -111.7%, #000 162.48%);
-    border-radius: 6rem;
-    padding: 0.12rem;
+    border-radius: 5vw;
+    padding: .1vw;
     position: absolute;
     inset: 0;
     -webkit-mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
@@ -136,35 +134,35 @@
 }
 
 .productshowcase-wrapper-toggle p {
-    font-size: 1.08rem !important;
+    font-size: 0.9vw !important;
     line-height: 160%;
     font-family: 'NeueHaasDisplayXXThin' !important;
     font-weight: 600;
-    letter-spacing: 0.06rem !important;
+    letter-spacing: 0.05vw !important;
 }
 
 /* P2N2 body content paragraphs */
 .p2n2 .body p {
-    font-size: 1.08rem;
+    font-size: 0.9vw;
     line-height: 160%;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.05vw;
 }
 
 /* Shared body content wrapper — same for all three */
 .productshowcase-body-content {
     display: flex;
     flex-direction: column;
-    row-gap: 0.24rem;
+    row-gap: 0.2vw;
 }
 
 /* ---------------- FVA ---------------- */
 .finger-vein-authentication .header {
-    height: 4.32rem;
+    height: 3.6vw;
     width: 100%;
     background-color: transparent;
-    border-top: solid 0.12rem rgba(0, 0, 0, 1);
+    border-top: solid 0.1vw rgba(0, 0, 0, 1);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -172,33 +170,33 @@
 
 .finger-vein-authentication .header p {
     font-family: NeueHaasDisplayThin;
-    font-size: 1.44rem;
+    font-size: 1.2vw;
     line-height: 100%;
     font-weight: 600;
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.05vw;
 }
 
 .finger-vein-authentication .body {
     display: flex;
     flex-direction: column;
-    row-gap: 4.8rem;
+    row-gap: 4vw;
 }
 
 /* ✅ FVA body paragraphs — same style as P2N2 */
 .finger-vein-authentication .body p {
-    font-size: 1.08rem;
+    font-size: 0.9vw;
     line-height: 160%;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.05vw;
 }
 
 /* ---------------- KISA ---------------- */
 .kisa-certification .header {
-    height: 4.32rem;
+    height: 3.6vw;
     width: 100%;
     background-color: transparent;
-    border-top: solid 0.12rem rgba(0, 0, 0, 1);
+    border-top: solid 0.1vw rgba(0, 0, 0, 1);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -206,26 +204,26 @@
 
 .kisa-certification .header p {
     font-family: NeueHaasDisplayThin;
-    font-size: 1.44rem;
+    font-size: 1.2vw;
     line-height: 100%;
     font-weight: 600;
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.05vw;
 }
 
 .kisa-certification .body {
     display: flex;
     flex-direction: column;
-    row-gap: 4.8rem;
-    border-bottom: solid 0.12rem rgba(0, 0, 0, 1);
+    row-gap: 4vw;
+    border-bottom: solid 0.1vw rgba(0, 0, 0, 1);
 }
 
 /* ✅ KISA body paragraphs — same style as P2N2 */
 .kisa-certification .body p {
-    font-size: 1.08rem;
+    font-size: 0.9vw;
     line-height: 160%;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.05vw;
 }
 
 /* ------------- body animation ------------------- */
@@ -237,9 +235,9 @@
 
 /* ------------ productshowcase-right ---------------- */
 .productshowcase-wrapper .productshowcase-right {
-    height: 33.6rem;
+    height: 28vw;
     flex: 1;
-    border-radius: 1.2rem;
+    border-radius: 1vw;
     overflow: hidden;
 }
 
@@ -259,7 +257,7 @@
 /* + icon at the right corner */
 .toggle-icon {
     margin-left: auto;
-    font-size: 2.16rem;
+    font-size: 1.8vw;
     font-weight: thin;
     transition: transform 0.3s ease;
     cursor: pointer;
