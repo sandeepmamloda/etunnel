@@ -1,12 +1,9 @@
 .newsmidia-wrapper {
     height: fit-content;
-    /* width: 100%; */
-    max-width:120rem;
-    margin-left:auto;
-    margin-right:auto;
-    padding-inline: 8.4rem;
-    padding-block-start: 9.6rem;
-    margin-bottom: 10.8rem;
+    width: 100%;
+    padding-inline: 7vw;
+    padding-block-start: 8vw;
+    margin-bottom: 9vw;
 }
 
 /*  ---------------top------------------- */
@@ -15,8 +12,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: 0rem;
-    padding-block-end: 2.4rem;
+    row-gap: 0vw;
+    padding-block-end: 2vw;
 }
 
 .newsmidia-top .newsmidia-top-tcontent {
@@ -25,8 +22,8 @@
 }
 
 .newsmidia-top .newsmidia-top-tcontent>p {
-    letter-spacing: 0.084rem;
-    font-size: 2.4rem;
+    letter-spacing: 0.07vw;
+    font-size: 2vw;
     font-family: 'NeueHaasDisplayThin';
     line-height: 100%;
     font-weight: 600;
@@ -42,19 +39,19 @@
 .newsmidia-top .newsmidia-top-mcontent>p:first-child {
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1vw;
     line-height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding-bottom: 0.36rem;
-    letter-spacing: 0.036rem;
+    padding-bottom: 0.3vw;
+    letter-spacing: 0.03vw;
 }
 
 .newsmidia-top-toggle {
-    height: 3rem;
-    width: 13.56rem;
-    border-radius: 3.6rem;
+    height: 2.5vw;
+    width: 11.3vw;
+    border-radius: 3vw;
     color: #fff;
     background-color: rgba(0, 0, 0, 1);
     display: flex;
@@ -71,8 +68,8 @@
     -webkit-mask-composite: xor;
     z-index: -1;
     background: linear-gradient(#b5b5b5 -111.7%, #000 162.48%);
-    border-radius: 6rem;
-    padding: 0.12rem;
+    border-radius: 5vw;
+    padding: .1vw;
     position: absolute;
     inset: 0;
     -webkit-mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
@@ -89,7 +86,7 @@
 
 .newsmidia-top-toggle p {
     font-family: 'NeueHaasGroteskLight';
-    font-size: 1.08rem !important;
+    font-size: 0.9vw !important;
     line-height: 100%;
 }
 
@@ -99,21 +96,21 @@
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
-    column-gap: 3rem;
+    column-gap: 2.5vw;
 }
 
 /* -------------left-------------- */
 .newsmidia-bottom-left {
     display: flex;
     flex-direction: column;
-    row-gap: 1.2rem;
+    row-gap: 1vw;
 }
 
 .newsmidia-bottom-left-img {
-    height: 48rem;
+    height: 40vw;
     width: 100%;
     background-color: transparent;
-    border-radius: 0.6rem;
+    border-radius: 0.5vw;
     overflow: hidden;
 }
 
@@ -131,10 +128,10 @@
 
 .newsmidia-bottom-left-text-wrapper p {
     font-family: NeueHaasGroteskLight;
-    font-size: 1.44rem;
+    font-size: 1.2vw;
     font-weight: 900;
     line-height: 150%;
-    letter-spacing: 0.096rem;
+    letter-spacing: 0.08vw;
 }
 
 /* -------------right-------------- */
@@ -149,7 +146,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: 1.44rem;
+    row-gap: 1.2vw;
 }
 
 .newsmidia-bottom-right-top-text {
@@ -158,9 +155,9 @@
 }
 
 .newsmidia-bottom-right-top-img {
-    height: 24rem;
+    height: 20vw;
     width: 100%;
-    border-radius: 0.6rem;
+    border-radius: 0.5vw;
     overflow: hidden;
 }
 
@@ -173,10 +170,10 @@
 
 .newsmidia-bottom-right-top-text p {
     line-height: 100%;
-    font-size: 1.44rem;
+    font-size: 1.2vw;
     font-family: NeueHaasGroteskLight;
     font-weight: 600;
-    letter-spacing: 0.096rem;
+    letter-spacing: 0.08vw;
     font-style: 65 Medium;
 }
 
@@ -186,7 +183,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: 1.2rem;
+    row-gap: 1vw;
 }
 
 .newsmidia-bottom-right-bottom-text {
@@ -195,9 +192,9 @@
 }
 
 .newsmidia-bottom-right-bottom-img {
-    height: 18.96rem;
+    height: 15.8vw;
     width: 100%;
-    border-radius: 0.6rem;
+    border-radius: 0.5vw;
     overflow: hidden;
 }
 
@@ -210,10 +207,10 @@
 
 .newsmidia-bottom-right-bottom-text p {
     line-height: 150%;
-    font-size: 1.44rem;
+    font-size: 1.2vw;
     font-family: NeueHaasGroteskLight;
     font-weight: 600;
-    letter-spacing: 0.096rem;
+    letter-spacing: 0.08vw;
     font-style: 65 Medium;
 }
 

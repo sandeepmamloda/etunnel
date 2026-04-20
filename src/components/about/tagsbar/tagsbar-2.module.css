@@ -4,9 +4,9 @@
 }
 
 .tagsbar-wrapper {
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 2.64rem 7.44rem;
+  max-width: 100%;
+  /* margin: 0 auto; */
+  padding: 2.2vw 6.2vw;
   overflow: hidden;
 }
 
@@ -19,8 +19,8 @@
 
 .tagsbar-item {
   flex-shrink: 0;
-  width: 9rem;
-  height: 2.88rem;
+  width: 7.5vw;
+  height: 2.4vw;
   position: relative;
 }
 

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";        // ← Sirf yeh line add ki hai
 import styles from "./familysite.module.css";
 
 const Familysite = () => {
@@ -26,9 +27,13 @@ const Familysite = () => {
               </div>
             </div>
 
-            <div className={styles["familysite-img-overlay-text-bottom"]}>
-              <p>Our Journey</p>
-            </div>
+            {/* Sirf yahan Link add kiya hai - baaki sab same */}
+            <Link 
+              href="/" 
+              className={styles["familysite-img-overlay-text-bottom"]}
+            >
+              <p>Learn More</p>
+            </Link>
           </div>
         </div>
       </div>

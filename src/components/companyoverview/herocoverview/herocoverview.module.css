@@ -1,5 +1,5 @@
 .heroabout-section{
-    height:42vw;
+    height:50.4rem;
     width:100%;
     background-color:black;
 }
@@ -7,6 +7,8 @@
     height:100%;
     width:100%;
     position:relative;
+    max-width:120rem;
+    margin-inline:auto;
 }
 .heroabout-section-wrapper .heroabout-section-img{
     height:100%;
@@ -25,16 +27,17 @@
     background: radial-gradient(49.45% 49.45% at 49.04% 45.2%, rgba(0, 0, 0, 0.2) 0%, #000000 100%);
     z-index: 1;
 }
+
 /* ------heroabout-section-text-wrapper------ */
 .heroabout-section-text-wrapper {
     z-index: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 0.4vw;
+    row-gap: 0.48rem;
     display: flex;
     position: absolute;
-    bottom: 2vw;
+    bottom: 2.4rem;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -43,7 +46,7 @@
     line-height:100%;
 }
 .heroabout-section-text-wrapper p:first-child{
-    font-size:2.2vw;
+    font-size:2.64rem;
     font-family: 'NeueHaasGroteskLight';
 }
 .heroabout-section-text-wrapper p:nth-child(2){
@@ -52,18 +55,19 @@
     justify-content:center;
     align-items:center;
     font-family: 'NeueHaasGroteskLight';
-    font-size:2.2vw;
-    row-gap:0.2vw;
+    font-size:2.64rem;
+    row-gap:0.24rem;
 }
+
 .request-a-demo {
     position: relative;
-    border-radius: 5vw;
-    width: 15vw;
-    height: 2.5vw;
+    border-radius: 6rem;
+    width: 18rem;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1.7vw;
+    margin-top: 2.04rem;
     background:transparent;
     z-index: 1;
 }
@@ -72,8 +76,8 @@
     content: "";
     position: absolute;
     inset: 0;
-    padding: 0.1vw;
-    border-radius: 5vw;
+    padding: 0.12rem;
+    border-radius: 6rem;
     background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
     
     -webkit-mask: 
@@ -84,9 +88,10 @@
 
     z-index: -1;
 }
+
 .request-a-demo span{
     color:white;
     font-family: 'NeueHaasGroteskLight';
-    font-size: 0.92vw;
+    font-size: 1.104rem;
     line-height:100%;
 }
