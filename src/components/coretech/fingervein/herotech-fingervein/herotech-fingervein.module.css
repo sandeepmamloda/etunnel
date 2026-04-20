@@ -19,6 +19,8 @@
     display: flex;
     margin-inline: auto;
     max-width: 106.4rem;
+    background-color:orange;
+    /* ye change mene laptop se kiya hai  */
 }
 
 .herotech-fingervein-left {
