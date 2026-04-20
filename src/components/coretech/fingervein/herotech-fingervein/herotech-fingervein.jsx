@@ -1,5 +1,5 @@
-import styles from "./herotech-fingervein.module.css";
 import Image from "next/image";
+import styles from "./herotech-fingervein.module.css";
 
 const Herotech = function () {
     return (

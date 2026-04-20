@@ -1,17 +1,97 @@
 .grid-wrapper {
     height: fit-content;
+    width: 100%;
+    padding-block:3rem;
+}
+
+.grid-main {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    row-gap:2.5rem;
+    margin-inline: auto;
+    padding-inline:1.6rem;
+}
+.grid-top{
+    height:fit-content;
+    width:100%;
+}
+.grid-top h2{
+    font-size:2rem;
+    font-weight:600;
+    font-family: 'NeueHaasDisplayThin';
+    letter-spacing: 0.2rem;
+    line-height: 100%;
+}
+.grid-medium{
+    height:fit-content;
+    width:100%;
+}
+.grid-medium p{
+    font-size:1rem;
+    font-weight:600;
+    font-family: 'NeueHaasDisplayXXThin';
+    color:#525252;
+    letter-spacing: 0.08rem;
+    line-height:100%;
+}
+.grid-bottom {
+    height: fit-content;
     width: fit-content;
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(2, auto);
-    gap: 1.2vw;
-    margin-inline: auto;
+    gap: 1.5rem;       /* 1.2vw → 1.2 × 1.2 = 1.44rem */
 }
 
 .grid-items {
-    height: 15vw;
+    height: 18rem;      /* 15vw → 15 × 1.2 = 18rem */
     aspect-ratio: 1/1;
     background-color: transparent;
-    border-radius: 1vw;
-    border: solid 0.1vw rgba(0, 0, 0, 0.1);
+    border-radius: 1.2rem;    /* 1vw → 1 × 1.2 = 1.2rem */
+    border: solid 0.12rem rgba(0, 0, 0, 0.1);  /* 0.1vw → 0.1 × 1.2 = 0.12rem */
+    display:flex;
+    flex-direction: column;
+    row-gap:1rem;
+    padding:2rem;
+}
+.grid-items .top{
+    height:3rem;
+    width:3rem
+}
+.grid-items .top .logo{
+    height:100%;
+    width:100%;
+}
+.grid-items .top .logo .img{
+    height:100%!important;
+    width:100%!important;
+    object-fit:cover!important;
+    position:static!important;
+}
+.grid-items .medium{
+    height:fit-content;
+    width:fit-content;
+    /* margin-top:0.4rem; */
+}
+.grid-items .medium h4{
+    font-size:1rem;
+    font-weight:600;
+    line-height:150%;
+    font-family: 'NeueHaasDisplayThin';
+    letter-spacing: 0.05rem;
+}
+.grid-items .bottom{
+    height:fit-content;
+    width:fit-content;
+}
+.grid-items .bottom p{
+    font-family: 'NeueHaasDisplayXXThin';
+    font-size:0.76rem;
+    line-height:180%;
+    color:#737373;
+    letter-spacing: 0.07rem;
+    font-weight:600;
 }

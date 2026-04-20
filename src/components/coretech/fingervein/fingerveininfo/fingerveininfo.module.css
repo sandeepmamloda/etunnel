@@ -1,0 +1,77 @@
+.fingervein-wrapper{
+    height:fit-content;
+    width:100%;
+    padding-top:5rem;
+}
+.fingervein-main{
+    height:40rem;
+    width:100%;
+    display:flex;
+    background-color:transparent;
+    margin-inline:auto;
+}
+/* ------------------left------------------ */
+.fingervein-main-left{
+    height:100%;
+    flex:50%;
+    background-color:black;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom:13rem;
+    padding-left:11rem;
+    padding-right: 12rem;
+}
+.fingervein-main-left-text-wrapper{
+    height:fit-content;
+    width:fit-content;
+    display:flex;
+    flex-direction:column;
+    row-gap:1.3rem;
+}
+.top-content{
+    height:1.8rem;
+    width:1.8rem;
+}
+.top-content .img{
+    height:100%;
+    width:100%;
+    position:static!important;
+    object-fit:contain;
+}
+.medium-content{
+    height:fit-content;
+    width:100%;
+}
+.medium-content h2{
+    color: #fff;
+    letter-spacing: .08rem;
+    font-family: NeueHaasDisplayXThin;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 150%;
+}
+.bottom-content{
+    height:fit-content;
+    width:100%;
+}
+.bottom-content p{
+    color: rgba(161, 161, 161, 1);
+    letter-spacing: .08rem;
+    font-family: NeueHaasDisplayXThin;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 170%;
+}
+/* -------------------right--------------------- */
+.fingervein-main-right{
+    height:100%;
+    width:50%;
+    background-color:transparent;
+}
+.fingervein-main-right .img{
+    height:100%!important;
+    width:100%!important;
+    object-fit:cover;
+    position:static!important;
+}

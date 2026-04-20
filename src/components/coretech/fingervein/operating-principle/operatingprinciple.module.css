@@ -1,0 +1,71 @@
+.operating-principle-wrapper{
+    height:fit-content;
+    width:100%;
+    padding-block:5rem;
+}
+.operating-principle-main{
+    height:fit-content;
+    width:100%;
+    max-width:70%;
+    margin-inline:auto;
+    padding-inline:1rem;
+    display:flex;
+    flex-direction: column;
+    row-gap:2rem;
+}
+.operating-principle-top{
+    height:fit-content;
+    width:auto;
+    display:flex;
+    flex-direction: column;
+    row-gap:2rem;
+}
+.operating-principle-top-tcontent{
+    height:fit-content;
+    width:auto;
+}
+.operating-principle-top-tcontent h2{
+    font-size:0.9rem;
+    font-family: 'NeueHaasDisplayXXThin';
+    color:#737373;
+    text-align:center;
+    letter-spacing: 0.1rem;
+    line-height:100%;
+}
+.operating-principle-top-mcontent{
+    height:fit-content;
+    width:auto;
+}
+.operating-principle-top-mcontent h3{
+    font-family: 'NeueHaasDisplayThin';
+    font-size:2.5rem;
+    font-weight:600;
+    color:#000000;
+    text-align:center;
+    letter-spacing: 0.08rem;
+    line-height: 100%;
+}
+.operating-principle-top-bcontent{
+    height:fit-content;
+    width:auto;
+}
+.operating-principle-top-bcontent p{
+    font-family: 'NeueHaasDisplayXXThin';
+    font-weight:600;
+    font-size:1rem;
+    text-align:center;
+    letter-spacing: 0.08rem;
+    line-height: 100%;
+}
+.operating-principle-bottom{
+    height:32rem;
+    width:100%;
+    background-color:transparent;
+    margin-top:2rem;
+}
+.operating-principle-bottom .img{
+    height:100%!important;
+    width:100%!important;
+    position:static!important;
+    object-fit:contain;
+}

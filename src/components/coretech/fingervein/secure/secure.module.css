@@ -1,0 +1,103 @@
+.integrate-wrapper {
+    width: 100%;
+    padding: 7.2rem 0;
+    background: linear-gradient(180deg, rgba(255, 210, 170, 0.3) 0%, #FFFFFF 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 0.12rem rgba(0, 0, 0, 0.1);
+    /* border-bottom:solid 0.1vw rgba(0, 0, 0, 0.1); */
+}
+
+.integrate-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    max-width: 70%;
+}
+
+/* Heading */
+.integrate-content h2 {
+    font-size: 2.76rem;
+    font-family: 'NeueHaasDisplayThin';
+    font-weight: 600;
+    letter-spacing: 0.096rem;
+    color: black;
+}
+
+/* Paragraph */
+.integrate-content p {
+    font-size: 1.032rem;
+    font-family: 'NeueHaasDisplayXThin';
+    color: rgba(82, 82, 82, 1);
+    font-weight: 600;
+    line-height: 180%;
+    letter-spacing: 0.096rem;
+}
+
+/* Buttons Wrapper */
+.integrate-buttons {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+}
+
+/* Dark Button */
+.btn-dark {
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    border: 0.156rem solid rgb(0, 0, 0);
+    border-radius: 3rem;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.48rem;
+    width: 13.2rem;
+    height: 3.96rem;
+    display: flex;
+}
+
+.btn-dark span {
+    font-size: 1.08rem;
+    color: white;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.036rem;
+}
+
+.btn-dark svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.btn-dark:hover {
+    transform: translateY(-2px);
+}
+
+/* Light Button */
+.btn-light {
+    cursor: pointer;
+    background-color: rgba(255,255,255,1);
+    border: 0.156rem solid rgb(0, 0, 0);
+    border-radius: 3rem;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.48rem;
+    width: 13.2rem;
+    height: 3.96rem;
+    display: flex;
+    color: rgba(0,0,0,1);
+}
+
+.btn-light span {
+    font-size: 1.08rem;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+}
+
+.btn-light:hover {
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,71 @@
+.authentication-process-wrapper{
+    height:fit-content;
+    width:100%;
+    padding-block:5rem;
+}
+.authentication-process-main{
+    height:fit-content;
+    width:100%;
+    max-width:70%;
+    margin-inline:auto;
+    padding-inline:1rem;
+    display:flex;
+    flex-direction: column;
+    row-gap:2rem;
+}
+.authentication-process-top{
+    height:fit-content;
+    width:auto;
+    display:flex;
+    flex-direction: column;
+    row-gap:2rem;
+}
+.authentication-process-top-tcontent{
+    height:fit-content;
+    width:auto;
+}
+.authentication-process-top-tcontent h2{
+    font-size:0.9rem;
+    font-family: 'NeueHaasDisplayXXThin';
+    color:#737373;
+    text-align:center;
+    letter-spacing: 0.1rem;
+    line-height:100%;
+}
+.authentication-process-top-mcontent{
+    height:fit-content;
+    width:auto;
+}
+.authentication-process-top-mcontent h3{
+    font-family: 'NeueHaasDisplayThin';
+    font-size:2.5rem;
+    font-weight:600;
+    color:#000000;
+    text-align:center;
+    letter-spacing: 0.08rem;
+    line-height: 100%;
+}
+.authentication-process-top-bcontent{
+    height:fit-content;
+    width:auto;
+}
+.authentication-process-top-bcontent p{
+    font-family: 'NeueHaasDisplayXXThin';
+    font-weight:600;
+    font-size:1rem;
+    text-align:center;
+    letter-spacing: 0.08rem;
+    line-height: 100%;
+}
+.authentication-process-bottom{
+    height:32rem;
+    width:100%;
+    background-color:transparent;
+    margin-top:1rem;
+}
+.authentication-process-bottom .img{
+    height:100%!important;
+    width:100%!important;
+    position:static!important;
+    object-fit:contain;
+}
