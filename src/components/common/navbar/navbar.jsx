@@ -15,7 +15,6 @@ const navLinks = [
   { label: "News & Media", href: "/news" },
 ];
 
-/* ── Animation variants ── */
 const headerVariants = {
   hidden: { y: -60, opacity: 0 },
   visible: {
@@ -65,6 +64,7 @@ const FlagEN = () => (
     <rect width="25" height="14" fill="#3c3b6e" />
   </svg>
 );
+
 const FlagKO = () => (
   <svg width="20" height="20" viewBox="0 0 60 40">
     <rect width="60" height="40" fill="white" />
@@ -81,21 +81,21 @@ const ArrowIcon = ({ isDark }) => (
     />
   </svg>
 );
-/* ── Component ── */
+
 const Navbar = function () {
   const pathname = usePathname();
   const isCoreTech = pathname.startsWith("/coretech");
-  // ✅ ADD THIS
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState({
     code: "EN",
-    flag: "/images/flag-us.png",
+    component: <FlagEN />,
   });
 
   const languages = [
     { code: "EN", component: <FlagEN /> },
     { code: "KO", component: <FlagKO /> },
   ];
+
   return (
     <>
       <motion.header
@@ -113,14 +113,16 @@ const Navbar = function () {
             initial="hidden"
             animate="visible"
           >
-            <div className={styles["header-section-left-img"]}>
+            <Link
+              href="/"
+              className={`${styles["header-section-left-img"]} ${isCoreTech ? styles["img-dark"] : ""}`}
+            >
               <Image
-                className={`${styles["img"]} ${isCoreTech ? styles["img-dark"] : ""}`}
                 src="/images/logo.png"
                 fill={true}
                 alt="Logo"
               />
-            </div>
+            </Link>
           </motion.div>
 
           {/* CENTER — Nav Links */}
@@ -157,11 +159,9 @@ const Navbar = function () {
               onClick={() => setIsOpen(!isOpen)}
             >
               {selectedLang.component}
-
-              <span className={styles["lang-text"]}>
+              <span className={`${styles["lang-text"]} ${isCoreTech ? styles["lang-text-dark"] : ""}`}>
                 {selectedLang.code}
               </span>
-
               <ArrowIcon isDark={isCoreTech} />
 
               {isOpen && (

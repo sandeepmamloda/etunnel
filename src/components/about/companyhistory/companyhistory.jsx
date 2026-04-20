@@ -18,8 +18,8 @@ const Companyhistory = () => {
           <div className={styles["companyhistory-img-overlay-text"]}>
             <div className={styles["companyhistory-img-overlay-text-top"]}>
               <div className={styles["companyhistory-img-overlay-text-top-1"]}>
-                <p>Company History</p>
-                <p>The Journey of ETUNNEL</p>
+                <h3>Company History</h3>
+                <h2>The Journey of ETUNNEL</h2>
               </div>
 
               <div className={styles["companyhistory-img-overlay-text-top-2"]}>
@@ -32,7 +32,7 @@ const Companyhistory = () => {
               href="/company-history" 
               className={styles["companyhistory-img-overlay-text-bottom"]}
             >
-              <p>Our Journey</p>
+              <span>Our Journey</span>
             </Link>
           </div>
         </div>

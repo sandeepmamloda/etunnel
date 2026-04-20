@@ -18,26 +18,24 @@ const Companyoverview = () => {
           <div className={styles["companyoverview-img-overlay-text"]}>
             <div className={styles["companyoverview-img-overlay-text-top"]}>
               <div className={styles["companyoverview-img-overlay-text-top-1"]}>
-                <p>Company Overview</p>
-                <p>ETUNNEL</p>
+                <h4>Company Overview</h4>
+                <h2>ETUNNEL</h2>
               </div>
 
               <div className={styles["companyoverview-img-overlay-text-top-2"]}>
-                <p>Pioneering the future of biometric security.</p>
+                <h3>Pioneering the future of biometric security.</h3>
 
                 <div
                   className={
                     styles["companyoverview-img-overlay-text-top-2-inner"]
                   }
                 >
-                  <span>
+                  <p>
                     Enhanced Biometric Tunnel, the innovative symbol of ETUNNEL.
                     Maximizing
-                  </span>
-                  <span>
                     security and convenience with advanced biometric recognition
                     technology.
-                  </span>
+                  </p>
                 </div>
               </div>
             </div>

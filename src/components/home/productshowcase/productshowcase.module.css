@@ -1,12 +1,12 @@
 .productshowcase-wrapper {
     height: fit-content;
-    /* width: 100%; */
-    max-width:120rem;
+    width: 100%;
+    max-width: 106.4rem;
     margin:0 auto;
     display: flex;
     align-items: flex-end;
     column-gap: 9.6rem;
-    padding-inline: 8.4rem;
+    padding-inline: 2rem;
     padding-block-start: 10.32rem;
 }
 
@@ -83,7 +83,7 @@
     align-items: center;
 }
 
-.p2n2 .header p {
+.p2n2 .header h3 {
     font-family: NeueHaasDisplayThin;
     font-size: 1.44rem;
     line-height: 100%;
@@ -92,6 +92,7 @@
 }
 
 .p2n2 .body {
+    width:100%;
     display: flex;
     flex-direction: column;
     row-gap: 4.8rem;
@@ -135,7 +136,7 @@
     mask-mode: match-source, match-source;
 }
 
-.productshowcase-wrapper-toggle p {
+.productshowcase-wrapper-toggle span {
     font-size: 1.08rem !important;
     line-height: 160%;
     font-family: 'NeueHaasDisplayXXThin' !important;
@@ -154,9 +155,8 @@
 
 /* Shared body content wrapper — same for all three */
 .productshowcase-body-content {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.24rem;
+    height:fit-content;
+    width:100%;
 }
 
 /* ---------------- FVA ---------------- */
@@ -170,7 +170,7 @@
     align-items: center;
 }
 
-.finger-vein-authentication .header p {
+.finger-vein-authentication .header h3 {
     font-family: NeueHaasDisplayThin;
     font-size: 1.44rem;
     line-height: 100%;
@@ -204,7 +204,7 @@
     align-items: center;
 }
 
-.kisa-certification .header p {
+.kisa-certification .header h3 {
     font-family: NeueHaasDisplayThin;
     font-size: 1.44rem;
     line-height: 100%;

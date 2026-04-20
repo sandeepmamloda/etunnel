@@ -1,9 +1,9 @@
 .seeussection-wrapper {
     height: fit-content;
-    /* width: 100%; */
-    max-width:120rem;
+    width: 100%;
+    max-width: 106.4rem;
     margin:0 auto;
-    padding-inline: 8.4rem;
+    padding-inline: 2rem;
     padding-block-start: 12rem;
     display: flex;
     flex-direction: column;
@@ -18,14 +18,14 @@
     row-gap: 0.84rem;
 }
 
-.seeussection-wrapper-text-content p:first-child {
+.seeussection-wrapper-text-content h2 {
     font-size: 2.4rem;
     letter-spacing: 0.06rem;
     font-weight: 600;
     font-family: 'NeueHaasDisplayThin';
 }
 
-.seeussection-wrapper-text-content p:last-child {
+.seeussection-wrapper-text-content p{
     font-size: 1.08rem;
     font-family: 'NeueHaasDisplayThin';
     font-weight: 600;

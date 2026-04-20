@@ -90,6 +90,7 @@
 "use client";
 import styles from "./hero.module.css";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 
 const Hero = function () {
@@ -109,11 +110,7 @@ const Hero = function () {
 
             if (canvas) {
                 const app = LiquidBackground(canvas);
-
-                // ✅ IMAGE ADD KIYA
                 app.loadImage('/images/hero.png');
-
-                // subtle effect
                 app.liquidPlane.material.metalness = 0.6;
                 app.liquidPlane.material.roughness = 0.3;
                 app.liquidPlane.uniforms.displacementScale.value = 2;
@@ -123,7 +120,6 @@ const Hero = function () {
 
         document.body.appendChild(script);
 
-        // ✅ GSAP
         const ctx = gsap.context(() => {
             const tl = gsap.timeline();
 
@@ -167,22 +163,29 @@ const Hero = function () {
     const headingWords = "Secure Identity. Zero Compromise.".split(" ");
 
     return (
-        <section className={styles["hero-section"]}>
+        <section
+            className={styles["hero-section"]}
+            aria-label="Hero section - ETUNNEL biometric authentication"
+        >
             <div className={styles["hero-section-wrapper"]}>
 
                 <div
                     ref={imgRef}
                     className={styles["hero-section-img"]}
                     style={{ opacity: 0 }}
+                    role="presentation"
                 >
                     <canvas
                         id="hero-canvas"
                         className={styles["canvas"]}
-                    ></canvas>
+                        aria-hidden="true"
+                    />
                 </div>
 
                 <div className={styles["hero-section-text-wrapper"]}>
-                    <p>
+
+                    {/* ✅ h1 — main page heading, crawlable by Google */}
+                    <h1>
                         <span
                             ref={headingRef}
                             style={{
@@ -198,24 +201,24 @@ const Hero = function () {
                                 </span>
                             ))}
                         </span>
-                    </p>
+                    </h1>
 
+                    {/* ✅ p — description, Google reads this as page summary */}
                     <p ref={subtextRef} style={{ opacity: 0 }}>
-                        <span>
-                            ETUNNEL delivers AI-powered biometric authentication systems trusted by global institutions
-                        </span>
-                        <span>
-                            governments, enterprises, and critical infrastructure.
-                        </span>
+                        ETUNNEL delivers AI-powered biometric authentication systems trusted by global institutions, governments, enterprises , and critical infrastructure.
                     </p>
 
+                    {/* ✅ Link — crawlable CTA */}
                     <div
                         ref={buttonRef}
                         className={styles["request-a-demo"]}
                         style={{ opacity: 0 }}
                     >
-                        <span>Request a Demo</span>
+                        <Link href="/contact" aria-label="Request a demo of ETUNNEL biometric authentication">
+                            <span>Request a Demo</span>
+                        </Link>
                     </div>
+
                 </div>
             </div>
         </section>

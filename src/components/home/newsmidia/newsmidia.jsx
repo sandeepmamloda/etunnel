@@ -54,15 +54,15 @@ const Newsmidia = function () {
 
   return (
     <>
-      <div className={styles["newsmidia-wrapper"]} ref={sectionRef}>
+      <section className={styles["newsmidia-wrapper"]} ref={sectionRef}>
         <div className={styles["newsmidia-top"]}>
           <div className={styles["newsmidia-top-tcontent"]}>
-            <p ref={titleRef}>News & Media</p>
+            <h2 ref={titleRef}>News & Media</h2>
           </div>
           <div className={styles["newsmidia-top-mcontent"]}>
             <p ref={descRef}>Introducing our news and media coverage from all over the world</p>
             <Link ref={toggleRef} href="/" className={styles["newsmidia-top-toggle"]}>
-              <p>See More News</p>
+              <span>See More News</span>
             </Link>
           </div>
         </div>
@@ -73,7 +73,7 @@ const Newsmidia = function () {
               <Image src="/images/newsmidia/left.jpg" alt="Hero Image" fill priority className={styles["img"]} />
             </div>
             <div className={styles["newsmidia-bottom-left-text-wrapper"]}>
-              <p>"Eternal Opens a Passwordless Future": Global Export of Fingerprint <br />Hardware Wallet</p>
+              <h4>"Eternal Opens a Passwordless Future": Global Export of Fingerprint Hardware Wallet</h4>
             </div>
           </div>
 
@@ -83,7 +83,7 @@ const Newsmidia = function () {
                 <Image src="/images/newsmidia/right-top.jpg" alt="Hero Image" fill priority className={styles["img"]} />
               </div>
               <div className={styles["newsmidia-bottom-right-top-text"]}>
-                <p>Eternal Presents Finger Vein Authentication-Based PC Logon Solution</p>
+                <h4>Eternal Presents Finger Vein Authentication-Based PC Logon Solution</h4>
               </div>
             </div>
 
@@ -92,12 +92,12 @@ const Newsmidia = function () {
                 <Image src="/images/newsmidia/right-bottom.jpg" alt="Hero Image" fill priority className={styles["img"]} />
               </div>
               <div className={styles["newsmidia-bottom-right-bottom-text"]}>
-                <p>ETUNNEL wins contract to supply biometric smart cards for UN <br />organizations</p>
+                <h4>ETUNNEL wins contract to supply biometric smart cards for UN organizations</h4>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

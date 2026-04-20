@@ -18,12 +18,12 @@ const Familysite = () => {
           <div className={styles["familysite-img-overlay-text"]}>
             <div className={styles["familysite-img-overlay-text-top"]}>
               <div className={styles["familysite-img-overlay-text-top-1"]}>
-                <p>FAMILY SITE</p>
-                <p>G-KNOT</p>
+                <h3>FAMILY SITE</h3>
+                <h2>G-KNOT</h2>
               </div>
 
               <div className={styles["familysite-img-overlay-text-top-2"]}>
-                <p>ETUNNEL’s partner G-Knot enhances physical access, blockchain wallet, data, and<br/>password security through exclusive technology. At the forefront of technological<br/>access protection, we are creating  a safe and convenient digital environment.</p>
+                <p>ETUNNEL’s partner G-Knot enhances physical access, blockchain wallet, data, and password security through exclusive technology. At the forefront of technological access protection, we are creating  a safe and convenient digital environment.</p>
               </div>
             </div>
 
@@ -32,7 +32,7 @@ const Familysite = () => {
               href="/" 
               className={styles["familysite-img-overlay-text-bottom"]}
             >
-              <p>Learn More</p>
+              <span>Learn More</span>
             </Link>
           </div>
         </div>

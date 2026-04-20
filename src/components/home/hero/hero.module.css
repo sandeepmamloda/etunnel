@@ -24,15 +24,14 @@
 
 /* ------hero-section-text-wrapper------ */
 .hero-section-text-wrapper {
-    height:fit-content;
-    max-width:50rem;
-    padding-inline:1rem;
-    margin:0 auto;
+    height: fit-content;
+    max-width: 50rem;
+    padding-inline: 1rem;
     z-index: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 1.56rem;
+    row-gap: 1.3rem;
     display: flex;
     position: absolute;
     bottom: 7.2rem;
@@ -40,22 +39,24 @@
     transform: translateX(-50%);
 }
 
-.hero-section-text-wrapper p {
+/* ✅ h1 replace kiya p:first-child ko */
+.hero-section-text-wrapper h1 {
     color: #fff;
     line-height: 100%;
-}
-
-.hero-section-text-wrapper p:first-child {
     font-size: 2.4rem;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
+    text-align: center;
+    margin: 0;
 }
 
-.hero-section-text-wrapper p:first-child span {
+.hero-section-text-wrapper h1 span {
     letter-spacing: 0.108rem;
 }
 
-.hero-section-text-wrapper p:nth-child(2) {
+.hero-section-text-wrapper p {
+    color: #fff;
+    line-height: 140%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,11 +65,14 @@
     font-weight: 600;
     font-size: 0.96rem;
     row-gap: 0.36rem;
-}
-
-.hero-section-text-wrapper p:nth-child(2) span {
+    margin: 0;
+    text-align: center;
     letter-spacing: 0.096rem;
 }
+
+/* .hero-section-text-wrapper p span {
+    
+} */
 
 .request-a-demo {
     position: relative;
@@ -87,17 +91,25 @@
     content: "";
     position: absolute;
     inset: 0;
-    padding: 0.12rem;           /* border thickness */
+    padding: 0.12rem;
     border-radius: 6rem;
     background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
-
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-
     z-index: -1;
+}
+
+/* ✅ Link tag ke andar span */
+.request-a-demo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
 }
 
 .request-a-demo span {

@@ -47,9 +47,9 @@ const Seeussection = function () {
 
   return (
     <>
-      <div className={styles["seeussection-wrapper"]} ref={sectionRef}>
+      <section className={styles["seeussection-wrapper"]} ref={sectionRef}>
         <div ref={textRef} className={styles["seeussection-wrapper-text-content"]}>
-          <p>See Us in Action</p>
+          <h2>See Us in Action</h2>
           <p>Introducing ETUNNEL's integrated biometric authentication solution, AI Engine P2N2.</p>
         </div>
         <div ref={videoRef} className={styles["seeussection-wrapper-video"]}>
@@ -64,7 +64,7 @@ const Seeussection = function () {
             className={styles["img"]}
           />
         </div>
-      </div>
+      </section>
     </>
   );
 };

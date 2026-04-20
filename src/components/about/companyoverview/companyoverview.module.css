@@ -37,42 +37,53 @@
     display: flex;
     flex-direction: column;
     row-gap: 2.4rem;
+    width:100%;
+    height:fit-content;
 }
 
 .companyoverview-img-overlay-text-top{
     display: flex;
     flex-direction: column;
     row-gap: 1.8rem;
+    max-width:42rem;
+    width:100%;
+    height:fit-content;
 }
 
 .companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-1{
     display: flex;
     flex-direction: column;
     row-gap: 0.96rem;
+    width:100%;
+    height:fit-content;
 }
 
-.companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-1 p:first-child{
+.companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-1 h4{
     font-size: 1.08rem;
     line-height: 100%;
     color: white;
     font-family: 'NeueHaasGroteskLight2';
     letter-spacing: 0.06rem;
+    font-weight:normal;
 }
 
-.companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-1 p:last-child{
+.companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-1 h2{
     font-size: 2.4rem;
     line-height: 100%;
     color: white;
     font-family: 'NeueHaasGroteskLight2';
+    font-weight: normal;
 }
 
 .companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-2{
     display: flex;
     flex-direction: column;
     row-gap: 1.2rem;
+    width:100%;
+    height:fit-content;
 }
 
-.companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-2 p{
+.companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-2 h3{
     font-size: 1.44rem;
     color: #fff;
     line-height: 100%;
@@ -82,17 +93,19 @@
 }
 
 .companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-2-inner{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    row-gap: 0.36rem;
+    row-gap: 0.2rem; */
+    height:fit-content;
 }
 
-.companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-2-inner span{
+.companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-2-inner p{
     font-size: 1.08rem;
     color: #fff;
-    line-height: 100%;
+    line-height: 140%;
     font-family: 'NeueHaasGroteskLight2';
     letter-spacing: 0.084rem;
+    text-align:start;
 }
 
 /* ----------------- */

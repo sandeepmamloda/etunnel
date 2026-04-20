@@ -1,24 +1,24 @@
-.heroabout-section{
+.heroabout-section {
     height: 50.4rem;
     width: 100%;
     background-color: black;
 }
 
-.heroabout-section-wrapper{
+.heroabout-section-wrapper {
     height: 100%;
-    /* width: 100%; */
-    max-width:120rem;
-    margin:0 auto;
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
     position: relative;
 }
 
-.heroabout-section-wrapper .heroabout-section-img{
+.heroabout-section-wrapper .heroabout-section-img {
     height: 100%;
     width: 100%;
     position: relative;
 }
 
-.heroabout-section-wrapper .heroabout-section-img img{
+.heroabout-section-wrapper .heroabout-section-img img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -46,24 +46,22 @@
     transform: translateX(-50%);
 }
 
-.heroabout-section-text-wrapper p{
+.heroabout-section-text-wrapper h1 {
+    font-size: 2.64rem;
+    font-family: 'NeueHaasGroteskLight';
     color: #fff;
     line-height: 100%;
+    font-weight: normal;
+    white-space: nowrap;
+    text-align: center;
 }
 
-.heroabout-section-text-wrapper p:first-child{
-    font-size: 2.64rem;
-    font-family: 'NeueHaasGroteskLight';
-}
-
-.heroabout-section-text-wrapper p:nth-child(2){
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.heroabout-section-text-wrapper p {
     font-family: 'NeueHaasGroteskLight';
     font-size: 2.64rem;
-    row-gap: 0.24rem;
+    color: #fff;
+    line-height: 100%;
+    text-align: center;
 }
 
 .request-a-demo {
@@ -86,9 +84,9 @@
     padding: 0.12rem;
     border-radius: 6rem;
     background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
-    
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -96,7 +94,17 @@
     z-index: -1;
 }
 
-.request-a-demo span{
+/* ✅ Link tag — full button cover, UI same */
+.request-a-demo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.request-a-demo span {
     color: white;
     font-family: 'NeueHaasGroteskLight';
     font-size: 1.104rem;

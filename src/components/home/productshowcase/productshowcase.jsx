@@ -65,7 +65,7 @@ const Productshowcase = function () {
   };
 
   return (
-    <div className={styles["productshowcase-wrapper"]} ref={sectionRef}>
+    <section className={styles["productshowcase-wrapper"]} ref={sectionRef}>
       <div className={`${styles["productshowcase-left"]} ${styles["manual-size"]}`}>
 
         <div ref={textRef} className={styles["productshowcase-text-wrapper"]}>
@@ -78,7 +78,7 @@ const Productshowcase = function () {
           {/* ── P2N2 ── */}
           <div className={`${styles["p2n2"]} ${openSection === "p2n2" ? styles["active"] : ""}`}>
             <div className={styles["header"]} onClick={() => toggle("p2n2")}>
-              <p>P2N2</p>
+              <h3>P2N2</h3>
               <span className={`${styles["toggle-icon"]} ${openSection === "p2n2" ? styles["rotate"] : ""}`}>+</span>
             </div>
             <div
@@ -86,11 +86,11 @@ const Productshowcase = function () {
               className={`${styles["body"]} ${openSection === "p2n2" ? styles["open"] : ""}`}
             >
               <div className={styles["productshowcase-body-content"]}>
-                <p>At the heart of ETUNNEL is the P2N2 Biometric Authentication Integration Module.</p>
-                <p>It is a single AI engine designed to handle multiple biometric methods, without complexity.</p>
+                <p>At the heart of ETUNNEL is the P2N2 Biometric Authentication Integration Module.
+                It is a single AI engine designed to handle multiple biometric methods, without complexity.</p>
               </div>
               <Link href="/" className={styles["productshowcase-wrapper-toggle"]}>
-                <p>How P2N2 Works</p>
+                <span>How P2N2 Works</span>
               </Link>
             </div>
           </div>
@@ -98,7 +98,7 @@ const Productshowcase = function () {
           {/* ── FVA ── */}
           <div className={`${styles["finger-vein-authentication"]} ${openSection === "fva" ? styles["active"] : ""}`}>
             <div className={styles["header"]} onClick={() => toggle("fva")}>
-              <p>Finger Vein Authentication</p>
+              <h3>Finger Vein Authentication</h3>
               <span className={`${styles["toggle-icon"]} ${openSection === "fva" ? styles["rotate"] : ""}`}>+</span>
             </div>
             <div
@@ -106,8 +106,8 @@ const Productshowcase = function () {
               className={`${styles["body"]} ${openSection === "fva" ? styles["open"] : ""}`}
             >
               <div className={styles["productshowcase-body-content"]}>
-                <p>Finger vein authentication captures the unique vascular pattern beneath the skin using near-infrared light.</p>
-                <p>Internal and invisible, vein patterns cannot be forged or replicated.</p>
+                <p>Finger vein authentication captures the unique vascular pattern beneath the skin using near-infrared light.
+                Internal and invisible, vein patterns cannot be forged or replicated.</p>
               </div>
               <Link href="/" className={styles["productshowcase-wrapper-toggle"]}>
                 <p>How FVA Works</p>
@@ -118,7 +118,7 @@ const Productshowcase = function () {
           {/* ── KISA ── */}
           <div className={`${styles["kisa-certification"]} ${openSection === "kisa" ? styles["active"] : ""}`}>
             <div className={styles["header"]} onClick={() => toggle("kisa")}>
-              <p>KISA Certification</p>
+              <h3>KISA Certification</h3>
               <span className={`${styles["toggle-icon"]} ${openSection === "kisa" ? styles["rotate"] : ""}`}>+</span>
             </div>
             <div
@@ -126,11 +126,11 @@ const Productshowcase = function () {
               className={`${styles["body"]} ${openSection === "kisa" ? styles["open"] : ""}`}
             >
               <div className={styles["productshowcase-body-content"]}>
-                <p>ETUNNEL is certified by KISA — Korea's Internet & Security Agency.</p>
-                <p>Meeting government-level standards for digital identity verification and security.</p>
+                <p>ETUNNEL is certified by KISA — Korea's Internet & Security Agency.
+                Meeting government-level standards for digital identity verification and security.</p>
               </div>
               <Link href="/" className={styles["productshowcase-wrapper-toggle"]}>
-                <p>View Certification</p>
+                <span>View Certification</span>
               </Link>
             </div>
           </div>
@@ -143,7 +143,7 @@ const Productshowcase = function () {
           <Image src="/images/productshowcase/p2n2.png" alt="Hero Image" fill priority className={styles["img"]} />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

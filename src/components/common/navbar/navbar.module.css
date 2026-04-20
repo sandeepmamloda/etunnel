@@ -7,9 +7,7 @@
 }
 
 .header-section-wrapper {
-    height:fit-content;
-    max-width:120rem;
-    margin:0 auto;
+    height: fit-content;
     justify-content: space-between;
     align-items: center;
     padding-block-start: 2.4rem;
@@ -29,6 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* required for Next.js fill Image */
 }
 
 .header-section-left-img img {

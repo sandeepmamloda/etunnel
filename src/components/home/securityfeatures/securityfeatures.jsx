@@ -58,40 +58,40 @@ const Securityfeatures = function () {
   const cards = [
     {
       title: "Secure Identity Verification",
-      spans: ["ETUNNEL authenticates users using biometric", "data such as fingerprint, finger vein, and facial", "recognition. Each identity is verified against", "encrypted biometric templates, ensuring that", "access is granted only to the rightful individual."],
+      spans: ["ETUNNEL authenticates users using biometric data such as fingerprint, finger vein, and facial recognition. Each identity is verified against encrypted biometric templates, ensuring that access is granted only to the rightful individual."],
       img: "/images/security/unnamed.png"
     },
     {
       title: "Fast and Frictionless Access",
-      spans: ["Using the P2N2 AI Engine, biometric data is", "processed quickly and accurately. This allows", "users to authenticate in seconds without", "passwords, PINs, or complex procedures while", "maintaining high security."],
+      spans: ["Using the P2N2 AI Engine, biometric data is processed quickly and accurately. This allows users to authenticate in seconds without passwords, PINs, or complex procedures while maintaining high security."],
       img: "/images/security/tunnel.jpg"
     },
     {
-      title: `Protection Against Fraud and <br/>Spoofing`,
-      spans: ["ETUNNEL's biometric systems are designed to", "prevent impersonation and fraud.", "Technologies such as finger vein recognition", "require a live human presence, making spoofing,", "duplication, or replay attacks extremely difficult."],
+      title: `Protection Against Fraud and Spoofing`,
+      spans: ["ETUNNEL’s biometric systems are designed to prevent impersonation and fraud. Technologies such as finger vein recognition require a live human presence, making spoofing, duplication, or replay attacks extremely difficult."],
       img: "/images/security/fingerprint.png"
     },
     {
-      title: "Seamless Physical and <br/>Digital Security",
-      spans: ["ETUNNEL solutions work across both physical", "access points and digital systems. The same", "biometric identity can be used for facility access,", "system login, secure transactions, and identity", "verification creating a unified and consistent", "security experience."],
+      title: "Seamless Physical and Digital Security",
+      spans: ["ETUNNEL solutions work across both physical access points and digital systems. The same biometric identity can be used for facility access, system login, secure transactions, and identity verification creating a unified and consistent security experience."],
       img: "/images/security/globe.png"
     },
   ];
 
   return (
-    <div className={styles["security-feature-wrapper"]} ref={sectionRef}>
+    <section className={styles["security-feature-wrapper"]} ref={sectionRef}>
       <div className={styles["security-feature-top"]}>
 
         <div className={styles["security-feature-top-tcontent"]}>
-          <p ref={titleRef}>
+          <h2 ref={titleRef}>
             Biometric Security Built for the Real World
-          </p>
+          </h2>
         </div>
 
         <div className={styles["security-feature-top-mcontent"]}>
 
           <p ref={descRef}>
-            ETUNNEL replaces weak credentials with secure biometric authentication powered by AI. Our systems verify identity using unique human features<br /> that cannot be copied or transferred.
+            ETUNNEL replaces weak credentials with secure biometric authentication powered by AI. Our systems verify identity using unique human features that cannot be copied or transferred.
           </p>
 
           {/* ✅ Updated Button */}
@@ -112,10 +112,10 @@ const Securityfeatures = function () {
             ref={(el) => (cardsRef.current[i] = el)}
           >
             <div className={styles["security-feature-cart-top"]}>
-              <p dangerouslySetInnerHTML={{ __html: card.title }} />
+               <h3>{card.title}</h3>
               <div>
                 {card.spans.map((s, j) => (
-                  <span key={j}>{s}</span>
+                  <p key={j}>{s}</p>
                 ))}
               </div>
             </div>
@@ -131,7 +131,7 @@ const Securityfeatures = function () {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

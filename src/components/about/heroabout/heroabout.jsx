@@ -1,42 +1,7 @@
-// import Image from 'next/image';
-// import styles from "./heroabout.module.css";
-
-// const Heroabout = function () {
-//     return (
-//         <>
-//             <section className={styles["heroabout-section"]}>
-//                 <div className={styles["heroabout-section-wrapper"]}>
-//                     <div className={styles["heroabout-section-img"]}>
-//                         <Image 
-//                             src="/images/about/heroabout/hero-about.jpg"    
-//                             alt="Hero Image" 
-//                             fill={true}
-//                             priority
-//                             className={styles["img"]}                  
-//                         />
-//                         <div className={styles["heroabout-section-img-overlay"]}></div>
-//                     </div>
-//                     <div className={styles["heroabout-section-text-wrapper"]}>
-//                         <p>Building a Safer Biometric Authentication Environment</p>
-//                         <p> 
-//                             <span>Through Continuous R&D and Innovation</span>
-//                         </p>
-//                         <div className={styles["request-a-demo"]}>
-//                             <span>Download Company Brochure</span>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </section>
-//         </>
-//     );
-// }
-
-// export default Heroabout;
-
-// ========================================================
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import styles from "./heroabout.module.css";
 
 const Heroabout = function () {
@@ -44,7 +9,7 @@ const Heroabout = function () {
     useEffect(() => {
         const script = document.createElement("script");
 
-        script.type = "module"; // ✅ FIX
+        script.type = "module";
         script.innerHTML = `
             import LiquidBackground from 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.27/build/backgrounds/liquid1.min.js';
 
@@ -65,21 +30,42 @@ const Heroabout = function () {
     }, []);
 
     return (
-        <section className={styles["heroabout-section"]}>
+        <section
+            className={styles["heroabout-section"]}
+            aria-label="About ETUNNEL - Biometric Authentication"
+        >
             <div className={styles["heroabout-section-wrapper"]}>
-                
-                <div className={styles["heroabout-section-img"]}>
-                    <canvas id="canvas" className={styles["canvas"]}></canvas>
-                    <div className={styles["heroabout-section-img-overlay"]}></div>
+
+                <div
+                    className={styles["heroabout-section-img"]}
+                    role="presentation"
+                >
+                    <canvas
+                        id="canvas"
+                        className={styles["canvas"]}
+                        aria-hidden="true"
+                    />
+                    <div className={styles["heroabout-section-img-overlay"]} aria-hidden="true" />
                 </div>
 
                 <div className={styles["heroabout-section-text-wrapper"]}>
-                    <p>Building a Safer Biometric Authentication Environment</p>
+                    {/* ✅ h1 — main page heading */}
+                    <h1>Building a Safer Biometric Authentication Environment</h1>
+
+                    {/* ✅ p — subheading */}
                     <p>
-                        <span>Through Continuous R&D and Innovation</span>
+                        <span>Through Continuous R&amp;D and Innovation</span>
                     </p>
+
+                    {/* ✅ Link — crawlable CTA, UI same rehega */}
                     <div className={styles["request-a-demo"]}>
-                        <span>Download Company Brochure</span>
+                        <Link
+                            href="/"
+                            className={styles["request-a-demo-link"]}
+                            aria-label="Download ETUNNEL Company Brochure"
+                        >
+                            <span>Download Company Brochure</span>
+                        </Link>
                     </div>
                 </div>
 

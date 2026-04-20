@@ -1,0 +1,118 @@
+.authentication-wrapper{
+    height:fit-content;
+    width:100%;
+    border-top:solid 0.1vw rgba(0,0,0,1);
+    display:flex;
+    flex-direction: column;
+    row-gap: 4vw;
+    align-items: center;
+}
+.authentication-top{
+    height:fit-content;
+    width:100%;
+    row-gap:1vw;
+    display:flex;
+    flex-direction: column;
+    row-gap: 2vw;
+    padding-top:2.5vw;
+}
+.authentication-top-1{
+    height:fit-content;
+    width:100%;
+}
+.authentication-top-1 span{
+    line-height: 100%;
+    font-size:2vw;
+    letter-spacing: 0.08vw;
+    font-family: 'NeueHaasDisplayThin';
+    font-weight:600;
+    text-align: center;
+    width:100%;
+    display:block;
+}
+.authentication-top-2{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    row-gap: 0.5vw;
+}
+.authentication-top-2 span{
+    line-height: 100%;
+    font-size:0.9vw;
+    letter-spacing: 0.08vw;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight:600;
+    text-align: center;
+    color:rgba(82, 82, 82, 1);
+}
+/* ---------------authentication-bottom-------------- */
+.authentication-bottom{
+    height:fit-content;
+    width:100%;
+    border-radius:1vw;
+    display:flex;
+    flex-direction: column;
+    row-gap: 3vw;
+    align-items: center;
+}
+.authentication-bottom-img{
+    width: 70vw;
+    height: 36vw;
+}
+.authentication-bottom-img .img{
+    height:100%!important;
+    width:100%!important;
+    object-fit: contain!important;
+    position:static!important;
+}
+.authentication-bottom .authentication-bottom-content{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    row-gap:2vw;
+}
+.authentication-bottom .authentication-bottom-content .authentication-bottom-content-top{
+    display:flex;
+    flex-direction: column;
+    row-gap:0.6vw;
+}
+.authentication-bottom .authentication-bottom-content .authentication-bottom-content-top span{
+    color:rgba(38, 38, 38, 1);
+    font-size:1.2vw;
+    font-weight: 600;
+    letter-spacing:0.08vw;
+    font-family: 'NeueHaasDisplayThin';
+}
+.authentication-bottom .authentication-bottom-content .authentication-bottom-content-top{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.authentication-bottom .authentication-bottom-content .authentication-bottom-content-bottom{
+    height:fit-content;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap:0.5vw;
+}
+.authentication-bottom-content-medium{
+    display:block;
+    height:0.1vw;
+    width:4vw;
+    background-color:rgba(255, 210, 170, 1);
+    border-radius:0.1vw;
+}
+.authentication-bottom-content-bottom span{
+    color:rgba(38, 38, 38, 1);
+    font-size:1.2vw;
+    font-weight: 600;
+    letter-spacing:0.08vw;
+    font-family: 'NeueHaasDisplayThin';
+}

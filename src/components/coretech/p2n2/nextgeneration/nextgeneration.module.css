@@ -1,51 +1,70 @@
 .nextgeneration-wrapper{
-    height:fit-content;
-    width:100%;
-    padding-top:7vw;
-    padding-bottom:7vw;
-    border-top:solid 0.1vw rgba(0,0,0,1);
-    display:flex;
+    height: fit-content;
+    width: 100%;
+    /* max-width:106.4rem;
+    padding-inline:2rem; */
+    padding-top: 8.4rem;
+    padding-bottom: 8.4rem;
+    border-top: solid 0.12rem rgba(0,0,0,1);
+    /* display: flex;
     flex-direction: column;
-    row-gap:1vw;
+    row-gap: 1.2rem; */
+}
+.nextgeneration-main{
+    height: fit-content;
+    width: 100%;
+    max-width:95rem;
+    margin-inline:auto;
+    padding-inline:2rem;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    row-gap: 0.8rem;
 }
 .nextgeneration-wrapper .nextgeneration-top{
-    display:flex;
+    display: flex;
     flex-direction: column;
-    row-gap:1vw;
-    height:fit-content;
-    width:100%;
+    row-gap: 0.4rem;
+    height: fit-content;
+    width: 100%;
 }
-.nextgeneration-wrapper .nextgeneration-top span:first-child{
-    font-size:1.7vw;
+
+.nextgeneration-wrapper .nextgeneration-top h2{
+    font-size: 2.04rem;
     font-family: 'NeueHaasDisplayThin';
-    font-weight:600;
-    line-height: 100%;
-    color:#000;
-    letter-spacing:0.08vw;
-    text-align:center;
+    font-weight: 600;
+    line-height: 150%;
+    color: #000;
+    letter-spacing: 0.096rem;
+    text-align: center;
 }
-.nextgeneration-wrapper .nextgeneration-top span:last-child{
-    font-size:1.7vw;
+
+/* .nextgeneration-wrapper .nextgeneration-top span:last-child{
+    font-size: 2.04rem;
     font-family: 'NeueHaasDisplayThin';
-    font-weight:600;
+    font-weight: 600;
     line-height: 100%;
-    color:#000;
-    text-align:center;
-    letter-spacing:0.08vw;
-}
+    color: #000;
+    text-align: center;
+    letter-spacing: 0.096rem;
+} */
+
 .nextgeneration-bottom{
-    height:fit-content;
-    width:100%;
-    display:flex;
+    height: fit-content;
+    width: 100%;
+    max-width:60%;
+    /* margin-inline:auto; */
+    display: flex;
     flex-direction: column;
-    row-gap: 0.6vw;
+    row-gap: 0.72rem;
 }
-.nextgeneration-bottom span{
-    font-size:0.9vw;
+
+.nextgeneration-bottom p{
+    font-size: 1.08rem;
     font-family: 'NeueHaasDisplayXThin';
-    font-weight:600;
-    line-height: 100%;
-    color:rgba(82, 82, 82, 1);
-    letter-spacing:0.05vw;
-    text-align:center;
+    font-weight: 600;
+    line-height: 160%;
+    color: rgba(82, 82, 82, 1);
+    letter-spacing: 0.06rem;
+    text-align: center;
 }
