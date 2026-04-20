@@ -1,13 +1,13 @@
 .security-feature-wrapper {
     height: fit-content;
-    max-width:120rem;
+    max-width:106.4rem;
     margin:0 auto;
     display: flex;
     flex-direction: column;
-    padding-inline: 8.4rem;
+    padding-inline: 2rem;
     padding-block-start: 4.2rem;
     row-gap: 1.92rem;
-    /* background-color:orange; */
+    background-color:blue;
 }
 
 .security-feature-wrapper .security-feature-top {
@@ -432,4 +432,81 @@
     object-fit: cover;
     object-position: center;
     position: static !important;
+}
+@media (max-width: 1810px) {
+     .security-feature-wrapper{
+        max-width:85rem;
+        padding:1rem;
+     }
+     .security-feature-wrapper .security-feature-top .security-feature-top-tcontent p {
+        letter-spacing: 0.096rem;
+        font-size: 2rem;
+    }
+    .security-feature-wrapper .security-feature-top .security-feature-top-mcontent p {
+        font-size: 0.9rem;
+    }
+    .toggle-link{
+        font-size:0.8rem;
+    }
+    .security-feature-wrapper-toggle {
+        height: 2.6rem;
+        width: 12rem;
+    }
+    .security-feature-wrapper-toggle p{
+        font-size:1rem!important;
+    }
+     /* ---------------1-------------- */
+     .security-feature-wrapper .security-feature-cart:first-child{
+        height:30rem;
+     }      
+     .security-feature-cart:nth-child(1) .security-feature-cart-top p {
+         font-size: 1.3rem;
+         letter-spacing: 0.084rem;
+     }  
+     .security-feature-cart:nth-child(1) .security-feature-cart-top div span {
+         font-family: 'NeueHaasDisplayThin';
+         font-size: 0.85rem;
+         line-height:140%;
+     }
+     /* -------------------2--------------------- */
+     .security-feature-wrapper .security-feature-cart:nth-child(2){
+        height:30rem;
+     }      
+     .security-feature-cart:nth-child(2) .security-feature-cart-top p {
+         font-size: 1.3rem;
+         letter-spacing: 0.084rem;
+     }  
+     .security-feature-cart:nth-child(2) .security-feature-cart-top div span {
+         font-family: 'NeueHaasDisplayThin';
+         font-size: 0.85rem;
+         line-height:140%;
+     }
+     /* -------------------3--------------------- */
+     .security-feature-wrapper .security-feature-cart:nth-child(3){
+        height:30rem;
+     }      
+     .security-feature-cart:nth-child(3) .security-feature-cart-top p {
+         font-size: 1.3rem;
+         letter-spacing: 0.084rem;
+     }  
+     .security-feature-cart:nth-child(3) .security-feature-cart-top div span {
+         font-family: 'NeueHaasDisplayThin';
+         font-size: 0.85rem;
+         line-height:140%;
+     }
+
+     /* -------------------4--------------------- */
+     .security-feature-wrapper .security-feature-cart:nth-child(4){
+        height:30rem;
+     }      
+     .security-feature-cart:nth-child(4) .security-feature-cart-top p {
+         font-size: 1.3rem;
+         letter-spacing: 0.084rem;
+     }  
+     .security-feature-cart:nth-child(4) .security-feature-cart-top div span {
+         font-family: 'NeueHaasDisplayThin';
+         font-size: 0.85rem;
+         line-height:140%;
+     }
+
 }

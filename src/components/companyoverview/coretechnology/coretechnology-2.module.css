@@ -1,51 +1,49 @@
 .coretechnology-wrapper{
     height:fit-content;
     width:100%;
-    margin-inline:auto;
-    max-width:120rem;
-    padding-inline:8.4rem;
-    padding-block-end:6rem;
+    padding-inline:7vw;
+    padding-block-end:5vw;
     display:flex;
     flex-direction: column;
-    row-gap: 3.36rem;
-    margin-top:6.6rem;
+    row-gap: 2.8vw;
+    margin-top:5.5vw;
 }
 .coretechnology-wrapper .coretechnology-top{
     height:fit-content;
     width:100%;
     display:flex;
     flex-direction: column;
-    row-gap:1.2rem;
+    row-gap:1vw;
 }
 .coretechnology-wrapper .coretechnology-top span:first-child{
     text-align: center;
-    font-size:2.4rem;
+    font-size:2vw;
     text-align:center;
     font-family: 'NeueHaasDisplayThin';
     font-weight:600;
-    letter-spacing: 0.096rem;
+    letter-spacing: 0.08vw;
     line-height:100%;
 }
 .coretechnology-wrapper .coretechnology-top span:last-child{
     text-align: center;
-    font-size:1.08rem;
+    font-size:0.9vw;
     text-align:center;
     font-family: 'NeueHaasDisplayXThin';
     font-weight:600;
     line-height:100%;
-    letter-spacing:0.06rem;
+    letter-spacing:0.05vw;
 }
 .coretechnology-wrapper .coretechnology-bottom{
     height:fit-content;
     width:100%;
     display:flex;
-    column-gap:1.44rem;
+    column-gap:1.2vw;
 }
 .coretechnology-left{
-    height:38.4rem;
+    height:32vw;
     flex:1;
     background-color:black;
-    border-radius:0.96rem;
+    border-radius:0.8vw;
     position:relative;
     overflow:hidden;
 }
@@ -73,17 +71,17 @@
     position:absolute;
     bottom:0;
     z-index:2;
-    padding-block-end:1.8rem;
-    row-gap:2.04rem;
+    padding-block-end:1.5vw;
+    row-gap:1.7vw;
 }
 .coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top{
     display:flex;
     flex-direction: column;
-    row-gap:0.96rem;
+    row-gap:0.8vw;
     width:100%;
 }
 .coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top>span{
-    font-size:2.04rem;
+    font-size:1.7vw;
     text-align:center;
     font-family: 'NeueHaasDisplayXThin';
     font-weight:600;
@@ -93,28 +91,28 @@
 .coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top>div{
     display:flex;
     flex-direction: column;
-    row-gap:0.24rem;
+    row-gap:0.2vw;
 }
 .coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top>div span{
-    font-size:1.08rem;
+    font-size:0.9vw;
     text-align:center;
     font-family: 'NeueHaasDisplayXXThin';
     line-height: 100%;
     font-weight:600;
-    letter-spacing: 0.096rem;
+    letter-spacing: 0.08vw;
     color:#fff;
 }
 .coretechnology-right{
-    height:38.4rem;
+    height:32vw;
     flex:1;
     background-color:orange;
-    border-radius:0.96rem;
+    border-radius:0.8vw;
 }
 .coretechnology-left-text-wrapper-bottom {
     position: relative;
-    border-radius: 6rem;
-    width: 12rem;
-    height: 3rem;
+    border-radius: 5vw;
+    width: 10vw;
+    height: 2.5vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,8 +123,8 @@
     content: "";
     position: absolute;
     inset: 0;
-    padding: 0.12rem;
-    border-radius: 6rem;
+    padding: 0.1vw;
+    border-radius: 5vw;
     background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
     
     -webkit-mask: 
@@ -140,16 +138,15 @@
 .coretechnology-left-text-wrapper-bottom span{
     color:white;
     font-family: 'NeueHaasGroteskLight';
-    font-size: 1.104rem;
+    font-size: 0.92vw;
     line-height:100%;
 }
-
 /* -----------------right---------------------------- */
 .coretechnology-right{
-    height:38.4rem;
+    height:32vw;
     flex:1;
     background-color:black;
-    border-radius:0.96rem;
+    border-radius:0.8vw;
     position:relative;
     overflow:hidden;
 }
@@ -177,49 +174,49 @@
     position:absolute;
     bottom:0;
     z-index:2;
-    padding-block-end:1.8rem;
-    row-gap:2.04rem;
+    padding-block-end:1.5vw;
+    row-gap:1.7vw;
 }
 .coretechnology-right-text-wrapper .coretechnology-right-text-wrapper-top{
     display:flex;
     flex-direction: column;
-    row-gap:0.96rem;
+    row-gap:0.8vw;
     width:100%;
 }
 .coretechnology-right-text-wrapper .coretechnology-right-text-wrapper-top>span{
-    font-size:2.04rem;
+    font-size:1.7vw;
     text-align:center;
     font-family: 'NeueHaasDisplayXThin';
     font-weight:600;
     line-height:100%;
     color:#fff;
-    letter-spacing:0.06rem;
+    letter-spacing:0.05vw;
 }
 .coretechnology-right-text-wrapper .coretechnology-right-text-wrapper-top>div{
     display:flex;
     flex-direction: column;
-    row-gap:0.24rem;
+    row-gap:0.2vw;
 }
 .coretechnology-right-text-wrapper .coretechnology-right-text-wrapper-top>div span{
-    font-size:1.08rem;
+    font-size:0.9vw;
     text-align:center;
     font-family: 'NeueHaasDisplayXXThin';
     line-height: 100%;
     font-weight:600;
-    letter-spacing: 0.096rem;
+    letter-spacing: 0.08vw;
     color:#fff;
 }
 .coretechnology-right{
-    height:38.4rem;
+    height:32vw;
     flex:1;
     background-color:black;
-    border-radius:0.96rem;
+    border-radius:0.8vw;
 }
 .coretechnology-right-text-wrapper-bottom {
     position: relative;
-    border-radius: 6rem;
-    width: 20.4rem;
-    height: 3rem;
+    border-radius: 5vw;
+    width: 17vw;
+    height: 2.5vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,8 +227,8 @@
     content: "";
     position: absolute;
     inset: 0;
-    padding: 0.12rem;
-    border-radius: 6rem;
+    padding: 0.1vw;
+    border-radius: 5vw;
     background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
     
     -webkit-mask: 
@@ -245,7 +242,7 @@
 .coretechnology-right-text-wrapper-bottom span{
     color:white;
     font-family: 'NeueHaasGroteskLight';
-    font-size: 1.104rem;
+    font-size: 0.92vw;
     line-height:100%;
-    letter-spacing:0.0012rem;
+    letter-spacing:0.001vw;
 }

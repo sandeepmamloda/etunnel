@@ -1,40 +1,35 @@
 .ourpartners-wrapper{
     height:fit-content;
     width:100%;
-    max-width:120rem;
-    margin-inline:auto;
-    padding-inline:8.4rem;
-    padding-block-end:6rem;
+    padding-inline:7vw;
+    padding-block-end:5vw;
     display:flex;
     flex-direction: column;
-    row-gap: 3.36rem;
-    margin-top:6.6rem;
+    row-gap: 2.8vw;
+    margin-top:5.5vw;
 }
-
 .ourpartners-wrapper .ourpartners-top{
     height:fit-content;
     width:100%;
     display:flex;
     flex-direction: column;
-    row-gap:1.2rem;
+    row-gap:1vw;
 }
-
 .ourpartners-wrapper .ourpartners-top span:first-child{
     text-align: center;
-    font-size:2.4rem;
+    font-size:2vw;
     text-align:center;
     font-family: 'NeueHaasDisplayThin';
     font-weight:600;
-    letter-spacing: 0.096rem;
+    letter-spacing: 0.08vw;
     line-height:100%;
 }
-
 .ourpartners-wrapper .ourpartners-top span:last-child{
     text-align: center;
-    font-size:1.08rem;
+    font-size:0.9vw;
     text-align:center;
     font-family: 'NeueHaasDisplayXThin';
     font-weight:600;
     line-height:100%;
-    letter-spacing:0.06rem;
+    letter-spacing:0.05vw;
 }

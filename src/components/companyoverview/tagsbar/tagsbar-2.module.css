@@ -1,37 +1,31 @@
 .tagsbar-section {
   width: 100%;
-  max-width:120rem;
-  margin-inline:auto;
   background-color: #ffffff;
 }
-
 .tagsbar-section h2{
     text-align: center;
-    font-size:1.8rem;
+    font-size:1.5vw;
     text-align:center;
     font-family: 'NeueHaasDisplayThin';
     font-weight:600;
-    letter-spacing: 0.096rem;
+    letter-spacing: 0.08vw;
     line-height:100%;
 }
-
 .tagsbar-wrapper {
   max-width: 100%;
   /* margin: 0 auto; */
-  padding: 2.64rem 7.44rem;
+  padding: 2.2vw 6.2vw;
   overflow: hidden;
 }
-
 .tagsbar-title {
   text-align: center;
-  font-size: 1.92rem;
+  font-size: 1.6vw;
   font-weight: 400;
   color: #111;
   margin: 0;
-  padding-top: 2.4rem;
+  padding-top: 2vw;
   letter-spacing: 0.01em;
 }
-
 .tagsbar-track {
   display: flex;
   align-items: center;
@@ -41,8 +35,8 @@
 
 .tagsbar-item {
   flex-shrink: 0;
-  width: 9rem;
-  height: 2.88rem;
+  width: 7.5vw;
+  height: 2.4vw;
   position: relative;
 }
 
