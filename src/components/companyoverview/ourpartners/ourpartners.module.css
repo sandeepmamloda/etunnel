@@ -1,9 +1,9 @@
 .ourpartners-wrapper{
     height:fit-content;
     width:100%;
-    max-width:120rem;
+    max-width:106.4rem;
     margin-inline:auto;
-    padding-inline:8.4rem;
+    padding-inline:2rem;
     padding-block-end:6rem;
     display:flex;
     flex-direction: column;
@@ -19,7 +19,7 @@
     row-gap:1.2rem;
 }
 
-.ourpartners-wrapper .ourpartners-top span:first-child{
+.ourpartners-wrapper .ourpartners-top h2{
     text-align: center;
     font-size:2.4rem;
     text-align:center;
@@ -29,7 +29,7 @@
     line-height:100%;
 }
 
-.ourpartners-wrapper .ourpartners-top span:last-child{
+.ourpartners-wrapper .ourpartners-top p{
     text-align: center;
     font-size:1.08rem;
     text-align:center;

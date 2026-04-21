@@ -5,8 +5,8 @@ const Authentication = function () {
     <>
       <div className={styles["authentication-wrapper"]}>
         <div className={styles["authentication-top"]}>
-            <span>Patents for Finger Vein Authentication System</span>
-            <span>U.S., Europe (3057034), Japan (5951871), Republic of Korea (10-1496852)</span>
+            <h2>Patents for Finger Vein Authentication System</h2>
+            <p>U.S., Europe (3057034), Japan (5951871), Republic of Korea (10-1496852)</p>
         </div>
         <div className={styles["authentication-bottom"]}>
             <Image 

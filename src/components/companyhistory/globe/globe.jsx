@@ -14,6 +14,7 @@ const Globe = function () {
         });
 
         const init = async () => {
+            await document.fonts.ready;
             await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js');
             await loadScript('https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js');
             await loadScript('https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js');
@@ -55,7 +56,6 @@ const Globe = function () {
                 );
             }
 
-            // lat/lng -> equirectangular pixel coords
             function ll2px(lat, lng, W, H) {
                 const x = ((lng + 180) / 360) * W;
                 const y = ((90 - lat) / 180) * H;
@@ -69,14 +69,12 @@ const Globe = function () {
                 oc.width = W; oc.height = H;
                 const ctx = oc.getContext('2d');
 
-                // Background gradient
                 const grad = ctx.createLinearGradient(0, 0, 0, H);
                 grad.addColorStop(0, '#fce0c0');
                 grad.addColorStop(1, '#fdf5ec');
                 ctx.fillStyle = grad;
                 ctx.fillRect(0, 0, W, H);
 
-                // Grid lines
                 ctx.strokeStyle = 'rgba(200,140,80,0.12)';
                 ctx.lineWidth = 0.6;
                 for (let lon = -180; lon <= 180; lon += 30) {
@@ -88,7 +86,6 @@ const Globe = function () {
                     ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
                 }
 
-                // Countries
                 const proj = d3.geoEquirectangular().scale(W / (2 * Math.PI)).translate([W / 2, H / 2]);
                 const path = d3.geoPath().projection(proj).context(ctx);
                 const countries = topojson.feature(world, world.objects.countries);
@@ -101,39 +98,28 @@ const Globe = function () {
                     ctx.stroke();
                 });
 
-                // Paint glowing dots directly on texture
                 locs.forEach((loc, i) => {
                     const [px, py] = ll2px(loc.lat, loc.lng, W, H);
                     const ps = pulseScales ? pulseScales[i] : 0;
 
-                    // Animated pulse ring
                     if (ps > 0) {
-                        const pr = 18 + ps * 24;
+                        const pr = 12 + ps * 16;
                         const gPulse = ctx.createRadialGradient(px, py, pr * 0.5, px, py, pr);
-                        gPulse.addColorStop(0, `rgba(244,122,32,${0.38 * (1 - ps)})`);
+                        gPulse.addColorStop(0, `rgba(244,122,32,${0.45 * (1 - ps)})`);
                         gPulse.addColorStop(1, 'rgba(244,122,32,0)');
                         ctx.beginPath(); ctx.arc(px, py, pr, 0, Math.PI * 2);
                         ctx.fillStyle = gPulse; ctx.fill();
                     }
 
-                    // Soft outer glow halo
-                    const gHalo = ctx.createRadialGradient(px, py, 0, px, py, 30);
-                    gHalo.addColorStop(0, 'rgba(244,122,32,0.40)');
+                    const gHalo = ctx.createRadialGradient(px, py, 0, px, py, 18);
+                    gHalo.addColorStop(0, 'rgba(244,122,32,0.55)');
+                    gHalo.addColorStop(0.5, 'rgba(244,122,32,0.20)');
                     gHalo.addColorStop(1, 'rgba(244,122,32,0)');
-                    ctx.beginPath(); ctx.arc(px, py, 30, 0, Math.PI * 2);
+                    ctx.beginPath(); ctx.arc(px, py, 18, 0, Math.PI * 2);
                     ctx.fillStyle = gHalo; ctx.fill();
 
-                    // Dark outer ring
-                    ctx.beginPath(); ctx.arc(px, py, 12, 0, Math.PI * 2);
-                    ctx.fillStyle = '#1a1a1a'; ctx.fill();
-
-                    // Orange fill
-                    ctx.beginPath(); ctx.arc(px, py, 8, 0, Math.PI * 2);
+                    ctx.beginPath(); ctx.arc(px, py, 5, 0, Math.PI * 2);
                     ctx.fillStyle = '#f47a20'; ctx.fill();
-
-                    // White center dot
-                    ctx.beginPath(); ctx.arc(px, py, 3.5, 0, Math.PI * 2);
-                    ctx.fillStyle = '#ffffff'; ctx.fill();
                 });
 
                 return new THREE.CanvasTexture(oc);
@@ -185,7 +171,6 @@ const Globe = function () {
                     globe = new THREE.Mesh(new THREE.SphereGeometry(1, 64, 64), globeMat);
                     scene.add(globe);
 
-                    // Label sprites — always face camera, sit above surface
                     mg = new THREE.Group();
                     locs.forEach(loc => {
                         const pos = ll2v(loc.lat, loc.lng, 1);
@@ -195,12 +180,8 @@ const Globe = function () {
                         sc.width = 300; sc.height = 70;
                         const sx = sc.getContext('2d');
                         sx.clearRect(0, 0, 300, 70);
-                        sx.fillStyle = 'rgba(255,245,235,0.92)';
-                        sx.beginPath(); sx.roundRect(0, 0, 300, 70, 12); sx.fill();
-                        sx.strokeStyle = '#1a1a1a'; sx.lineWidth = 2;
-                        sx.beginPath(); sx.roundRect(1, 1, 298, 68, 12); sx.stroke();
                         sx.fillStyle = '#1a1a1a';
-                        sx.font = 'bold 28px sans-serif';
+                        sx.font = '600 28px NeueHaasDisplayThin, sans-serif';
                         sx.textAlign = 'center'; sx.textBaseline = 'middle';
                         sx.fillText(loc.name, 150, 35);
                         const st = new THREE.CanvasTexture(sc);
@@ -212,7 +193,6 @@ const Globe = function () {
                     });
                     scene.add(mg);
 
-                    // Store world ref for texture rebuild
                     globe.userData.world = world;
                 });
 
@@ -242,7 +222,6 @@ const Globe = function () {
                     globe.rotation.y = ry;
                     globe.rotation.x = rx;
 
-                    // Rebuild texture every 8 frames for pulse animation
                     if (frameCount % 8 === 0 && globe.userData.world) {
                         pulseScales = locs.map((_, i) =>
                             Math.abs(Math.sin(tt * 1.8 + i * 1.2))
@@ -275,33 +254,53 @@ const Globe = function () {
     }, []);
 
     return (
-        <div
-            ref={wrapRef}
-            style={{
-                width: '100%',
-                height: '100svh',
-                position: 'relative',
-                overflow: 'hidden',
-                borderRadius: '12px',
-                background: "transparent"
-            }}
-        >
-            <canvas
-                ref={canvasRef}
-                style={{ display: 'block', width: '100%', height: '100%' }}
-            />
-            <div style={{
-                position: 'absolute',
-                bottom: '14px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                fontSize: '11px',
-                color: 'rgba(120,80,40,0.4)',
-                letterSpacing: '0.5px'
-            }}>
-                drag to rotate
+        <>
+            <div
+                ref={wrapRef}
+                style={{
+                    width: '100%',
+                    height: '100svh',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    borderRadius: '12px',
+                    background: "transparent"
+                }}
+            >
+                <canvas
+                    ref={canvasRef}
+                    style={{ display: 'block', width: '100%', height: '100%' }}
+                />
+                <div style={{
+                    position: 'absolute',
+                    bottom: '14px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    fontSize: '11px',
+                    color: 'rgba(120,80,40,0.4)',
+                    letterSpacing: '0.5px'
+                }}>
+                    drag to rotate
+                </div>
             </div>
-        </div>
+            <div style={{
+                width: '100%',
+                textAlign: 'center',
+                paddingBlock: '2rem',
+            }}>
+                <p style={{
+                    fontSize: '1.4rem',
+                    fontFamily: 'NeueHaasDisplayXThin',
+                    fontWeight: '600',
+                    color: '#000',
+                    lineHeight: '160%',
+                    letterSpacing: '0.05rem',
+                    margin: '0',
+                }}>
+                    With branches in the U.S., India, and Singapore, ETUNNEL offers global biometric security solutions.<br />
+                    We will strengthen our global presence through innovation and partnerships.
+                </p>
+            </div>
+        </>
     );
 };
 

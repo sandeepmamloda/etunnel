@@ -1,29 +1,29 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from "./herocoverview.module.css";
 
-const Heroabout = function () {
+const Herocoverview = function () {
     return (
         <>
-            <section className={styles["heroabout-section"]}>
-                <div className={styles["heroabout-section-wrapper"]}>
-                    <div className={styles["heroabout-section-img"]}>
+            <section className={styles["herocoverview-section"]}>
+                <div className={styles["herocoverview-section-wrapper"]}>
+                    <div className={styles["herocoverview-section-img"]}>
                         <Image 
                             src="/images/companyoverview/herocoverview/herocoverview.jpg"    
-                            alt="Hero Image" 
+                            alt="Company Overview - Biometric Authentication Solutions" 
                             fill={true}
                             priority
                             className={styles["img"]}                  
                         />
-                        <div className={styles["heroabout-section-img-overlay"]}></div>
+                        <div className={styles["herocoverview-section-img-overlay"]}></div>
                     </div>
-                    <div className={styles["heroabout-section-text-wrapper"]}>
-                        <p>Building a Safer Biometric Authentication Environment</p>
-                        <p> 
-                            <span>Through Continuous R&D and Innovation</span>
-                        </p>
-                        <div className={styles["request-a-demo"]}>
+                    <div className={styles["herocoverview-section-text-wrapper"]}>
+                        <h1>Building a Safer Biometric Authentication Environment 
+                            Through Continuous R&D and Innovation
+                        </h1>
+                        <Link href="/" className={styles["download-brocher"]}>
                             <span>Download Company Brochure</span>
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -31,4 +31,4 @@ const Heroabout = function () {
     );
 }
 
-export default Heroabout;
+export default Herocoverview;

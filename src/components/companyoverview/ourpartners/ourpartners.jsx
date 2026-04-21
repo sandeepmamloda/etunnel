@@ -5,8 +5,8 @@ const Ourpartners = function () {
     <>
       <div className={styles["ourpartners-wrapper"]}>
         <div className={styles["ourpartners-top"]}>
-            <span>Our Partners</span>
-            <span>We maintain partnerships with various companies and institutions to popularize biometric security.</span>
+            <h2>Our Partners</h2>
+            <p>We maintain partnerships with various companies and institutions to popularize biometric security.</p>
         </div>
     </div>
     </>

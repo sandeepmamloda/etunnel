@@ -1,78 +1,69 @@
-.heroabout-section{
+.herocoverview-section{
     height:50.4rem;
     width:100%;
     background-color:black;
 }
-.heroabout-section-wrapper{
+.herocoverview-section-wrapper{
     height:100%;
     width:100%;
     position:relative;
     max-width:120rem;
     margin-inline:auto;
 }
-.heroabout-section-wrapper .heroabout-section-img{
+.herocoverview-section-wrapper .herocoverview-section-img{
     height:100%;
     width:100%;
     position:relative;
 }
-.heroabout-section-wrapper .heroabout-section-img img{
+.herocoverview-section-wrapper .herocoverview-section-img img{
     height:100%;
     width:100%;
     object-fit:cover;
     object-position:center;
 }
-.heroabout-section-img-overlay {
+.herocoverview-section-img-overlay {
     position: absolute;
     inset: 0;
     background: radial-gradient(49.45% 49.45% at 49.04% 45.2%, rgba(0, 0, 0, 0.2) 0%, #000000 100%);
     z-index: 1;
 }
 
-/* ------heroabout-section-text-wrapper------ */
-.heroabout-section-text-wrapper {
+/* ------herocoverview-section-text-wrapper------ */
+.herocoverview-section-text-wrapper {
     z-index: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 0.48rem;
+    row-gap: 0.5rem;
     display: flex;
     position: absolute;
     bottom: 2.4rem;
     left: 50%;
     transform: translateX(-50%);
 }
-.heroabout-section-text-wrapper p{
+.herocoverview-section-text-wrapper h1{
+    font-size:2.64rem;
+    font-family: 'NeueHaasGroteskLight';
+    font-weight:normal;
+    text-align:center;
     color:#fff;
-    line-height:100%;
+    line-height:117%;
 }
-.heroabout-section-text-wrapper p:first-child{
-    font-size:2.64rem;
-    font-family: 'NeueHaasGroteskLight';
-}
-.heroabout-section-text-wrapper p:nth-child(2){
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items:center;
-    font-family: 'NeueHaasGroteskLight';
-    font-size:2.64rem;
-    row-gap:0.24rem;
-}
-
-.request-a-demo {
+.download-brocher {
     position: relative;
     border-radius: 6rem;
-    width: 18rem;
+    width: 18.6rem;
     height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2.04rem;
+    margin-top: 1.77rem;
     background:transparent;
     z-index: 1;
+    text-decoration:none;
 }
 
-.request-a-demo::before {
+.download-brocher::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -89,9 +80,10 @@
     z-index: -1;
 }
 
-.request-a-demo span{
+.download-brocher span{
     color:white;
     font-family: 'NeueHaasGroteskLight';
-    font-size: 1.104rem;
+    font-size: 1.07rem;
     line-height:100%;
+    letter-spacing:0.05rem;
 }

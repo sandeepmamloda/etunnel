@@ -1,29 +1,29 @@
 import styles from "./coretechnology.module.css";
 import Image from "next/image";
+import Link from "next/link";
+
 const Coretechnology = function () {
   return (
     <>
       <div className={styles["coretechnology-wrapper"]}>
         <div className={styles["coretechnology-top"]}>
-            <span>Core Technology of ETUNNEL</span>
-            <span>Building a trustworthy future with enhanced biometric authentication and unique security technology.</span>
+            <h1>Core Technology of ETUNNEL</h1>
+            <p>Building a trustworthy future with enhanced biometric authentication and unique security technology.</p>
         </div>
         <div className={styles["coretechnology-bottom"]}>
             <div className={styles["coretechnology-left"]}>
               <div className={styles["coretechnology-left-text-wrapper"]}>
                 <div className={styles["coretechnology-left-text-wrapper-top"]}>
-                  <span>P2N2</span>
+                  <h2>P2N2</h2>
                   <div>
-                    <span>At the heart of ETUNNEL is the P2N2 Biometric Authentication Integration Module. It is a
-                    </span> 
-                    <span>
+                    <p>At the heart of ETUNNEL is the P2N2 Biometric Authentication Integration Module. It is a
                         single AI engine designed to handle multiple biometric methods, without complexity.
-                    </span>
+                    </p>
                   </div>
                 </div>
-                <div className={styles["coretechnology-left-text-wrapper-bottom"]}>
-                                <span>How P2N2 Works</span>
-                </div>
+                <Link href="/" className={styles["coretechnology-left-text-wrapper-bottom"]}>
+                    <span>How P2N2 Works</span>
+                </Link>
               </div>
               <div className={styles["img"]}>
                  <Image 
@@ -38,18 +38,16 @@ const Coretechnology = function () {
             <div className={styles["coretechnology-right"]}>
                 <div className={styles["coretechnology-right-text-wrapper"]}>
                 <div className={styles["coretechnology-right-text-wrapper-top"]}>
-                  <span>Finger Vein Authentication</span>
+                  <h2>Finger Vein Authentication</h2>
                   <div>
-                    <span>The finger vein authentication technology developed by ETUNNEL
-                    </span> 
-                    <span>
+                    <p>The finger vein authentication technology developed by ETUNNEL
                         is a new technology with excellent security, versatility,and immunity to hacking.
-                    </span>
+                    </p>
                   </div>
                 </div>
-                <div className={styles["coretechnology-right-text-wrapper-bottom"]}>
-                                <span>How Finger Vein Authentication Works</span>
-                </div>
+                <Link href="/" className={styles["coretechnology-right-text-wrapper-bottom"]}>
+                    <span>How Finger Vein Authentication Works</span>
+                </Link>
               </div>
               <div className={styles["img"]}>
                  <Image 

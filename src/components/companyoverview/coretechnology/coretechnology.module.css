@@ -2,8 +2,8 @@
     height:fit-content;
     width:100%;
     margin-inline:auto;
-    max-width:120rem;
-    padding-inline:8.4rem;
+    max-width:106.4rem;
+    padding-inline:2rem;
     padding-block-end:6rem;
     display:flex;
     flex-direction: column;
@@ -17,7 +17,7 @@
     flex-direction: column;
     row-gap:1.2rem;
 }
-.coretechnology-wrapper .coretechnology-top span:first-child{
+.coretechnology-wrapper .coretechnology-top h1{
     text-align: center;
     font-size:2.4rem;
     text-align:center;
@@ -26,7 +26,7 @@
     letter-spacing: 0.096rem;
     line-height:100%;
 }
-.coretechnology-wrapper .coretechnology-top span:last-child{
+.coretechnology-wrapper .coretechnology-top p{
     text-align: center;
     font-size:1.08rem;
     text-align:center;
@@ -75,14 +75,15 @@
     z-index:2;
     padding-block-end:1.8rem;
     row-gap:2.04rem;
+    padding-inline:2rem;
 }
 .coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top{
     display:flex;
     flex-direction: column;
-    row-gap:0.96rem;
+    row-gap:0.84rem;
     width:100%;
 }
-.coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top>span{
+.coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top>h2{
     font-size:2.04rem;
     text-align:center;
     font-family: 'NeueHaasDisplayXThin';
@@ -91,15 +92,17 @@
     color:#fff;
 }
 .coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top>div{
-    display:flex;
+    /* display:flex;
     flex-direction: column;
-    row-gap:0.24rem;
+    row-gap:0.24rem; */
+    height:fit-content;
+    width:fit-content;
 }
-.coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top>div span{
+.coretechnology-left-text-wrapper .coretechnology-left-text-wrapper-top>div p{
     font-size:1.08rem;
     text-align:center;
     font-family: 'NeueHaasDisplayXXThin';
-    line-height: 100%;
+    line-height: 120%;
     font-weight:600;
     letter-spacing: 0.096rem;
     color:#fff;
@@ -119,6 +122,7 @@
     align-items: center;
     justify-content: center;
     background:transparent;
+    text-decoration:none;
 }
 
 .coretechnology-left-text-wrapper-bottom::before {
@@ -178,6 +182,7 @@
     bottom:0;
     z-index:2;
     padding-block-end:1.8rem;
+    padding-inline:5rem;
     row-gap:2.04rem;
 }
 .coretechnology-right-text-wrapper .coretechnology-right-text-wrapper-top{
@@ -186,7 +191,7 @@
     row-gap:0.96rem;
     width:100%;
 }
-.coretechnology-right-text-wrapper .coretechnology-right-text-wrapper-top>span{
+.coretechnology-right-text-wrapper .coretechnology-right-text-wrapper-top>h2{
     font-size:2.04rem;
     text-align:center;
     font-family: 'NeueHaasDisplayXThin';
@@ -200,11 +205,11 @@
     flex-direction: column;
     row-gap:0.24rem;
 }
-.coretechnology-right-text-wrapper .coretechnology-right-text-wrapper-top>div span{
+.coretechnology-right-text-wrapper .coretechnology-right-text-wrapper-top>div p{
     font-size:1.08rem;
     text-align:center;
     font-family: 'NeueHaasDisplayXXThin';
-    line-height: 100%;
+    line-height: 120%;
     font-weight:600;
     letter-spacing: 0.096rem;
     color:#fff;
@@ -224,6 +229,7 @@
     align-items: center;
     justify-content: center;
     background:transparent;
+    text-decoration:none;
 }
 
 .coretechnology-right-text-wrapper-bottom::before {

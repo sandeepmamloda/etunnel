@@ -1,7 +1,10 @@
 .historyinovation-section {
     width: 100%;
+    max-width:106.4rem;
+    margin-inline:auto;
     background-color: #fff;
-    padding-block: 4vw;
+    padding-block: 4.8rem;
+    padding-inline:2rem;
 }
 
 /* ------heading area------ */
@@ -11,24 +14,23 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-block: 4vw;
+    padding-block: 4.8rem;
 }
 .historyinovation-heading-title {
-    font-size: 2.4vw;
+    font-size: 2.88rem;
     font-family: 'NeueHaasDisplayThin';
     font-weight: 600;
     color: #000;
-    letter-spacing: 0.04vw;
-    /* margin: 0 0 1.2vw 0; */
-    padding-block-end:1vw;
+    letter-spacing: 0.048rem;
+    padding-block-end: 1.2rem;
     line-height: 110%;
 }
 .historyinovation-heading-desc {
-    font-size: 1.1vw;
+    font-size: 1.32rem;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
     color: #000;
-    letter-spacing: 0.02vw;
+    letter-spacing: 0.024rem;
     line-height: 160%;
     margin: 0;
 }
@@ -36,7 +38,6 @@
 /* ------accordion wrapper------ */
 .historyinovation-section-wrapper {
     width: 100%;
-    padding-inline: 7vw;
     display: flex;
     flex-direction: column;
 }
@@ -44,10 +45,10 @@
 /* ------accordion-item------ */
 .historyinovation-accordion-item {
     width: 100%;
-    border-top: 0.05vw solid #c8c8c8;
+    border-top: 0.06rem solid #c8c8c8;
 }
 .historyinovation-accordion-item:last-child {
-    border-bottom: 0.05vw solid #c8c8c8;
+    border-bottom: 0.06rem solid #c8c8c8;
 }
 .historyinovation-accordion-checkbox {
     display: none;
@@ -59,31 +60,33 @@
     display: flex;
     align-items: center;
     column-gap: 0;
-    padding-block: 1.8vw;
+    padding-block: 1.5rem;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
 .historyinovation-accordion-label-icon {
-    font-size: 1.4vw;
+    font-size: 1.68rem;
     color: #c8c8c8;
     line-height: 100%;
     display: inline-block;
-    width: 1.4vw;
-    margin-right: 0.2vw;
+    width: 1.68rem;
+    margin-right: 0.24rem;
     flex-shrink: 0;
     text-align: center;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
-    letter-spacing: 0.04vw;
+    letter-spacing: 0.048rem;
 }
 .historyinovation-accordion-label-icon::before {
     content: "+";
 }
 .historyinovation-accordion-label-year {
-    font-size: 1.4vw;
+    font-size: 1.68rem;
     color: #c8c8c8;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
-    letter-spacing: 0.04vw;
+    letter-spacing: 0.048rem;
     line-height: 100%;
 }
 
@@ -109,7 +112,7 @@
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.5s ease;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .historyinovation-accordion-checkbox:checked
     ~ .historyinovation-accordion-body {
@@ -120,22 +123,31 @@
 .historyinovation-accordion-body-inner {
     min-height: 0;
     overflow: hidden;
-    padding-inline-start: 10vw;
+    margin-inline-start: 12rem;
+    /* margin-block-start: 2.16rem; */
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
-
+/* ------checked state translateY fix------ */
+.historyinovation-accordion-checkbox:checked
+    ~ .historyinovation-accordion-body
+    .historyinovation-accordion-body-inner {
+    transform: translateY(-2.3rem);
+}
 /* ------accordion-body-row------ */
 .historyinovation-accordion-body-row {
     display: grid;
-    grid-template-columns: 30vw 1fr;
-    column-gap: 2vw;
-    padding-bottom: 3vw;
+    grid-template-columns: 36rem 1fr;
+    column-gap: 2.4rem;
 }
 
 /* ------img------ */
 .historyinovation-accordion-body-img-wrapper {
     width: 100%;
-    height: 18vw;
-    border-radius: 1vw;
+    height: 21.6rem;
+    border-radius: 1.5rem;
     overflow: hidden;
 }
 .historyinovation-accordion-body-img {
@@ -151,21 +163,21 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    row-gap: 1.2vw;
+    row-gap: 1.44rem;
 }
 .historyinovation-accordion-body-content-block {
     display: flex;
     flex-direction: column;
-    row-gap: 0.5vw;
+    row-gap: 0.6rem;
 }
 .historyinovation-accordion-body-content-text {
-    font-size: 1.2vw;
+    font-size: 1.44rem;
     font-family: 'NeueHaasDisplayXThin';
-    color: #000;
+    color: rgba(64, 64, 64, 1);
     line-height: 130%;
     margin: 0;
     font-weight: 600;
-    letter-spacing: 0.04vw;
+    letter-spacing: 0.05rem;
 }
 .historyinovation-accordion-body-content-list {
     list-style: none;
@@ -173,17 +185,17 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    row-gap: 0.4vw;
+    row-gap: 0.48rem;
 }
 .historyinovation-accordion-body-content-list-item {
-    font-size: 1.2vw;
+    font-size: 1.44rem;
     font-family: 'NeueHaasDisplayXThin';
-    color: #000;
+    color: rgba(64, 64, 64, 1);
     line-height: 1.5;
-    padding-left: 1.2vw;
+    padding-left: 1.44rem;
     position: relative;
     font-weight: 600;
-    letter-spacing: 0.04vw;
+    letter-spacing: 0.048rem;
 }
 .historyinovation-accordion-body-content-list-item::before {
     content: "•";

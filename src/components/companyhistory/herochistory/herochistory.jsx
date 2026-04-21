@@ -1,5 +1,6 @@
 import styles from "./herochistory.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const Herochistory = function () {
     return (
@@ -8,7 +9,7 @@ const Herochistory = function () {
                 <div className={styles["herochistory-section-wrapper"]}>
                     <div className={styles["herochistory-section-img"]}>
                         <Image
-                            src="/images/about/heroabout/hero-about.jpg"
+                            src="/images/companyhistory/herohistory/herohistory.jpg"
                             alt="Hero Image"
                             fill={true}
                             priority
@@ -17,13 +18,13 @@ const Herochistory = function () {
                         <div className={styles["herochistory-section-img-overlay"]}></div>
                     </div>
                     <div className={styles["herochistory-section-text-wrapper"]}>
-                        <p>Company History</p>
+                        <h1>Company History</h1>
                         <p>
-                            <span>Introducing ETUNNEL's journey towards a safer life with enhanced biometric recognition technology.</span>
+                            Introducing ETUNNEL's journey towards a safer life with enhanced biometric recognition technology.
                         </p>
-                        <div className={styles["request-a-demo"]}>
+                        <Link href="/" className={styles["download-brocher"]}>
                             <span>Download Company Brochure</span>
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </section>
