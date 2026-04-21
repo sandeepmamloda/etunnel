@@ -5,19 +5,50 @@
 .biometriccertification-main{
     height:fit-content;
     width:100%;
-    max-width: 75%;
+    max-width: 85%;
     margin-inline:auto;
     display:flex;
     flex-direction:row;
     justify-content:space-between;
+    align-items:center;
+    margin-top:6.4rem;
 }
 .biometriccertification-left{
-    height:30rem;
+    height:35rem;
     width:100%;
-    background-color:orange;
+    /* background-color:orange; */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2rem;
+}
+.biometriccertification-left p{
+    font-size:1.5rem;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight:600;
+    letter-spacing: 0.09rem;
+    line-height: 140%;
+} 
+.biometriccertification-left p span{
+    font-family: 'NeueHaasGroteskMedium';
+    font-weight:600;
+}
+.biometriccertification-left h3{
+    font-size:1.5rem;
+    font-family: 'NeueHaasGroteskMedium';
+    font-weight:600;
+    letter-spacing: 0rem;
+    line-height: 120%;
 }
 .biometriccertification-right{
     height:30rem;
     width:100%;
-    background-color:yellow;
+    /* background-color:yellow; */
+    padding:2.4rem;
+}
+.biometriccertification-right .img{
+    height:100%!important;
+    width:100%!important;
+    position:static!important;
+    object-fit:contain;
 }

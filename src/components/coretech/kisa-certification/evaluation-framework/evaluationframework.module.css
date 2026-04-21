@@ -1,0 +1,60 @@
+.evaluationframework-wrapper {
+  width: 100%;
+  max-width: 106.4rem;
+  padding-inline: 2rem;
+}
+
+.evaluationframework-main {
+  display: grid;
+  grid-template-columns: 30rem 30rem 30rem;
+  grid-template-rows: 30rem 30rem 30rem;
+
+  /* IMPORTANT */
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Common circle */
+.evaluationframework-items {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  background: orange;
+}
+
+/* top left */
+.evaluationframework-items:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* top right */
+.evaluationframework-items:nth-child(2) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+/* middle left */
+.evaluationframework-items:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* middle right */
+.evaluationframework-items:nth-child(4) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* EXACT CENTER */
+.evaluationframework-items:nth-child(5) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* bottom center */
+.evaluationframework-items:nth-child(6) {
+  grid-column: 2;
+  grid-row: 3;
+}
