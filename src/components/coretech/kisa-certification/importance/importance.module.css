@@ -1,0 +1,108 @@
+/* Base: 1920px → 1rem = 16px */
+
+.importance-wrapper {
+  height: fit-content;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 5rem 0; /* 80px */
+}
+
+.importance-main {
+  max-width: 106.4rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem; /* 80px sides */
+  display: flex;
+  align-items: center;
+  gap: 3.75rem; /* 60px */
+}
+
+/* ---- Left panel ---- */
+.importance-left {
+  flex: 0 0 28rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* 20px */
+  padding-top: 0.25rem;
+}
+
+.importance-title {
+  font-size: 2.5rem; /* 36px */
+  font-weight: 600;
+  font-family: 'NeueHaasDisplayThin', sans-serif;
+  color: #0f0f0f;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.importance-subtitle {
+  font-size: 1rem; /* 14px */
+  font-weight: 600;
+  font-family: 'NeueHaasDisplayXThin', sans-serif;
+  color: #555555;
+  line-height: 1.6;
+  letter-spacing: 0.07rem;
+}
+
+/* ---- Right panel: 3 cards ---- */
+.importance-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem; /* 20px */
+}
+
+/* ---- Individual card ---- */
+.importance-items {
+  border: 0.008rem solid #e0e0e0;
+  border-radius: 1rem; /* 12px */
+  padding: 2rem 1.75rem; /* 32px 28px */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content:space-between;
+  background-color: #ffffff;
+}
+
+.items-heading {
+  font-size: 1.4rem; /* 18px */
+  font-weight: 600;
+  font-family: 'NeueHaasDisplayThin', sans-serif;
+  color: #0f0f0f;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.items-desc {
+  font-size: 0.9rem; /* 13px */
+  font-weight: 400;
+  font-family: 'NeueHaasDisplayXThin', sans-serif;
+  color: #555555;
+  line-height: 1.5;
+  font-weight:600;
+  letter-spacing:0.04rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 75rem) { /* 1200px */
+  .importance-main {
+    flex-direction: column;
+  }
+  .importance-left {
+    flex: none;
+    width: 100%;
+  }
+  .importance-right {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 48rem) { /* 768px */
+  .importance-main {
+    padding: 0 1.25rem;
+  }
+  .importance-right {
+    grid-template-columns: 1fr;
+  }
+}
