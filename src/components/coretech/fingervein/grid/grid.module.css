@@ -19,10 +19,10 @@
     width:100%;
 }
 .grid-top h2{
-    font-size:2rem;
+    font-size:2.3rem;
     font-weight:600;
     font-family: 'NeueHaasDisplayThin';
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.09rem;
     line-height: 100%;
 }
 .grid-medium{
@@ -32,9 +32,9 @@
 .grid-medium p{
     font-size:1rem;
     font-weight:600;
-    font-family: 'NeueHaasDisplayXXThin';
-    color:#525252;
-    letter-spacing: 0.08rem;
+    font-family: 'NeueHaasDisplayThin';
+    color:rgba(82, 82, 82, 1);
+    letter-spacing: 0.09rem;
     line-height:100%;
 }
 .grid-bottom {
@@ -55,7 +55,7 @@
     display:flex;
     flex-direction: column;
     row-gap:1rem;
-    padding:2rem;
+    padding:1.5rem;
 }
 .grid-items .top{
     height:3rem;
@@ -88,8 +88,8 @@
     width:fit-content;
 }
 .grid-items .bottom p{
-    font-family: 'NeueHaasDisplayXXThin';
-    font-size:0.76rem;
+    font-family: 'NeueHaasDisplayXThin';
+    font-size:0.78rem;
     line-height:180%;
     color:#737373;
     letter-spacing: 0.07rem;

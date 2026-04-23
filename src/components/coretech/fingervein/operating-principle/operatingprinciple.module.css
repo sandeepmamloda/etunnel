@@ -26,11 +26,12 @@
 }
 .operating-principle-top-tcontent h2{
     font-size:0.9rem;
-    font-family: 'NeueHaasDisplayXXThin';
+    font-family: 'NeueHaasDisplayXThin';
     color:#737373;
     text-align:center;
     letter-spacing: 0.1rem;
     line-height:100%;
+    text-transform: uppercase;
 }
 .operating-principle-top-mcontent{
     height:fit-content;
@@ -42,7 +43,7 @@
     font-weight:600;
     color:#000000;
     text-align:center;
-    letter-spacing: 0.08rem;
+    letter-spacing: 0.09rem;
     line-height: 100%;
 }
 .operating-principle-top-bcontent{
@@ -50,12 +51,13 @@
     width:auto;
 }
 .operating-principle-top-bcontent p{
-    font-family: 'NeueHaasDisplayXXThin';
+    font-family: 'NeueHaasDisplayThin';
     font-weight:600;
     font-size:1rem;
     text-align:center;
-    letter-spacing: 0.08rem;
+    letter-spacing: 0.09rem;
     line-height: 100%;
+    color:rgba(82, 82, 82, 1);
 }
 .operating-principle-bottom{
     height:32rem;

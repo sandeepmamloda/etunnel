@@ -1,0 +1,184 @@
+.heroproducts-section{
+    height:50.4rem;
+    width:100%;
+    background-color:black;
+}
+.heroproducts-section-wrapper{
+    height:100%;
+    width:100%;
+    position:relative;
+    max-width:120rem;
+    margin-inline:auto;
+}
+.heroproducts-section-wrapper .heroproducts-section-img{
+    height:100%;
+    width:100%;
+    position:relative;
+}
+.heroproducts-section-wrapper .heroproducts-section-img img{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    object-position:center;
+}
+.heroproducts-section-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(49.45% 49.45% at 49.04% 45.2%, rgba(0, 0, 0, 0.2) 0%, #000000 100%);
+    z-index: 1;
+}
+
+/* ------heroproducts-section-text-wrapper------ */
+.heroproducts-section-text-wrapper {
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.8rem;
+    display: flex;
+    position: absolute;
+    bottom: 2.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width:80%;
+}
+.heroproducts-section-text-wrapper h1{
+    font-size:2.64rem;
+    font-family: 'NeueHaasGroteskLight';
+    font-weight:normal;
+    text-align:center;
+    color:#fff;
+    line-height:117%;
+}
+.heroproducts-section-text-wrapper p{
+    font-size:1rem;
+    font-family: 'NeueHaasGroteskLight';
+    font-weight:normal;
+    text-align:center;
+    color:#fff;
+    line-height:100%;
+    letter-spacing: 0.05rem;
+}
+.download-brocher {
+    position: relative;
+    border-radius: 6rem;
+    width: 9.5rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.77rem;
+    background:transparent;
+    z-index: 1;
+    text-decoration:none;
+}
+
+.download-brocher::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 0.12rem;
+    border-radius: 6rem;
+    background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
+    
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    z-index: -1;
+}
+
+.download-brocher span{
+    color:white;
+    font-family: 'NeueHaasGroteskLight';
+    font-size: 1.07rem;
+    line-height:100%;
+    letter-spacing:0.05rem;
+}
+.data-container{
+    height:fit-content;
+    width:fit-content;
+    display:flex;
+    flex-direction: row;
+    border:solid 0.008rem rgba(255, 255, 255, 0.3);
+    border-radius:0.3rem;
+    margin-top:1.5rem;
+}
+.content-box{
+    display:flex;
+    flex-direction: column;
+    row-gap:0.5rem;
+    padding-block:0.6rem;
+    position:relative;
+}
+.content-box h2{
+    color:#fff;
+}
+.content-box p{
+    color:#fff;
+}
+.content-box:first-child{
+    position:relative;
+    padding-left:1rem;
+    padding-right:2.3rem
+}
+.content-box:first-child h2{
+    text-align:center;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight:600;
+    font-size:1.82rem;
+}
+.content-box:first-child p{
+    text-align:center;
+    font-family: 'NeueHaasDisplayXXThin';
+    font-weight:600;
+    font-size:0.8rem;
+    letter-spacing: 0.08rem;
+}
+.content-box:nth-child(2){
+    padding-left:2.5rem;
+    padding-right:2.5rem;
+}
+.content-box:nth-child(2) h2{
+    text-align:center;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight:600;
+    font-size:1.82rem;
+}
+.content-box:nth-child(2) p{
+    text-align:center;
+    font-family: 'NeueHaasDisplayXXThin';
+    font-weight:600;
+    font-size:0.8rem;
+    letter-spacing: 0.08rem;
+}
+.content-box:last-child{
+    padding-left:2.3rem;
+    padding-right:1rem;
+}
+.content-box:last-child h2{
+    text-align:center;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight:600;
+    font-size:1.82rem;
+    letter-spacing: 0.08rem;
+}
+.content-box:last-child p{
+    text-align:center;
+    font-family: 'NeueHaasDisplayXXThin';
+    font-weight:600;
+    font-size:0.8rem;
+    letter-spacing: 0.08rem;
+}
+.content-box::after{
+    content:"";
+    width:0.008rem;
+    height:80%;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    right:0;
+    background-color:rgba(255, 255, 255, 0.3);
+}
