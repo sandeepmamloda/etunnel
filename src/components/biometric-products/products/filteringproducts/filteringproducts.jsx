@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
+import { useState, useEffect, useRef } from "react";
 import styles from "./filteringproducts.module.css";
 
 const CATEGORIES = [
@@ -14,6 +15,7 @@ const PRODUCTS = [
   {
     id: 1,
     name: "ETUNNEL-ST-100V",
+    slug: "etunnel-st-100v",
     category: "finger-vein",
     badge: "Finger Vein",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-ST-100V.png",
@@ -22,6 +24,7 @@ const PRODUCTS = [
   {
     id: 2,
     name: "ETUNNEL-PL-101V",
+    slug: "etunnel-pl-101v",
     category: "finger-vein",
     badge: "Finger Vein",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-PL-101V.png",
@@ -30,6 +33,7 @@ const PRODUCTS = [
   {
     id: 3,
     name: "ETUNNEL-SW-100V",
+    slug: "etunnel-sw-100v",
     category: "finger-vein",
     badge: "Finger Vein",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-SW-100V.png",
@@ -38,6 +42,7 @@ const PRODUCTS = [
   {
     id: 4,
     name: "ETUNNEL-CW-100V",
+    slug: "etunnel-cw-100v",
     category: "finger-vein",
     badge: "Finger Vein",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-CW-100V.png",
@@ -46,6 +51,7 @@ const PRODUCTS = [
   {
     id: 5,
     name: "ETUNNEL-SC-100P",
+    slug: "etunnel-sc-100p",
     category: "fingerprint",
     badge: "Fingerprint",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-SC-100P.png",
@@ -54,6 +60,7 @@ const PRODUCTS = [
   {
     id: 6,
     name: "ETUNNEL-CC-100",
+    slug: "etunnel-cc-100",
     category: "fingerprint",
     badge: "Fingerprint",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-CC-100.png",
@@ -62,6 +69,7 @@ const PRODUCTS = [
   {
     id: 7,
     name: "ETUNNEL-CR-100",
+    slug: "etunnel-cr-100",
     category: "fingerprint",
     badge: "Fingerprint",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-CR-100.png",
@@ -70,6 +78,7 @@ const PRODUCTS = [
   {
     id: 8,
     name: "ETUNNEL-IV-100M",
+    slug: "etunnel-iv-100m",
     category: "multimodal",
     badge: "Multimodal",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-IV-100M.png",
@@ -79,10 +88,25 @@ const PRODUCTS = [
 
 export default function FilteringProducts() {
   const [active, setActive] = useState("all");
+  const [visibleKey, setVisibleKey] = useState("all");
+  const [animating, setAnimating] = useState(false);
+  const timeoutRef = useRef(null);
 
   const filtered = PRODUCTS.filter(
-    (p) => active === "all" || p.category === active
+    (p) => visibleKey === "all" || p.category === visibleKey
   );
+
+  const handleFilter = (value) => {
+    if (value === active || animating) return;
+    setAnimating(true);
+    timeoutRef.current = setTimeout(() => {
+      setVisibleKey(value);
+      setActive(value);
+      setAnimating(false);
+    }, 220);
+  };
+
+  useEffect(() => () => clearTimeout(timeoutRef.current), []);
 
   return (
     <section className={styles["product-section"]}>
@@ -108,42 +132,60 @@ export default function FilteringProducts() {
             className={`${styles["filter-btn"]} ${
               active === cat.value ? styles["active"] : ""
             }`}
-            onClick={() => setActive(cat.value)}
+            onClick={() => handleFilter(cat.value)}
           >
-            {cat.label}
+            <span className={styles["stair"]} />
+            <span className={styles["stair"]} />
+            <span className={styles["stair"]} />
+            <span className={styles["stair"]} />
+            <span className={styles["btn-label"]}>{cat.label}</span>
           </button>
         ))}
       </div>
 
       {/* Grid */}
       <div className={styles["product-grid"]}>
-        {filtered.map((product) => (
-          <div className={styles["product-card"]} key={product.id}>
+        {filtered.map((product, index) => (
+          /*
+           * TWO-LAYER TRICK:
+           * outer div  → stagger animation (opacity + translateY)   [no hover]
+           * inner Link → hover transform + box-shadow               [no animation]
+           * Keeping them separate avoids CSS animation vs transition conflict on transform.
+           */
+          <div
+            key={product.id}
+            className={animating ? styles["card-exit"] : styles["card-enter"]}
+            style={{ "--stagger": index }}
+          >
+            <Link
+              href={`/products/${product.slug}`}
+              className={styles["product-card"]}
+            >
+              {/* Image */}
+              <div className={styles["product-image-wrap"]}>
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  sizes="(max-width: 440px) 100vw, (max-width: 720px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className={styles["product-image"]}
+                />
+              </div>
 
-            {/* Image */}
-            <div className={styles["product-image-wrap"]}>
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                sizes="(max-width: 440px) 100vw, (max-width: 720px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                className={styles["product-image"]}
-              />
-            </div>
+              {/* Badge Wrapper */}
+              <div className={styles["product-badge-wrap"]}>
+                <span className={styles["product-badge"]}>
+                  {product.badge}
+                </span>
+              </div>
 
-            {/* Badge Wrapper ← updated */}
-            <div className={styles["product-badge-wrap"]}>
-              <span className={styles["product-badge"]}>
-                {product.badge}
-              </span>
-            </div>
+              {/* Info */}
+              <div className={styles["product-info"]}>
+                <p className={styles["product-name"]}>{product.name}</p>
+                <p className={styles["product-desc"]}>{product.desc}</p>
+              </div>
 
-            {/* Info */}
-            <div className={styles["product-info"]}>
-              <p className={styles["product-name"]}>{product.name}</p>
-              <p className={styles["product-desc"]}>{product.desc}</p>
-            </div>
-
+            </Link>
           </div>
         ))}
 

@@ -14,9 +14,9 @@
 }
 
 .product-eyebrow {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #888;
   margin-bottom: 0.75rem;
@@ -25,7 +25,7 @@
 
 .product-title {
   font-family: 'NeueHaasDisplayThin';
-  letter-spacing: 0.14rem;
+  letter-spacing: 0.12rem;
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 600;
   line-height: 1.2;
@@ -35,10 +35,10 @@
 
 .product-subtitle {
   font-size: 1.1rem;
-  color:#737373;
+  color: #737373;
   line-height: 1.65;
   font-family: 'NeueHaasDisplayXThin';
-  font-weight:600;
+  font-weight: 600;
   letter-spacing: 0.05rem;
 }
 
@@ -60,19 +60,51 @@
   letter-spacing: 0.04rem;
   background: #F5F5F5;
   color: #444;
-  transition: background 0.2s, color 0.2s;
   white-space: nowrap;
-  border:none;
+  border: none;
+  overflow: hidden;
+  position: relative;
 }
 
-.filter-btn:hover {
-  color: #111;
-}
-
-.filter-btn.active {
+/* ── Stair columns ── */
+.filter-btn .stair {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 25%;
   background: #111;
-  color: #fff;
+  z-index: 1;
+  transform: translateY(101%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.filter-btn .stair:nth-child(1) { left: 0%;  transition-delay: 0s; }
+.filter-btn .stair:nth-child(2) { left: 25%; transition-delay: 0.06s; }
+.filter-btn .stair:nth-child(3) { left: 50%; transition-delay: 0.12s; }
+.filter-btn .stair:nth-child(4) { left: 75%; transition-delay: 0.18s; }
+
+.filter-btn:hover .stair { transform: translateY(0); }
+
+.filter-btn:not(:hover) .stair:nth-child(1) { transition-delay: 0.18s; }
+.filter-btn:not(:hover) .stair:nth-child(2) { transition-delay: 0.12s; }
+.filter-btn:not(:hover) .stair:nth-child(3) { transition-delay: 0.06s; }
+.filter-btn:not(:hover) .stair:nth-child(4) { transition-delay: 0s; }
+
+.filter-btn .btn-label {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease 0.1s;
+  color: #444;
+  letter-spacing: 0.07rem;
+  font-family: 'NeueHaasDisplayThin';
+  font-weight: 600;
+}
+
+.filter-btn:hover .btn-label { color: #fff; }
+
+.filter-btn.active { background: #111; }
+.filter-btn.active .btn-label { color: #fff; }
+.filter-btn.active .stair { display: none; }
 
 /* ===== PRODUCT GRID ===== */
 .product-grid {
@@ -82,37 +114,73 @@
 }
 
 @media (max-width: 1024px) {
-  .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .product-grid { grid-template-columns: repeat(3, 1fr); }
 }
-
 @media (max-width: 720px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 440px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
+  .product-grid { grid-template-columns: 1fr; }
 }
 
-/* ===== PRODUCT CARD ===== */
+/* ===================================================
+   STAGGER ANIMATION — lives on the outer <div> ONLY
+   Never touches transform, so hover on inner Link
+   works without any conflict.
+   =================================================== */
+@keyframes card-fade-up {
+  0%   { opacity: 0; translate: 0 20px; }
+  100% { opacity: 1; translate: 0 0; }
+}
+
+@keyframes card-fade-out {
+  0%   { opacity: 1; translate: 0 0; }
+  100% { opacity: 0; translate: 0 -12px; }
+}
+
+/* outer wrapper — opacity + translate only, no transform */
+.card-enter {
+  animation: card-fade-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: calc(var(--stagger) * 0.07s);
+}
+
+.card-exit {
+  animation: card-fade-out 0.2s cubic-bezier(0.4, 0, 1, 1) both;
+  animation-delay: calc(var(--stagger) * 0.03s);
+  pointer-events: none;
+}
+
+/* ===================================================
+   PRODUCT CARD — hover lives here ONLY
+   Uses transform freely since no animation is on this element.
+   =================================================== */
 .product-card {
   border-radius: 1rem;
   padding: 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: box-shadow 0.22s, transform 0.22s;
   cursor: pointer;
+  border: none;
+  /* inset shadow acts as border — takes no space, no layout shift */
+  box-shadow: inset 0 0 0 0.08rem rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  height: 100%;
+
+  transition:
+    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  will-change: transform, box-shadow;
 }
 
 .product-card:hover {
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.09);
-  transform: translateY(-3px);
+  transform: translateY(-6px) scale(1.015);
+  box-shadow:
+    inset 0 0 0 0.08rem rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.07),
+    0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* ===== IMAGE WRAP ===== */
@@ -121,31 +189,46 @@
   width: 100%;
   aspect-ratio: 4 / 2.3;
   background: #FFD2AA1A;
+  overflow: hidden;
 }
 
 .product-image {
   object-fit: contain;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* ===== BADGE WRAPPER ← updated ===== */
+.product-card:hover .product-image-wrap img,
+.product-card:hover .product-image {
+  transform: scale(1.04);
+}
+
+/* ===== BADGE WRAPPER ===== */
 .product-badge-wrap {
   padding-left: 1.5rem;
   padding-top: 0.6rem;
 }
 
-/* ===== BADGE ← updated (margin-left removed) ===== */
+/* ===== BADGE ===== */
 .product-badge {
   display: inline-block;
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: #000;
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
-  border: 1.5px solid #d4d4d4;
+  border: none;
+  box-shadow: inset 0 0 0 1.5px #d4d4d4;
   width: fit-content;
   font-family: 'NeueHaasDisplayXThin';
-  letter-spacing:0.02rem;
-  margin-top:1rem;
+  letter-spacing: 0.06rem;
+  margin-top: 1rem;
+  transition: box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.product-card:hover .product-badge {
+  box-shadow: inset 0 0 0 1.5px #111;
+  background: #111;
+  color: #fff;
 }
 
 /* ===== NAME + DESCRIPTION ===== */
@@ -164,15 +247,21 @@
   font-weight: 700;
   color: #111;
   font-family: 'NeueHaasDisplayThin';
-  letter-spacing:0.04rem;
+  letter-spacing: 0.04rem;
 }
 
 .product-desc {
   font-size: 0.9rem;
   color: #666;
   line-height: 1.55;
-  font-family: 'NeueHaasDisplayThin';
-  letter-spacing: 0.02rem;
+  font-family: 'NeueHaasDisplayXThin';
+  letter-spacing: 0.05rem;
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+.product-card:hover .product-desc {
+  color: #444;
 }
 
 /* ===== EMPTY STATE ===== */
