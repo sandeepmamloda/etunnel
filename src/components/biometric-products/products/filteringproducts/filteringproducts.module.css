@@ -1,4 +1,3 @@
-
 /* ===== SECTION WRAPPER ===== */
 .product-section {
   max-width: 106.4rem;
@@ -21,23 +20,26 @@
   text-transform: uppercase;
   color: #888;
   margin-bottom: 0.75rem;
+  font-family: 'NeueHaasDisplayThin';
 }
 
 .product-title {
-  font-family: "DM Serif Display", serif;
+  font-family: 'NeueHaasDisplayThin';
+  letter-spacing: 0.14rem;
   font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.2;
   color: #111;
   margin-bottom: 0.9rem;
-  max-width: 700px;
 }
 
 .product-subtitle {
-  font-size: 0.88rem;
-  color: #555;
+  font-size: 1.1rem;
+  color:#737373;
   line-height: 1.65;
-  max-width: 860px;
+  font-family: 'NeueHaasDisplayXThin';
+  font-weight:600;
+  letter-spacing: 0.05rem;
 }
 
 /* ===== FILTER TABS ===== */
@@ -49,28 +51,27 @@
 }
 
 .filter-btn {
-  padding: 0.45rem 1.2rem;
+  padding: 0.8rem 1.5rem;
   border-radius: 999px;
-  border: 1.5px solid #d4d4d4;
   cursor: pointer;
   font-size: 0.84rem;
-  font-weight: 500;
-  font-family: "DM Sans", sans-serif;
-  background: #fff;
+  font-weight: 600;
+  font-family: 'NeueHaasDisplayXThin';
+  letter-spacing: 0.04rem;
+  background: #F5F5F5;
   color: #444;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition: background 0.2s, color 0.2s;
   white-space: nowrap;
+  border:none;
 }
 
 .filter-btn:hover {
-  border-color: #111;
   color: #111;
 }
 
 .filter-btn.active {
   background: #111;
   color: #fff;
-  border-color: #111;
 }
 
 /* ===== PRODUCT GRID ===== */
@@ -100,12 +101,11 @@
 
 /* ===== PRODUCT CARD ===== */
 .product-card {
-  background: #f7f6f3;
   border-radius: 1rem;
-  padding: 1.2rem 1.2rem 1.4rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  overflow: hidden;
   transition: box-shadow 0.22s, transform 0.22s;
   cursor: pointer;
 }
@@ -115,61 +115,64 @@
   transform: translateY(-3px);
 }
 
-/* Image placeholder */
+/* ===== IMAGE WRAP ===== */
 .product-image-wrap {
+  position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  background: #ece9e2;
-  border-radius: 0.65rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  aspect-ratio: 4 / 2.3;
+  background: #FFD2AA1A;
 }
 
-.product-image-wrap img {
-  width: 100%;
-  height: 100%;
+.product-image {
   object-fit: contain;
-  padding: 0.5rem;
 }
 
-.product-image-placeholder {
-  font-size: 2.4rem;
-  opacity: 0.3;
+/* ===== BADGE WRAPPER ← updated ===== */
+.product-badge-wrap {
+  padding-left: 1.5rem;
+  padding-top: 0.6rem;
 }
 
-/* Badge */
+/* ===== BADGE ← updated (margin-left removed) ===== */
 .product-badge {
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #666;
-  background: #e8e6e0;
-  padding: 0.22rem 0.65rem;
+  color: #000;
+  padding: 0.35rem 0.9rem;
   border-radius: 999px;
+  border: 1.5px solid #d4d4d4;
   width: fit-content;
+  font-family: 'NeueHaasDisplayXThin';
+  letter-spacing:0.02rem;
+  margin-top:1rem;
 }
 
-/* Name + Description */
+/* ===== NAME + DESCRIPTION ===== */
 .product-info {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: 2.2rem;
 }
 
 .product-name {
   font-size: 0.95rem;
   font-weight: 700;
   color: #111;
-  letter-spacing: -0.01em;
+  font-family: 'NeueHaasDisplayThin';
+  letter-spacing:0.04rem;
 }
 
 .product-desc {
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: #666;
   line-height: 1.55;
+  font-family: 'NeueHaasDisplayThin';
+  letter-spacing: 0.02rem;
 }
 
 /* ===== EMPTY STATE ===== */

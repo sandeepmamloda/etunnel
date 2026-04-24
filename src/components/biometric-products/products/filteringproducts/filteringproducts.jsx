@@ -1,8 +1,7 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import styles from "./filteringproducts.module.css";
-
-// ─── Data ─────────────────────────────────────────────
 
 const CATEGORIES = [
   { label: "All Products", value: "all" },
@@ -17,6 +16,7 @@ const PRODUCTS = [
     name: "ETUNNEL-ST-100V",
     category: "finger-vein",
     badge: "Finger Vein",
+    image: "/images/biometric-products/products/biometric-products/ETUNNEL-ST-100V.png",
     desc: "An integrated security product utilizing finger vein-based biometric authentication. It offers strong security and convenience in various environments, including H/W wallets, S/W wallets, and I²C login.",
   },
   {
@@ -24,53 +24,58 @@ const PRODUCTS = [
     name: "ETUNNEL-PL-101V",
     category: "finger-vein",
     badge: "Finger Vein",
-    desc: "It is a safe and convenient login product using biometric authentication. Experience the optimal login solution for a secure digital environment with finger vein recognition, no password required",
+    image: "/images/biometric-products/products/biometric-products/ETUNNEL-PL-101V.png",
+    desc: "It is a safe and convenient login product using biometric authentication. Experience the optimal login solution for a secure digital environment with finger vein recognition, no password required.",
   },
   {
     id: 3,
     name: "ETUNNEL-SW-100V",
     category: "finger-vein",
     badge: "Finger Vein",
-    desc: "It is a software-based wallet with strong encryption technology and biometric authentication.Experience a software wallet with powerful security and convenient accessibility.",
+    image: "/images/biometric-products/products/biometric-products/ETUNNEL-SW-100V.png",
+    desc: "It is a software-based wallet with strong encryption technology and biometric authentication. Experience a software wallet with powerful security and convenient accessibility.",
   },
   {
     id: 4,
     name: "ETUNNEL-CW-100V",
     category: "finger-vein",
     badge: "Finger Vein",
-    desc: "A hardware wallet with strong security and biometric authentication. It securely protects encrypted assets and personal information through finger vein authentication.",
+    image: "/images/biometric-products/products/biometric-products/ETUNNEL-CW-100V.png",
+    desc: "A hardware wallet with strong security and biometric authentication. It securely protects encrypted assets and personal information through finger vein authentication.",
   },
   {
     id: 5,
     name: "ETUNNEL-SC-100P",
     category: "fingerprint",
     badge: "Fingerprint",
-    desc: "A security-enhanced smart ID card with fingerprint authentication. It provides safe and convenient authentication with just fingerprint registration, no password required.",
+    image: "/images/biometric-products/products/biometric-products/ETUNNEL-SC-100P.png",
+    desc: "A security-enhanced smart ID card with fingerprint authentication. It provides safe and convenient authentication with just fingerprint registration, no password required.",
   },
   {
     id: 6,
     name: "ETUNNEL-CC-100",
     category: "fingerprint",
     badge: "Fingerprint",
-    desc: "An accessory that securely protects your card and allows for convenient portability.It offers both security and practicality",
+    image: "/images/biometric-products/products/biometric-products/ETUNNEL-CC-100.png",
+    desc: "An accessory that securely protects your card and allows for convenient portability. It offers both security and practicality.",
   },
   {
     id: 7,
     name: "ETUNNEL-CR-100",
     category: "fingerprint",
     badge: "Fingerprint",
-    desc: "ETUNNEL-CR-100 is the optimal solution for accurate and fast biometric authentication.Experience the convenient and powerful fingerprint authentication system.",
+    image: "/images/biometric-products/products/biometric-products/ETUNNEL-CR-100.png",
+    desc: "ETUNNEL-CR-100 is the optimal solution for accurate and fast biometric authentication. Experience the convenient and powerful fingerprint authentication system.",
   },
   {
     id: 8,
     name: "ETUNNEL-IV-100M",
     category: "multimodal",
     badge: "Multimodal",
-    desc: "It is a security technology that strengthens identity verification and authentication. By utilizing AI-based validation and biometric recognition, it provides fast and accurate identity authentication.",
+    image: "/images/biometric-products/products/biometric-products/ETUNNEL-IV-100M.png",
+    desc: "It is a security technology that strengthens identity verification and authentication. By utilizing AI-based validation and biometric recognition, it provides fast and accurate identity authentication.",
   },
 ];
-
-// ─── Component ───────────────────────────────────────
 
 export default function FilteringProducts() {
   const [active, setActive] = useState("all");
@@ -81,17 +86,17 @@ export default function FilteringProducts() {
 
   return (
     <section className={styles["product-section"]}>
-      
+
       {/* Header */}
       <div className={styles["product-header"]}>
         <p className={styles["product-eyebrow"]}>Product Lineup</p>
-
         <h1 className={styles["product-title"]}>
           The new standard in biometric security authentication
         </h1>
-
         <p className={styles["product-subtitle"]}>
           ETUNNEL provides a secure environment based on biometric technology.
+          Experience a more convenient and reliable security solution with the
+          powerful 100V series and cutting-edge authentication system.
         </p>
       </div>
 
@@ -114,15 +119,26 @@ export default function FilteringProducts() {
       <div className={styles["product-grid"]}>
         {filtered.map((product) => (
           <div className={styles["product-card"]} key={product.id}>
-            
+
+            {/* Image */}
             <div className={styles["product-image-wrap"]}>
-              <span className={styles["product-image-placeholder"]}>🔒</span>
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                sizes="(max-width: 440px) 100vw, (max-width: 720px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                className={styles["product-image"]}
+              />
             </div>
 
-            <span className={styles["product-badge"]}>
-              {product.badge}
-            </span>
+            {/* Badge Wrapper ← updated */}
+            <div className={styles["product-badge-wrap"]}>
+              <span className={styles["product-badge"]}>
+                {product.badge}
+              </span>
+            </div>
 
+            {/* Info */}
             <div className={styles["product-info"]}>
               <p className={styles["product-name"]}>{product.name}</p>
               <p className={styles["product-desc"]}>{product.desc}</p>
@@ -130,6 +146,10 @@ export default function FilteringProducts() {
 
           </div>
         ))}
+
+        {filtered.length === 0 && (
+          <p className={styles["no-products"]}>No products found.</p>
+        )}
       </div>
     </section>
   );
