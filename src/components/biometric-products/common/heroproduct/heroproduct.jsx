@@ -1,6 +1,6 @@
-import styles from "./heroproduct.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./heroproduct.module.css";
 
 const LetterCascade = ({ text, className, tag: Tag = "span", delay = 0 }) => {
   return (
@@ -18,7 +18,7 @@ const LetterCascade = ({ text, className, tag: Tag = "span", delay = 0 }) => {
   );
 };
 
-const Heroproduct = function ({ image, title, highlight, description }) {
+const Heroproduct = function ({ image, title, highlight, description, brochureUrl }) {
   return (
     <section className={styles["heroproduct-wrapper"]}>
       <div className={styles["heroproduct-main"]}>
@@ -38,7 +38,7 @@ const Heroproduct = function ({ image, title, highlight, description }) {
           <div className={styles["heroproduct-right-top"]}>
             <div className={styles["heroproduct-button"]}>
               <span className={styles["heroproduct-button-left"]}></span>
-              <span>Biometric Products</span>
+              <span>Biometric Product</span>
             </div>
           </div>
 
@@ -74,7 +74,7 @@ const Heroproduct = function ({ image, title, highlight, description }) {
 
           <div className={styles["heroproduct-bottom-1"]}>
 
-            <a href="#" className={styles["product-brochure"]}>
+            <a href={brochureUrl} target="_blank" className={styles["product-brochure"]}>
               <span className={styles["stair"]}></span>
               <span className={styles["stair"]}></span>
               <span className={styles["stair"]}></span>

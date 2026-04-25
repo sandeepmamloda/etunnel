@@ -1,0 +1,120 @@
+.ps-wrapper {
+  width: 100%;
+  height: fit-content;
+  background-color: #ffffff;
+  padding-block-start: 5rem;
+  padding-block-end: 7rem;
+  border-top:solid 0.008rem #000;
+}
+
+.ps-container {
+  max-width: 70rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+  padding-inline: 3rem;
+}
+
+/* ── Heading ── */
+.ps-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+.ps-label {
+  font-family: "NeueHaasDisplayXThin";
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  color: #737373;
+}
+
+.ps-title {
+  font-family: "NeueHaasDisplayThin";
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  color: #000;
+}
+
+/* ── Table ── */
+.ps-table {
+  width: 100%;
+  border: 0.008rem solid rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: -3px 0px 8px rgba(0, 0, 0, 0.00), 3px 0px 8px rgba(0, 0, 0, 0.00), 0px -3px 8px rgba(0, 0, 0, 0.00), 0px 10px 16px rgba(0, 0, 0, 0.1);
+}
+
+.ps-table-header {
+  display: grid;
+  grid-template-columns: 26% 74%;
+  padding-block: 1.2rem;
+  padding-inline: 2rem;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 1);
+}
+
+.ps-table-header span {
+  font-family: "NeueHaasDisplayXThin";
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12rem;
+  color: #737373;
+}
+
+/* ── Rows ── */
+.ps-row {
+  display: grid;
+  grid-template-columns: 26% 74%;
+  padding-block: 1.3rem;
+  padding-inline: 2rem;
+  border-bottom: 0.008rem solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.ps-row:last-child {
+  border-bottom: none;
+}
+
+.ps-row-left {
+  display: flex;
+  align-items: center;
+}
+
+.ps-spec-label {
+  font-family: "NeueHaasDisplayXThin";
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.065rem;
+  color: #000;
+}
+
+.ps-row-right {
+  display: flex;
+  align-items: center;
+}
+
+.ps-detail {
+  font-family: "NeueHaasDisplayXThin";
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  color: #525252;
+  line-height: 160%;
+}
+
+/* ── Colored Text ── */
+.ps-detail-green {
+  font-family: 'NeueHaasGroteskMedium';
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.ps-detail-red {
+  font-family: 'NeueHaasGroteskMedium';
+  color: #dc2626;
+  font-weight: 700;
+}

@@ -1,22 +1,27 @@
 .heroproduct-wrapper {
     height: fit-content;
     width: 100%;
-    border-bottom: solid 0.008rem #000;
+    /* border-bottom: solid 0.008rem #000; */
     background: linear-gradient(180deg, #FFE5CE 0%, #FFFFFF 100%);
-    padding-bottom: 8rem;
-    padding-top: 9rem;
-}
+    /* padding-bottom: 8rem;
+    padding-top: 9rem; */
+    height:92svh;
+    display:flex;
+    align-items:center;
+}   
 
 .heroproduct-main {
     height: fit-content;
     width: fit-content;
     display: flex;
     flex-direction: row;
-    column-gap: 6rem;
+    column-gap: 5rem;
     justify-content: flex-start;
     align-items: center;
-    margin-inline: auto;
-    padding-left: 1rem;
+    /* margin-inline: auto; */
+    margin-right:auto;
+    margin-left:9rem;
+    padding-left: 0rem;
     padding-right: 3rem;
 }
 
@@ -45,7 +50,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 1.8rem;
-    max-width: 44rem;
+    max-width: 55rem;
 }
 
 .heroproduct-right-top {
@@ -55,7 +60,7 @@
 
 .heroproduct-right-top .heroproduct-button {
     background: #ffffff80;
-    border: 0.12rem solid #000;
+    border: 0.08rem solid #000;
     border-radius: 2.4rem;
     display: flex;
     flex-direction: row;
@@ -116,7 +121,10 @@
 .heroproduct-right-middle h1 {
     font-family: "NeueHaasDisplayThin";
     font-weight: 600;
-    letter-spacing: 0.1rem;
+    letter-spacing: 10rem;
+}
+.heroproduct-right-middle h1 span{
+    letter-spacing: 0.18rem;
 }
 
 .heroproduct-highlight .lc-letter {

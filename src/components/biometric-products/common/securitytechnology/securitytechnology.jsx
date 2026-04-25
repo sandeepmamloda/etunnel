@@ -1,6 +1,6 @@
 "use client";
-import styles from "./securitytechnology.module.css";
 import Image from "next/image";
+import styles from "./securitytechnology.module.css";
 
 const cards = [
   {

@@ -3,6 +3,7 @@
     width: 100%;
     background-color: #fff;
     padding-block: 7rem;
+    border-block: .008rem solid #000;
 }
 
 .securitytechnology-main {
@@ -94,7 +95,7 @@
 
 .card-description {
     font-family: 'NeueHaasDisplayXThin';
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: rgba(82, 82, 82, 1);
     letter-spacing: 0.05rem;

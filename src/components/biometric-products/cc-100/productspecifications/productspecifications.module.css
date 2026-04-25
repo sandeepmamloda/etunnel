@@ -1,0 +1,88 @@
+.ph-wrapper {
+  width: 100%;
+  height: fit-content;
+  background-color: #ffffff;
+  padding-bottom: 4rem;
+  padding-top: 5rem;
+  border-top:solid 0.001rem #000;
+}
+
+.ph-container {
+  max-width: 90rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  padding-inline: 3rem;
+}
+
+/* ── Heading ── */
+.ph-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+.ph-label {
+  font-family: "NeueHaasDisplayXThin";
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  color: #737373;
+}
+
+.ph-title {
+  font-family: "NeueHaasDisplayThin";
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  color: #000;
+}
+
+/* ── Cards ── */
+.ph-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 12rem;
+}
+
+.ph-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.8rem;
+  text-align: center;
+}
+
+/* ── Image ── */
+.ph-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.ph-image-wrapper img{
+    height:100%!important;
+    width:100%!important;
+    object-fit: cover!important;
+}
+/* ── Text ── */
+.ph-card-title {
+  font-family: "NeueHaasDisplayThin";
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.04rem;
+  color: #000;
+}
+
+.ph-card-description {
+  font-family: "NeueHaasDisplayXThin";
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04rem;
+  color: #525252;
+  line-height: 170%;
+  max-width: 26rem;
+}
