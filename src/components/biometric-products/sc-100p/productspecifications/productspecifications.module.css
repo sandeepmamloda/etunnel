@@ -78,7 +78,9 @@
 .ps-row:last-child {
   border-bottom: none;
 }
-
+.ps-row:nth-last-child(2){
+  align-items:start;
+}
 .ps-row-left {
   display: flex;
   align-items: center;

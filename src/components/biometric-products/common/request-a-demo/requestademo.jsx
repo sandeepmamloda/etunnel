@@ -1,19 +1,58 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import styles from "./requestademo.module.css";
 
 const RequestADemo = ({
-  heading = "Ready to integrate P2N2?",
+  heading     = "Ready to integrate P2N2?",
   description = "Discover how ETUNNEL's AI Engine P2N2 can transform your biometric security infrastructure.",
   brochureUrl = "/brochures/etunnel.pdf",
 }) => {
+  const wrapperRef     = useRef(null);
+  const headingRef     = useRef(null);
+  const descriptionRef = useRef(null);
+  const buttonsRef     = useRef(null);
+
+  useEffect(() => {
+    let ctx;
+    (async () => {
+      const { gsap } = await import("gsap");
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+
+        // ── Heading + description + buttons — fade up stagger ──
+        gsap.from(
+          [headingRef.current, descriptionRef.current, buttonsRef.current],
+          {
+            opacity: 0,
+            y: 40,
+            duration: 0.75,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: wrapperRef.current,
+              start: "top 80%",
+            },
+          }
+        );
+
+      }, wrapperRef);
+    })();
+
+    return () => ctx?.revert();
+  }, []);
+
   return (
-    <div className={styles["integrate-wrapper"]}>
+    <div className={styles["integrate-wrapper"]} ref={wrapperRef}>
       <div className={styles["integrate-content"]}>
 
-        <h2>{heading}</h2>
-        <p>{description}</p>
+        <h2 ref={headingRef}>{heading}</h2>
+        <p  ref={descriptionRef}>{description}</p>
 
-        <div className={styles["integrate-buttons"]}>
+        <div className={styles["integrate-buttons"]} ref={buttonsRef}>
 
           <Link href="/contact" className={styles["btn-dark"]}>
             <span className={styles["stair"]}></span>
@@ -36,7 +75,6 @@ const RequestADemo = ({
           </a>
 
         </div>
-
       </div>
     </div>
   );

@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./heroproduct.module.css";
 
+/* ─── LetterCascade ─────────────────────────────────────────────────── */
 const LetterCascade = ({ text, className, tag: Tag = "span", delay = 0 }) => {
   return (
     <Tag className={className}>
@@ -9,7 +13,7 @@ const LetterCascade = ({ text, className, tag: Tag = "span", delay = 0 }) => {
         <span
           key={i}
           className={styles["lc-letter"]}
-          style={{ animationDelay: `${delay + i * 0.03}s` }}
+          style={{ animationDelay: `${delay + i * 0.02}s` }}
         >
           {ch === " " ? "\u00A0" : ch}
         </span>
@@ -18,25 +22,24 @@ const LetterCascade = ({ text, className, tag: Tag = "span", delay = 0 }) => {
   );
 };
 
-const Heroproduct = function ({ image, title, highlight, description, brochureUrl }) {
+/* ─── Inner Component ───────────────────────────────────────────────── */
+const HeroproductInner = function ({ image, title, highlight, description, brochureUrl }) {
+  const brochureClass = `${styles["product-brochure"]} ${styles["anim-drop"]}`;
+
   return (
     <section className={styles["heroproduct-wrapper"]}>
       <div className={styles["heroproduct-main"]}>
 
         <div className={styles["heroproduct-left"]}>
-          <div className={styles["heroproduct-img"]}>
-            <Image
-              src={image}
-              alt="product image"
-              fill
-            />
+          <div className={`${styles["heroproduct-img"]} ${styles["anim-img"]}`}>
+            <Image src={image} alt="product image" fill />
           </div>
         </div>
 
         <div className={styles["heroproduct-right"]}>
 
           <div className={styles["heroproduct-right-top"]}>
-            <div className={styles["heroproduct-button"]}>
+            <div className={`${styles["heroproduct-button"]} ${styles["anim-drop"]}`}>
               <span className={styles["heroproduct-button-left"]}></span>
               <span>Biometric Product</span>
             </div>
@@ -55,7 +58,7 @@ const Heroproduct = function ({ image, title, highlight, description, brochureUr
                   text={highlight}
                   className={styles["lc-line"]}
                   tag="span"
-                  delay={0.1 + (`${title} `.length * 0.03)}
+                  delay={0.1 + (`${title} `.length * 0.02)}
                 />
               </span>
             </h1>
@@ -73,8 +76,7 @@ const Heroproduct = function ({ image, title, highlight, description, brochureUr
           </div>
 
           <div className={styles["heroproduct-bottom-1"]}>
-
-            <a href={brochureUrl} target="_blank" className={styles["product-brochure"]}>
+            <a href={brochureUrl} target="_blank" rel="noopener noreferrer" className={brochureClass}>
               <span className={styles["stair"]}></span>
               <span className={styles["stair"]}></span>
               <span className={styles["stair"]}></span>
@@ -85,7 +87,10 @@ const Heroproduct = function ({ image, title, highlight, description, brochureUr
               </svg>
             </a>
 
-            <Link href="/contact" className={styles["contact-us"]}>
+            <Link
+              href="/contact"
+              className={`${styles["contact-us"]} ${styles["anim-drop"]}`}
+            >
               <span className={styles["stair"]}></span>
               <span className={styles["stair"]}></span>
               <span className={styles["stair"]}></span>
@@ -95,13 +100,18 @@ const Heroproduct = function ({ image, title, highlight, description, brochureUr
                 <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
-
           </div>
 
         </div>
       </div>
     </section>
   );
+};
+
+/* ─── Wrapper ───────────────────────────────────────────────────────── */
+const Heroproduct = (props) => {
+  const pathname = usePathname();
+  return <HeroproductInner key={pathname} {...props} />;
 };
 
 export default Heroproduct;

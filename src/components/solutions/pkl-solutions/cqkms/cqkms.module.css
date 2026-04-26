@@ -1,0 +1,146 @@
+.cqkms-wrapper {
+   height: fit-content;
+   width: 100%;
+}
+
+.cqkms-img {
+    height: 48rem;
+    width: 100%;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.cqkms-img .img {
+    height: 100% !important;
+    width: 100% !important;
+    position: static !important;
+    object-fit: cover;
+}
+
+.cqkms-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(49.45% 49.45% at 49.04% 45.2%, rgba(0, 0, 0, 0.2) 0%, #000000 100%);
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 2.4rem;
+}
+
+.cqkms-img-overlay-text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+}
+
+.cqkms-img-overlay-text-top {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.8rem;
+    max-width: 46rem;
+}
+
+.cqkms-img-overlay-text-top .cqkms-img-overlay-text-top-1 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.96rem;
+}
+
+.cqkms-img-overlay-text-top .cqkms-img-overlay-text-top-1 h3 {
+    font-size: 1.08rem;
+    line-height: 100%;
+    color: white;
+    font-family: 'NeueHaasGroteskLight2';
+    letter-spacing: 0.06rem;
+    font-weight: normal;
+}
+
+.cqkms-img-overlay-text-top .cqkms-img-overlay-text-top-1 h2 {
+    font-size: 2.4rem;
+    line-height: 100%;
+    color: white;
+    font-family: 'NeueHaasGroteskLight2';
+    font-weight: normal;
+}
+
+.cqkms-img-overlay-text-top .cqkms-img-overlay-text-top-2 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+}
+
+.cqkms-img-overlay-text-top .cqkms-img-overlay-text-top-2 p {
+    font-size: 1.08rem;
+    color: #fff;
+    line-height: 120%;
+    font-family: 'NeueHaasGroteskLight2';
+    letter-spacing: 0.084rem;
+    font-weight: 100;
+}
+
+.cqkms-img-overlay-text-top .cqkms-img-overlay-text-top-2 p span {
+    font-size: 1.08rem;
+    color: #fff;
+    line-height: 120%;
+    font-family: 'NeueHaasGroteskLight2';
+    letter-spacing: 0.084rem;
+    font-weight: 600;
+}
+
+.cqkms-img-overlay-text-bottom span {
+    font-size: 1.08rem;
+    color: #fff;
+    line-height: 100%;
+    font-family: 'NeueHaasGroteskLight2';
+    letter-spacing: 0.04rem;
+}
+
+.cqkms-img-overlay-text-bottom {
+    position: relative;
+    border-radius: 6rem;
+    width: 9rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    z-index: 1;
+    text-decoration: none;
+    color: inherit;
+    background-color: black;
+}
+
+.cqkms-img-overlay-text-bottom:hover {
+    opacity: 0.9;
+}
+
+.cqkms-img-overlay-text-bottom::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 0.12rem;
+    border-radius: 6rem;
+    background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
+    
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    z-index: -1;
+}
+
+.cqkms-img-overlay-text-bottom p {
+    color: white;
+    font-family: 'NeueHaasGroteskLight';
+    font-size: 1.104rem;
+    line-height: 100%;
+    letter-spacing: 0.036rem;
+    margin: 0;
+}

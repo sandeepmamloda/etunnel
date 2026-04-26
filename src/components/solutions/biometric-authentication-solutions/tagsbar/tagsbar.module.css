@@ -1,0 +1,29 @@
+.tagsbar-section {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.tagsbar-wrapper {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 2.64rem 7.44rem;
+  overflow: hidden;
+}
+
+.tagsbar-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.tagsbar-item {
+  flex-shrink: 0;
+  width: 9rem;
+  height: 2.88rem;
+  position: relative;
+}
+
+.tagsbar-img {
+  object-fit: contain;
+}

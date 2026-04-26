@@ -37,13 +37,13 @@ const pl101v=function(){
                 specs={[
                   { icon: "/images/productspecifications/C-MOS Sensor.png", label: "C-MOS Sensor", detail: "SD, Gray Scale, 3.0 × 3.0 µm, Global Shutter" },
                   { icon: "/images/productspecifications/Main Chip.png", label: "Main Chip", detail: "ARM Cortex-H7" },
-                  { icon: "/images/productspecifications/Interface.png", label: "Interface", detail: " USB 2.0 / HID Connection" },
+                  { icon: "/images/productspecifications/interface.png", label: "Interface", detail: " USB 2.0 / HID Connection" },
                   { icon: "/images/productspecifications/Operating System.png", label: "Operating System", detail: "Embedded system (Free RTOS, Bare Metal) — Recommended: Windows 10/11 Connection" },
                   { icon: "/images/productspecifications/Authentication-Speed.png", label: "Authentication Speed", detail: "Less than 1 second (Based on Local Max 2 Fingers, 5 users)" },
                   { icon: "/images/productspecifications/Operating-Temp-Humidity.png", label: "Operating Temp / Humidity", detail: "-20°C ~ 85°C / up to 90%" },
                   { icon: "/images/productspecifications/Authentication-Method.png", label: "Authentication Method", detail: "1:1 Local (Stand-alone) / Up to 1,000 users registered" },
                   { icon: "/images/productspecifications/Product-Dimensions.png", label: "Product Dimensions", detail: "33(W) × 65(L) × 52(H) mm" },
-                  { icon: "/images/productspecifications/Product-Weight.png", label: "60 g (Base Model 45g + Cradle 15g)", detail: "45 g" },
+                  { icon: "/images/productspecifications/Product-Weight.png", label: "Product Weight", detail: "60 g (Base Model 45g + Cradle 15g)" },
                   
                 ]}
               />

@@ -52,8 +52,8 @@
   display: grid;
   grid-template-columns: 26% 74%;
   padding-block: 1.2rem;
-  padding-inline: 2rem;
-  border-bottom: 0.1rem solid rgba(0, 0, 0, 1);
+  padding-inline: 1.6rem;
+  border-bottom: 0.16rem solid rgba(0, 0, 0, 1);
 }
 
 .ps-table-header span {

@@ -1,171 +1,197 @@
+/* ── Image 3D unfold ── */
+.anim-img {
+  opacity: 0;
+  transform: rotateY(-70deg) rotateX(12deg) translateZ(-60px);
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  animation: img-unfold 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+}
+
+@keyframes img-unfold {
+  0%   { opacity: 0; transform: rotateY(-70deg) rotateX(12deg) translateZ(-60px); }
+  100% { opacity: 1; transform: rotateY(0deg) rotateX(0deg) translateZ(0px); }
+}
+
+/* ── Badge + Buttons drop ── */
+.anim-drop {
+  opacity: 0;
+  transform: translateY(-70px);
+}
+
+.anim-drop:nth-of-type(1) { animation: drop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s forwards; }
+.anim-drop:nth-of-type(2) { animation: drop-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.65s forwards; }
+.anim-drop:nth-of-type(3) { animation: drop-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.78s forwards; }
+
+@keyframes drop-in {
+  0%   { opacity: 0; transform: translateY(-70px); }
+  60%  { opacity: 1; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 .heroproduct-wrapper {
-    height: fit-content;
-    width: 100%;
-    /* border-bottom: solid 0.008rem #000; */
-    background: linear-gradient(180deg, #FFE5CE 0%, #FFFFFF 100%);
-    /* padding-bottom: 8rem;
-    padding-top: 9rem; */
-    height:92svh;
-    display:flex;
-    align-items:center;
-}   
+  height: fit-content;
+  width: 100%;
+  background: linear-gradient(180deg, #FFE5CE 0%, #FFFFFF 100%);
+  height: 92svh;
+  display: flex;
+  align-items: center;
+}
 
 .heroproduct-main {
-    height: fit-content;
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    column-gap: 5rem;
-    justify-content: flex-start;
-    align-items: center;
-    /* margin-inline: auto; */
-    margin-right:auto;
-    margin-left:9rem;
-    padding-left: 0rem;
-    padding-right: 3rem;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  column-gap: 5rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: auto;
+  margin-left: 9rem;
+  padding-right: 3rem;
 }
 
 .heroproduct-left {
-    height: fit-content;
-    width: fit-content;
+  height: fit-content;
+  width: fit-content;
 }
 
 .heroproduct-left .heroproduct-img {
-    height: 38rem;
-    width: 38rem;
-    background-color: transparent;
-    position: relative;
+  height: 38rem;
+  width: 38rem;
+  background-color: transparent;
+  position: relative;
 }
 
 .heroproduct-left .heroproduct-img img {
-    height: 100% !important;
-    width: 100% !important;
-    object-fit: contain;
-    position: static !important;
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: contain;
+  position: static !important;
 }
 
 .heroproduct-right {
-    height: fit-content;
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.8rem;
-    max-width: 55rem;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.8rem;
+  max-width: 55rem;
 }
 
 .heroproduct-right-top {
-    height: fit-content;
-    width: fit-content;
+  height: fit-content;
+  width: fit-content;
 }
 
 .heroproduct-right-top .heroproduct-button {
-    background: #ffffff80;
-    border: 0.08rem solid #000;
-    border-radius: 2.4rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    column-gap: 0.6rem;
-    width: fit-content;
-    height: fit-content;
-    padding-block: 0.72rem;
-    padding-inline: 0.96rem;
+  background: #ffffff80;
+  border: 0.08rem solid #000;
+  border-radius: 2.4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.6rem;
+  width: fit-content;
+  height: fit-content;
+  padding-block: 0.72rem;
+  padding-inline: 0.96rem;
 }
 
 .heroproduct-right-top .heroproduct-button .heroproduct-button-left {
-    background: #ff7800;
-    border-radius: 50%;
-    width: 0.48rem;
-    height: 0.48rem;
-    display: block;
-    position: relative;
-    animation: pulse-dot 2s ease-in-out infinite;
+  background: #ff7800;
+  border-radius: 50%;
+  width: 0.48rem;
+  height: 0.48rem;
+  display: block;
+  position: relative;
+  animation: pulse-dot 2s ease-in-out infinite;
 }
 
 .heroproduct-right-top .heroproduct-button .heroproduct-button-left::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    border: 1.5px solid rgba(255, 120, 0, 0.7);
-    animation: border-ring 2s ease-in-out infinite;
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 120, 0, 0.7);
+  animation: border-ring 2s ease-in-out infinite;
 }
 
 @keyframes pulse-dot {
-    0%, 100% { background: rgba(255, 120, 0, 1);  transform: scale(1); }
-    50%       { background: rgba(255, 150, 50, 1); transform: scale(1.1); }
+  0%, 100% { background: rgba(255, 120, 0, 1);  transform: scale(1); }
+  50%       { background: rgba(255, 150, 50, 1); transform: scale(1.1); }
 }
 
 @keyframes border-ring {
-    0%   { transform: scale(1);   opacity: 0.8; }
-    80%  { transform: scale(3.2); opacity: 0; }
-    100% { transform: scale(1);   opacity: 0; }
+  0%   { transform: scale(1);   opacity: 0.8; }
+  80%  { transform: scale(3.2); opacity: 0; }
+  100% { transform: scale(1);   opacity: 0; }
 }
 
 .heroproduct-right-top .heroproduct-button span:last-child {
-    letter-spacing: 0.06rem;
-    color: #525252;
-    justify-content: center;
-    align-items: center;
-    font-family: NeueHaasDisplayXThin;
-    font-size: 0.84rem;
-    font-weight: 600;
-    line-height: 100%;
-    display: flex;
+  letter-spacing: 0.06rem;
+  color: #525252;
+  justify-content: center;
+  align-items: center;
+  font-family: NeueHaasDisplayXThin;
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 100%;
+  display: flex;
 }
 
 .heroproduct-right-middle {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
 .heroproduct-right-middle h1 {
-    font-family: "NeueHaasDisplayThin";
-    font-weight: 600;
-    letter-spacing: 10rem;
+  font-family: "NeueHaasDisplayThin";
+  font-weight: 600;
 }
-.heroproduct-right-middle h1 span{
-    letter-spacing: 0.18rem;
+
+.heroproduct-right-middle h1 span {
+  letter-spacing: 0.18rem;
 }
 
 .heroproduct-highlight .lc-letter {
-    color: rgba(255, 120, 0, 1);
+  color: rgba(255, 120, 0, 1);
 }
 
 .heroproduct-right-bottom p {
-    font-family: "NeueHaasDisplayXThin";
-    font-weight: 600;
-    color: rgba(82, 82, 82, 1);
-    letter-spacing: 0.08rem;
-    line-height: 170%;
-    font-size: 1.2rem;
+  font-family: "NeueHaasDisplayXThin";
+  font-weight: 600;
+  color: rgba(82, 82, 82, 1);
+  letter-spacing: 0.08rem;
+  line-height: 170%;
+  font-size: 1.2rem;
 }
-.heroproduct-right-bottom p span{
-    letter-spacing: 0.08rem;
+
+.heroproduct-right-bottom p span {
+  letter-spacing: 0.08rem;
 }
 
 /* ── Buttons ── */
 .heroproduct-bottom-1 {
-    height: fit-content;
-    width: fit-content;
-    display: flex;
-    column-gap: 1rem;
-    margin-top: 1rem;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  column-gap: 1rem;
+  margin-top: 1rem;
 }
 
 .product-brochure,
 .contact-us {
-    cursor: pointer;
-    background-color: #fff;
-    border: 0.156rem solid #000;
-    border-radius: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 0.48rem;
-    height: 3.96rem;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
+  cursor: pointer;
+  background-color: #fff;
+  border: 0.156rem solid #000;
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.48rem;
+  height: 3.96rem;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
 }
 
 .product-brochure { width: 14rem; }
@@ -174,14 +200,14 @@
 /* ── Stair spans ── */
 .product-brochure .stair,
 .contact-us .stair {
-    position: absolute;
-    bottom: 0;
-    height: 100%;
-    width: 25%;
-    background: rgba(0, 0, 0, 1);
-    z-index: 1;
-    transform: translateY(101%);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 25%;
+  background: rgba(0, 0, 0, 1);
+  z-index: 1;
+  transform: translateY(101%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product-brochure .stair:nth-child(1),
@@ -211,56 +237,54 @@
 .product-brochure:not(:hover) .stair:nth-child(4),
 .contact-us:not(:hover) .stair:nth-child(4) { transition-delay: 0s; }
 
-/* ── Text ── */
+/* ── Button Text ── */
 .product-brochure span:not(.stair),
 .contact-us span:not(.stair) {
-    font-family: 'NeueHaasDisplayXThin';
-    font-size: 1.08rem;
-    font-weight: 600;
-    letter-spacing: 0.0636rem;
-    color: #000;
-    position: relative;
-    z-index: 2;
-    transition: color 0.3s ease 0.1s;
-    line-height: 100%;
+  font-family: 'NeueHaasDisplayXThin';
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: 0.0636rem;
+  color: #000;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease 0.1s;
+  line-height: 100%;
 }
 
 .product-brochure:hover span:not(.stair),
-.contact-us:hover span:not(.stair) {
-    color: #fff;
-}
+.contact-us:hover span:not(.stair) { color: #fff; }
 
 /* ── SVG arrows ── */
 .product-brochure svg,
 .contact-us svg {
-    height: 1.2rem;
-    width: 1.2rem;
-    position: relative;
-    z-index: 2;
-    color: #000;
-    transition: transform 0.3s ease, color 0.3s ease 0.1s;
+  height: 1.2rem;
+  width: 1.2rem;
+  position: relative;
+  z-index: 2;
+  color: #000;
+  transition: transform 0.3s ease, color 0.3s ease 0.1s;
 }
 
 .product-brochure:hover svg,
 .contact-us:hover svg {
-    transform: translateX(4px);
-    color: #fff;
+  transform: translateX(4px);
+  color: #fff;
 }
 
 /* ── Letter Cascade ── */
 .lc-line {
-    display: inline;
+  display: inline;
 }
 
 .lc-letter {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(16px) rotate(4deg);
-    animation: lc-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(16px) rotate(4deg);
+  animation: lc-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes lc-in {
-    0%   { opacity: 0; transform: translateY(16px) rotate(4deg); }
-    60%  { opacity: 1; transform: translateY(-3px) rotate(-1deg); }
-    100% { opacity: 1; transform: translateY(0) rotate(0deg); }
+  0%   { opacity: 0; transform: translateY(16px) rotate(4deg); }
+  60%  { opacity: 1; transform: translateY(-3px) rotate(-1deg); }
+  100% { opacity: 1; transform: translateY(0) rotate(0deg); }
 }

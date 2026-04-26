@@ -1,196 +1,244 @@
+/* ══════════════════════════════════════
+   KEYFRAME ANIMATIONS
+══════════════════════════════════════ */
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-60px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeScaleIn {
+  from { opacity: 0; transform: scale(0.75); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════════════
+   HEADER
+══════════════════════════════════════ */
+
 .header-section {
-    height: fit-content;
-    width: 100%;
-    background-color: transparent;
-    position: absolute;
-    z-index: 2;
+  height: fit-content;
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
+  z-index: 2;
+  animation: slideDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .header-section-wrapper {
-    height: fit-content;
-    justify-content: space-between;
-    align-items: center;
-    padding-block-start: 2.4rem;
-    padding-inline: 2.52rem;
-    display: flex;
-    position: relative;
+  height: fit-content;
+  justify-content: space-between;
+  align-items: center;
+  padding-block-start: 2.4rem;
+  padding-inline: 2.52rem;
+  display: flex;
+  position: relative;
 }
 
+/* ══════════════════════════════════════
+   LEFT — Logo
+══════════════════════════════════════ */
+
 .header-section-left {
-    height: fit-content;
-    width: fit-content;
+  height: fit-content;
+  width: fit-content;
+  animation: fadeScaleIn 0.6s 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 .header-section-left-img {
-    width: 8.4rem !important;
-    height: 1.2rem !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* required for Next.js fill Image */
+  width: 8.4rem !important;
+  height: 1.2rem !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .header-section-left-img img {
-    width: 100%;
-    height: 100%;
-    position: static !important;
+  width: 100%;
+  height: 100%;
+  position: static !important;
 }
 
-/* center-navlinks-at navbar */
+/* Logo — white (default, no filter) */
+/* Logo — black (invert) */
+.logo-black {
+  filter: brightness(0) !important;
+}
+
+/* ══════════════════════════════════════
+   CENTER — Nav Links
+══════════════════════════════════════ */
+
 .header-section-center {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%);
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
 }
 
 .nav-links {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    column-gap: 1.8rem;
-    width: fit-content;
-    height: fit-content;
-    display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1.8rem;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
 }
 
 .nav-links li {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
+
+/* Staggered animations */
+.nav-links li:nth-child(1) { animation: fadeUp 0.45s 0.40s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.nav-links li:nth-child(2) { animation: fadeUp 0.45s 0.48s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.nav-links li:nth-child(3) { animation: fadeUp 0.45s 0.56s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.nav-links li:nth-child(4) { animation: fadeUp 0.45s 0.64s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.nav-links li:nth-child(5) { animation: fadeUp 0.45s 0.72s cubic-bezier(0.16, 1, 0.3, 1) both; }
 
 .nav-links li a {
-    text-decoration: none;
-    color: white;
-    font-family: 'NeueHaasGroteskLight';
-    font-size: 1.14rem;
-    line-height: 100%;
-    position: relative;
+  text-decoration: none;
+  font-family: "NeueHaasGroteskLight";
+  font-size: 1.14rem;
+  line-height: 100%;
+  position: relative;
 }
 
+/* Underline */
 .nav-links li a::after {
-    content: '';
-    position: absolute;
-    bottom: -0.36rem;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: white;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  content: "";
+  position: absolute;
+  bottom: -0.36rem;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-links li a:hover::after {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
-/* ── RIGHT SECTION ── */
+/* Active underline — li pe class taaki nth-child override na kare */
+.nav-links li.active-li a::after {
+  transform: scaleX(1) !important;
+}
+
+/* WHITE text */
+.nav-link-white { color: white; }
+.nav-link-white::after { background-color: white; }
+
+/* BLACK text */
+.nav-link-black { color: black; }
+.nav-link-black::after { background-color: black; }
+
+/* ══════════════════════════════════════
+   RIGHT SECTION
+══════════════════════════════════════ */
+
 .header-section-right {
-    display: flex;
-    align-items: center;
-    column-gap: 2.4rem;
+  display: flex;
+  align-items: center;
+  column-gap: 2.4rem;
+  animation: fadeScaleIn 0.6s 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
-/* Language Selector */
 .lang-selector {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.48rem;
-    cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.48rem;
+  cursor: pointer;
 }
 
 .lang-dropdown {
-    position: absolute;
-    top: 2.4rem;
-    right: 0;
-    background-color: white;
-    border-radius: 0.6rem;
-    padding: 0.6rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.1);
-    z-index: 10;
+  position: absolute;
+  top: 2.4rem;
+  right: 0;
+  background-color: white;
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
 .lang-option {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.36rem 0.72rem;
-    cursor: pointer;
-    border-radius: 0.36rem;
-    font-size: 0.96rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.36rem 0.72rem;
+  cursor: pointer;
+  border-radius: 0.36rem;
+  font-size: 0.96rem;
 }
 
 .lang-option:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-.flag-icon {
-    width: 1.44rem !important;
-    height: 1.44rem !important;
-    border-radius: 50%;
-    object-fit: cover;
+.lang-text-white {
+  color: white;
+  font-family: "NeueHaasGroteskLight";
+  font-size: 1.14rem;
+  line-height: 100%;
 }
 
-.lang-text {
-    color: white;
-    font-family: 'NeueHaasGroteskLight';
-    font-size: 1.14rem;
-    line-height: 100%;
+.lang-text-black {
+  color: black;
+  font-family: "NeueHaasGroteskLight";
+  font-size: 1.14rem;
+  line-height: 100%;
 }
 
-.lang-arrow {
-    color: white;
-    font-size: 0.84rem;
-    line-height: 100%;
+/* Hamburger — white */
+.hamburger-white {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.36rem;
+  cursor: pointer;
 }
 
-.hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 0.36rem;
-    cursor: pointer;
+.hamburger-white span {
+  display: block;
+  width: 1.8rem;
+  height: 0.12rem;
+  background-color: white;
+  border-radius: 0.12rem;
 }
 
-.hamburger span {
-    display: block;
-    width: 1.8rem;
-    height: 0.12rem;
-    background-color: white;
-    border-radius: 0.12rem;
+/* Hamburger — black */
+.hamburger-black {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.36rem;
+  cursor: pointer;
 }
 
-/* ── DARK THEME (for /coretech routes) ── */
-.nav-link-dark {
-    color: black !important;
-}
-
-.nav-link-dark::after {
-    background-color: black !important;
-}
-
-.img-dark {
-    filter: brightness(0) !important;
-}
-
-.lang-text-dark {
-    color: black !important;
-}
-
-.lang-arrow-dark {
-    color: black !important;
-}
-
-.hamburger-dark span {
-    background-color: black !important;
+.hamburger-black span {
+  display: block;
+  width: 1.8rem;
+  height: 0.12rem;
+  background-color: black;
+  border-radius: 0.12rem;
 }

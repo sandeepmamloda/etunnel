@@ -1,0 +1,96 @@
+.herobiometric-section {
+    height: 90svh;
+    width: 100%;
+    background-color: black;
+}
+
+.herobiometric-section-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.herobiometric-section-wrapper .herobiometric-section-img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.herobiometric-section-wrapper .herobiometric-section-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.herobiometric-section-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(49.45% 49.45% at 49.04% 45.2%, rgba(0, 0, 0, 0.2) 0%, #000000 100%);
+    z-index: 1;
+}
+
+.herobiometric-section-text-wrapper {
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1.44rem;
+    display: flex;
+    position: absolute;
+    bottom: 2.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 70%;
+    min-width: 70%;
+}
+
+.herobiometric-section-text-wrapper h1 {
+    font-size: 2.64rem;
+    font-family: 'NeueHaasGroteskLight';
+    color: #fff;
+    line-height: 100%;
+    font-weight: normal;
+}
+
+.herobiometric-section-text-wrapper p {
+    font-family: 'NeueHaasGroteskLight';
+    font-size: 1.08rem;
+    letter-spacing: 0.048rem !important;
+    color: #fff;
+}
+
+.download-brocher {
+    position: relative;
+    border-radius: 6rem;
+    width: 19.2rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.2rem;
+    background: transparent;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.download-brocher::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 0.12rem;
+    border-radius: 6rem;
+    background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.download-brocher span {
+    color: white;
+    font-family: 'NeueHaasGroteskLight';
+    font-size: 1.08rem;
+    line-height: 100%;
+    letter-spacing: 0.06rem;
+}

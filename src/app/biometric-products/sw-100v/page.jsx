@@ -11,6 +11,7 @@ const sw100v=function(){
               title="ETUNNEL"
               highlight="SW-100V"
               description="An embedded finger vein authentication module optimized for managing mobile software wallets through biometric authentication. Wireless, portable, and built for digital asset security."
+              brochureUrl="/brochures/sw-100v.pdf"
             />
             <Securitytechnology/>
             <ConvenienceReliability
