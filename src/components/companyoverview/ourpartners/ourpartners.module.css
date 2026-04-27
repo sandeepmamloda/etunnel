@@ -38,3 +38,21 @@
     line-height:100%;
     letter-spacing:0.06rem;
 }
+/* ---------------------responsive------------------------ */
+
+@media  screen and (max-width:1730px){
+    .ourpartners-wrapper{
+        max-width:90rem;
+    }
+}
+@media  screen and (max-width:1360px){
+    .ourpartners-wrapper{
+        max-width:75rem;
+    }
+    .ourpartners-wrapper .ourpartners-top h2{
+        font-size:2.2rem;
+    }
+    .ourpartners-wrapper .ourpartners-top p{
+        font-size:0.8rem;
+    }
+}

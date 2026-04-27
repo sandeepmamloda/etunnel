@@ -1,7 +1,5 @@
 .tagsbar-section {
   width: 100%;
-  max-width:120rem;
-  margin-inline:auto;
   background-color: #ffffff;
 }
 
@@ -16,9 +14,9 @@
 }
 
 .tagsbar-wrapper {
-  max-width: 100%;
-  /* margin: 0 auto; */
-  padding: 2.64rem 7.44rem;
+  max-width: 106.4rem;
+  margin: 0 auto;
+  padding: 2.64rem 1rem;
   overflow: hidden;
 }
 
@@ -48,4 +46,19 @@
 
 .tagsbar-img {
   object-fit: contain;
+}
+
+/* --------------------------------------------responsive----------------------------------------- */
+@media screen and (max-width: 1730px) { 
+    .tagsbar-wrapper{
+        max-width:90rem;
+    }
+}
+@media screen and (max-width: 1360px) { 
+    .tagsbar-wrapper{
+        max-width:75rem;
+    }
+    .tagsbar-section h2{
+       font-size:1.6rem;
+    }
 }

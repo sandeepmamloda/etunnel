@@ -290,3 +290,100 @@
         font-size: 1.24rem;
     }
 }
+
+/* --------------------------Mobile-------------------------- */
+@media screen and (max-width: 599px) {
+
+  .newsmidia-wrapper {
+    max-width: 100%;
+    padding-inline: 1.6rem;
+    padding-block-start: 4rem;
+    margin-bottom: 6rem;
+  }
+
+  /* ✅ Top section */
+  .newsmidia-top {
+    padding-block-end: 1.6rem;
+  }
+
+  .newsmidia-top .newsmidia-top-tcontent > h2 {
+    font-size: 2.4rem;
+    letter-spacing: 0.06rem;
+  }
+
+  .newsmidia-top .newsmidia-top-mcontent {
+    flex-direction: column;       /* ✅ p aur button stack ho jayein */
+    row-gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .newsmidia-top .newsmidia-top-mcontent > p:first-child {
+    font-size: 1rem;
+    line-height: 150%;
+  }
+
+  .newsmidia-top-toggle {
+    height: 3rem;
+    width: 13rem;
+  }
+
+  .newsmidia-top-toggle span {
+    font-size: 1rem !important;
+  }
+
+  /* ✅ Bottom grid — single column */
+  .newsmidia-bottom {
+    grid-template-columns: 1fr;   /* ✅ 2 column se 1 column */
+    grid-template-rows: auto;
+    row-gap: 2.4rem;
+    column-gap: 0;
+  }
+
+  /* ✅ Left card */
+  .newsmidia-bottom-left {
+    row-gap: 1rem;
+  }
+
+  .newsmidia-bottom-left-img {
+    height: 28rem;
+  }
+
+  .newsmidia-bottom-left-text-wrapper h4 {
+    font-size: 1.4rem;
+    line-height: 150%;
+  }
+
+  /* ✅ Right section — column mein */
+  .newsmidia-bottom-right {
+    flex-direction: column;
+    row-gap: 2.4rem;
+  }
+
+  /* ✅ Right top */
+  .newsmidia-bottom-right-top {
+    row-gap: 1rem;
+  }
+
+  .newsmidia-bottom-right-top-img {
+    height: 22rem;
+  }
+
+  .newsmidia-bottom-right-top-text h4 {
+    font-size: 1.4rem;
+    line-height: 150%;
+  }
+
+  /* ✅ Right bottom */
+  .newsmidia-bottom-right-bottom {
+    row-gap: 1rem;
+  }
+
+  .newsmidia-bottom-right-bottom-img {
+    height: 22rem;
+  }
+
+  .newsmidia-bottom-right-bottom-text h4 {
+    font-size: 1.4rem;
+    line-height: 150%;
+  }
+}

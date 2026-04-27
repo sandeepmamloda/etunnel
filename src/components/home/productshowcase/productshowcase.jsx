@@ -13,7 +13,6 @@ const Productshowcase = function () {
   const textRef = useRef(null);
   const accordionRef = useRef(null);
   const imageRef = useRef(null);
-
   // Accordion logic
   useEffect(() => {
     const sections = ["p2n2", "fva", "kisa"];

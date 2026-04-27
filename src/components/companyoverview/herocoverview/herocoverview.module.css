@@ -1,5 +1,5 @@
 .herocoverview-section{
-    height:50.4rem;
+    height:100svh;
     width:100%;
     background-color:black;
 }
@@ -37,9 +37,11 @@
     row-gap: 0.5rem;
     display: flex;
     position: absolute;
-    bottom: 2.4rem;
+    bottom: 2.8vw;
     left: 50%;
     transform: translateX(-50%);
+    min-width:70%;
+        max-width:70%;
 }
 .herocoverview-section-text-wrapper h1{
     font-size:2.64rem;
@@ -86,4 +88,24 @@
     font-size: 1.07rem;
     line-height:100%;
     letter-spacing:0.05rem;
+}
+/* ----------------------------------responsive----------------------------- */
+
+@media screen and (max-width:1800px) {
+    
+}
+@media screen and (max-width:1360px){
+    .herocoverview-section-text-wrapper h1 {
+        font-size: 2.44rem;
+    }
+    .download-brocher {
+        width: 14rem;
+        height: 2.7rem;
+        margin-top: 1.8rem;
+    }
+    .download-brocher span {
+        font-family: 'NeueHaasGroteskLight';
+        font-size: 0.9rem;
+        letter-spacing: 0;
+    }
 }

@@ -1,7 +1,7 @@
 .authentication-wrapper{
     height:fit-content;
     width:100%;
-    max-width:106.4rem;
+    max-width:100%;
     margin-inline:auto;
     padding-inline:2rem;
     padding-block-end:6rem;
@@ -49,7 +49,44 @@
 .authentication-bottom .img{
     height:100%!important;
     width:100%!important;
-    object-fit:cover;
+    object-fit:contain;
     object-position:center;
     position:static!important;
+}
+/* -------------------------responsive------------------------- */
+@media  screen and (max-width:1730px){
+    .authentication-wrapper{
+        row-gap:2rem;
+        max-width:100%;
+    }
+    .coretechnology-left{
+        height:36rem;
+    }
+    .coretechnology-right{
+        height:36rem;
+    }
+    .authentication-wrapper .authentication-top h2{
+        font-size:2.2rem;
+    }
+    .authentication-wrapper .authentication-top p{
+        font-size:0.8rem;
+    }
+}
+@media  screen and (max-width:1360px){
+    .authentication-wrapper{
+        row-gap:2rem;
+        max-width:100%;
+    }
+    .coretechnology-left{
+        height:36rem;
+    }
+    .coretechnology-right{
+        height:36rem;
+    }
+    .authentication-wrapper .authentication-top h2{
+        font-size:2.2rem;
+    }
+    .authentication-wrapper .authentication-top p{
+        font-size:0.8rem;
+    }
 }
