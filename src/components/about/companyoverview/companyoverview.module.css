@@ -151,7 +151,45 @@
     .companyoverview-img{
         height: 42rem;
     }
+}
+@media screen and (max-width:1600px) {
     .companyoverview-img{
-        height: 38rem;
+        height: 35rem;
+    }
+}
+@media screen and (max-width:1360px) {
+    .companyoverview-img{
+        height: 32rem;
+    }
+    .companyoverview-img-overlay-text{
+        row-gap: 1.8rem;
+    }
+    .companyoverview-img-overlay-text-top{
+        row-gap: 1.2rem;
+    }
+    .companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-1 h4{
+        font-size: 0.8rem;
+    }
+    
+    .companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-1 h2{
+        font-size: 2.2rem;
+    }
+    .companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-2 h3{
+        font-size: 1.24rem;
+    }
+    .companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-2{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.2rem;
+    }
+    .companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-2-inner p{
+        font-size: 0.8rem;
+    }
+    .companyoverview-img-overlay-text-bottom {
+        width: 8rem;
+        height: 2.7rem;
+    }
+    .companyoverview-img-overlay-text-bottom P{
+        font-size:0.9rem;
     }
 }

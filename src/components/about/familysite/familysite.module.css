@@ -154,6 +154,58 @@
 }
 @media screen and (max-width:1600px) {
     .familysite-img{
-        height: 38rem;
+        height: 35rem;
+    }
+}
+@media screen and (max-width:1360px) {
+    .familysite-img{
+        height: 32rem;
+    }
+    .familysite-img-overlay-text{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.8rem;
+    }
+    .familysite-img-overlay-text-top{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.2rem;
+    }
+    .familysite-img-overlay-text-top .familysite-img-overlay-text-top-1 h3{
+        font-size: 0.8rem;
+        line-height: 100%;
+        color: white;
+        font-family: 'NeueHaasGroteskLight2';
+        letter-spacing: 0.06rem;
+        font-weight:normal;
+    }
+    
+    .familysite-img-overlay-text-top .familysite-img-overlay-text-top-1 h2{
+        font-size: 2.2rem;
+        line-height: 100%;
+        color: white;
+        font-family: 'NeueHaasGroteskLight2';
+        font-weight:normal;
+    }
+    .familysite-img-overlay-text-top .familysite-img-overlay-text-top-2{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.2rem;
+    }
+    
+    .familysite-img-overlay-text-top .familysite-img-overlay-text-top-2 p{
+        font-size: 0.8rem;
+        color: #fff;
+        line-height: 100%;
+        font-family: 'NeueHaasGroteskLight2';
+        letter-spacing: 0.084rem;
+        font-weight: 100;
+    }
+    .familysite-img-overlay-text-bottom {
+        width: 8rem;
+        height: 2.7rem;
+    }
+    .familysite-img-overlay-text-bottom span{
+        font-size:0.9rem;
     }
 }

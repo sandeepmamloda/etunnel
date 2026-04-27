@@ -25,13 +25,13 @@ const About = () => {
 
     gsap.to(cards[i - 1], {
       scale: 0.85,
-      y: "-5vh",
+      y: "0",
       borderRadius: "2vw",
       ease: "none",
       scrollTrigger: {
         trigger: card,
-        start: "top 90%",
-        end: "top 20%",
+        start: "top bottom",
+        end: "top top",
         scrub: 1.5,
       },
     })

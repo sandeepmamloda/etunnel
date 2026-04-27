@@ -4,7 +4,7 @@ import styles from "./companyhistory.module.css";
 
 const Companyhistory = () => {
   return (
-    <div className={styles["companyhistory-wrapper"]}>
+    <section className={styles["companyhistory-wrapper"]}>
       <div className={styles["companyhistory-img"]}>
         <Image
           src="/images/about/companyhistory/companyhistory.jpg"
@@ -37,7 +37,7 @@ const Companyhistory = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
