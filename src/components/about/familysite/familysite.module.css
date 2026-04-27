@@ -152,3 +152,8 @@
         height: 42rem;
     }
 }
+@media screen and (max-width:1600px) {
+    .familysite-img{
+        height: 38rem;
+    }
+}
