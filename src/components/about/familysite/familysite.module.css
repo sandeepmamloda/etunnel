@@ -146,3 +146,9 @@
     letter-spacing: 0.036rem;
     margin: 0;                       /* Extra margin hataya */
 }
+/* -------------------responsive----------------------- */
+@media screen and (max-width:1800px) {
+    .familysite-img{
+        height: 42rem;
+    }
+}

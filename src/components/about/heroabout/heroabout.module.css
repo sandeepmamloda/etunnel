@@ -1,5 +1,5 @@
 .heroabout-section {
-    height: 50.4rem;
+    height: 100svh;
     width: 100%;
     background-color: black;
 }
@@ -41,7 +41,7 @@
     row-gap: 0.48rem;
     display: flex;
     position: absolute;
-    bottom: 2.4rem;
+    bottom: 2.8vw;
     left: 50%;
     transform: translateX(-50%);
 }

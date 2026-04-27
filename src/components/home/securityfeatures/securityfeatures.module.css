@@ -144,7 +144,7 @@
 }
 
 .security-feature-cart:nth-child(1) {
-    height: 36rem;
+    /* height: 36rem; */
     flex: 1;
     background: rgba(0, 0, 0, 1);
     border-radius: 0.96rem;
@@ -207,7 +207,7 @@
 
 /* -----------2---------------- */
 .security-feature-cart:nth-child(2) {
-    height: 36rem;
+    /* height: 36rem; */
     flex: 1;
     background: rgba(0, 0, 0, 1);
     border-radius: 0.96rem;
@@ -280,7 +280,7 @@
 
 /* ---------3---------------- */
 .security-feature-cart:nth-child(3) {
-    height: 36rem;
+    /* height: 36rem; */
     flex: 1;
     background: rgba(0, 0, 0, 1);
     border-radius: 0.96rem;
@@ -361,7 +361,7 @@
 
 /* ---------4---------------- */
 .security-feature-cart:nth-child(4) {
-    height: 36rem;
+    /* height: 36rem; */
     flex: 1;
     background: rgba(0, 0, 0, 1);
     border-radius: 0.96rem;
@@ -440,80 +440,59 @@
     object-position: center;
     position: static !important;
 }
-@media (max-width: 1810px) {
-     .security-feature-wrapper{
-        max-width:85rem;
-        padding:1rem;
-     }
-     .security-feature-wrapper .security-feature-top .security-feature-top-tcontent p {
-        letter-spacing: 0.096rem;
-        font-size: 2rem;
+/* -----------------------------------------------responsive---------------------------------- */
+@media screen and (max-width: 1730px) { 
+    .security-feature-wrapper{
+        max-width:90rem;
     }
-    .security-feature-wrapper .security-feature-top .security-feature-top-mcontent p {
-        font-size: 0.9rem;
+    .security-feature-cart{
+        height:31rem;
     }
-    .toggle-link{
-        font-size:0.8rem;
+}
+@media screen and (max-width: 1360px) { 
+    .security-feature-wrapper{
+        max-width:75rem;
+        padding-block-start:2.2rem;
     }
-    .security-feature-wrapper-toggle {
-        height: 2.6rem;
-        width: 12rem;
+    .security-feature-wrapper .security-feature-top .security-feature-top-tcontent h2 {
+        font-size: 2.2rem;
     }
-    .security-feature-wrapper-toggle p{
-        font-size:1rem!important;
+    .security-feature-wrapper .security-feature-top .security-feature-top-mcontent>p {
+        font-size: 0.8rem;
     }
-     /* ---------------1-------------- */
-     .security-feature-wrapper .security-feature-cart:first-child{
-        height:30rem;
-     }      
-     .security-feature-cart:nth-child(1) .security-feature-cart-top p {
-         font-size: 1.3rem;
-         letter-spacing: 0.084rem;
-     }  
-     .security-feature-cart:nth-child(1) .security-feature-cart-top div span {
-         font-family: 'NeueHaasDisplayThin';
-         font-size: 0.85rem;
-         line-height:140%;
-     }
-     /* -------------------2--------------------- */
-     .security-feature-wrapper .security-feature-cart:nth-child(2){
-        height:30rem;
-     }      
-     .security-feature-cart:nth-child(2) .security-feature-cart-top p {
-         font-size: 1.3rem;
-         letter-spacing: 0.084rem;
-     }  
-     .security-feature-cart:nth-child(2) .security-feature-cart-top div span {
-         font-family: 'NeueHaasDisplayThin';
-         font-size: 0.85rem;
-         line-height:140%;
-     }
-     /* -------------------3--------------------- */
-     .security-feature-wrapper .security-feature-cart:nth-child(3){
-        height:30rem;
-     }      
-     .security-feature-cart:nth-child(3) .security-feature-cart-top p {
-         font-size: 1.3rem;
-         letter-spacing: 0.084rem;
-     }  
-     .security-feature-cart:nth-child(3) .security-feature-cart-top div span {
-         font-family: 'NeueHaasDisplayThin';
-         font-size: 0.85rem;
-         line-height:140%;
-     }
-
-     /* -------------------4--------------------- */
-     .security-feature-wrapper .security-feature-cart:nth-child(4){
-        height:30rem;
-     }      
-     .security-feature-cart:nth-child(4) .security-feature-cart-top p {
-         font-size: 1.3rem;
-         letter-spacing: 0.084rem;
-     }  
-     .security-feature-cart:nth-child(4) .security-feature-cart-top div span {
-         font-family: 'NeueHaasDisplayThin';
-         font-size: 0.85rem;
-         line-height:140%;
-     }
-
+    .security-feature-wrapper-toggle{
+        height:2.7rem;
+        width:12rem;
+        border-radius:2.7rem;
+    }    
+    .toggle-link {
+        font-size: 0.8rem !important;
+    }
+    .security-feature-cart{
+        height:28rem;
+    }
+    .security-feature-cart:nth-child(1) .security-feature-cart-top  h3{
+        font-size: 1.24rem;
+    }
+    .security-feature-cart:nth-child(1) .security-feature-cart-top div p {
+        font-size: 0.8rem;
+    }
+    .security-feature-cart:nth-child(2) .security-feature-cart-top  h3{
+        font-size: 1.24rem;
+    }
+    .security-feature-cart:nth-child(2) .security-feature-cart-top div p {
+        font-size: 0.8rem;
+    }
+    .security-feature-cart:nth-child(3) .security-feature-cart-top  h3{
+        font-size: 1.24rem;
+    }
+    .security-feature-cart:nth-child(3) .security-feature-cart-top div p {
+        font-size: 0.8rem;
+    }
+    .security-feature-cart:nth-child(4) .security-feature-cart-top  h3{
+        font-size: 1.24rem;
+    }
+    .security-feature-cart:nth-child(4) .security-feature-cart-top div p {
+        font-size: 0.8rem;
+    }
 }

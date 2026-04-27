@@ -139,7 +139,7 @@
 .productshowcase-wrapper-toggle span {
     font-size: 1.08rem !important;
     line-height: 160%;
-    font-family: 'NeueHaasDisplayXXThin' !important;
+    font-family: 'NeueHaasDisplayXThin' !important;
     font-weight: 600;
     letter-spacing: 0.06rem !important;
 }
@@ -269,4 +269,49 @@
 /* rotate 45deg to become X when active */
 .rotate {
     transform: rotate(45deg);
+}
+/* --------------------------responsive-------------------------- */
+@media screen and (max-width: 1730px) { 
+    .productshowcase-wrapper{
+        max-width:90rem;
+        padding-block-start: 8.32rem;
+    }
+}
+@media screen and (max-width: 1360px) { 
+    .productshowcase-wrapper{
+        max-width:75rem;
+        column-gap:4rem;
+    }
+    .productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p:first-child {
+        font-size: 2.2rem;
+    }
+    
+    .productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p:last-child {
+        font-size: 0.8rem;
+    }
+    .p2n2 .header h3 {
+        font-size: 1.24rem;
+    }
+    .p2n2 .body p {
+        font-size: 0.8rem;
+    }
+    .finger-vein-authentication .header h3 {
+        font-size: 1.24rem;
+    }
+    .finger-vein-authentication .body p {
+        font-size: 0.8rem;
+    }
+    .kisa-certification .header h3{
+        font-size: 1.24rem;
+    }
+    .kisa-certification .body p{
+        font-size: 0.8rem;
+    }
+    .productshowcase-wrapper-toggle{
+        min-height:2.7rem;
+        width:10rem;
+    }
+    .productshowcase-wrapper-toggle span{
+        font-size:0.8rem!important;
+    }
 }

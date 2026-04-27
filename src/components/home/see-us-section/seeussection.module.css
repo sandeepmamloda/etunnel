@@ -68,3 +68,32 @@
     object-position: 100% 50%;
     position: static !important;
 }
+/* -------------------------------responsive---------------------------------- */
+@media screen and (max-width: 1730px) { 
+    .seeussection-wrapper{
+        max-width:90rem;
+    }
+}
+@media screen and (max-width: 1360px) { 
+    .seeussection-wrapper{
+        max-width:75rem;
+        padding-block-start: 10rem;
+    }
+    .seeussection-wrapper-text-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .seeussection-wrapper-text-content p{
+        font-size: 0.8rem;
+    }
+    .seeussection-wrapper-video {
+        height: 28.6rem;
+    }
+    .seeussection-wrapper-video .play-button {
+        height: 6rem;
+        width: 6rem;
+    }
+    .seeussection-wrapper-video .play-button p {
+        font-size: 1.36rem;
+    }
+}

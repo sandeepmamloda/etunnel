@@ -135,3 +135,9 @@
     line-height: 100%;
     letter-spacing: 0.036rem;
 }
+/* -------------------responsive----------------------- */
+@media screen and (max-width:1800px) {
+    .companyhistory-img{
+        height: 42rem;
+    }
+}

@@ -34,7 +34,8 @@
     row-gap: 1.3rem;
     display: flex;
     position: absolute;
-    bottom: 7.2rem;
+    /* bottom: 7.2rem; */
+    bottom: 6vw;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -118,4 +119,60 @@
     font-size: 1.056rem;
     line-height: 100%;
     letter-spacing: 0.072rem;
+}
+/* -----------------------------------responsive------------------------------------ */
+@media screen and (max-width: 1360px) { 
+    .hero-section-text-wrapper{
+        row-gap:0.8rem;
+        max-width: 60rem;
+    }
+    .hero-section-text-wrapper h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section-text-wrapper p {
+        font-size: 0.76rem;
+    }
+    .request-a-demo {
+        width: 10rem;
+        height: 2.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1.5rem;
+        background: transparent;
+        z-index: 1;
+    }
+    
+    .request-a-demo::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 0.12rem;
+        border-radius: 6rem;
+        background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: -1;
+    }
+    
+    /* ✅ Link tag ke andar span */
+    .request-a-demo a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+    }
+    
+    .request-a-demo span {
+        color: white;
+        font-family: 'NeueHaasGroteskLight';
+        font-size: 0.856rem;
+        line-height: 100%;
+        letter-spacing: 0.072rem;
+    }
 }
