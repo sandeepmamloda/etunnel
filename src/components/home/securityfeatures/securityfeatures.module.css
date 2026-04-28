@@ -519,6 +519,11 @@
     }
 }
 @media screen and (max-width: 600px) {
+    .security-feature-wrapper .security-feature-top .security-feature-top-tcontent h2 {
+        font-size: 1.8rem;
+        letter-spacing: 0.066rem;
+        line-height: 130%;
+    }
     .security-feature-cart {
         min-width: 100%;
         scroll-snap-align: start;
