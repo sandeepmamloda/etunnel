@@ -148,7 +148,7 @@
 }
 @media screen and (max-width:1360px) {
     .companyhistory-img{
-        height: 32rem;
+        height: 70svh;
     }
     .companyhistory-img-overlay-text{
         display: flex;
@@ -196,13 +196,14 @@
         font-size:0.9rem;
     }
 }
-@media screen and (max-width:730px) {
-    .companyhistory-img{
-        height: 70svh;
-    }
-}
 @media screen and (max-width:600px) {
     .companyhistory-img{
         height: 90svh;
+    }
+    .companyhistory-img-overlay-text-top .companyhistory-img-overlay-text-top-1 h2{
+        font-size: 1.6rem;
+    }
+    .companyhistory-img-overlay{
+        padding:1.2rem;
     }
 }

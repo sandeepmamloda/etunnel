@@ -159,7 +159,7 @@
 }
 @media screen and (max-width:1360px) {
     .companyoverview-img{
-        height: 32rem;
+        height: 70svh;
     }
     .companyoverview-img-overlay-text{
         row-gap: 1.8rem;
@@ -193,13 +193,18 @@
         font-size:0.9rem;
     }
 }
-@media screen and (max-width:730px) {
-    .companyoverview-img{
-        height: 70svh;
-    }
-}
 @media screen and (max-width:600px) {
     .companyoverview-img{
         height: 90svh;
+    }
+    .companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-1 h2{
+        font-size: 1.6rem;
+    }
+    .companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-2 h3{
+        font-size: 1rem;
+        line-height:130%;
+    }
+    .companyoverview-img-overlay{
+        padding:1.2rem;
     }
 }

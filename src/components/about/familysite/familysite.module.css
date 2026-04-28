@@ -159,7 +159,7 @@
 }
 @media screen and (max-width:1360px) {
     .familysite-img{
-        height: 32rem;
+        height: 70svh;
     }
     .familysite-img-overlay-text{
         display: flex;
@@ -209,13 +209,14 @@
         font-size:0.9rem;
     }
 }
-@media screen and (max-width:730px) {
-    .familysite-img{
-        height:70svh;
-    }
-}
 @media screen and (max-width:600px) {
     .familysite-img{
         height:90svh;
+    }
+    .familysite-img-overlay-text-top .familysite-img-overlay-text-top-1 h2{
+        font-size: 1.6rem;
+    }
+    .familysite-img-overlay{
+        padding:1.2rem;
     }
 }
