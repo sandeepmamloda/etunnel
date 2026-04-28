@@ -107,6 +107,10 @@
         padding-block-start: 6rem;
         row-gap: 1.2rem;
     }
+    .seeussection-wrapper-text-content h2 {
+        font-size: 1.8rem;
+        letter-spacing: 0.03rem;
+    }
     .seeussection-wrapper-video {
         height: 30rem;
         width: 100%;

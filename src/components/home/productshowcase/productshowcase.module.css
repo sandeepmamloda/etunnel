@@ -467,6 +467,7 @@
 
     .productshowcase-wrapper .productshowcase-left .productshowcase-text-wrapper p:first-child {
         font-size: 1.5rem;
+        letter-spacing:0.06rem;
     }
 
     .p2n2 .header h3,
