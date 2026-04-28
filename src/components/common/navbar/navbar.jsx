@@ -52,12 +52,12 @@ const ArrowIcon = ({ isWhite }) => (
 const Navbar = function () {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState({
     code: "EN",
     component: <FlagEN />,
   });
 
-  // ✅ Server pe hamesha false (black) — client pe mount ke baad update
   const [isWhite, setIsWhite] = useState(false);
 
   useEffect(() => {
@@ -65,7 +65,22 @@ const Navbar = function () {
       route === "/" ? pathname === "/" : pathname.startsWith(route)
     );
     setIsWhite(white);
-  }, [pathname]); // pathname change hone pe update hoga
+  }, [pathname]);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
 
   const languages = [
     { code: "EN", component: <FlagEN /> },
@@ -78,95 +93,129 @@ const Navbar = function () {
   };
 
   return (
-    <header className={styles["header-section"]}>
-      <div className={styles["header-section-wrapper"]}>
+    <>
+      <header className={styles["header-section"]}>
+        <div className={styles["header-section-wrapper"]}>
 
-        {/* LEFT — Logo */}
-        <div className={styles["header-section-left"]}>
-          <Link
-            href="/"
-            className={`${styles["header-section-left-img"]} ${
-              !isWhite ? styles["logo-black"] : ""
-            }`}
-          >
-            <Image src="/images/logo.png" fill={true} alt="Logo" />
-          </Link>
-        </div>
-
-        {/* CENTER — Nav Links */}
-        <nav className={styles["header-section-center"]}>
-          <ul className={styles["nav-links"]}>
-            {navLinks.map((link) => (
-              <li
-                key={link.href}
-                className={isActive(link.href) ? styles["active-li"] : ""}
-              >
-                <Link
-                  href={link.href}
-                  className={
-                    isWhite
-                      ? styles["nav-link-white"]
-                      : styles["nav-link-black"]
-                  }
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        {/* RIGHT — Language + Hamburger */}
-        <div className={styles["header-section-right"]}>
-
-          {/* Language Selector */}
-          <div
-            className={styles["lang-selector"]}
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {selectedLang.component}
-            <span
-              className={
-                isWhite ? styles["lang-text-white"] : styles["lang-text-black"]
-              }
+          {/* LEFT — Logo */}
+          <div className={styles["header-section-left"]}>
+            <Link
+              href="/"
+              className={`${styles["header-section-left-img"]} ${
+                !isWhite ? styles["logo-black"] : ""
+              }`}
             >
-              {selectedLang.code}
-            </span>
-            <ArrowIcon isWhite={isWhite} />
+              <Image src="/images/logo.png" fill={true} alt="Logo" />
+            </Link>
+          </div>
 
-            {isOpen && (
-              <div className={styles["lang-dropdown"]}>
-                {languages.map((lang) => (
-                  <div
-                    key={lang.code}
-                    className={styles["lang-option"]}
-                    onClick={() => {
-                      setSelectedLang(lang);
-                      setIsOpen(false);
-                    }}
+          {/* CENTER — Nav Links (desktop only) */}
+          <nav className={styles["header-section-center"]}>
+            <ul className={styles["nav-links"]}>
+              {navLinks.map((link) => (
+                <li
+                  key={link.href}
+                  className={isActive(link.href) ? styles["active-li"] : ""}
+                >
+                  <Link
+                    href={link.href}
+                    className={
+                      isWhite
+                        ? styles["nav-link-white"]
+                        : styles["nav-link-black"]
+                    }
                   >
-                    {lang.component}
-                    <span>{lang.code}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-          {/* Hamburger */}
-          <div
-            className={`${styles["hamburger"]} ${
-              isWhite ? styles["hamburger-white"] : styles["hamburger-black"]
-            }`}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          {/* RIGHT — Language + Hamburger */}
+          <div className={styles["header-section-right"]}>
 
+            {/* Language Selector */}
+            <div
+              className={styles["lang-selector"]}
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {selectedLang.component}
+              <span
+                className={
+                  isWhite ? styles["lang-text-white"] : styles["lang-text-black"]
+                }
+              >
+                {selectedLang.code}
+              </span>
+              <ArrowIcon isWhite={isWhite} />
+
+              {isOpen && (
+                <div className={styles["lang-dropdown"]}>
+                  {languages.map((lang) => (
+                    <div
+                      key={lang.code}
+                      className={styles["lang-option"]}
+                      onClick={() => {
+                        setSelectedLang(lang);
+                        setIsOpen(false);
+                      }}
+                    >
+                      {lang.component}
+                      <span>{lang.code}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Hamburger */}
+            <button
+              className={`${styles["hamburger"]} ${
+                isWhite ? styles["hamburger-white"] : styles["hamburger-black"]
+              } ${menuOpen ? styles["hamburger-active"] : ""}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={menuOpen}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+          </div>
         </div>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`${styles["mobile-menu"]} ${
+          menuOpen ? styles["mobile-menu-open"] : ""
+        } ${isWhite ? styles["mobile-menu-transparent"] : styles["mobile-menu-white"]}`}
+      >
+        <ul className={styles["mobile-nav-links"]}>
+          {navLinks.map((link, index) => (
+            <li
+              key={link.href}
+              className={`${styles["mobile-nav-item"]} ${
+                menuOpen ? styles["mobile-nav-item-visible"] : ""
+              }`}
+              style={{ transitionDelay: menuOpen ? `${0.08 * index + 0.15}s` : "0s" }}
+            >
+              <Link
+                href={link.href}
+                className={`${styles["mobile-nav-link"]} ${
+                  isActive(link.href) ? styles["mobile-nav-link-active"] : ""
+                } ${isWhite ? styles["mobile-link-white"] : styles["mobile-link-black"]}`}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
-    </header>
+    </>
   );
 };
 

@@ -1,14 +1,15 @@
 .footer-wrapper {
   width: 100%;
-  /* max-width:120rem; */
-  margin:0 auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  /* padding-top: 9vw; */
   border-top: solid 0.12rem rgba(255,255,255,1);
 }
 
-/* ---------------- TOP ---------------- */
+/* ══════════════════════════════════════
+   TOP
+══════════════════════════════════════ */
+
 .footer-top {
   border-bottom: solid 0.12rem rgba(255,255,255,1);
   display: flex;
@@ -39,8 +40,8 @@
   letter-spacing: 0.108rem;
 }
 
-.footer-top-links span:last-child{
-    font-size: 2.4rem;
+.footer-top-links span:last-child {
+  font-size: 2.4rem;
 }
 
 .footer-top-links:hover {
@@ -51,14 +52,16 @@
   color: black;
 }
 
-/* ---------------- BOTTOM ---------------- */
+/* ══════════════════════════════════════
+   BOTTOM
+══════════════════════════════════════ */
 
 .footer-bottom {
   background-color: black;
   color: white;
   padding: 2.4rem 2.4rem 0 2.4rem;
   position: relative;
-  font-family: NeueHaasGroteskLight;  /* ← add */
+  font-family: NeueHaasGroteskLight;
 }
 
 /* 3 COLUMN LAYOUT */
@@ -73,14 +76,16 @@
 .footer-left {
   flex: 1;
   font-size: 1.08rem;
-  font-family: NeueHaasGroteskLight;  /* ← add */
+  font-family: NeueHaasGroteskLight;
   display: flex;
   flex-direction: column;
   gap: 1.68rem;
 }
-.footer-left span{
+
+.footer-left span {
   letter-spacing: 0.096rem;
 }
+
 .footer-left-item {
   display: flex;
   flex-direction: column;
@@ -89,12 +94,12 @@
 
 .footer-left-label {
   font-weight: bold;
-  font-family: NeueHaasGroteskLight;  /* ← add */
+  font-family: NeueHaasGroteskLight;
 }
 
 .footer-left-value {
   font-weight: normal;
-  font-family: NeueHaasGroteskLight;  /* ← add */
+  font-family: NeueHaasGroteskLight;
   line-height: 1;
 }
 
@@ -121,14 +126,16 @@
   flex: 1;
   text-align: right;
   font-size: 1.08rem;
-  font-family: NeueHaasGroteskLight;  /* ← add */
+  font-family: NeueHaasGroteskLight;
   display: flex;
   flex-direction: column;
   gap: 1.68rem;
 }
-.footer-right span{
+
+.footer-right span {
   letter-spacing: 0.096rem;
 }
+
 .footer-right-item {
   display: flex;
   flex-direction: column;
@@ -137,12 +144,12 @@
 
 .footer-right-label {
   font-weight: bold;
-  font-family: NeueHaasGroteskLight;  /* ← add */
+  font-family: NeueHaasGroteskLight;
 }
 
 .footer-right-value {
   font-weight: normal;
-  font-family: NeueHaasGroteskLight;  /* ← add */
+  font-family: NeueHaasGroteskLight;
   line-height: 1.6;
 }
 
@@ -154,21 +161,139 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.96rem;
-  font-family: NeueHaasGroteskLight;  /* ← add */
-  margin-bottom:0.8rem;
+  font-family: NeueHaasGroteskLight;
+  margin-bottom: 0.8rem;
 }
-.footer-bar span{
+
+.footer-bar span {
   letter-spacing: 0.096rem;
   font-family: 'NeueHaasDisplayXThin';
-  font-weight:600;
+  font-weight: 600;
 }
+
 .footer-bar div {
   display: flex;
   gap: 2.4rem;
 }
-/* --------------------------------responsive--------------------------------- */
-@media screen and (max-width:930px) {
-  .footer-wrapper{
-    display:none;
+
+/* ══════════════════════════════════════
+   RESPONSIVE — 1160px se neeche
+══════════════════════════════════════ */
+
+@media screen and (max-width: 1160px) {
+
+  /* Top: 2x2 grid */
+  .footer-top {
+    flex-wrap: wrap;
+  }
+
+  .footer-top-links {
+    flex: 1 1 50%;
+    min-width: 50%;
+    height: 14rem;
+    box-sizing: border-box;
+  }
+
+  /* 1st aur 2nd — dono ke beech border */
+  .footer-top-links:nth-child(1) {
+    border-right: solid 0.12rem rgba(255,255,255,1);
+    border-bottom: solid 0.12rem rgba(255,255,255,1);
+  }
+
+  .footer-top-links:nth-child(2) {
+    border-right: none;
+    border-bottom: solid 0.12rem rgba(255,255,255,1);
+  }
+
+  .footer-top-links:nth-child(3) {
+    border-right: solid 0.12rem rgba(255,255,255,1);
+    border-bottom: none;
+  }
+
+  .footer-top-links:nth-child(4) {
+    border-right: none;
+    border-bottom: none;
+  }
+
+  /* Content: stack vertically, center logo normal flow mein */
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  /* Logo — absolute se normal flow, left aur right ke beech */
+  .footer-center {
+    position: static;
+    transform: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 1.2rem;
+    border-top: solid 0.12rem rgba(255,255,255,0.2);
+    border-bottom: solid 0.12rem rgba(255,255,255,0.2);
+  }
+
+  .footer-logo {
+    width: 22rem !important;
+  }
+
+  /* Right — left-aligned */
+  .footer-right {
+    text-align: left;
+    width: 100%;
+  }
+
+  .footer-left {
+    width: 100%;
+  }
+
+  /* Footer bar — stack on very narrow */
+  .footer-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 2.4rem;
+  }
+
+  .footer-bar div {
+    gap: 1.2rem;
+  }
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — 720px se neeche
+══════════════════════════════════════ */
+
+@media screen and (max-width: 720px) {
+
+  /* Top: single column stack */
+  .footer-top-links {
+    flex: 1 1 100%;
+    min-width: 100%;
+    height: 10rem;
+    border-right: none !important;
+    border-bottom: solid 0.12rem rgba(255,255,255,1) !important;
+  }
+
+  .footer-top-links:last-child {
+    border-bottom: none !important;
+  }
+
+  .footer-top-links span:first-child {
+    font-size: 1.8rem;
+  }
+
+  .footer-top-links span:last-child {
+    font-size: 1.8rem;
+  }
+
+  .footer-bottom {
+    padding: 2rem 1.4rem 0 1.4rem;
+  }
+
+  .footer-logo {
+    width: 16rem !important;
   }
 }
