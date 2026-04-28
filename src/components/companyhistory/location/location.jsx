@@ -21,7 +21,7 @@ const Location = function () {
                             className={styles["location-card-img"]}
                         />
                         
-                        <a    href="https://www.google.com/maps?q=1011-1013+Building+G+H+Business+Park+26+Beopwon-ro+9-gil+Songpa-gu+Seoul+05836+South+Korea"
+                        <a href="https://www.google.com/maps?q=1011-1013+Building+G+H+Business+Park+26+Beopwon-ro+9-gil+Songpa-gu+Seoul+05836+South+Korea"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles["location-card-map-btn"]}

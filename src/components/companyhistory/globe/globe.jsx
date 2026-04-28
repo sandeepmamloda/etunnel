@@ -292,7 +292,7 @@ const Globe = function () {
                 textAlign: 'center',
                 paddingBlock: '2rem',
             }}>
-                <p style={{
+                <p className="globe-desc-text" style={{
                     fontSize: '1.4rem',
                     fontFamily: 'NeueHaasDisplayXThin',
                     fontWeight: '600',

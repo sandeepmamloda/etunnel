@@ -1,5 +1,5 @@
 .herochistory-section {
-    height: 50.4rem;
+    height: 90svh;
     width: 100%;
     background-color: black;
 }
@@ -37,7 +37,8 @@
     bottom: 2.4rem;
     left: 50%;
     transform: translateX(-50%);
-    max-width:50rem;
+    max-width: 70%;
+    min-width: 70%;
 }
 .herochistory-section-text-wrapper h1 {
     font-size: 2.64rem;
@@ -45,13 +46,15 @@
     color: #fff;
     line-height: 100%;
     font-weight: normal;
+    text-align: center;
 }
 .herochistory-section-text-wrapper p {
     font-family: 'NeueHaasGroteskLight';
     font-size: 1.08rem;
     row-gap: 0rem;
-    letter-spacing: 0.048rem!important;
+    letter-spacing: 0.048rem !important;
     color: #fff;
+    text-align: center;
 }
 .download-brocher {
     position: relative;
@@ -86,3 +89,28 @@
     letter-spacing: 0.06rem;
 }
 /* ----------------------------------responsive----------------------------- */
+@media screen and (max-width: 1360px) {
+    .herochistory-section-text-wrapper h1 {
+        font-size: 2.44rem;      /* 2.64 - 0.2 */
+    }
+    .herochistory-section-text-wrapper p {
+        font-size: 0.88rem;      /* 1.08 - 0.2 */
+    }
+    .download-brocher span {
+        font-size: 0.88rem;      /* 1.08 - 0.2 */
+    }
+    .download-brocher {
+        width: 17rem;
+        height: 2.7rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .herochistory-section-text-wrapper h1 {
+        font-size: 2.04rem;      /* 2.44 - 0.4 */
+    }
+    .herochistory-section-text-wrapper {
+        max-width: 90%;
+        min-width: 90%;
+    }
+}

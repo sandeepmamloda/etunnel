@@ -1,0 +1,5 @@
+@media screen and (max-width: 1360px) {
+    .globe-desc-text {
+        font-size: 1.2rem !important; /* 1.4 - 0.2 */
+    }
+}

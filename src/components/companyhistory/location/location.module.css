@@ -1,12 +1,15 @@
 .location-section {
     width: 100%;
     background-color: #fff;
-    padding-block: 4vw;
-    margin-bottom:2.8vw;
+    padding-block: 4.8rem;
+    margin-bottom: 3.36rem;
 }
+
 .location-section-wrapper {
     width: 100%;
-    padding-inline: 7vw;
+    max-width: 106.4rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,12 +17,12 @@
 
 /* ------heading------ */
 .location-heading {
-    font-size: 2vw;
+    font-size: 2.4rem;
     font-family: 'NeueHaasDisplayThin';
     font-weight: 600;
     color: #000;
-    letter-spacing: 0.04vw;
-    margin: 0 0 2vw 0;
+    letter-spacing: 0.048rem;
+    margin: 0 0 2.4rem 0;
     line-height: 120%;
     text-align: center;
 }
@@ -29,41 +32,43 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-radius: 1vw;
+    border-radius: 0.96rem;
     overflow: hidden;
 }
 
 /* ------left: image------ */
 .location-card-img-wrapper {
     width: 100%;
-    height: 22vw;
+    height: 26.4rem;
     position: relative;
     overflow: hidden;
 }
-.location-card-img{
-    height:100%!important;
-    width:100%!important;
-    position:static!important;
-    object-fit:cover;
+
+.location-card-img {
+    height: 100% !important;
+    width: 100% !important;
+    position: static !important;
+    object-fit: cover;
 }
+
 .location-card-map-btn {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     background-color: #fff;
     color: #000;
-    font-size: 0.8vw;
+    font-size: 0.96rem;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
-    letter-spacing: .05vw;
-    padding: 0.8vw 1.4vw;
+    letter-spacing: 0.06rem;
+    padding: 0.96rem 1.68rem;
     line-height: 100%;
-    border-radius: 5vw;
-    border:solid 0.1vw rgba(0, 0, 0, 1);
+    border-radius: 6rem;
+    border: solid 0.12rem rgba(0, 0, 0, 1);
     text-decoration: none;
     white-space: nowrap;
-    box-shadow: 0 0.2vw 1vw rgba(0,0,0,0.15);
+    box-shadow: 0 0.24rem 1.2rem rgba(0, 0, 0, 0.15);
     z-index: 1;
 }
 
@@ -73,27 +78,92 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 3vw;
-    padding-inline-start:5vw;
-    row-gap: 1.2vw;
+    padding: 3.6rem;
+    padding-inline-start: 6rem;
+    row-gap: 1.44rem;
 }
+
 .location-card-title {
-    font-size: 2vw;
+    font-size: 2.4rem;
     font-family: 'NeueHaasDisplayThin';
     font-weight: 700;
     color: rgba(255, 210, 170, 1);
-    letter-spacing: 0.13vw;
+    letter-spacing: 0.156rem;
     margin: 0;
     line-height: 120%;
     display: inline-block;
     align-self: flex-start;
 }
+
 .location-card-address {
-    font-size: 1.3vw;
+    font-size: 1.56rem;
     font-family: 'NeueHaasDisplayXXThin';
     font-weight: 600;
     color: #fff;
-    letter-spacing: 0.04vw;
+    letter-spacing: 0.048rem;
     line-height: 140%;
     margin: 0;
+}
+
+/* ------responsive------ */
+@media screen and (max-width: 1730px) {
+    .location-section-wrapper {
+        max-width: 90rem;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .location-section-wrapper {
+        max-width: 75rem;
+    }
+    .location-heading {
+        font-size: 2.2rem;       /* 2.4 - 0.2 */
+    }
+    .location-card-title {
+        font-size: 2.2rem;       /* 2.4 - 0.2 */
+    }
+    .location-card-address {
+        font-size: 1.36rem;      /* 1.56 - 0.2 */
+    }
+    .location-card-map-btn {
+        font-size: 0.76rem;      /* 0.96 - 0.2 */
+    }
+    .location-card-content {
+        padding: 2.8rem;
+        padding-inline-start: 4rem;
+    }
+    .location-card-img-wrapper {
+        height: 22rem;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .location-card {
+        grid-template-columns: 1fr;
+    }
+    .location-card-img-wrapper {
+        height: 22rem;
+    }
+    .location-card-content {
+        padding: 2.4rem;
+        padding-inline-start: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .location-section {
+        padding-block: 3rem;
+        margin-bottom: 2rem;
+    }
+    .location-heading {
+        font-size: 1.8rem;       /* 2.2 - 0.4 */
+        margin-bottom: 1.4rem;
+    }
+    .location-card-img-wrapper {
+        height: 16rem;
+    }
+    .location-card-content {
+        padding: 1.8rem;
+        padding-inline-start: 1.8rem;
+    }
 }
