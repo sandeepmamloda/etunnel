@@ -1,10 +1,10 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
-import styles from "./productshowcase.module.css";
-import Image from "next/image";
-import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import styles from "./productshowcase.module.css";
 
 const Productshowcase = function () {
   const [openSection, setOpenSection] = useState("p2n2");
@@ -13,6 +13,8 @@ const Productshowcase = function () {
   const textRef = useRef(null);
   const accordionRef = useRef(null);
   const imageRef = useRef(null);
+  const mobileImageRef = useRef(null); // ✅ New ref for mobile image
+
   // Accordion logic
   useEffect(() => {
     const sections = ["p2n2", "fva", "kisa"];
@@ -29,6 +31,7 @@ const Productshowcase = function () {
 
   // GSAP
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
 
       const tl = gsap.timeline({
@@ -48,7 +51,9 @@ const Productshowcase = function () {
           { clipPath: "inset(0 0 0% 0)", duration: 1.3, ease: "power2.inOut" },
           "-=0.9"
         )
-        .fromTo(imageRef.current,
+        .fromTo(
+          // ✅ Both image refs in array, filter(Boolean) handles if either is null
+          [imageRef.current, mobileImageRef.current].filter(Boolean),
           { clipPath: "inset(0 100% 0 0)" },
           { clipPath: "inset(0 0% 0 0)", duration: 1.4, ease: "power2.inOut" },
           "-=1.0"
@@ -67,11 +72,21 @@ const Productshowcase = function () {
     <section className={styles["productshowcase-wrapper"]} ref={sectionRef}>
       <div className={`${styles["productshowcase-left"]} ${styles["manual-size"]}`}>
 
+        {/* ── Text ── */}
         <div ref={textRef} className={styles["productshowcase-text-wrapper"]}>
           <p>One AI Engine. Every Biometric.</p>
           <p>ETUNNEL offers a full range of biometric solutions designed to work together.</p>
         </div>
 
+        {/* ── Mobile-only image (between text and accordion) ── */}
+        {/* ✅ mobileImageRef added here */}
+        <div className={styles["mobile-image"]} ref={mobileImageRef}>
+          <div className={styles["productshowcase-right-img"]}>
+            <Image src="/images/productshowcase/p2n2.png" alt="Hero Image" fill priority className={styles["img"]} />
+          </div>
+        </div>
+
+        {/* ── Accordion ── */}
         <div ref={accordionRef} className={styles["accordion"]}>
 
           {/* ── P2N2 ── */}
@@ -137,7 +152,8 @@ const Productshowcase = function () {
         </div>
       </div>
 
-      <div ref={imageRef} className={`${styles["productshowcase-right"]} ${styles["manual-size"]}`}>
+      {/* ── Desktop-only image (right column) ── */}
+      <div ref={imageRef} className={`${styles["productshowcase-right"]} ${styles["desktop-image"]} ${styles["manual-size"]}`}>
         <div className={`${styles["productshowcase-right-img"]} ${styles["manual-size"]}`}>
           <Image src="/images/productshowcase/p2n2.png" alt="Hero Image" fill priority className={styles["img"]} />
         </div>

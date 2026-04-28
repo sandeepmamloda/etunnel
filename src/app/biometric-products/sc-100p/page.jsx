@@ -6,7 +6,7 @@ import Productspecifications from "@/components/biometric-products/sc-100p/produ
 const sc100p=function(){
     return (
         <>
-            <Heroproduct 
+            <Heroproduct
                 image="/images/biometric-products/sc-100p/sc-100p.png"
                 title="ETUNNEL"
                 highlight="SC-100P"

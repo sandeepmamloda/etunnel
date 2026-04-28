@@ -166,3 +166,9 @@
   display: flex;
   gap: 2.4rem;
 }
+/* --------------------------------responsive--------------------------------- */
+@media screen and (max-width:930px) {
+  .footer-wrapper{
+    display:none;
+  }
+}

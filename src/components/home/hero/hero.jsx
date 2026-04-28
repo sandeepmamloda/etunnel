@@ -88,10 +88,10 @@
 
 // ===================================================
 "use client";
-import styles from "./hero.module.css";
-import { useEffect, useRef } from "react";
-import Link from "next/link";
 import gsap from "gsap";
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+import styles from "./hero.module.css";
 
 const Hero = function () {
     const imgRef = useRef(null);

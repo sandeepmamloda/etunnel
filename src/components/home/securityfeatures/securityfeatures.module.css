@@ -449,7 +449,7 @@
         height:31rem;
     }
 }
-@media screen and (max-width: 1360px) { 
+@media screen and (max-width: 1360px) {
     .security-feature-wrapper{
         max-width:75rem;
         padding-block-start:2.2rem;
@@ -494,5 +494,15 @@
     }
     .security-feature-cart:nth-child(4) .security-feature-cart-top div p {
         font-size: 0.8rem;
+    }
+}
+@media screen and (max-width: 1360px) {
+    .security-feature-cart{
+        min-width:22rem;
+        height:30rem;
+    }
+    .security-feature-cart-wrapper{
+        overflow-x:auto;
+        scrollbar-width: none;
     }
 }
