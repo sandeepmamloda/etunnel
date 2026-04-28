@@ -1,7 +1,7 @@
 .historyinovation-section {
     width: 100%;
     background-color: #fff;
-    padding-block-start: 2vw;
+    padding-block-start: 1.92rem;
 }
 
 /* ------heading area------ */
@@ -12,22 +12,40 @@
     align-items: center;
     text-align: center;
 }
+
 .historyinovation-heading-title {
-    font-size: 2.4vw;
+    font-size: 2.4rem;
     font-family: 'NeueHaasDisplayThin';
     font-weight: 600;
     color: #000;
-    letter-spacing: 0.04vw;
-    /* margin: 0 0 1.2vw 0; */
-    padding-block-end:1vw;
+    letter-spacing: 0.048rem;
+    padding-block-end: 0.96rem;
     line-height: 110%;
 }
+
 .historyinovation-heading-desc {
-    font-size: 1.1vw;
+    font-size: 1.08rem;
     font-family: 'NeueHaasDisplayXThin';
     font-weight: 600;
     color: #000;
-    letter-spacing: 0.02vw;
+    letter-spacing: 0.024rem;
     line-height: 160%;
     margin: 0;
+}
+
+/* ------1360px------ */
+@media screen and (max-width: 1360px) {
+    .historyinovation-heading-title {
+        font-size: 2.2rem; /* 2.4 - 0.2 */
+    }
+    .historyinovation-heading-desc {
+        font-size: 0.88rem; /* 1.08 - 0.2 */
+    }
+}
+
+/* ------600px------ */
+@media screen and (max-width: 600px) {
+    .historyinovation-heading-title {
+        font-size: 1.8rem; /* 2.2 - 0.4 */
+    }
 }

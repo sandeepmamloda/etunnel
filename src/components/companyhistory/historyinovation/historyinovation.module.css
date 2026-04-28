@@ -203,3 +203,99 @@
     left: 0;
     color: #000;
 }
+
+/* --------------------------responsive------------------------ */
+/* --------------------------responsive------------------------ */
+
+/* 1730px के लिए */
+@media screen and (max-width: 1730px) {
+  .historyinovation-section {
+    max-width: 90rem;
+  }
+}
+
+/* 1400px के लिए - Accordion content column wise */
+@media screen and (max-width: 1400px) {
+  .historyinovation-accordion-body-row {
+    padding-inline:5rem;
+    grid-template-columns: 1fr;
+    row-gap: 1.44rem;
+  }
+  .historyinovation-accordion-body-img-wrapper {
+    width: 100%;
+    height: 30rem;
+}
+  .historyinovation-accordion-body-inner {
+    margin-inline-start: 0;
+    transform: none !important;
+  }
+  
+  .historyinovation-accordion-checkbox:checked
+    ~ .historyinovation-accordion-body
+    .historyinovation-accordion-body-inner {
+    transform: none !important;
+  }
+}
+/* 1360px के लिए */
+/* 1360px के लिए - Font size reduced */
+@media screen and (max-width: 1360px) {
+  .historyinovation-section {
+    max-width: 75rem;
+  }
+  
+  /* Font sizes -0.2rem */
+  .historyinovation-heading-title {
+    font-size: 2.68rem; /* 2.88rem - 0.2rem */
+  }
+  
+  .historyinovation-heading-desc {
+    font-size: 1.12rem; /* 1.32rem - 0.2rem */
+  }
+  
+  .historyinovation-accordion-label-icon,
+  .historyinovation-accordion-label-year {
+    font-size: 1.48rem; /* 1.68rem - 0.2rem */
+  }
+  
+  .historyinovation-accordion-body-content-text,
+  .historyinovation-accordion-body-content-list-item {
+    font-size: 1.24rem; /* 1.44rem - 0.2rem */
+  }
+}
+@media screen and (max-width:930px){
+    .historyinovation-section {
+      padding-inline:1rem;
+    }
+    .historyinovation-accordion-body-row {
+      padding-inline:3rem;
+      grid-template-columns: 1fr;
+      row-gap: 1.44rem;
+    }
+    .historyinovation-accordion-body-content-list{
+        margin-block-end:1rem;
+    }
+}
+@media screen and (max-width:700px){
+    .historyinovation-section {
+      padding-inline:1rem;
+    }
+    .historyinovation-accordion-body-row {
+      padding-inline:0rem;
+      grid-template-columns: 1fr;
+      row-gap: 1.44rem;
+    }
+}
+@media screen and (max-width:600px){
+    .historyinovation-accordion-body-img-wrapper {
+        width: 100%;
+        height: 22rem;
+    }
+    .historyinovation-heading-title{
+        font-size:2.28rem;
+    }
+}
+@media screen and (max-width:378px){
+    .historyinovation-section {
+      padding-inline:1rem;
+    }
+}

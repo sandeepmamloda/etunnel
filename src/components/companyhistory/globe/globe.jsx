@@ -260,10 +260,15 @@ const Globe = function () {
                 style={{
                     width: '100%',
                     height: '100svh',
+                    maxWidth: "100%",
+                    marginInline:"auto",
                     position: 'relative',
                     overflow: 'hidden',
                     borderRadius: '12px',
-                    background: "transparent"
+                    background: "transparent",
+                    display:"flex",
+                    justifyContent:"center",
+                    alignItems:"center"
                 }}
             >
                 <canvas
