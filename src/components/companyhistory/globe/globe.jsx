@@ -4,6 +4,38 @@ import { useEffect, useRef } from "react";
 const Globe = function () {
     const canvasRef = useRef(null);
     const wrapRef = useRef(null);
+    const globeWrapRef = useRef(null);
+    const textRef = useRef(null);
+
+    useEffect(() => {
+        // ── Globe entrance: scale + fade + translateY ──
+        const globeEl = globeWrapRef.current;
+        const textEl = textRef.current;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            globeEl.style.opacity = "1";
+                            globeEl.style.transform = "scale(1) translateY(0px)";
+                        }, 80);
+
+                        setTimeout(() => {
+                            textEl.style.opacity = "1";
+                            textEl.style.transform = "translateY(0)";
+                        }, 600);
+
+                        observer.disconnect();
+                    }
+                });
+            },
+            { threshold: 0.35, rootMargin: "0px 0px -15% 0px" }
+        );
+
+        if (globeEl) observer.observe(globeEl);
+        return () => observer.disconnect();
+    }, []);
 
     useEffect(() => {
         const loadScript = (src) => new Promise((resolve) => {
@@ -255,43 +287,61 @@ const Globe = function () {
 
     return (
         <>
+            {/* Globe — scale(0.88) + opacity(0) + translateY(40px) se "hila ke" aata hai */}
             <div
-                ref={wrapRef}
+                ref={globeWrapRef}
                 style={{
-                    width: '100%',
-                    height: '100svh',
-                    maxWidth: "100%",
-                    marginInline:"auto",
-                    position: 'relative',
-                    overflow: 'hidden',
-                    borderRadius: '12px',
-                    background: "transparent",
-                    display:"flex",
-                    justifyContent:"center",
-                    alignItems:"center"
+                    opacity: 0,
+                    transform: "scale(0.88) translateY(40px)",
+                    transition: "opacity 0.9s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1)",
                 }}
             >
-                <canvas
-                    ref={canvasRef}
-                    style={{ display: 'block', width: '100%', height: '100%' }}
-                />
-                <div style={{
-                    position: 'absolute',
-                    bottom: '14px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    fontSize: '11px',
-                    color: 'rgba(120,80,40,0.4)',
-                    letterSpacing: '0.5px'
-                }}>
-                    drag to rotate
+                <div
+                    ref={wrapRef}
+                    style={{
+                        width: '100%',
+                        height: '100svh',
+                        maxWidth: "100%",
+                        marginInline: "auto",
+                        position: 'relative',
+                        overflow: 'hidden',
+                        borderRadius: '12px',
+                        background: "transparent",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center"
+                    }}
+                >
+                    <canvas
+                        ref={canvasRef}
+                        style={{ display: 'block', width: '100%', height: '100%' }}
+                    />
+                    <div style={{
+                        position: 'absolute',
+                        bottom: '14px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        fontSize: '11px',
+                        color: 'rgba(120,80,40,0.4)',
+                        letterSpacing: '0.5px'
+                    }}>
+                        drag to rotate
+                    </div>
                 </div>
             </div>
-            <div style={{
-                width: '100%',
-                textAlign: 'center',
-                paddingBlock: '2rem',
-            }}>
+
+            {/* Text — fade + translateY */}
+            <div
+                ref={textRef}
+                style={{
+                    width: '100%',
+                    textAlign: 'center',
+                    paddingBlock: '2rem',
+                    opacity: 0,
+                    transform: 'translateY(16px)',
+                    transition: "opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+                }}
+            >
                 <p className="globe-desc-text" style={{
                     fontSize: '1.4rem',
                     fontFamily: 'NeueHaasDisplayXThin',
