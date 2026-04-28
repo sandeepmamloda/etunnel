@@ -90,3 +90,21 @@
         font-size:0.8rem;
     }
 }
+@media  screen and (max-width:600px){
+    .authentication-bottom .img{
+        object-fit:cover;
+    }
+    .authentication-wrapper .authentication-top{
+        row-gap:1.3rem;
+    }
+    
+    .authentication-wrapper .authentication-top h2{
+        font-size:1.8rem;
+        line-height:120%;
+    }
+    
+    .authentication-wrapper .authentication-top p{
+        font-size:1.08rem;
+        line-height: 130%;
+    }
+}

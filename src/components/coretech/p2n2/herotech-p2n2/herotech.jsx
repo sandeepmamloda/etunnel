@@ -1,7 +1,7 @@
 "use client";
-import styles from "./herotech.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./herotech.module.css";
 
 const LetterCascade = ({ text, className, tag: Tag = "span", delay = 0 }) => {
   return (

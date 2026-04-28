@@ -137,7 +137,7 @@
     }
 }
 
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 800px) {
     .location-card {
         grid-template-columns: 1fr;
     }
@@ -156,14 +156,18 @@
         margin-bottom: 2rem;
     }
     .location-heading {
-        font-size: 1.8rem;       /* 2.2 - 0.4 */
+        font-size: 1.8rem;       
         margin-bottom: 1.4rem;
     }
     .location-card-img-wrapper {
-        height: 16rem;
+        height: 20rem;
     }
     .location-card-content {
         padding: 1.8rem;
         padding-inline-start: 1.8rem;
+        padding-block:5rem;
+    }
+    .location-card-address{
+        font-size:1rem;
     }
 }

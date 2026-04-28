@@ -20,13 +20,12 @@ const ProductspecificationsGrouped = function () {
         { label: "Memory", detail: "8GB RAM + 32GB Flash" },
         { label: "LCD", detail: '10.1" Color LCD' },
         { label: "LCD Resolution", detail: "800×1280" },
-        { label: "Power", detail: "220VAC 60Hz 12V DC 3A", isHalf: true },
+        { label: "Power", detail: "220VAC 60Hz 12V DC 3A" },
       ],
     },
     {
       groupLabel: "Face",
       specs: [
-        { label: "Power", detail: "220VAC 60Hz 12V DC 3A", isGhost: true },
         { label: "Matching Speed", detail: "<0.8s" },
         { label: "Verification Method", detail: "1:1" },
         { label: "Certification", detail: "KISA" },
@@ -72,37 +71,21 @@ const ProductspecificationsGrouped = function () {
 
               {groups.map((group, gIndex) => (
                 <div key={gIndex} className={styles["ps-group"]}>
-                  {group.specs.map((spec, sIndex) => {
-                    if (spec.isGhost) {
-                      return (
-                        <div
-                          key={sIndex}
-                          className={`${styles["ps-row"]} ${styles["ps-row-ghost"]}`}
-                        >
-                          <div className={styles["ps-row-left"]} />
-                          <div className={styles["ps-row-right"]} />
-                        </div>
-                      );
-                    }
-                    return (
-                      <div
-                        key={sIndex}
-                        className={`${styles["ps-row"]}${spec.isHalf ? ` ${styles["ps-row-half"]}` : ""}`}
-                      >
-                        <div className={styles["ps-row-left"]}>
-                          <span className={styles["ps-spec-label"]}>{spec.label}</span>
-                        </div>
-                        <div className={styles["ps-row-right"]}>
-                          <span
-                            className={styles["ps-detail"]}
-                            style={{ whiteSpace: "pre-line" }}
-                          >
-                            {spec.detail}
-                          </span>
-                        </div>
+                  {group.specs.map((spec, sIndex) => (
+                    <div key={sIndex} className={styles["ps-row"]}>
+                      <div className={styles["ps-row-left"]}>
+                        <span className={styles["ps-spec-label"]}>{spec.label}</span>
                       </div>
-                    );
-                  })}
+                      <div className={styles["ps-row-right"]}>
+                        <span
+                          className={styles["ps-detail"]}
+                          style={{ whiteSpace: "pre-line" }}
+                        >
+                          {spec.detail}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>

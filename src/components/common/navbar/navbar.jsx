@@ -6,7 +6,15 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./navbar.module.css";
 
-const WHITE_TEXT_ROUTES = ["/", "/products", "/solutions", "/news"];
+const WHITE_TEXT_ROUTES = [
+  "/",
+  "/about",
+  "/solutions/solutions",
+  "/solutions/pkl-solutions",
+  "/solutons/biometric-authentication-solutions",
+  "/company/overview",
+  "/company/history",
+];
 
 const navLinks = [
   { label: "Company",            href: "/companyoverview" },
@@ -63,7 +71,7 @@ const Navbar = function () {
 
   useEffect(() => {
     const white = WHITE_TEXT_ROUTES.some((route) =>
-      route === "/" ? pathname === "/" : pathname.startsWith(route)
+      route === "/" ? pathname === "/" : pathname === route
     );
     setIsWhite(white);
   }, [pathname]);

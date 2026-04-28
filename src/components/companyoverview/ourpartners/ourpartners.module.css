@@ -56,3 +56,12 @@
         font-size:0.8rem;
     }
 }
+@media  screen and (max-width:600px){
+    .ourpartners-wrapper .ourpartners-top h2{
+        font-size:2.2rem;
+    }
+    .ourpartners-wrapper .ourpartners-top p{
+        font-size:0.8rem;
+        line-height:160%;
+    }
+}

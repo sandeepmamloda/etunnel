@@ -135,9 +135,12 @@
 @media screen and (max-width:600px) {
     .heroabout-section{
         height:90svh;
+
     }
     .heroabout-section-text-wrapper{
         bottom:8rem;
+        max-width:90%;
+        min-width:90%;
     }
     .heroabout-section-text-wrapper h1{
         font-size:1.8rem;

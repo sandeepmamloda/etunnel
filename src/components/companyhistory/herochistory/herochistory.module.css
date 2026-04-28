@@ -55,6 +55,7 @@
     letter-spacing: 0.048rem !important;
     color: #fff;
     text-align: center;
+    line-height:100%;
 }
 .download-brocher {
     position: relative;
@@ -106,11 +107,20 @@
 }
 
 @media screen and (max-width: 600px) {
+    .herochistory-section-text-wrapper{
+        bottom:1rem;
+    }
     .herochistory-section-text-wrapper h1 {
         font-size: 2.04rem;      /* 2.44 - 0.4 */
+    }
+    .herochistory-section-text-wrapper p{
+        line-height: 150%;
     }
     .herochistory-section-text-wrapper {
         max-width: 90%;
         min-width: 90%;
+    }
+    .download-brocher{
+        width:15rem;
     }
 }

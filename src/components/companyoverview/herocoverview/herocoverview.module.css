@@ -1,5 +1,5 @@
 .herocoverview-section{
-    height:100svh;
+    height:90svh;
     width:100%;
     background-color:black;
 }
@@ -41,7 +41,7 @@
     left: 50%;
     transform: translateX(-50%);
     min-width:70%;
-        max-width:70%;
+    max-width:70%;
 }
 .herocoverview-section-text-wrapper h1{
     font-size:2.64rem;
@@ -108,4 +108,16 @@
         font-size: 0.9rem;
         letter-spacing: 0;
     }
+    
+}
+@media screen and (max-width:600px){
+    .herocoverview-section-text-wrapper {
+        max-width:90%;
+        min-width:90%;
+        bottom:3rem;
+    }
+    .herocoverview-section-text-wrapper h1{
+        font-size:1.8rem;
+    }
+    
 }
