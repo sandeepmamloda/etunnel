@@ -39,18 +39,20 @@
     row-gap: 0.48rem;
     display: flex;
     position: absolute;
-    bottom: 2.8vw;
+    bottom: 2.8rem;
     left: 50%;
     transform: translateX(-50%);
+    height:fit-content;
+    max-width:60%;
+    min-width:60%;
 }
 
 .heroabout-section-text-wrapper h1 {
     font-size: 2.64rem;
     font-family: 'NeueHaasGroteskLight';
     color: #fff;
-    line-height: 100%;
+    line-height: 120%;
     font-weight: normal;
-    white-space: nowrap;
     text-align: center;
 }
 
@@ -128,5 +130,16 @@
     .request-a-demo span {
         font-family: 'NeueHaasGroteskLight';
         font-size: 0.9rem;
+    }
+}
+@media screen and (max-width:600px) {
+    .heroabout-section{
+        height:90svh;
+    }
+    .heroabout-section-text-wrapper{
+        bottom:8rem;
+    }
+    .heroabout-section-text-wrapper h1{
+        font-size:1.8rem;
     }
 }

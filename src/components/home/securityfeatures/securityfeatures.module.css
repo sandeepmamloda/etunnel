@@ -506,3 +506,24 @@
         scrollbar-width: none;
     }
 }
+@media screen and (max-width: 930px) {
+    .security-feature-wrapper{
+        padding-inline:1.2rem;
+    }
+    .security-feature-wrapper .security-feature-top .security-feature-top-mcontent {
+        flex-direction: column;
+        row-gap: 1.2rem;
+    }
+    .security-feature-wrapper .security-feature-top .security-feature-top-mcontent > p {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .security-feature-cart {
+        min-width: 100%;
+        scroll-snap-align: start;
+    }
+    .security-feature-cart-wrapper {
+        scroll-snap-type: x mandatory;
+    }
+}

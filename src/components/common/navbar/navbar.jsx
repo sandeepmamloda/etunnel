@@ -52,6 +52,7 @@ const ArrowIcon = ({ isWhite }) => (
 const Navbar = function () {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState({
     code: "EN",
@@ -67,12 +68,10 @@ const Navbar = function () {
     setIsWhite(white);
   }, [pathname]);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
@@ -132,41 +131,43 @@ const Navbar = function () {
             </ul>
           </nav>
 
-          {/* RIGHT — Language + Hamburger */}
+          {/* RIGHT — Language (desktop only) + Hamburger */}
           <div className={styles["header-section-right"]}>
 
-            {/* Language Selector */}
-            <div
-              className={styles["lang-selector"]}
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {selectedLang.component}
-              <span
-                className={
-                  isWhite ? styles["lang-text-white"] : styles["lang-text-black"]
-                }
+            {/* Language Selector — desktop only */}
+            <div className={styles["lang-selector-desktop"]}>
+              <div
+                className={styles["lang-selector"]}
+                onClick={() => setIsOpen(!isOpen)}
               >
-                {selectedLang.code}
-              </span>
-              <ArrowIcon isWhite={isWhite} />
+                {selectedLang.component}
+                <span
+                  className={
+                    isWhite ? styles["lang-text-white"] : styles["lang-text-black"]
+                  }
+                >
+                  {selectedLang.code}
+                </span>
+                <ArrowIcon isWhite={isWhite} />
 
-              {isOpen && (
-                <div className={styles["lang-dropdown"]}>
-                  {languages.map((lang) => (
-                    <div
-                      key={lang.code}
-                      className={styles["lang-option"]}
-                      onClick={() => {
-                        setSelectedLang(lang);
-                        setIsOpen(false);
-                      }}
-                    >
-                      {lang.component}
-                      <span>{lang.code}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
+                {isOpen && (
+                  <div className={styles["lang-dropdown"]}>
+                    {languages.map((lang) => (
+                      <div
+                        key={lang.code}
+                        className={styles["lang-option"]}
+                        onClick={() => {
+                          setSelectedLang(lang);
+                          setIsOpen(false);
+                        }}
+                      >
+                        {lang.component}
+                        <span>{lang.code}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Hamburger */}
@@ -214,6 +215,48 @@ const Navbar = function () {
             </li>
           ))}
         </ul>
+
+        {/* Language Selector — mobile, inside menu */}
+        <div
+          className={`${styles["lang-selector-mobile"]} ${
+            menuOpen ? styles["mobile-nav-item-visible"] : ""
+          }`}
+          style={{ transitionDelay: menuOpen ? `${0.08 * navLinks.length + 0.15}s` : "0s" }}
+        >
+          <div
+            className={styles["lang-selector"]}
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+          >
+            {selectedLang.component}
+            <span
+              className={
+                isWhite ? styles["mobile-link-white"] : styles["mobile-link-black"]
+              }
+              style={{ fontFamily: "NeueHaasGroteskLight", fontSize: "1.14rem" }}
+            >
+              {selectedLang.code}
+            </span>
+            <ArrowIcon isWhite={isWhite} />
+
+            {isMobileOpen && (
+              <div className={styles["lang-dropdown"]}>
+                {languages.map((lang) => (
+                  <div
+                    key={lang.code}
+                    className={styles["lang-option"]}
+                    onClick={() => {
+                      setSelectedLang(lang);
+                      setIsMobileOpen(false);
+                    }}
+                  >
+                    {lang.component}
+                    <span>{lang.code}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </>
   );

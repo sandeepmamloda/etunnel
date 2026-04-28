@@ -97,3 +97,19 @@
         font-size: 1.36rem;
     }
 }
+@media screen and (max-width: 930px) {
+    .seeussection-wrapper {
+        padding-inline:1.2rem
+    }
+}
+@media screen and (max-width: 600px) {
+    .seeussection-wrapper {
+        padding-block-start: 6rem;
+        row-gap: 1.2rem;
+    }
+    .seeussection-wrapper-video {
+        height: 30rem;
+        width: 100%;
+        border-radius: 0.6rem;
+    }
+}

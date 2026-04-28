@@ -398,3 +398,8 @@
     line-height: 150%;
   }
 }
+@media screen and (max-width: 930px) { 
+    .newsmidia-wrapper{
+        padding-inline:1.2rem;
+    }
+}

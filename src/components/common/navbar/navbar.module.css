@@ -67,8 +67,6 @@
   position: static !important;
 }
 
-/* Logo — white (default, no filter) */
-/* Logo — black (invert) */
 .logo-black {
   filter: brightness(0) !important;
 }
@@ -104,7 +102,6 @@
   align-items: center;
 }
 
-/* Staggered animations */
 .nav-links li:nth-child(1) { animation: fadeUp 0.45s 0.40s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .nav-links li:nth-child(2) { animation: fadeUp 0.45s 0.48s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .nav-links li:nth-child(3) { animation: fadeUp 0.45s 0.56s cubic-bezier(0.16, 1, 0.3, 1) both; }
@@ -119,7 +116,6 @@
   position: relative;
 }
 
-/* Underline */
 .nav-links li a::after {
   content: "";
   position: absolute;
@@ -140,11 +136,9 @@
   transform: scaleX(1) !important;
 }
 
-/* WHITE text */
 .nav-link-white { color: white; }
 .nav-link-white::after { background-color: white; }
 
-/* BLACK text */
 .nav-link-black { color: black; }
 .nav-link-black::after { background-color: black; }
 
@@ -159,6 +153,39 @@
   animation: fadeScaleIn 0.6s 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) both;
   position: relative;
   z-index: 101;
+}
+
+/* ══════════════════════════════════════
+   LANGUAGE SELECTOR — DESKTOP / MOBILE
+══════════════════════════════════════ */
+
+.lang-selector-desktop {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1160px) {
+  .lang-selector-desktop {
+    display: none;
+  }
+}
+
+.lang-selector-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 1.44rem;
+  border-top: 1px solid rgba(128, 128, 128, 0.18);
+  margin-top: 0.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 1161px) {
+  .lang-selector-mobile {
+    display: none;
+  }
 }
 
 .lang-selector {
@@ -237,14 +264,10 @@
               width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* First span */
 .hamburger span:nth-child(1) { width: 1.8rem; }
-/* Second span — shorter for visual interest */
 .hamburger span:nth-child(2) { width: 1.2rem; }
-/* Third span */
 .hamburger span:nth-child(3) { width: 1.8rem; }
 
-/* Active (X) state */
 .hamburger-active span:nth-child(1) {
   transform: translateY(0.48rem) rotate(45deg);
   width: 1.8rem;
@@ -258,15 +281,8 @@
   width: 1.8rem;
 }
 
-/* Hamburger — white */
-.hamburger-white span {
-  background-color: white;
-}
-
-/* Hamburger — black */
-.hamburger-black span {
-  background-color: black;
-}
+.hamburger-white span { background-color: white; }
+.hamburger-black span { background-color: black; }
 
 /* ══════════════════════════════════════
    MOBILE MENU
@@ -282,10 +298,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding-inline: 2.52rem;
   padding-top: 6rem;
 
-  /* Slide in from top */
   clip-path: inset(0 0 100% 0);
   transition: clip-path 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
@@ -296,7 +312,6 @@
   pointer-events: all;
 }
 
-/* Background styles */
 .mobile-menu-white {
   background-color: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(12px);
@@ -320,6 +335,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  width: 100%;
 }
 
 .mobile-nav-item {
@@ -345,47 +361,25 @@
   font-size: 1.14rem;
   line-height: 100%;
   padding-block: 1.44rem;
+  text-align: center;
+  width: 100%;
   transition: opacity 0.2s ease;
   position: relative;
-}
-
-.mobile-nav-link::after {
-  content: "→";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%) translateX(-6px);
-  opacity: 0;
-  transition: opacity 0.2s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  font-size: 1rem;
-}
-
-.mobile-nav-link:hover::after {
-  opacity: 1;
-  transform: translateY(-50%) translateX(0);
 }
 
 .mobile-nav-link:hover {
   opacity: 0.6;
 }
 
-/* Active state */
 .mobile-nav-link-active {
   font-family: "NeueHaasGroteskMedium", "NeueHaasGroteskLight";
 }
 
-/* Link colors */
-.mobile-link-black {
-  color: black;
-}
-
-.mobile-link-white {
-  color: white;
-}
+.mobile-link-black { color: black; }
+.mobile-link-white { color: white; }
 
 /* ══════════════════════════════════════
-   RESPONSIVE — Desktop: show center nav
-   Mobile: hide center nav
+   RESPONSIVE
 ══════════════════════════════════════ */
 
 @media (max-width: 1160px) {
@@ -400,7 +394,6 @@
   }
 }
 
-/* Tablet / mid-range adjustments */
 @media (max-width: 1250px) and (min-width: 1161px) {
   .header-section-center {
     max-width: 64%;

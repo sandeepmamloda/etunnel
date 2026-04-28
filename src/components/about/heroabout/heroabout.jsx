@@ -49,15 +49,11 @@ const Heroabout = function () {
                 </div>
 
                 <div className={styles["heroabout-section-text-wrapper"]}>
-                    {/* ✅ h1 — main page heading */}
-                    <h1>Building a Safer Biometric Authentication Environment</h1>
+                    <h1>
+                        Building a Safer Biometric Authentication Environment<br />
+                        Through Continuous R&amp;D and Innovation
+                    </h1>
 
-                    {/* ✅ p — subheading */}
-                    <p>
-                        <span>Through Continuous R&amp;D and Innovation</span>
-                    </p>
-
-                    {/* ✅ Link — crawlable CTA, UI same rehega */}
                     <div className={styles["request-a-demo"]}>
                         <Link
                             href="/"

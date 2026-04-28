@@ -25,7 +25,7 @@
 /* ------hero-section-text-wrapper------ */
 .hero-section-text-wrapper {
     height: fit-content;
-    max-width: 50rem;
+    max-width: 50%;
     padding-inline: 1rem;
     z-index: 1;
     flex-direction: column;
@@ -124,7 +124,7 @@
 @media screen and (max-width: 1360px) { 
     .hero-section-text-wrapper{
         row-gap:0.8rem;
-        max-width: 60rem;
+        min-width: 95%;
     }
     .hero-section-text-wrapper h1 {
         font-size: 2.2rem;

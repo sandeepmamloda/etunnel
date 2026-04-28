@@ -209,3 +209,13 @@
         font-size:0.9rem;
     }
 }
+@media screen and (max-width:730px) {
+    .familysite-img{
+        height:70svh;
+    }
+}
+@media screen and (max-width:600px) {
+    .familysite-img{
+        height:90svh;
+    }
+}

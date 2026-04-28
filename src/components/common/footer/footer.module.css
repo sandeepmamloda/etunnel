@@ -222,7 +222,7 @@
     gap: 3rem;
   }
 
-  /* Logo — absolute se normal flow, left aur right ke beech */
+  /* Logo — absolute se normal flow, borders removed */
   .footer-center {
     position: static;
     transform: none;
@@ -231,8 +231,6 @@
     justify-content: center;
     align-items: center;
     padding-block: 1.2rem;
-    border-top: solid 0.12rem rgba(255,255,255,0.2);
-    border-bottom: solid 0.12rem rgba(255,255,255,0.2);
   }
 
   .footer-logo {

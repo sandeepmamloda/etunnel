@@ -196,3 +196,13 @@
         font-size:0.9rem;
     }
 }
+@media screen and (max-width:730px) {
+    .companyhistory-img{
+        height: 70svh;
+    }
+}
+@media screen and (max-width:600px) {
+    .companyhistory-img{
+        height: 90svh;
+    }
+}
