@@ -71,7 +71,7 @@
 }
 
 .authentication-bottom-img{
-    width: 84rem;
+    width: 100%;
     height: 43.2rem;
 }
 
@@ -141,4 +141,116 @@
     font-family: 'NeueHaasDisplayThin';
     text-align:center;
     line-height:160%!important;
+}
+
+/* ----------------------responsive--------------------- */
+@media screen and (max-width: 1730px) {
+    .authentication-main {
+        max-width: 90rem;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .authentication-main {
+        max-width: 74rem;
+    }
+
+    .authentication-top-1 h2 {
+        font-size: 2.2rem;
+    }
+
+    .authentication-top-2 p {
+        font-size: 0.88rem;
+    }
+    .authentication-bottom-img{
+        height:30rem;
+    }
+    .authentication-bottom .authentication-bottom-content .authentication-bottom-content-top p {
+        font-size: 1.24rem;
+    }
+
+    .authentication-bottom-content-bottom p {
+        font-size: 1.24rem;
+    }
+}
+@media screen and (max-width:1024px){
+    .authentication-top-2{
+       max-width:60%;
+    }
+    .authentication-bottom-img{
+        height:25rem;
+    }
+
+}
+@media screen and (max-width:930px){
+    .authentication-main{
+        row-gap:2rem;
+    }
+    .authentication-top-2{
+       max-width:60%;
+    }
+    .authentication-bottom-img{
+        height:20rem;
+    }
+    .authentication-bottom{
+        row-gap:2.5rem;
+    }
+}
+@media screen and (max-width:600px){
+    .authentication-main{
+        row-gap:1.5rem;
+    }
+    .authentication-top-1 h2 {
+        font-size: 2rem;
+    }
+    .authentication-top-2{
+       max-width:60%;
+    }
+    .authentication-bottom{
+        row-gap:2rem;
+    }
+    .authentication-bottom-img{
+        /* height:9rem; */
+        height:14rem;
+    }
+    .authentication-bottom-img .img{
+        object-position: center;
+        
+    }
+    .authentication-bottom .authentication-bottom-content .authentication-bottom-content-top p {
+        line-height:150%!important;
+        font-size: 1rem;
+    }
+    .authentication-bottom-content-bottom p {
+        line-height:150%!important;
+        font-size: 1rem;
+    }
+    
+}
+@media screen and (max-width:600px){
+    .authentication-top{
+        row-gap:1.5rem;
+    }
+    .authentication-top-2{
+       max-width:80%;
+    }
+    .authentication-bottom-img{
+        height:14rem;
+    }
+    .authentication-bottom-img .img{
+        object-position: center;   
+    }
+    
+}
+@media screen and (max-width:400px){
+    .authentication-top-2{
+       max-width:90%;
+    }
+    .authentication-bottom-img{
+        height:12rem;
+    }
+    .authentication-bottom-img .img{
+        object-position: center;   
+    }
+    
 }

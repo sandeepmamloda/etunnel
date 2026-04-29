@@ -68,3 +68,75 @@
     letter-spacing: 0.06rem;
     text-align: center;
 }
+
+@media screen and (max-width: 1730px) {
+    .nextgeneration-main {
+        max-width: 90rem;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .nextgeneration-main {
+        max-width: 74rem;
+    }
+
+    .nextgeneration-wrapper .nextgeneration-top h2 {
+        font-size: 1.84rem;
+    }
+
+    .nextgeneration-bottom p {
+        font-size: 0.88rem;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .nextgeneration-wrapper {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    .nextgeneration-wrapper .nextgeneration-top h2 {
+        font-size: 1.7rem;
+    }
+
+    .nextgeneration-bottom {
+        max-width: 90%;
+    }
+
+    .nextgeneration-bottom p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .nextgeneration-wrapper .nextgeneration-top h2 {
+        font-size: 1.5rem;
+    }
+
+    .nextgeneration-bottom {
+        max-width: 90%;
+    }
+
+    .nextgeneration-bottom p {
+        font-size: 0.96rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .nextgeneration-main {
+        padding-inline: 1.2rem;
+    }
+
+    .nextgeneration-wrapper .nextgeneration-top h2 {
+        font-size: 1.3rem;
+    }
+
+    .nextgeneration-bottom {
+        max-width: 90%;
+    }
+
+    .nextgeneration-bottom p {
+        font-size: 0.9rem;
+    }
+}
