@@ -176,3 +176,8 @@
         letter-spacing: 0.072rem;
     }
 }
+@media screen and (max-height: 700px){
+      .hero-section-text-wrapper{
+        bottom:1rem;
+      }
+}
