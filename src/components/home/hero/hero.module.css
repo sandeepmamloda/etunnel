@@ -178,6 +178,11 @@
 }
 @media screen and (max-height: 700px){
       .hero-section-text-wrapper{
-        bottom:1rem;
+        bottom:0.6rem;
       }
+      .request-a-demo {
+           margin-top: 0.6rem;
+           background: transparent;
+           z-index: 1;
+       }
 }
