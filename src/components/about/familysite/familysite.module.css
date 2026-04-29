@@ -220,3 +220,27 @@
         padding:1.2rem;
     }
 }
+@media screen and (max-height:428px) {
+    .familysite-img{
+        height: 100svh;
+    }
+    .familysite-img-overlay{
+        padding: 1rem;
+        align-items: flex-end;
+    }
+    .familysite-img-overlay-text{
+        row-gap: 1.2rem;
+    }
+    .familysite-img-overlay-text-top{
+        row-gap: 0.8rem;
+    }
+    .familysite-img-overlay-text-top .familysite-img-overlay-text-top-1{
+        row-gap: 0.8rem;
+    }
+    .familysite-img-overlay-text-top .familysite-img-overlay-text-top-2{
+        row-gap: 0.6rem;
+    }
+    .familysite-img-overlay-text-top .familysite-img-overlay-text-top-2-inner{
+        row-gap: 0.25rem;
+    }
+}

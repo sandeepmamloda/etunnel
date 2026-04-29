@@ -207,3 +207,27 @@
         padding:1.2rem;
     }
 }
+@media screen and (max-height:428px) {
+    .companyhistory-img{
+        height: 100svh;
+    }
+    .companyhistory-img-overlay{
+        padding: 1rem;
+        align-items: flex-end;
+    }
+    .companyhistory-img-overlay-text{
+        row-gap: 1.2rem;
+    }
+    .companyhistory-img-overlay-text-top{
+        row-gap: 0.8rem;
+    }
+    .companyhistory-img-overlay-text-top .companyhistory-img-overlay-text-top-1{
+        row-gap: 0.8rem;
+    }
+    .companyhistory-img-overlay-text-top .companyhistory-img-overlay-text-top-2{
+        row-gap: 0.6rem;
+    }
+    .companyhistory-img-overlay-text-top .companyhistory-img-overlay-text-top-2-inner{
+        row-gap: 0.25rem;
+    }
+}

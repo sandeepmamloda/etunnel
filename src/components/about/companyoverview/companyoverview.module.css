@@ -208,3 +208,27 @@
         padding:1.2rem;
     }
 }
+@media screen and (max-height:428px) {
+    .companyoverview-img{
+        height: 100svh;
+    }
+    .companyoverview-img-overlay{
+        padding: 1rem;
+        align-items: flex-end;
+    }
+    .companyoverview-img-overlay-text{
+        row-gap: 1.2rem;
+    }
+    .companyoverview-img-overlay-text-top{
+        row-gap: 0.8rem;
+    }
+    .companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-1{
+        row-gap: 0.8rem;
+    }
+    .companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-2{
+        row-gap: 0.6rem;
+    }
+    .companyoverview-img-overlay-text-top .companyoverview-img-overlay-text-top-2-inner{
+        row-gap: 0.25rem;
+    }
+}

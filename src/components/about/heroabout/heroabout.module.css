@@ -132,6 +132,12 @@
         font-size: 0.9rem;
     }
 }
+@media screen and (max-width:1024px) {
+    .heroabout-section-text-wrapper{
+        max-width:90%;
+        min-width:90%;
+    }
+}
 @media screen and (max-width:600px) {
     .heroabout-section{
         height:90svh;
@@ -145,4 +151,18 @@
     .heroabout-section-text-wrapper h1{
         font-size:1.8rem;
     }
+}
+@media screen and (max-height: 700px){
+      .heroabout-section-text-wrapper{
+        bottom:0.6rem;
+      }
+      .heroabout-section-text-wrapper h1{
+            font-size:1.8rem;
+            line-height: 130%;
+       }
+      .request-a-demo {
+           margin-top: 0.6rem;
+           background: transparent;
+           z-index: 1;
+       }
 }
