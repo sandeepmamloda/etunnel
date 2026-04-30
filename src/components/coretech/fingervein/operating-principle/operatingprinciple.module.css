@@ -60,14 +60,52 @@
     color:rgba(82, 82, 82, 1);
 }
 .operating-principle-bottom{
-    height:32rem;
+    height:auto;
     width:100%;
     background-color:transparent;
-    margin-top:2rem;
+    margin-top:2.5rem;
 }
 .operating-principle-bottom .img{
     height:100%!important;
     width:100%!important;
     position:static!important;
     object-fit:contain;
+}
+/* responsive */
+@media screen and (max-width:1730px){
+    .operating-principle-main{
+        max-width:80%;
+    }
+}
+@media screen and (max-width:1360px){
+    .operating-principle-main{
+        max-width:90%;
+    }
+    .operating-principle-main{
+        row-gap:1rem;
+    }
+    .operating-principle-bottom{
+        margin-top:1.5rem;
+    }
+    .operating-principle-top-mcontent h3{
+        font-size:2rem;
+    }
+}
+@media screen and (max-width:768px){
+    .operating-principle-top{
+        row-gap:0.7rem;
+    }
+    .operating-principle-wrapper{
+        padding-block:2rem;
+    }
+}
+@media screen and (max-width:600px){
+    .operating-principle-main{
+        max-width:100%;
+    }
+}
+@media screen and (max-width:400px){
+    .operating-principle-top-mcontent h3{
+        font-size:1.8rem;
+    }
 }

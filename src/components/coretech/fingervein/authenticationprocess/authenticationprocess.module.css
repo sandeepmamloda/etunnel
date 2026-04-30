@@ -58,7 +58,7 @@
     line-height: 100%;
 }
 .authentication-process-bottom{
-    height:32rem;
+    height:auto;
     width:100%;
     background-color:transparent;
     margin-top:1rem;
@@ -68,4 +68,79 @@
     width:100%!important;
     position:static!important;
     object-fit:contain;
+}
+@media screen and (max-width: 1730px) {
+    .authentication-process-main {
+        max-width: 75%;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .authentication-process-main {
+        max-width: 80%;
+    }
+
+    /* 2.5 → 2.3rem ✅ */
+    .authentication-process-top-mcontent h3 {
+        font-size: 2.3rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .authentication-process-top{
+        row-gap:1.7rem;
+    }
+    .authentication-process-wrapper {
+        padding-block: 3.5rem;
+    }
+
+    .authentication-process-main {
+        max-width: 85%;
+    }
+
+    /* 2.3 → 2.1rem ✅ */
+    .authentication-process-top-mcontent h3 {
+        font-size: 2.1rem;
+    }
+
+    .authentication-process-bottom {
+        height: auto;
+    }
+    .authentication-process-top-bcontent p{
+        line-height:170%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .authentication-process-wrapper {
+        padding-block: 2.5rem;
+    }
+
+    .authentication-process-main {
+        max-width: 100%;
+    }
+
+    /* 2.1 → 1.9rem ✅ */
+    .authentication-process-top-mcontent h3 {
+        font-size: 1.9rem;
+    }
+
+    .authentication-process-bottom {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .authentication-process-main {
+        padding-inline: 1.2rem;
+    }
+
+    /* 1.9 → 1.7rem ✅ */
+    .authentication-process-top-mcontent h3 {
+        font-size: 1.7rem;
+    }
+
+    .authentication-process-bottom {
+        height: auto;
+    }
 }

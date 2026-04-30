@@ -531,4 +531,17 @@
     .security-feature-cart-wrapper {
         scroll-snap-type: x mandatory;
     }
+    .security-feature-cart:nth-child(1) .security-feature-cart-bottom {
+        height: 100%;
+        width: 100%;
+
+    }
+    .security-feature-cart:nth-child(1) .security-feature-cart-bottom img {
+        object-fit:cover;
+    }
+}
+@media screen and (max-width: 400px) {
+    .security-feature-cart:nth-child(1) .security-feature-cart-bottom img {
+        object-fit:contain;
+    }
 }

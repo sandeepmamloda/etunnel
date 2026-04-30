@@ -82,3 +82,102 @@
     letter-spacing: 0.06rem;
     text-align: center;
 }
+
+/* ============================================
+   RESPONSIVE CSS — nextgeneration-autho.module.css
+   Pattern: matched from nextgeneration.module.css
+   ============================================ */
+
+@media screen and (max-width: 1730px) {
+    .nextget-main {
+        max-width: 90rem;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .nextget-main {
+        max-width: 75rem;
+    }
+
+    .nextgen-heading h2 {
+        font-size: 1.84rem;
+    }
+
+    .nextgen-description p {
+        font-size: 0.88rem;
+    }
+
+    .nextgen-extra p {
+        font-size: 0.88rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .nextgen-wrapper {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+    .nextget-main{
+        padding-block:0;
+    }
+    .nextgen-heading h2 {
+        font-size: 1.7rem;
+    }
+
+    .nextgen-description {
+        max-width: 90%;
+    }
+
+    .nextgen-description:last-child {
+        max-width: 90%;
+    }
+
+    .nextgen-description p {
+        font-size: 1rem;
+    }
+
+    .nextgen-extra p {
+        font-size: 1rem;
+        line-height: 130%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nextgen-heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .nextgen-description {
+        max-width: 90%;
+    }
+
+    .nextgen-description:last-child {
+        max-width: 90%;
+    }
+
+    .nextgen-description p {
+        font-size: 0.96rem;
+    }
+
+    .nextgen-extra p {
+        font-size: 0.96rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nextget-main {
+        padding-inline: 1.2rem;
+    }
+
+    .nextgen-heading h2 {
+        font-size: 1.3rem;
+    }
+
+    .nextgen-description p {
+        font-size: 0.9rem;
+    }
+
+    .nextgen-extra p {
+        font-size: 0.9rem;
+    }
+}
