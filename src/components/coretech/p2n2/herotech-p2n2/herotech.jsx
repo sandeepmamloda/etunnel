@@ -89,7 +89,7 @@ const Herotech = function () {
               </Link>
 
               <Link
-                href="/coretech/p2n2"
+                href="/coretech/fingervein"
                 className={styles["learn-more"]}
                 aria-label="Learn more about P2N2 AI Engine"
               >

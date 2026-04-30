@@ -1,6 +1,6 @@
-import styles from "./coretechnology.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./coretechnology.module.css";
 
 const Coretechnology = function () {
   return (
@@ -21,7 +21,7 @@ const Coretechnology = function () {
                     </p>
                   </div>
                 </div>
-                <Link href="/" className={styles["coretechnology-left-text-wrapper-bottom"]}>
+                <Link href="/coretech/p2n2" className={styles["coretechnology-left-text-wrapper-bottom"]}>
                     <span>How P2N2 Works</span>
                 </Link>
               </div>
@@ -45,7 +45,7 @@ const Coretechnology = function () {
                     </p>
                   </div>
                 </div>
-                <Link href="/" className={styles["coretechnology-right-text-wrapper-bottom"]}>
+                <Link href="/coretech/fingervein" className={styles["coretechnology-right-text-wrapper-bottom"]}>
                     <span>How Finger Vein Authentication Works</span>
                 </Link>
               </div>

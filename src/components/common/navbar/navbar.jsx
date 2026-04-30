@@ -14,13 +14,14 @@ const WHITE_TEXT_ROUTES = [
   "/solutons/biometric-authentication-solutions",
   "/company/overview",
   "/company/history",
+  "/biometric-products/products",
 ];
 
 const navLinks = [
-  { label: "Company",            href: "/companyoverview" },
+  { label: "Company",            href: "/company/overview" },
   { label: "Core Technology",    href: "/coretech/p2n2"   },
-  { label: "Biometric Products", href: "/products"         },
-  { label: "Solutions",          href: "/solutions"        },
+  { label: "Biometric Products", href: "/biometric-products/products"         },
+  { label: "Solutions",          href: "/solutions/solutions"        },
   { label: "News & Media",       href: "/news"             },
 ];
 

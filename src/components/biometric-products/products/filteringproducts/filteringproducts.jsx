@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./filteringproducts.module.css";
 
 const CATEGORIES = [
@@ -15,7 +15,7 @@ const PRODUCTS = [
   {
     id: 1,
     name: "ETUNNEL-ST-100V",
-    slug: "etunnel-st-100v",
+    slug: "st-100v",
     category: "finger-vein",
     badge: "Finger Vein",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-ST-100V.png",
@@ -24,7 +24,7 @@ const PRODUCTS = [
   {
     id: 2,
     name: "ETUNNEL-PL-101V",
-    slug: "etunnel-pl-101v",
+    slug: "pl-101v",
     category: "finger-vein",
     badge: "Finger Vein",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-PL-101V.png",
@@ -33,7 +33,7 @@ const PRODUCTS = [
   {
     id: 3,
     name: "ETUNNEL-SW-100V",
-    slug: "etunnel-sw-100v",
+    slug: "sw-100v",
     category: "finger-vein",
     badge: "Finger Vein",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-SW-100V.png",
@@ -42,7 +42,7 @@ const PRODUCTS = [
   {
     id: 4,
     name: "ETUNNEL-CW-100V",
-    slug: "etunnel-cw-100v",
+    slug: "cw-100v",
     category: "finger-vein",
     badge: "Finger Vein",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-CW-100V.png",
@@ -51,7 +51,7 @@ const PRODUCTS = [
   {
     id: 5,
     name: "ETUNNEL-SC-100P",
-    slug: "etunnel-sc-100p",
+    slug: "sc-100p",
     category: "fingerprint",
     badge: "Fingerprint",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-SC-100P.png",
@@ -60,7 +60,7 @@ const PRODUCTS = [
   {
     id: 6,
     name: "ETUNNEL-CC-100",
-    slug: "etunnel-cc-100",
+    slug: "cc-100",
     category: "fingerprint",
     badge: "Fingerprint",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-CC-100.png",
@@ -69,7 +69,7 @@ const PRODUCTS = [
   {
     id: 7,
     name: "ETUNNEL-CR-100",
-    slug: "etunnel-cr-100",
+    slug: "cr-100",
     category: "fingerprint",
     badge: "Fingerprint",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-CR-100.png",
@@ -78,7 +78,7 @@ const PRODUCTS = [
   {
     id: 8,
     name: "ETUNNEL-IV-100M",
-    slug: "etunnel-iv-100m",
+    slug: "iv-100m",
     category: "multimodal",
     badge: "Multimodal",
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-IV-100M.png",
@@ -158,7 +158,7 @@ export default function FilteringProducts() {
             style={{ "--stagger": index }}
           >
             <Link
-              href={`/products/${product.slug}`}
+              href={`/biometric-products/${product.slug}`}
               className={styles["product-card"]}
             >
               {/* Image */}

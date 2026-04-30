@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";     // ← Sirf yeh line add ki hai
+import Link from "next/link"; // ← Sirf yeh line add ki hai
 import styles from "./companyhistory.module.css";
 
 const Companyhistory = () => {
@@ -29,7 +29,7 @@ const Companyhistory = () => {
 
             {/* Sirf yahan Link add kiya hai - baaki sab same */}
             <Link 
-              href="/company-history" 
+              href="/company/history" 
               className={styles["companyhistory-img-overlay-text-bottom"]}
             >
               <span>Our Journey</span>

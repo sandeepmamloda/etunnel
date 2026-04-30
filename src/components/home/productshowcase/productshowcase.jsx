@@ -103,7 +103,7 @@ const Productshowcase = function () {
                 <p>At the heart of ETUNNEL is the P2N2 Biometric Authentication Integration Module.
                 It is a single AI engine designed to handle multiple biometric methods, without complexity.</p>
               </div>
-              <Link href="/" className={styles["productshowcase-wrapper-toggle"]}>
+              <Link href="/coretech/p2n2" className={styles["productshowcase-wrapper-toggle"]}>
                 <span>How P2N2 Works</span>
               </Link>
             </div>
@@ -123,7 +123,7 @@ const Productshowcase = function () {
                 <p>Finger vein authentication captures the unique vascular pattern beneath the skin using near-infrared light.
                 Internal and invisible, vein patterns cannot be forged or replicated.</p>
               </div>
-              <Link href="/" className={styles["productshowcase-wrapper-toggle"]}>
+              <Link href="/coretech/fingervein" className={styles["productshowcase-wrapper-toggle"]}>
                 <p>How FVA Works</p>
               </Link>
             </div>
@@ -143,7 +143,7 @@ const Productshowcase = function () {
                 <p>ETUNNEL is certified by KISA — Korea's Internet & Security Agency.
                 Meeting government-level standards for digital identity verification and security.</p>
               </div>
-              <Link href="/" className={styles["productshowcase-wrapper-toggle"]}>
+              <Link href="/coretech/kisa-certification" className={styles["productshowcase-wrapper-toggle"]}>
                 <span>View Certification</span>
               </Link>
             </div>
