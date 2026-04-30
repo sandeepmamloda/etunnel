@@ -35,3 +35,38 @@
   align-items: center;
   border-radius: 0;
 }
+/* -------------------responsive----------------------- */
+@media screen and (max-width: 1730px) {
+    .about-flex-wrapper {
+        max-width: 100rem;
+        padding-inline: 6rem;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .about-flex-wrapper {
+        max-width: 75rem;
+        padding-inline: 4rem;
+        row-gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .about-flex-wrapper {
+        padding-inline: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about-flex-wrapper {
+        padding-inline: 1rem;
+        row-gap: 1.2rem;
+    }
+}
+
+@media screen and (max-height: 428px) {
+    .about-flex-wrapper {
+        padding-inline: 1rem;
+        row-gap: 1rem;
+    }
+}

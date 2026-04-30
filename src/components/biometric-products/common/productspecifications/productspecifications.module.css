@@ -3,7 +3,7 @@
   height: fit-content;
   background-color: #ffffff;
   padding-block: 8rem;
-  border-top:solid 0.001rem #000;
+  border-top: solid 0.001rem #000;
 }
 
 .ps-container {
@@ -28,7 +28,7 @@
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.08rem;
-  color:#737373;
+  color: #737373;
 }
 
 .ps-title {
@@ -40,7 +40,7 @@
 }
 
 /* ── Table ── */
-  .ps-table {
+.ps-table {
   width: 100%;
   border: 0.008rem solid rgba(0, 0, 0, 0.15);
   border-radius: 1rem;
@@ -118,6 +118,115 @@
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.08rem;
-  color:#525252;
+  color: #525252;
   line-height: 160%;
+}
+
+/* =================RESPONSIVE================= */
+
+@media screen and (max-width: 1360px) {
+  .ps-container {
+    max-width: 60rem;
+  }
+  .ps-title {
+    font-size: 2.6rem;
+  }
+  .ps-wrapper {
+    padding-block: 6rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ps-container {
+    max-width: 100%;
+    padding-inline: 2.5rem;
+    row-gap: 3rem;
+  }
+  .ps-title {
+    font-size: 2.3rem;
+  }
+  .ps-wrapper {
+    padding-block: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ps-wrapper {
+    padding-block: 4rem;
+  }
+  .ps-container {
+    padding-inline: 1.8rem;
+    row-gap: 2.5rem;
+  }
+  .ps-title {
+    font-size: 2rem;
+  }
+  .ps-table-header {
+    grid-template-columns: 35% 65%;
+    padding-inline: 1.2rem;
+  }
+  .ps-row {
+    grid-template-columns: 35% 65%;
+    padding-inline: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ps-wrapper {
+    padding-block: 3rem;
+  }
+  .ps-container {
+    padding-inline: 1.2rem;
+    row-gap: 2rem;
+  }
+  .ps-title {
+    font-size: 1.8rem;
+  }
+
+  /* Row — stack ho jaaye column mein */
+  .ps-table-header {
+    display: none;
+  }
+  .ps-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-block: 1.2rem;
+    padding-inline: 1.2rem;
+  }
+  .ps-row-left {
+    column-gap: 0.6rem;
+  }
+  .ps-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .ps-spec-label {
+    font-size: 0.85rem;
+    color: #000;
+    font-weight: 700;
+  }
+  .ps-row-right {
+    padding-left: 2.4rem;
+  }
+  .ps-detail {
+    font-size: 0.8rem;
+    line-height: 170%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .ps-container {
+    padding-inline: 1rem;
+  }
+  .ps-title {
+    font-size: 1.6rem;
+  }
+  .ps-wrapper {
+    padding-block: 2.5rem;
+  }
+  .ps-row {
+    padding-inline: 1rem;
+  }
 }

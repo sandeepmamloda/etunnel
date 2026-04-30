@@ -51,6 +51,7 @@
     color: #fff;
     line-height: 100%;
     font-weight: normal;
+    text-align:center;
 }
 
 .heropk-section-text-wrapper p {
@@ -58,6 +59,7 @@
     font-size: 1.08rem;
     letter-spacing: 0.048rem !important;
     color: #fff;
+    text-align:center;
 }
 
 .download-brocher {
@@ -93,4 +95,103 @@
     font-size: 1.08rem;
     line-height: 100%;
     letter-spacing: 0.06rem;
+}
+
+/* -------------------responsive----------------------- */
+@media screen and (max-width:1800px) {
+    .heropk-section {
+        height: 85svh;
+    }
+}
+
+@media screen and (max-width:1600px) {
+    .heropk-section {
+        height: 80svh;
+    }
+}
+
+@media screen and (max-width:1360px) {
+    .heropk-section {
+        height: 70svh;
+    }
+    .heropk-section-text-wrapper {
+        row-gap: 1.2rem;
+        max-width: 80%;
+        min-width: 80%;
+    }
+    .heropk-section-text-wrapper h1 {
+        font-size: 2.2rem;
+    }
+    .heropk-section-text-wrapper p {
+        font-size: 0.9rem;
+    }
+    .download-brocher {
+        width: 8.5rem;
+        height: 2.7rem;
+    }
+    .download-brocher span {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .heropk-section {
+        height: 90svh;
+    }
+    .heropk-section-text-wrapper {
+        max-width: 90%;
+        min-width: 90%;
+        bottom: 1.2rem;
+        row-gap: 1rem;
+    }
+    .heropk-section-text-wrapper h1 {
+        font-size: 1.6rem;
+    }
+    .heropk-section-text-wrapper p {
+        font-size: 0.8rem;
+    }
+    .download-brocher {
+        width: 8.5rem;
+        height: 2.7rem;
+        margin-top: 0.8rem;
+    }
+    .download-brocher span {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .heropk-section-text-wrapper {
+        bottom: 1rem;
+        row-gap: 1rem;
+    }
+    .download-brocher {
+        margin-top: 0.8rem;
+    }
+}
+
+@media screen and (max-height: 428px) {
+    .heropk-section {
+        height: 100svh;
+    }
+    .heropk-section-text-wrapper {
+        bottom: 0.6rem;
+        row-gap: 0.8rem;
+        max-width: 90%;
+        min-width: 90%;
+    }
+    .heropk-section-text-wrapper h1 {
+        font-size: 1.4rem;
+    }
+    .heropk-section-text-wrapper p {
+        font-size: 0.75rem;
+    }
+    .download-brocher {
+        width: 8.5rem;
+        height: 2.5rem;
+        margin-top: 0.6rem;
+    }
+    .download-brocher span {
+        font-size: 0.75rem;
+    }
 }

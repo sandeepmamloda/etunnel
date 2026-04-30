@@ -144,3 +144,87 @@
     letter-spacing: 0.036rem;
     margin: 0;
 }
+
+
+/* -------------------responsive----------------------- */
+@media screen and (max-width:1800px) {
+    .cqframework-img {
+        height: 42rem;
+    }
+}
+
+@media screen and (max-width:1600px) {
+    .cqframework-img {
+        height: 35rem;
+    }
+}
+
+@media screen and (max-width:1360px) {
+    .cqframework-img {
+        height: 70svh;
+    }
+    .cqframework-img-overlay-text {
+        row-gap: 1.8rem;
+    }
+    .cqframework-img-overlay-text-top {
+        row-gap: 1.2rem;
+    }
+    .cqframework-img-overlay-text-top .cqframework-img-overlay-text-top-1 h3 {
+        font-size: 0.8rem;
+    }
+    .cqframework-img-overlay-text-top .cqframework-img-overlay-text-top-1 h2 {
+        font-size: 2.2rem;
+    }
+    .cqframework-img-overlay-text-top .cqframework-img-overlay-text-top-2 {
+        row-gap: 1.2rem;
+    }
+    .cqframework-img-overlay-text-top .cqframework-img-overlay-text-top-2 p {
+        font-size: 0.8rem;
+        line-height: 100%;
+    }
+    .cqframework-img-overlay-text-top .cqframework-img-overlay-text-top-2 p span {
+        font-size: 0.8rem;
+        line-height: 100%;
+    }
+    .cqframework-img-overlay-text-bottom {
+        width: 8rem;
+        height: 2.7rem;
+    }
+    .cqframework-img-overlay-text-bottom span {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .cqframework-img {
+        height: 90svh;
+    }
+    .cqframework-img-overlay-text-top .cqframework-img-overlay-text-top-1 h2 {
+        font-size: 1.6rem;
+    }
+    .cqframework-img-overlay {
+        padding: 1.2rem;
+    }
+}
+
+@media screen and (max-height:428px) {
+    .cqframework-img {
+        height: 100svh;
+    }
+    .cqframework-img-overlay {
+        padding: 1rem;
+        align-items: flex-end;
+    }
+    .cqframework-img-overlay-text {
+        row-gap: 1.2rem;
+    }
+    .cqframework-img-overlay-text-top {
+        row-gap: 0.8rem;
+    }
+    .cqframework-img-overlay-text-top .cqframework-img-overlay-text-top-1 {
+        row-gap: 0.8rem;
+    }
+    .cqframework-img-overlay-text-top .cqframework-img-overlay-text-top-2 {
+        row-gap: 0.6rem;
+    }
+}
