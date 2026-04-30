@@ -1,5 +1,5 @@
 .heroproducts-section{
-    height:50.4rem;
+    height:93svh;
     width:100%;
     background-color:black;
 }
@@ -181,4 +181,181 @@
     transform:translateY(-50%);
     right:0;
     background-color:rgba(255, 255, 255, 0.3);
+}
+
+/* ===== BASE STYLES (already existing) ===== */
+
+/* ---responsive--- */
+
+@media screen and (max-width: 1360px) {
+    /* .heroproducts-section {
+        height: 46rem;
+    } */
+
+    .heroproducts-section-text-wrapper {
+        min-width: 90%;
+        row-gap: 0.6rem;
+        bottom: 2rem;
+    }
+
+    .heroproducts-section-text-wrapper h1 {
+        font-size: 2.2rem;
+    }
+
+    .heroproducts-section-text-wrapper p {
+        font-size: 0.88rem;
+    }
+
+    .content-box:first-child h2,
+    .content-box:nth-child(2) h2,
+    .content-box:last-child h2 {
+        font-size: 1.6rem;
+    }
+
+    .content-box:first-child p,
+    .content-box:nth-child(2) p,
+    .content-box:last-child p {
+        font-size: 0.75rem;
+    }
+
+    .download-brocher {
+        width: 8.5rem;
+        height: 2.7rem;
+        margin-top: 1.4rem;
+    }
+
+    .download-brocher span {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* .heroproducts-section {
+        height: 100svh;
+    } */
+
+    .heroproducts-section-text-wrapper {
+        min-width: 95%;
+        row-gap: 0.5rem;
+        bottom: 1.8rem;
+        padding-inline: 1rem;
+    }
+
+    .heroproducts-section-text-wrapper h1 {
+        font-size: 1.8rem;
+        line-height: 120%;
+    }
+
+    .heroproducts-section-text-wrapper p {
+        font-size: 0.8rem;
+        letter-spacing: 0.03rem;
+    }
+
+    .data-container {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .content-box:first-child {
+        padding-left: 0.8rem;
+        padding-right: 1.5rem;
+    }
+
+    .content-box:nth-child(2) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .content-box:last-child {
+        padding-left: 1.5rem;
+        padding-right: 0.8rem;
+    }
+
+    .content-box:first-child h2,
+    .content-box:nth-child(2) h2,
+    .content-box:last-child h2 {
+        font-size: 1.4rem;
+    }
+
+    .content-box:first-child p,
+    .content-box:nth-child(2) p,
+    .content-box:last-child p {
+        font-size: 0.7rem;
+        letter-spacing: 0.04rem;
+    }
+
+    .download-brocher {
+        width: 8rem;
+        height: 2.6rem;
+        margin-top: 1.2rem;
+    }
+
+    .download-brocher span {
+        font-size: 0.88rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .heroproducts-section-text-wrapper h1 {
+        font-size: 1.5rem;
+        line-height: 125%;
+    }
+
+    .heroproducts-section-text-wrapper p {
+        font-size: 0.75rem;
+    }
+
+    .content-box:first-child h2,
+    .content-box:nth-child(2) h2,
+    .content-box:last-child h2 {
+        font-size: 1.2rem;
+    }
+
+    .content-box:first-child p,
+    .content-box:nth-child(2) p,
+    .content-box:last-child p {
+        font-size: 0.65rem;
+        letter-spacing: 0.03rem;
+    }
+
+    .content-box:first-child {
+        padding-left: 0.6rem;
+        padding-right: 1.1rem;
+    }
+
+    .content-box:nth-child(2) {
+        padding-left: 1.1rem;
+        padding-right: 1.1rem;
+    }
+
+    .content-box:last-child {
+        padding-left: 1.1rem;
+        padding-right: 0.6rem;
+    }
+
+    .download-brocher {
+        width: 7.5rem;
+        height: 2.4rem;
+        margin-top: 1rem;
+    }
+
+    .download-brocher span {
+        font-size: 0.82rem;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .heroproducts-section-text-wrapper {
+        bottom: 0.6rem;
+        row-gap: 0.4rem;
+    }
+
+    .data-container {
+        margin-top: 0.7rem;
+    }
+
+    .download-brocher {
+        margin-top: 0.7rem;
+    }
 }

@@ -157,10 +157,208 @@
   border-radius: 50%;
 }
 
-/* Next.js Image override */
 .img {
   height: 100% !important;
   width: 100% !important;
   position: static !important;
   object-fit: contain;
+}
+
+/* =================RESPONSIVE================= */
+
+@media screen and (max-width: 1360px) {
+  .evaluationframework-wrapper {
+    margin-top: 5.5rem;
+  }
+  .header-title {
+    font-size: 2.2rem;
+  }
+  .evaluationframework-items .content-title {
+    font-size: 1.3rem;
+  }
+  .evaluationframework-items .content-desc {
+    font-size: 0.9rem;
+  }
+  .evaluationframework-items .content {
+    max-width: 16rem;
+  }
+  .evaluationframework-items .image {
+    height: 6rem;
+    width: 6rem;
+  }
+  .circle .image {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .evaluationframework-wrapper {
+    margin-top: 4rem;
+    gap: 2rem;
+  }
+  .header-title {
+    font-size: 2rem;
+  }
+  .header-desc {
+    font-size: 0.9rem;
+  }
+  .evaluationframework-items .content-title {
+    font-size: 1.1rem;
+  }
+  .evaluationframework-items .content-desc {
+    font-size: 0.85rem;
+  }
+  .evaluationframework-items .content {
+    max-width: 12rem;
+  }
+  .evaluationframework-items .image {
+    height: 5rem;
+    width: 5rem;
+  }
+  .circle .image {
+    height: 8rem;
+    width: 8rem;
+  }
+  .tampering-resistance {
+    margin-inline-end: 1.5rem;
+  }
+  .user-convenience {
+    margin-inline-start: 1.5rem;
+  }
+  .true-acceptance-rate,
+  .false-acceptance-rate {
+    margin-block-end: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .evaluationframework-wrapper {
+    margin-top: 3rem;
+    width: 100%;
+    padding-inline: 1.5rem;
+  }
+  .header-title {
+    font-size: 1.8rem;
+  }
+  .evaluationframework-items .content {
+    max-width: 10rem;
+  }
+  /* .evaluationframework-items .image {
+    height: 4rem;
+    width: 4rem;
+  } */
+  /* .circle .image {
+    height: 6.5rem;
+    width: 6.5rem;
+  } */
+  .tampering-resistance {
+    margin-inline-end: 1rem;
+  }
+  .user-convenience {
+    margin-inline-start: 1rem;
+  }
+  .true-acceptance-rate{
+    margin-block-end:0;
+  }
+  .false-acceptance-rate{
+    margin-block-end:0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .evaluationframework-wrapper {
+    width: 100%;
+    margin-top: 2.5rem;
+    padding-inline: 1.2rem;
+    gap: 2rem;
+  }
+  .header-title {
+    font-size: 1.6rem;
+  }
+
+  /* Grid completely off — simple column stack */
+  .evaluationframework-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  /* Circle sabse upar */
+  .circle {
+    order: -1;
+    margin-inline:auto;
+    margin-block-end:0!important;
+  }
+  .circle .image {
+    height: 12rem!important;
+    width: 12rem!important;
+    object-position: center;
+  }
+
+  /* Sab items row mein — image + content side by side */
+  .true-acceptance-rate,
+  .false-acceptance-rate,
+  .tampering-resistance,
+  .user-convenience {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin: 0 !important;
+    justify-content: flex-start;
+  }
+
+  .tampering-resistance-2 {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  .tampering-resistance-2 .content {
+    max-width: 100% !important;
+    text-align: left;
+  }
+
+  /* Sab content left aligned */
+  .true-acceptance-rate .content,
+  .tampering-resistance .content {
+    text-align: left;
+  }
+
+  .evaluationframework-items .content {
+    max-width: 100%;
+  }
+  .evaluationframework-items .image {
+    height: 4.5rem;
+    width: 4.5rem;
+    flex-shrink: 0;
+  }
+  .evaluationframework-items .content-title {
+    font-size: 1rem;
+  }
+  .evaluationframework-items .content-desc {
+    font-size: 0.85rem;
+    line-height: 150%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .evaluationframework-wrapper {
+    padding-inline: 1rem;
+    margin-top: 2rem;
+  }
+  .header-title {
+    font-size: 1.4rem;
+  }
+  .evaluationframework-items .image {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+  .circle .image {
+    height: 6.5rem;
+    width: 6.5rem;
+  }
 }

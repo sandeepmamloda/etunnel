@@ -16,7 +16,6 @@
 .biometriccertification-left{
     height:35rem;
     width:100%;
-    /* background-color:orange; */
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -43,7 +42,6 @@
 .biometriccertification-right{
     height:30rem;
     width:100%;
-    /* background-color:yellow; */
     padding:2.4rem;
 }
 .biometriccertification-right .img{
@@ -51,4 +49,104 @@
     width:100%!important;
     position:static!important;
     object-fit:contain;
+}
+
+/* =================RESPONSIVE================= */
+
+@media screen and (max-width: 1730px) {
+    .biometriccertification-main {
+        max-width: 88%;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .biometriccertification-main {
+        max-width: 88%;
+        margin-top: 5rem;
+    }
+    .biometriccertification-left p,
+    .biometriccertification-left h3 {
+        font-size: 1.3rem;
+    }
+    .biometriccertification-left {
+        height: 30rem;
+    }
+    .biometriccertification-right {
+        height: 26rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .biometriccertification-main {
+        max-width: 90%;
+        margin-top: 4rem;
+    }
+    .biometriccertification-left p,
+    .biometriccertification-left h3 {
+        font-size: 1.1rem;
+    }
+    .biometriccertification-left {
+        height: 26rem;
+    }
+    .biometriccertification-right {
+        height: 22rem;
+        padding: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .biometriccertification-main {
+        max-width: 92%;
+        margin-top: 3rem;
+    }
+    .biometriccertification-left p,
+    .biometriccertification-left h3 {
+        font-size: 1rem;
+        line-height: 160%;
+    }
+    .biometriccertification-left {
+        height: fit-content;
+        row-gap: 1.5rem;
+    }
+    .biometriccertification-right {
+        height: 18rem;
+        padding: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .biometriccertification-main {
+        flex-direction: column;
+        max-width: 92%;
+        margin-top: 2.5rem;
+        row-gap: 2rem;
+    }
+    .biometriccertification-left {
+        height: fit-content;
+        row-gap: 1.2rem;
+    }
+    .biometriccertification-left p,
+    .biometriccertification-left h3 {
+        font-size: 1rem;
+        line-height: 170%;
+    }
+    .biometriccertification-right {
+        width: 100%;
+        height: 22rem;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .biometriccertification-main {
+        max-width: 95%;
+        margin-top: 2rem;
+    }
+    .biometriccertification-left p,
+    .biometriccertification-left h3 {
+        font-size: 0.95rem;
+    }
+    .biometriccertification-right {
+        height: 18rem;
+    }
 }

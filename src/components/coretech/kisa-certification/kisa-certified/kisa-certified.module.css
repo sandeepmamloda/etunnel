@@ -15,9 +15,11 @@
     align-items: center;
     gap: 1.8rem;
     max-width: 36%;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 2rem;
 }
 
-/* Heading */
 .kisacertified-content h2 {
     font-size: 2.76rem;
     font-family: 'NeueHaasDisplayThin';
@@ -26,7 +28,6 @@
     color: black;
 }
 
-/* Paragraph */
 .kisacertified-content p {
     font-size: 1.2rem;
     font-family: 'NeueHaasDisplayXThin';
@@ -36,14 +37,12 @@
     letter-spacing: 0.096rem;
 }
 
-/* Buttons Wrapper */
 .kisacertified-buttons {
     display: flex;
     gap: 1.2rem;
     margin-top: 1.2rem;
 }
 
-/* Dark Button */
 .btn-dark {
     cursor: pointer;
     background-color: rgb(0, 0, 0);
@@ -74,10 +73,9 @@
     transform: translateY(-2px);
 }
 
-/* Light Button */
 .btn-light {
     cursor: pointer;
-    background-color: rgba(255,255,255,1);
+    background-color: rgba(255, 255, 255, 1);
     border: 0.156rem solid rgb(0, 0, 0);
     border-radius: 3rem;
     justify-content: center;
@@ -86,7 +84,7 @@
     width: 13.2rem;
     height: 3.96rem;
     display: flex;
-    color: rgba(0,0,0,1);
+    color: rgba(0, 0, 0, 1);
 }
 
 .btn-light span {
@@ -99,4 +97,94 @@
 .btn-light:hover {
     background-color: black;
     color: white;
+}
+
+/* =================RESPONSIVE================= */
+
+@media screen and (max-width: 1730px) {
+    .kisacertified-content {
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .kisacertified-content {
+        max-width: 60%;
+    }
+    .kisacertified-content h2 {
+        font-size: 2rem;
+    }
+    .kisacertified-content p {
+        font-size: 1rem;
+    }
+    .btn-dark span,
+    .btn-light span {
+        font-size: 0.88rem;
+    }
+    .btn-dark,
+    .btn-light {
+        width: 12rem;
+        height: 3.6rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .kisacertified-content {
+        max-width: 72%;
+    }
+    .kisacertified-wrapper {
+        padding: 5.5rem 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .kisacertified-content {
+        max-width: 80%;
+    }
+    .kisacertified-wrapper {
+        padding: 4.8rem 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .kisacertified-content {
+        max-width: 92%;
+    }
+    .kisacertified-content{
+        row-gap:1rem;
+    }
+    .kisacertified-wrapper {
+        padding: 4rem 0;
+    }
+    .kisacertified-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .btn-dark,
+    .btn-light {
+        width: 100%;
+        max-width: 18rem;
+    }
+}
+@media screen and (max-width:440px){
+    .kisacertified-content p {
+        line-height: 140%;;
+    }
+    .kisacertified-buttons{
+        row-gap:0.5rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .kisacertified-content {
+        max-width: 95%;
+        padding-inline: 1.2rem;
+    }
+    .kisacertified-wrapper {
+        padding: 3.2rem 0;
+    }
+    .btn-dark,
+    .btn-light {
+        max-width: 100%;
+    }
 }

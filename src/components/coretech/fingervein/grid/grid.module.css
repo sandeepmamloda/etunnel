@@ -6,7 +6,7 @@
 
 .grid-main {
     height: fit-content;
-    width: fit-content;
+    width:fit-content;
     display: flex;
     flex-direction:column;
     justify-content: center;
@@ -98,15 +98,15 @@
 @media screen and (max-width: 1730px) {
     .grid-main {
         max-width: 90rem;
-        width: 100%;
+        width: fit-content;
     }
 }
 
 @media screen and (max-width: 1360px) {
-    .grid-main {
+    /* .grid-main {
         max-width: 75rem;
-        width: 100%;
-    }
+        width: fit-content;
+    } */
 
     /* h2 = 2.3rem → -0.2 = 2.1rem ✅ */
     .grid-top h2 {
@@ -118,7 +118,11 @@
     /* grid-items p = 0.78rem → skip ❌ */
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1300px) {
+    .grid-main {
+        max-width: 75rem;
+        width: fit-content;
+    }
     .grid-wrapper {
         padding-block: 2.2rem;
     }

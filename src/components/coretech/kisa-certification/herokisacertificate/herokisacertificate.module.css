@@ -26,7 +26,6 @@
     font-family: 'NeueHaasDisplayThin';
     line-height: 100%;
     letter-spacing:0.09rem;
-    text-align:center;
 }
 .herokisacertificate-top h1 span{
     color:rgba(255, 120, 0, 1);
@@ -57,9 +56,6 @@
     padding-inline:2rem;
     border-radius:2.4rem;
     background-color:black;
-    /* display:flex;
-    flex-direction: row;
-    column-gap:0.9rem; */
 }
 .herokisacertificate-bottom-wrapper span{
     font-size:1rem;
@@ -79,4 +75,84 @@
     width:1rem!important;
     position:static!important;
     object-fit:contain;
+}
+
+/* =================RESPONSIVE================= */
+
+@media screen and (max-width: 1730px) {
+    .herokisacertificate-main {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .herokisacertificate-main {
+        max-width: 70%;
+    }
+    .herokisacertificate-top h1 {
+        font-size: 3.1rem;
+    }
+    .herokisacertificate-middle p {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    /* .herokisacertificate-wrapper {
+        height: 30rem;
+    } */
+    .herokisacertificate-main {
+        max-width: 80%;
+        row-gap: 1.5rem;
+    }
+    .herokisacertificate-top h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* .herokisacertificate-wrapper {
+        height: 28rem;
+    } */
+    .herokisacertificate-main {
+        max-width: 88%;
+    }
+    .herokisacertificate-top h1 {
+        font-size: 2.4rem;
+    }
+    .herokisacertificate-middle p {
+        line-height: 160%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /* .herokisacertificate-wrapper {
+        height: fit-content;
+        padding-block: 4rem 2.5rem;
+    } */
+    .herokisacertificate-main {
+        max-width: 92%;
+        row-gap: 1.2rem;
+        justify-content: flex-end;
+    }
+    .herokisacertificate-top h1 {
+        font-size: 2rem;
+        line-height: 130%;
+    }
+    .herokisacertificate-middle p {
+        font-size: 0.9rem;
+        line-height: 170%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .herokisacertificate-main {
+        max-width: 95%;
+    }
+    .herokisacertificate-top h1 {
+        font-size: 1.8rem;
+    }
+    .herokisacertificate-wrapper {
+        padding-inline: 1.2rem;
+    }
 }
