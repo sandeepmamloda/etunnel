@@ -316,3 +316,13 @@
     width: 16rem !important;
   }
 }
+@media screen and (max-width:1580px) {
+  .footer-top-links span:first-child {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width:600px) {
+  .footer-top-links span:first-child {
+    font-size: 2rem;
+  }
+}

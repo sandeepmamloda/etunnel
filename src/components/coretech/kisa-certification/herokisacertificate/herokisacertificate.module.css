@@ -27,10 +27,18 @@
     line-height: 100%;
     letter-spacing:0.09rem;
 }
-.herokisacertificate-top h1 span{
+.herokisacertificate-top h1>span{
     color:rgba(255, 120, 0, 1);
     letter-spacing:0.09rem;
 }
+.herokisacertificate-top h1 span{
+    letter-spacing:0.09rem;
+}
+.herokisacertificate-top h1>span:last-child {
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 0.09rem;
+}
+/* Letter Cascade color helpers */
 .herokisacertificate-middle{
     height:fit-content;
     width:fit-content;

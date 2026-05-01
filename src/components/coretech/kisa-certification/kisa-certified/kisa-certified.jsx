@@ -2,7 +2,7 @@ import styles from "./kisa-certified.module.css";
 
 const Kisacertified = () => {
   return (
-    <div className={styles["kisacertified-wrapper"]}>
+    <section className={styles["kisacertified-wrapper"]}>
       
       <div className={styles["kisacertified-content"]}>
         
@@ -33,7 +33,7 @@ const Kisacertified = () => {
 
       </div>
 
-    </div>
+    </section>
   );
 };
 

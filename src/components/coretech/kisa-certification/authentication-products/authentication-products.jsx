@@ -1,22 +1,125 @@
+"use client";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 import styles from "./authentication-products.module.css";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Authenticationproducts = function () {
+  const wrapperRef = useRef(null);
+  const headingRef = useRef(null);
+  const descRef = useRef(null);
+  const fingerHeadingRef = useRef(null);
+  const faceHeadingRef = useRef(null);
+  const item1Ref = useRef(null);
+  const item2Ref = useRef(null);
+  const item3Ref = useRef(null);
+  const item4Ref = useRef(null);
+  const item5Ref = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const isMobile = window.innerWidth <= 600;
+
+      // ------ h2 ------
+      gsap.from(headingRef.current, {
+        clipPath: "inset(100% 0% 0% 0%)",
+        y: isMobile ? 24 : 40,
+        duration: isMobile ? 0.9 : 1.1,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 88%",
+          once: true,
+        },
+      });
+
+      // ------ p ------
+      gsap.from(descRef.current, {
+        clipPath: "inset(100% 0% 0% 0%)",
+        y: isMobile ? 24 : 40,
+        duration: isMobile ? 0.9 : 1.1,
+        ease: "power4.out",
+        delay: 0.15,
+        scrollTrigger: {
+          trigger: descRef.current,
+          start: "top 88%",
+          once: true,
+        },
+      });
+
+      // ------ finger vein heading ------
+      gsap.from(fingerHeadingRef.current, {
+        clipPath: "inset(100% 0% 0% 0%)",
+        y: isMobile ? 20 : 30,
+        duration: isMobile ? 0.85 : 1,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: fingerHeadingRef.current,
+          start: "top 88%",
+          once: true,
+        },
+      });
+
+      // ------ facial recognition heading ------
+      gsap.from(faceHeadingRef.current, {
+        clipPath: "inset(100% 0% 0% 0%)",
+        y: isMobile ? 20 : 30,
+        duration: isMobile ? 0.85 : 1,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: faceHeadingRef.current,
+          start: "top 88%",
+          once: true,
+        },
+      });
+
+      // ------ product items staggered ------
+      const items = [
+        item1Ref.current,
+        item2Ref.current,
+        item3Ref.current,
+        item4Ref.current,
+        item5Ref.current,
+      ].filter(Boolean);
+
+      items.forEach((el, i) => {
+        gsap.from(el, {
+          clipPath: "inset(100% 0% 0% 0%)",
+          y: isMobile ? 20 : 30,
+          duration: isMobile ? 0.85 : 1,
+          ease: "power4.out",
+          delay: i * 0.1,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 88%",
+            once: true,
+          },
+        });
+      });
+
+    }, wrapperRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
-      <div className={styles["authenticationproducts-wrapper"]}>
+      <section ref={wrapperRef} className={styles["authenticationproducts-wrapper"]}>
         <div className={styles["authenticationproducts-main"]}>
 
           {/* ---- Header ---- */}
           <div className={styles["authenticationproducts-top"]}>
-            <h2>Authentication Products</h2>
-            <p>KISA-certified biometric authentication devices for finger vein and facial recognition.</p>
+            <h2 ref={headingRef}>Authentication Products</h2>
+            <p ref={descRef}>KISA-certified biometric authentication devices for finger vein and facial recognition.</p>
           </div>
 
           <div className={styles["authenticationproducts-bottom"]}>
 
             {/* ---- Finger Vein Recognition ---- */}
             <div className={styles["authenticationproducts-bottom-1"]}>
-              <div className={styles["heading"]}>
+              <div ref={fingerHeadingRef} className={styles["heading"]}>
                 <span className={styles["heading-icon"]}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <g clipPath="url(#clip0_173_3882)">
@@ -41,7 +144,7 @@ const Authenticationproducts = function () {
               </div>
 
               <div className={styles["section"]}>
-                <div className={styles["authenticationproducts-items"]}>
+                <div ref={item1Ref} className={styles["authenticationproducts-items"]}>
                   <div className={styles["image-wrapper"]}>
                     <img src="/images/coretech/kisa-certification/authenticationproducts/etunnel-r1-100v.png" alt="ETUNNEL-R1-100V"/>
                   </div>
@@ -50,7 +153,7 @@ const Authenticationproducts = function () {
                   </div>
                 </div>
 
-                <div className={styles["authenticationproducts-items"]}>
+                <div ref={item2Ref} className={styles["authenticationproducts-items"]}>
                   <div className={styles["image-wrapper"]}>
                     <img src="/images/coretech/kisa-certification/authenticationproducts/etunnel-pl-101v.png" alt="ETUNNEL-PL-101V"/>
                   </div>
@@ -59,7 +162,7 @@ const Authenticationproducts = function () {
                   </div>
                 </div>
 
-                <div className={styles["authenticationproducts-items"]}>
+                <div ref={item3Ref} className={styles["authenticationproducts-items"]}>
                   <div className={styles["image-wrapper"]}>
                     <img src="/images/coretech/kisa-certification/authenticationproducts/etunnel-sw-100v.png" alt="ETUNNEL-SW-100V"/>
                   </div>
@@ -68,7 +171,7 @@ const Authenticationproducts = function () {
                   </div>
                 </div>
 
-                <div className={styles["authenticationproducts-items"]}>
+                <div ref={item4Ref} className={styles["authenticationproducts-items"]}>
                   <div className={styles["image-wrapper"]}>
                     <img src="/images/coretech/kisa-certification/authenticationproducts/etunnel-cw-100v.png" alt="ETUNNEL-CW-100V"/>
                   </div>
@@ -81,7 +184,7 @@ const Authenticationproducts = function () {
 
             {/* ---- Facial Recognition ---- */}
             <div className={styles["authenticationproducts-bottom-2"]}>
-              <div className={styles["heading"]}>
+              <div ref={faceHeadingRef} className={styles["heading"]}>
                 <span className={styles["heading-icon"]}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path d="M0 10C0 4.47715 4.47715 0 10 0H22C27.5228 0 32 4.47715 32 10V22C32 27.5228 27.5228 32 22 32H10C4.47715 32 0 27.5228 0 22V10Z" fill="black"/>
@@ -100,7 +203,7 @@ const Authenticationproducts = function () {
               </div>
 
               <div className={styles["section"]}>
-                <div className={styles["authenticationproducts-items"]}>
+                <div ref={item5Ref} className={styles["authenticationproducts-items"]}>
                   <div className={styles["image-wrapper"]}>
                     <img src="/images/coretech/kisa-certification/authenticationproducts/etunnel-iv-100m.png" alt="ETUNNEL-IV-100M"/>
                   </div>
@@ -113,7 +216,7 @@ const Authenticationproducts = function () {
 
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

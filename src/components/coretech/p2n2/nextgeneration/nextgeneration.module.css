@@ -38,6 +38,9 @@
     letter-spacing: 0.096rem;
     text-align: center;
 }
+.nextgeneration-wrapper .nextgeneration-top h2 span{
+    letter-spacing: 0.096rem;
+}
 
 /* .nextgeneration-wrapper .nextgeneration-top span:last-child{
     font-size: 2.04rem;
@@ -67,6 +70,9 @@
     color: rgba(82, 82, 82, 1);
     letter-spacing: 0.06rem;
     text-align: center;
+}
+.nextgeneration-bottom p span{
+    letter-spacing: 0.06rem;
 }
 
 @media screen and (max-width: 1730px) {
