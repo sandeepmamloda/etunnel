@@ -136,12 +136,6 @@ const Herotech = function () {
             <div className={styles["herotech-fingervein-right-outer"]}></div>
           </div>
           <div className={styles["herotech-fingervein-right-img"]}>
-            <div
-              className={`${styles["ai-powered"]} ${styles["anim-fade-up"]}`}
-              style={{ animationDelay: "0.8s" }}
-            >
-              <span>AI-Powered</span>
-            </div>
             <Image
               src="/images/coretech/fingervein/hero-tech/hero-tech.png"
               fill={true}

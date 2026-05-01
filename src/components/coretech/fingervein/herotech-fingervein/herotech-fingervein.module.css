@@ -182,7 +182,7 @@
     justify-content: center;
     align-items: center;
     column-gap: 0.48rem;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
     text-decoration: none;
     overflow: hidden;
@@ -217,7 +217,7 @@
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.links .contact-us .stair { background: rgba(255, 255, 255, 0.15); }
+.links .contact-us .stair { background: rgba(0, 0, 0, 1); }
 .links .learn-more .stair  { background: rgba(0, 0, 0, 1); }
 
 .links .contact-us .stair:nth-child(1),
@@ -248,14 +248,20 @@
 .links .learn-more:not(:hover) .stair:nth-child(4) { transition-delay: 0s; }
 
 /* Contact Us text & arrow */
+/* Contact Us text & arrow */
 .links .contact-us span:not(.stair) {
     font-family: 'NeueHaasDisplayXXThin';
     font-size: 1.08rem;
     font-weight: 600;
     letter-spacing: 0.0636rem;
-    color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 1);        /* black → white on hover */
     position: relative;
     z-index: 2;
+    transition: color 0.3s ease 0.1s;
+}
+
+.links .contact-us:hover span:not(.stair) {
+    color: rgba(255, 255, 255, 1);
 }
 
 .arrow {
@@ -263,12 +269,13 @@
     width: 1.2rem;
     position: relative;
     z-index: 2;
-    color: rgba(255, 255, 255, 1);
-    transition: transform 0.3s ease;
+    color: rgba(0, 0, 0, 1);        /* black → white on hover */
+    transition: transform 0.3s ease, color 0.3s ease 0.1s;
 }
 
 .links .contact-us:hover .arrow {
     transform: translateX(4px);
+    color: rgba(255, 255, 255, 1);
 }
 
 /* Learn More text & arrow */
@@ -355,6 +362,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    display:none;
 }
 
 .ai-powered span {

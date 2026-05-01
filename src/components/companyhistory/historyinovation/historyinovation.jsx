@@ -111,11 +111,10 @@
 // export default Historyinovation;
 // ------------------------------------------------
 "use client"
-import { useEffect, useRef } from "react";
-import { useState } from "react";
-import styles from "./historyinovation.module.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef, useState } from "react";
+import styles from "./historyinovation.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -153,15 +152,59 @@ const Historyinovation = function () {
     const titleRef = useRef(null);
     const descRef = useRef(null);
     const accordionItemsRef = useRef([]);
+    const bodyImgRefs = useRef([]);
+    const bodyContentBlocksRefs = useRef([]);
 
     const handleToggle = (year) => {
         setOpenYear(prev => prev === year ? null : year);
     };
 
+    // ------pehle accordion (2025) ka initial content animation------
+    useEffect(() => {
+        const index = 0;
+        const imgEl = bodyImgRefs.current[index];
+        const blocks = bodyContentBlocksRefs.current[index] || [];
+
+        const ctx = gsap.context(() => {
+
+            if (imgEl) {
+                gsap.from(imgEl, {
+                    clipPath: "inset(0% 100% 0% 0%)",
+                    duration: 1.2,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: imgEl,
+                        start: "top 88%",
+                        once: true,
+                    }
+                });
+            }
+
+            blocks.forEach((block, i) => {
+                if (!block) return;
+                gsap.from(block, {
+                    clipPath: "inset(100% 0% 0% 0%)",
+                    y: 30,
+                    duration: 1.0,
+                    ease: "power4.out",
+                    delay: 0.15 + i * 0.12,
+                    scrollTrigger: {
+                        trigger: block,
+                        start: "top 90%",
+                        once: true,
+                    }
+                });
+            });
+
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
+    // ------scroll trigger animations (mount pe ek baar)------
     useEffect(() => {
         const ctx = gsap.context(() => {
 
-            // ------title clip path reveal------
             gsap.from(titleRef.current, {
                 clipPath: "inset(100% 0% 0% 0%)",
                 y: 40,
@@ -174,13 +217,12 @@ const Historyinovation = function () {
                 }
             });
 
-            // ------desc clip path reveal------
             gsap.from(descRef.current, {
                 clipPath: "inset(100% 0% 0% 0%)",
-                y: 30,
+                y: 40,
                 duration: 1.0,
                 ease: "power4.out",
-                delay: 0.2,
+                delay: 0.15,
                 scrollTrigger: {
                     trigger: descRef.current,
                     start: "top 85%",
@@ -188,7 +230,6 @@ const Historyinovation = function () {
                 }
             });
 
-            // ------accordion items — har item ka apna scroll trigger------
             accordionItemsRef.current.forEach((item) => {
                 gsap.from(item, {
                     clipPath: "inset(0% 0% 100% 0%)",
@@ -196,8 +237,8 @@ const Historyinovation = function () {
                     duration: 0.8,
                     ease: "power4.out",
                     scrollTrigger: {
-                        trigger: item,       // ✅ har item apna trigger
-                        start: "top 88%",    // ✅ jab item viewport mein aaye
+                        trigger: item,
+                        start: "top 88%",
                         once: true,
                     }
                 });
@@ -207,6 +248,54 @@ const Historyinovation = function () {
 
         return () => ctx.revert();
     }, []);
+
+    // ------openYear change hone pe body content animate karo------
+    useEffect(() => {
+        if (!openYear) return;
+
+        const index = accordionData.findIndex(d => d.year === openYear);
+        if (index === -1) return;
+
+        // pehla accordion skip karo — uska animation alag useEffect se handle hota hai
+        if (index === 0) return;
+
+        const imgEl = bodyImgRefs.current[index];
+        const blocks = bodyContentBlocksRefs.current[index] || [];
+
+        const timer = setTimeout(() => {
+
+            if (imgEl) {
+                gsap.fromTo(imgEl,
+                    { clipPath: "inset(0% 100% 0% 0%)" },
+                    {
+                        clipPath: "inset(0% 0% 0% 0%)",
+                        duration: 1.2,
+                        ease: "power4.out",
+                    }
+                );
+            }
+
+            blocks.forEach((block, i) => {
+                if (!block) return;
+                gsap.fromTo(block,
+                    {
+                        clipPath: "inset(100% 0% 0% 0%)",
+                        y: 30,
+                    },
+                    {
+                        clipPath: "inset(0% 0% 0% 0%)",
+                        y: 0,
+                        duration: 1.0,
+                        ease: "power4.out",
+                        delay: 0.15 + i * 0.12,
+                    }
+                );
+            });
+
+        }, 80);
+
+        return () => clearTimeout(timer);
+    }, [openYear]);
 
     return (
         <section ref={sectionRef} className={styles["historyinovation-section"]}>
@@ -247,19 +336,36 @@ const Historyinovation = function () {
                             <span className={styles["historyinovation-accordion-label-icon"]}></span>
                             <span className={styles["historyinovation-accordion-label-year"]}>{item.year}</span>
                         </label>
+
                         <div className={styles["historyinovation-accordion-body"]}>
                             <div className={styles["historyinovation-accordion-body-inner"]}>
                                 <div className={styles["historyinovation-accordion-body-row"]}>
-                                    <div className={styles["historyinovation-accordion-body-img-wrapper"]}>
+
+                                    {/* ------image------ */}
+                                    <div
+                                        ref={el => bodyImgRefs.current[index] = el}
+                                        className={styles["historyinovation-accordion-body-img-wrapper"]}
+                                    >
                                         <img
                                             src={item.image}
                                             alt={`${item.year} image`}
                                             className={styles["historyinovation-accordion-body-img"]}
                                         />
                                     </div>
+
+                                    {/* ------text blocks------ */}
                                     <div className={styles["historyinovation-accordion-body-content"]}>
                                         {item.content.map((block, i) => (
-                                            <div key={i} className={styles["historyinovation-accordion-body-content-block"]}>
+                                            <div
+                                                key={i}
+                                                ref={el => {
+                                                    if (!bodyContentBlocksRefs.current[index]) {
+                                                        bodyContentBlocksRefs.current[index] = [];
+                                                    }
+                                                    bodyContentBlocksRefs.current[index][i] = el;
+                                                }}
+                                                className={styles["historyinovation-accordion-body-content-block"]}
+                                            >
                                                 <p className={styles["historyinovation-accordion-body-content-text"]}>
                                                     {block.text}
                                                 </p>
@@ -275,6 +381,7 @@ const Historyinovation = function () {
                                             </div>
                                         ))}
                                     </div>
+
                                 </div>
                             </div>
                         </div>

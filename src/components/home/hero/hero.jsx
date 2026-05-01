@@ -1,113 +1,32 @@
-// "use client";
-// import Image from 'next/image';
-// import styles from "./hero.module.css";
-// import { useEffect, useRef } from "react";
-// import gsap from "gsap";
-
-// const Hero = function () {
-//     const imgRef = useRef(null);
-//     const headingRef = useRef(null);
-//     const subtextRef = useRef(null);
-//     const buttonRef = useRef(null);
-
-//     useEffect(() => {
-//     const ctx = gsap.context(() => {
-
-//         const tl = gsap.timeline();
-
-//         tl.fromTo(imgRef.current,
-//             { scale: 1.04, opacity: 0 },
-//             { scale: 1, opacity: 1, duration: 2.5, ease: "power1.inOut" }
-//         )
-//         .fromTo(
-//             headingRef.current.querySelectorAll("span"),
-//             { opacity: 0, y: "80%" },
-//             { opacity: 1, y: "0%", duration: 1, ease: "power2.inOut", stagger: 0.1 },
-//             "-=1.6"
-//         )
-//         .fromTo(subtextRef.current,
-//             { opacity: 0 },
-//             { opacity: 1, duration: 1.2, ease: "power1.inOut" },
-//             "-=0.3"
-//         )
-//         .fromTo(buttonRef.current,
-//             { opacity: 0, y: 10 },
-//             { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
-//             "-=0.6"
-//         );
-
-//     });
-//     return () => ctx.revert();
-//     }, []);
-
-//     const headingWords = "Secure Identity. Zero Compromise.".split(" ");
-
-//     return (
-//         <section className={styles["hero-section"]}>
-//             <div className={styles["hero-section-wrapper"]}>
-
-//                 <div ref={imgRef} className={styles["hero-section-img"]} style={{ opacity: 0 }}>
-//                     <Image
-//                         src="/images/hero.png"
-//                         alt="Hero Image"
-//                         fill={true}
-//                         priority
-//                         className={styles["img"]}
-//                     />
-//                 </div>
-
-//                 <div className={styles["hero-section-text-wrapper"]}>
-//                     <p>
-//                         <span
-//                             ref={headingRef}
-//                             style={{ display: "inline-flex", flexWrap: "wrap", justifyContent: "center", gap: "0.3em" }}
-//                         >
-//                             {headingWords.map((word, i) => (
-//                                 <span key={i} style={{ display: "inline-block", overflow: "hidden" }}>
-//                                     {word}
-//                                 </span>
-//                             ))}
-//                         </span>
-//                     </p>
-
-//                     <p ref={subtextRef} style={{ opacity: 0 }}>
-//                         <span>ETUNNEL delivers AI-powered biometric authentication systems trusted by global institutions</span>
-//                         <span>governments, enterprises, and critical infrastructure.</span>
-//                     </p>
-
-//                     <div ref={buttonRef} className={styles["request-a-demo"]} style={{ opacity: 0 }}>
-//                         <span>Request a Demo</span>
-//                     </div>
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// }
-
-// export default Hero;
-
-// ===================================================
 "use client";
 import gsap from "gsap";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./hero.module.css";
 
 const Hero = function () {
-    const imgRef = useRef(null);
     const headingRef = useRef(null);
     const subtextRef = useRef(null);
     const buttonRef = useRef(null);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        const script = document.createElement("script");
+        // ✅ Check viewport width
+        const checkMobile = () => setIsMobile(window.innerWidth <= 1026);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
+    useEffect(() => {
+        if (isMobile) return; // mobile pe canvas nahi, script bhi nahi
+
+        const script = document.createElement("script");
         script.type = "module";
         script.innerHTML = `
             import LiquidBackground from 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.27/build/backgrounds/liquid1.min.js';
 
             const canvas = document.getElementById('hero-canvas');
-
             if (canvas) {
                 const app = LiquidBackground(canvas);
                 app.loadImage('/images/hero.png');
@@ -115,20 +34,37 @@ const Hero = function () {
                 app.liquidPlane.material.roughness = 0.3;
                 app.liquidPlane.uniforms.displacementScale.value = 2;
                 app.setRain(false);
+
+                // ✅ Touch → Mouse fix for tablet
+                function touchToMouse(e) {
+                    e.preventDefault();
+                    const touch = e.touches[0] || e.changedTouches[0];
+                    const map = { touchstart: 'mousedown', touchmove: 'mousemove', touchend: 'mouseup' };
+                    canvas.dispatchEvent(new MouseEvent(map[e.type], {
+                        bubbles: true, cancelable: true,
+                        clientX: touch.clientX, clientY: touch.clientY,
+                        screenX: touch.screenX, screenY: touch.screenY,
+                        button: 0, buttons: e.type === 'touchend' ? 0 : 1,
+                    }));
+                }
+                canvas.addEventListener('touchstart', touchToMouse, { passive: false });
+                canvas.addEventListener('touchmove',  touchToMouse, { passive: false });
+                canvas.addEventListener('touchend',   touchToMouse, { passive: false });
             }
         `;
-
         document.body.appendChild(script);
 
+        return () => {
+            if (document.body.contains(script)) document.body.removeChild(script);
+        };
+    }, [isMobile]);
+
+    useEffect(() => {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline();
 
+            // ✅ imgRef animation REMOVED — yahi brightness ka cause tha
             tl.fromTo(
-                imgRef.current,
-                { scale: 1.04, opacity: 0 },
-                { scale: 1, opacity: 1, duration: 2.5, ease: "power1.inOut" }
-            )
-            .fromTo(
                 headingRef.current.querySelectorAll("span"),
                 { opacity: 0, y: "80%" },
                 {
@@ -137,8 +73,7 @@ const Hero = function () {
                     duration: 1,
                     ease: "power2.inOut",
                     stagger: 0.1,
-                },
-                "-=1.6"
+                }
             )
             .fromTo(
                 subtextRef.current,
@@ -154,10 +89,7 @@ const Hero = function () {
             );
         });
 
-        return () => {
-            document.body.removeChild(script);
-            ctx.revert();
-        };
+        return () => ctx.revert();
     }, []);
 
     const headingWords = "Secure Identity. Zero Compromise.".split(" ");
@@ -169,22 +101,23 @@ const Hero = function () {
         >
             <div className={styles["hero-section-wrapper"]}>
 
-                <div
-                    ref={imgRef}
-                    className={styles["hero-section-img"]}
-                    style={{ opacity: 0 }}
-                    role="presentation"
-                >
+                {/* ✅ 1026px+ pe canvas, usse kam pe simple image */}
+                {isMobile ? (
+                    <img
+                        src="/images/hero.png"
+                        alt="ETUNNEL hero background"
+                        className={styles["hero-section-img-static"]}
+                    />
+                ) : (
                     <canvas
                         id="hero-canvas"
                         className={styles["canvas"]}
                         aria-hidden="true"
                     />
-                </div>
+                )}
 
                 <div className={styles["hero-section-text-wrapper"]}>
 
-                    {/* ✅ h1 — main page heading, crawlable by Google */}
                     <h1>
                         <span
                             ref={headingRef}
@@ -203,12 +136,10 @@ const Hero = function () {
                         </span>
                     </h1>
 
-                    {/* ✅ p — description, Google reads this as page summary */}
                     <p ref={subtextRef} style={{ opacity: 0 }}>
-                        ETUNNEL delivers AI-powered biometric authentication systems trusted by global institutions, governments, enterprises , and critical infrastructure.
+                        ETUNNEL delivers AI-powered biometric authentication systems trusted by global institutions, governments, enterprises, and critical infrastructure.
                     </p>
 
-                    {/* ✅ Link — crawlable CTA */}
                     <div
                         ref={buttonRef}
                         className={styles["request-a-demo"]}

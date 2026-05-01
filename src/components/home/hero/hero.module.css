@@ -13,6 +13,7 @@
 .hero-section-wrapper .hero-section-img {
     height: 100%;
     width: 100%;
+    position: relative;
 }
 
 .hero-section-wrapper .hero-section-img img {
@@ -20,6 +21,34 @@
     width: 100%;
     object-fit: cover;
     object-position: top;
+}
+
+/* ✅ Canvas — desktop/tablet (>1026px) */
+.canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    touch-action: none;
+}
+
+/* ✅ Simple image — mobile/tablet (<=1026px) */
+.hero-section-img-static {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.hero-section-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* ------hero-section-text-wrapper------ */
@@ -35,12 +64,11 @@
     display: flex;
     position: absolute;
     bottom: 7.2rem;
-    /* bottom: 6vw; */
     left: 50%;
     transform: translateX(-50%);
+    pointer-events: none;
 }
 
-/* ✅ h1 replace kiya p:first-child ko */
 .hero-section-text-wrapper h1 {
     color: #fff;
     line-height: 100%;
@@ -71,10 +99,6 @@
     letter-spacing: 0.096rem;
 }
 
-/* .hero-section-text-wrapper p span {
-    
-} */
-
 .request-a-demo {
     position: relative;
     border-radius: 6rem;
@@ -86,6 +110,7 @@
     margin-top: 2.4rem;
     background: transparent;
     z-index: 1;
+    pointer-events: auto;
 }
 
 .request-a-demo::before {
@@ -103,7 +128,6 @@
     z-index: -1;
 }
 
-/* ✅ Link tag ke andar span */
 .request-a-demo a {
     display: flex;
     align-items: center;
@@ -120,10 +144,11 @@
     line-height: 100%;
     letter-spacing: 0.072rem;
 }
+
 /* -----------------------------------responsive------------------------------------ */
-@media screen and (max-width: 1360px) { 
-    .hero-section-text-wrapper{
-        row-gap:0.8rem;
+@media screen and (max-width: 1360px) {
+    .hero-section-text-wrapper {
+        row-gap: 0.8rem;
         min-width: 95%;
     }
     .hero-section-text-wrapper h1 {
@@ -135,54 +160,18 @@
     .request-a-demo {
         width: 10rem;
         height: 2.7rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         margin-top: 1.5rem;
-        background: transparent;
-        z-index: 1;
     }
-    
-    .request-a-demo::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        padding: 0.12rem;
-        border-radius: 6rem;
-        background: linear-gradient(180deg, #B5B5B5 -111.7%, #000000 162.48%);
-        -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        z-index: -1;
-    }
-    
-    /* ✅ Link tag ke andar span */
-    .request-a-demo a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        text-decoration: none;
-    }
-    
     .request-a-demo span {
-        color: white;
-        font-family: 'NeueHaasGroteskLight';
         font-size: 0.856rem;
-        line-height: 100%;
-        letter-spacing: 0.072rem;
     }
 }
-@media screen and (max-height: 700px){
-      .hero-section-text-wrapper{
-        bottom:0.6rem;
-      }
-      .request-a-demo {
-           margin-top: 0.6rem;
-           background: transparent;
-           z-index: 1;
-       }
+
+@media screen and (max-height: 700px) {
+    .hero-section-text-wrapper {
+        bottom: 0.6rem;
+    }
+    .request-a-demo {
+        margin-top: 0.6rem;
+    }
 }

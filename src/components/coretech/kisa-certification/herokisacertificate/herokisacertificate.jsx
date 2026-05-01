@@ -1,9 +1,9 @@
-import styles from "./herokisacertificate.module.css";
 import Image from "next/image";
+import styles from "./herokisacertificate.module.css";
 const Herokisacertificate = function () {
     return (
         <>
-            <div className={styles["herokisacertificate-wrapper"]}>
+            <section className={styles["herokisacertificate-wrapper"]}>
                 <div className={styles["herokisacertificate-main"]}>
                     <div className={styles["herokisacertificate-top"]}>
                         <h1><span>KISA</span> Biometric Certification</h1>
@@ -24,7 +24,7 @@ const Herokisacertificate = function () {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 }

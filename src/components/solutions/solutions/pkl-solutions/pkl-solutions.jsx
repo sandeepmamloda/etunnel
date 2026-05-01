@@ -28,7 +28,7 @@ const Pklsolutions = () => {
             </div>
 
             <Link 
-              href="/" 
+              href="/solutions/pkl-solutions"
               className={styles["pkl-solutions-img-overlay-text-bottom"]}
             >
               <span>See More</span>

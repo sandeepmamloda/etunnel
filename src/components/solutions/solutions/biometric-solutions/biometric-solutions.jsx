@@ -28,7 +28,7 @@ const Biometricsolutions = () => {
             </div>
 
             <Link 
-              href="/" 
+              href="/solutions/biometric-authentication-solutions" 
               className={styles["biometric-solutions-img-overlay-text-bottom"]}
             >
               <span>See More</span>

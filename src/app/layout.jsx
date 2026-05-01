@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect } from 'react'
-import Lenis from 'lenis'
-import './globals.css'
-import Navbar from '@/components/common/navbar/navbar'
 import Footer from '@/components/common/footer/footer'
+import Navbar from '@/components/common/navbar/navbar'
+import Lenis from 'lenis'
+import { useEffect } from 'react'
+import './globals.css'
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body >
+      <body>
         <Navbar />
         <main>{children}</main>
         <Footer />

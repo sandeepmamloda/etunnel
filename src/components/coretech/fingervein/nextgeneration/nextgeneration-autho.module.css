@@ -44,7 +44,9 @@
     letter-spacing: 0.096rem;
     text-align: center;
 }
-
+.nextgen-heading h2 span{
+    letter-spacing: 0.096rem;
+}
 /* Description */
 .nextgen-description {
     display: flex;
@@ -64,7 +66,9 @@
     letter-spacing: 0.06rem;
     text-align: center;
 }
-
+.nextgen-description p span{
+    letter-spacing: 0.06rem;
+}
 /* 👇 Extra Direct Child */
 .nextgen-extra {
     width: 100%;
@@ -82,7 +86,9 @@
     letter-spacing: 0.06rem;
     text-align: center;
 }
-
+.nextgen-extra p span{
+    letter-spacing: 0.06rem;
+}
 /* ============================================
    RESPONSIVE CSS — nextgeneration-autho.module.css
    Pattern: matched from nextgeneration.module.css

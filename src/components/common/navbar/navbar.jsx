@@ -11,7 +11,7 @@ const WHITE_TEXT_ROUTES = [
   "/about",
   "/solutions/solutions",
   "/solutions/pkl-solutions",
-  "/solutons/biometric-authentication-solutions",
+  "/solutions/biometric-authentication-solutions",
   "/company/overview",
   "/company/history",
   "/biometric-products/products",

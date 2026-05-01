@@ -1,8 +1,8 @@
 "use client"
-import { useEffect, useRef } from "react";
-import styles from "./globalnetwork.module.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import styles from "./globalnetwork.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,13 +27,13 @@ const Globalnetwork = function () {
                 }
             });
 
-            // ------desc clip path reveal------
+            // ------desc: same animation as title, thoda delay------
             gsap.from(descRef.current, {
                 clipPath: "inset(100% 0% 0% 0%)",
-                y: 30,
-                duration: 1.0,
+                y: 40,
+                duration: 1.1,
                 ease: "power4.out",
-                delay: 0.25,
+                delay: 0.15,
                 scrollTrigger: {
                     trigger: descRef.current,
                     start: "top 85%",

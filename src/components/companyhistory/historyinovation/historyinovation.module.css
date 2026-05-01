@@ -5,6 +5,7 @@
     background-color: #fff;
     padding-block: 4.8rem;
     padding-inline:2rem;
+    overflow:hidden;
 }
 
 /* ------heading area------ */

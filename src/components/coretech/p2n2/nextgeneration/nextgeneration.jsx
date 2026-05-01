@@ -96,7 +96,7 @@ import styles from "./nextgeneration.module.css";
 const Nextgeneration = function () {
   return (
     <>
-      <div className={styles["nextgeneration-wrapper"]}>
+      <section className={styles["nextgeneration-wrapper"]}>
         <div className={styles["nextgeneration-main"]}>
 
           <div className={styles["nextgeneration-top"]}>
@@ -114,7 +114,7 @@ const Nextgeneration = function () {
           </div>
 
         </div>
-      </div>
+      </section>
     </>
   );
 };

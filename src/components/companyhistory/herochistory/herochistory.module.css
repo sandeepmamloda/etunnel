@@ -2,6 +2,7 @@
     height: 90svh;
     width: 100%;
     background-color: black;
+    overflow:hidden;
 }
 .herochistory-section-wrapper {
     height: 100%;

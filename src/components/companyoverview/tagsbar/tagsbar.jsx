@@ -1,9 +1,8 @@
 "use client";
-import styles from './tagsbar.module.css';
+import gsap from "gsap";
 import Image from 'next/image';
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import styles from './tagsbar.module.css';
 
 const logos = [
   { src: '/images/logos/coretrust.png',   alt: 'CoreTrust' },
@@ -17,10 +16,27 @@ const logos = [
 
 const TagsBar = function ({ title }) {
     const sectionRef = useRef(null);
+    const titleRef = useRef(null);
     const itemsRef = useRef([]);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
+
+            // ------title: pure clip path reveal------
+            if (titleRef.current) {
+                gsap.from(titleRef.current, {
+                    clipPath: "inset(0% 0% 100% 0%)",
+                    duration: 1.1,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: titleRef.current,
+                        start: "top 85%",
+                        once: true,
+                    }
+                });
+            }
+
+            // ------logos: left se right curtain, staggered------
             gsap.fromTo(
                 itemsRef.current,
                 { clipPath: "inset(0 100% 0 0)" },
@@ -36,6 +52,7 @@ const TagsBar = function ({ title }) {
                     },
                 }
             );
+
         }, sectionRef);
 
         return () => ctx.revert();
@@ -43,7 +60,14 @@ const TagsBar = function ({ title }) {
 
     return (
         <section className={styles['tagsbar-section']} ref={sectionRef}>
-            {title && <h2 className={styles['tagsbar-title']}>{title}</h2>}
+            {title && (
+                <h2
+                    ref={titleRef}
+                    className={styles['tagsbar-title']}
+                >
+                    {title}
+                </h2>
+            )}
             <div className={styles['tagsbar-wrapper']}>
                 <div className={styles['tagsbar-track']}>
                     {logos.map((logo, i) => (
