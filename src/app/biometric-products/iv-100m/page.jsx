@@ -1,8 +1,16 @@
+"use client"
 import ConvenienceReliability from "@/components/biometric-products/common/convencereliability/convencereliability";
 import Heroproduct from "@/components/biometric-products/common/heroproduct/heroproduct";
 import Securitytechnology from "@/components/biometric-products/common/securitytechnology/securitytechnology";
 import Productspecifications from "@/components/biometric-products/iv-100m/productspecifications/productspecifications";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 const iv100m=function(){
+  const pathname = usePathname();
+    // Har navigation pe scroll top
+    useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }, [pathname]);
     return (
         <>
             <Heroproduct 

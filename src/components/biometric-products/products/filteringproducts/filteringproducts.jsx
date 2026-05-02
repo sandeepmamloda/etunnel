@@ -1,8 +1,13 @@
 "use client";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import styles from "./filteringproducts.module.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const CATEGORIES = [
   { label: "All Products", value: "all" },
@@ -91,6 +96,15 @@ export default function FilteringProducts() {
   const [visibleKey, setVisibleKey] = useState("all");
   const [animating, setAnimating] = useState(false);
   const timeoutRef = useRef(null);
+  const pathname = usePathname(); // ← route track karne ke liye
+
+  // ── Refs ──
+  const wrapperRef = useRef(null);
+  const eyebrowRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const filterTabsRef = useRef(null);
+  const cardRefs = useRef([]);
 
   const filtered = PRODUCTS.filter(
     (p) => visibleKey === "all" || p.category === visibleKey
@@ -108,16 +122,124 @@ export default function FilteringProducts() {
 
   useEffect(() => () => clearTimeout(timeoutRef.current), []);
 
+  // ── Scroll to top on every route change ──
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [pathname]);
+
+  // ── GSAP clipPath animations ──
+  useEffect(() => {
+    // Pehle scroll top karo, phir ScrollTrigger refresh
+    window.scrollTo({ top: 0, behavior: "instant" });
+
+    // Thoda wait karo taaki DOM settle ho jaye
+    const initTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+
+      const ctx = gsap.context(() => {
+
+        // eyebrow
+        gsap.from(eyebrowRef.current, {
+          clipPath: "inset(100% 0% 0% 0%)",
+          y: 30,
+          duration: 1.0,
+          ease: "power4.out",
+          immediateRender: false, // ← important
+          scrollTrigger: {
+            trigger: eyebrowRef.current,
+            start: "top 90%",
+            once: true,
+          },
+        });
+
+        // h1
+        gsap.from(titleRef.current, {
+          clipPath: "inset(100% 0% 0% 0%)",
+          y: 40,
+          duration: 1.1,
+          ease: "power4.out",
+          delay: 0.15,
+          immediateRender: false,
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 90%",
+            once: true,
+          },
+        });
+
+        // subtitle
+        gsap.from(subtitleRef.current, {
+          clipPath: "inset(100% 0% 0% 0%)",
+          y: 40,
+          duration: 1.1,
+          ease: "power4.out",
+          delay: 0.3,
+          immediateRender: false,
+          scrollTrigger: {
+            trigger: subtitleRef.current,
+            start: "top 90%",
+            once: true,
+          },
+        });
+
+        // filter tabs
+        gsap.from(filterTabsRef.current, {
+          clipPath: "inset(100% 0% 0% 0%)",
+          y: 30,
+          duration: 1.0,
+          ease: "power4.out",
+          delay: 0.45,
+          immediateRender: false,
+          scrollTrigger: {
+            trigger: filterTabsRef.current,
+            start: "top 92%",
+            once: true,
+          },
+        });
+
+        // ── har card individually ──
+        cardRefs.current.forEach((card) => {
+          if (!card) return;
+          gsap.from(card, {
+            clipPath: "inset(100% 0% 0% 0%)",
+            y: 40,
+            duration: 1.0,
+            ease: "power4.out",
+            immediateRender: false,
+            scrollTrigger: {
+              trigger: card,
+              start: "top 92%",
+              once: true,
+            },
+          });
+        });
+
+      }, wrapperRef);
+
+      // Cleanup function store karo
+      wrapperRef._gsapCtx = ctx;
+    }, 50); // 50ms DOM settle hone do
+
+    return () => {
+      clearTimeout(initTimer);
+      // Properly cleanup karo
+      if (wrapperRef._gsapCtx) {
+        wrapperRef._gsapCtx.revert();
+      }
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, [pathname]); // ← pathname change hone par re-run
+
   return (
-    <section className={styles["product-section"]}>
+    <section ref={wrapperRef} className={styles["product-section"]}>
 
       {/* Header */}
       <div className={styles["product-header"]}>
-        <p className={styles["product-eyebrow"]}>Product Lineup</p>
-        <h1 className={styles["product-title"]}>
+        <p ref={eyebrowRef} className={styles["product-eyebrow"]}>Product Lineup</p>
+        <h1 ref={titleRef} className={styles["product-title"]}>
           The new standard in biometric security authentication
         </h1>
-        <p className={styles["product-subtitle"]}>
+        <p ref={subtitleRef} className={styles["product-subtitle"]}>
           ETUNNEL provides a secure environment based on biometric technology.
           Experience a more convenient and reliable security solution with the
           powerful 100V series and cutting-edge authentication system.
@@ -125,7 +247,7 @@ export default function FilteringProducts() {
       </div>
 
       {/* Filter Tabs */}
-      <div className={styles["filter-tabs"]}>
+      <div ref={filterTabsRef} className={styles["filter-tabs"]}>
         {CATEGORIES.map((cat) => (
           <button
             key={cat.value}
@@ -146,14 +268,9 @@ export default function FilteringProducts() {
       {/* Grid */}
       <div className={styles["product-grid"]}>
         {filtered.map((product, index) => (
-          /*
-           * TWO-LAYER TRICK:
-           * outer div  → stagger animation (opacity + translateY)   [no hover]
-           * inner Link → hover transform + box-shadow               [no animation]
-           * Keeping them separate avoids CSS animation vs transition conflict on transform.
-           */
           <div
             key={product.id}
+            ref={(el) => (cardRefs.current[index] = el)}
             className={animating ? styles["card-exit"] : styles["card-enter"]}
             style={{ "--stagger": index }}
           >

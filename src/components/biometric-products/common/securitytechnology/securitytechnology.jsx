@@ -50,33 +50,74 @@ const Securitytechnology = function () {
 
       ctx = gsap.context(() => {
 
-        // ── Top section — fade up stagger ──
-        gsap.from(
-          [labelRef.current, headingRef.current, subRef.current, dividerRef.current],
-          {
-            opacity: 0,
-            y: 40,
-            duration: 0.7,
-            stagger: 0.12,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: labelRef.current,
-              start: "top 85%",
-            },
-          }
-        );
-
-        // ── Cards — fade up stagger ──
-        gsap.from(cardsRef.current, {
-          opacity: 0,
-          y: 60,
-          duration: 0.7,
-          stagger: 0.15,
-          ease: "power3.out",
+        // ── label ──
+        gsap.from(labelRef.current, {
+          clipPath: "inset(100% 0% 0% 0%)",
+          y: 30,
+          duration: 1.0,
+          ease: "power4.out",
           scrollTrigger: {
-            trigger: cardsRef.current[0],
+            trigger: labelRef.current,
             start: "top 85%",
-          },
+            once: true,
+          }
+        });
+
+        // ── heading ──
+        gsap.from(headingRef.current, {
+          clipPath: "inset(100% 0% 0% 0%)",
+          y: 40,
+          duration: 1.1,
+          ease: "power4.out",
+          delay: 0.15,
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 85%",
+            once: true,
+          }
+        });
+
+        // ── subheading ──
+        gsap.from(subRef.current, {
+          clipPath: "inset(100% 0% 0% 0%)",
+          y: 40,
+          duration: 1.1,
+          ease: "power4.out",
+          delay: 0.3,
+          scrollTrigger: {
+            trigger: subRef.current,
+            start: "top 85%",
+            once: true,
+          }
+        });
+
+        // ── divider ──
+        gsap.from(dividerRef.current, {
+          clipPath: "inset(0% 100% 0% 0%)",
+          duration: 1.0,
+          ease: "power4.out",
+          delay: 0.45,
+          scrollTrigger: {
+            trigger: dividerRef.current,
+            start: "top 88%",
+            once: true,
+          }
+        });
+
+        // ── har card individually ──
+        cardsRef.current.forEach((card) => {
+          if (!card) return;
+          gsap.from(card, {
+            clipPath: "inset(100% 0% 0% 0%)",
+            y: 40,
+            duration: 1.0,
+            ease: "power4.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 88%",
+              once: true,
+            }
+          });
         });
 
       }, wrapperRef);
@@ -86,14 +127,14 @@ const Securitytechnology = function () {
   }, []);
 
   return (
-    <div className={styles["securitytechnology-wrapper"]} ref={wrapperRef}>
+    <section className={styles["securitytechnology-wrapper"]} ref={wrapperRef}>
       <div className={styles["securitytechnology-main"]}>
 
         <div className={styles["securitytechnology-top"]}>
-          <span className={styles["label"]}         ref={labelRef}>CORE TECHNOLOGY</span>
-          <h2   className={styles["heading"]}        ref={headingRef}>Core Elements of Security Technology</h2>
-          <p    className={styles["subheading"]}     ref={subRef}>The trusted technology developed by ETUNNEL sets a new global standard in security.</p>
-          <div  className={styles["divider"]}        ref={dividerRef}></div>
+          <span className={styles["label"]}      ref={labelRef}>CORE TECHNOLOGY</span>
+          <h2   className={styles["heading"]}     ref={headingRef}>Core Elements of Security Technology</h2>
+          <p    className={styles["subheading"]}  ref={subRef}>The trusted technology developed by ETUNNEL sets a new global standard in security.</p>
+          <div  className={styles["divider"]}     ref={dividerRef}></div>
         </div>
 
         <div className={styles["securitytechnology-bottom"]}>
@@ -111,7 +152,7 @@ const Securitytechnology = function () {
         </div>
 
       </div>
-    </div>
+    </section>
   );
 };
 

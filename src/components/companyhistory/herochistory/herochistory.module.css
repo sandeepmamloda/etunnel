@@ -58,6 +58,9 @@
     text-align: center;
     line-height:100%;
 }
+.herochistory-section-text-wrapper p span{
+    letter-spacing: 0.048rem !important;
+}
 .download-brocher {
     position: relative;
     border-radius: 6rem;
@@ -124,4 +127,24 @@
     .download-brocher{
         width:15rem;
     }
+}
+@media screen and (max-height: 700px){
+      .herochistory-section-text-wrapper{
+        bottom:0.6rem;
+      }
+      .herochistory-section-text-wrapper h1{
+            font-size:1.8rem;
+            line-height: 110%;
+       }
+       .herochistory-section-text-wrapper p{
+        line-height: 150%;
+      }
+      .herochistory-section-text-wrapper{
+        row-gap:0.3rem;
+      }
+     .download-brocher {
+          margin-top: 0.6rem;
+          background: transparent;
+          z-index: 1;
+      }
 }

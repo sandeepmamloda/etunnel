@@ -3,7 +3,7 @@
   height: fit-content;
   background-color: #ffffff;
   padding-block: 8rem;
-  border-top:solid 0.001rem #000;
+  border-top: solid 0.001rem #000;
 }
 
 .ps-container {
@@ -45,8 +45,11 @@
   border: 0.008rem solid rgba(0, 0, 0, 0.15);
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: -3px 0px 8px rgba(0, 0, 0, 0.00), 3px 0px 8px rgba(0, 0, 0, 0.00),
-    0px -3px 8px rgba(0, 0, 0, 0.00), 0px 10px 16px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    -3px 0px 8px rgba(0, 0, 0, 0.00),
+     3px 0px 8px rgba(0, 0, 0, 0.00),
+     0px -3px 8px rgba(0, 0, 0, 0.00),
+     0px 10px 16px rgba(0, 0, 0, 0.1);
 }
 
 .ps-table-layout {
@@ -69,14 +72,14 @@
   padding: 2rem;
   border-bottom: 0.08rem solid rgba(0, 0, 0, 0.15);
 }
-.ps-group-label-wrapper:first-child{
-  padding-block:4.6rem!important;
+.ps-group-label-wrapper:first-child {
+  padding-block: 4.6rem !important;
 }
-.ps-group-label-wrapper:nth-child(2){
-  padding-block:5rem;
+.ps-group-label-wrapper:nth-child(2) {
+  padding-block: 5rem;
 }
-.ps-group-label-wrapper:nth-child(3){
-  padding-block:2rem;
+.ps-group-label-wrapper:nth-child(3) {
+  padding-block: 2rem;
 }
 .ps-group-label-wrapper:last-child {
   border-bottom: none;
@@ -131,7 +134,6 @@
   border-bottom: 0.008rem solid rgba(0, 0, 0, 0.1);
   align-items: center;
 }
-
 .ps-row:last-child {
   border-bottom: none;
 }
@@ -161,4 +163,158 @@
   letter-spacing: 0.08rem;
   color: #525252;
   line-height: 160%;
+}
+
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+
+/* ── Tablet — 1024px ── */
+@media (max-width: 1024px) {
+  .ps-wrapper {
+    padding-block: 6rem;
+  }
+
+  .ps-container {
+    padding-inline: 2rem;
+    row-gap: 3rem;
+  }
+
+  .ps-title {
+    font-size: 2.4rem;
+  }
+
+  .ps-group-label-text {
+    font-size: 1.8rem;
+  }
+
+  .ps-table-layout {
+    grid-template-columns: 28% 72%;
+  }
+
+  .ps-group-label-wrapper:first-child {
+    padding-block: 3.5rem !important;
+  }
+  .ps-group-label-wrapper:nth-child(2) {
+    padding-block: 4rem;
+  }
+}
+
+/* ── Small Tablet / Large Mobile — 768px ── */
+@media (max-width: 768px) {
+  .ps-wrapper {
+    padding-block: 4.5rem;
+  }
+
+  .ps-container {
+    padding-inline: 1.5rem;
+    row-gap: 2.5rem;
+  }
+
+  .ps-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .ps-label {
+    font-size: 0.75rem;
+  }
+
+  /* Left column group label upar, right column neeche — stack layout */
+  .ps-table-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ps-left-column {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 0.08rem solid rgba(0, 0, 0, 0.15);
+    overflow-x: auto;
+  }
+
+  .ps-group-label-wrapper {
+    flex: 1;
+    min-width: max-content;
+    padding: 1rem 1.5rem !important;
+    border-bottom: none;
+    border-right: 0.008rem solid rgba(0, 0, 0, 0.1);
+  }
+  .ps-group-label-wrapper:last-child {
+    border-right: none;
+  }
+
+  .ps-group-label-text {
+    font-size: 1.1rem;
+    letter-spacing: 0.06rem;
+  }
+
+  .ps-table-header {
+    padding-inline: 1.2rem;
+    padding-block: 0.9rem;
+  }
+
+  .ps-row {
+    padding-inline: 1.2rem;
+    padding-block: 1rem;
+  }
+}
+
+/* ── Mobile — 480px ── */
+@media (max-width: 480px) {
+  .ps-wrapper {
+    padding-block: 3.5rem;
+  }
+
+  .ps-container {
+    padding-inline: 1rem;
+    row-gap: 2rem;
+  }
+
+  .ps-title {
+    font-size: 1.6rem;
+    letter-spacing: 0.04rem;
+  }
+
+  .ps-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.06rem;
+  }
+
+  .ps-table {
+    border-radius: 0.6rem;
+  }
+
+  .ps-group-label-text {
+    font-size: 0.95rem;
+    letter-spacing: 0.04rem;
+  }
+
+  .ps-group-label-wrapper {
+    padding: 0.8rem 1rem !important;
+  }
+
+  /* Row — 2 column se single column stack */
+  .ps-row {
+    grid-template-columns: 1fr;
+    padding-inline: 1rem;
+    padding-block: 0.9rem;
+    row-gap: 0.3rem;
+  }
+
+  .ps-table-header {
+    grid-template-columns: 1fr;
+    padding-inline: 1rem;
+    padding-block: 0.8rem;
+    row-gap: 0.2rem;
+  }
+
+  .ps-spec-label {
+    font-size: 0.75rem;
+    color: #737373;
+  }
+
+  .ps-detail {
+    font-size: 0.78rem;
+  }
 }

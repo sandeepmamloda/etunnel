@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import styles from "./productspecifications.module.css";
 
 const ProductspecificationsGrouped = function () {
@@ -43,53 +46,150 @@ const ProductspecificationsGrouped = function () {
     },
   ];
 
+  const wrapperRef   = useRef(null);
+  const labelWrapRef = useRef(null);
+  const titleWrapRef = useRef(null);
+  const tableWrapRef = useRef(null);
+  const rowRefs      = useRef([]);
+
+  useEffect(() => {
+    let ctx;
+    (async () => {
+      const { gsap }          = await import("gsap");
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+
+        // ── label ──
+        gsap.from(labelWrapRef.current, {
+          clipPath: "inset(100% 0% 0% 0%)",
+          y: 20,
+          duration: 1.6,
+          ease: "expo.out",
+          scrollTrigger: {
+            trigger: labelWrapRef.current,
+            start: "top 85%",
+            once: true,
+          },
+        });
+
+        // ── title ──
+        gsap.from(titleWrapRef.current, {
+          clipPath: "inset(100% 0% 0% 0%)",
+          y: 24,
+          duration: 1.7,
+          ease: "expo.out",
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: titleWrapRef.current,
+            start: "top 85%",
+            once: true,
+          },
+        });
+
+        // ── table wrapper ──
+        gsap.from(tableWrapRef.current, {
+          clipPath: "inset(100% 0% 0% 0%)",
+          y: 30,
+          duration: 1.8,
+          ease: "expo.out",
+          delay: 0.3,
+          scrollTrigger: {
+            trigger: tableWrapRef.current,
+            start: "top 85%",
+            once: true,
+          },
+        });
+
+        // ── har row individually staggered ──
+        rowRefs.current.forEach((row, i) => {
+          if (!row) return;
+          gsap.from(row, {
+            clipPath: "inset(100% 0% 0% 0%)",
+            y: 16,
+            duration: 1.4,
+            ease: "expo.out",
+            delay: 0.05 * i,
+            scrollTrigger: {
+              trigger: row,
+              start: "top 90%",
+              once: true,
+            },
+          });
+        });
+
+      }, wrapperRef);
+    })();
+
+    return () => ctx?.revert();
+  }, []);
+
+  let globalRowIndex = 0;
+
   return (
-    <section className={styles["ps-wrapper"]}>
+    <section className={styles["ps-wrapper"]} ref={wrapperRef}>
       <div className={styles["ps-container"]}>
 
         <div className={styles["ps-heading"]}>
-          <span className={styles["ps-label"]}>KEY FEATURES</span>
-          <h2 className={styles["ps-title"]}>Product Specifications</h2>
+
+          <div ref={labelWrapRef} style={{ overflow: "hidden" }}>
+            <span className={styles["ps-label"]}>KEY FEATURES</span>
+          </div>
+
+          <div ref={titleWrapRef} style={{ overflow: "hidden" }}>
+            <h2 className={styles["ps-title"]}>Product Specifications</h2>
+          </div>
+
         </div>
 
-        <div className={styles["ps-table"]}>
-          <div className={styles["ps-table-layout"]}>
+        <div ref={tableWrapRef} style={{ overflow: "hidden" }}>
+          <div className={styles["ps-table"]}>
+            <div className={styles["ps-table-layout"]}>
 
-            <div className={styles["ps-left-column"]}>
-              {groups.map((group, gIndex) => (
-                <div key={gIndex} className={styles["ps-group-label-wrapper"]}>
-                  <span className={styles["ps-group-label-text"]}>{group.groupLabel}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className={styles["ps-right-column"]}>
-              <div className={styles["ps-table-header"]}>
-                <span>SPECIFICATION</span>
-                <span>DETAILS</span>
+              <div className={styles["ps-left-column"]}>
+                {groups.map((group, gIndex) => (
+                  <div key={gIndex} className={styles["ps-group-label-wrapper"]}>
+                    <span className={styles["ps-group-label-text"]}>{group.groupLabel}</span>
+                  </div>
+                ))}
               </div>
 
-              {groups.map((group, gIndex) => (
-                <div key={gIndex} className={styles["ps-group"]}>
-                  {group.specs.map((spec, sIndex) => (
-                    <div key={sIndex} className={styles["ps-row"]}>
-                      <div className={styles["ps-row-left"]}>
-                        <span className={styles["ps-spec-label"]}>{spec.label}</span>
-                      </div>
-                      <div className={styles["ps-row-right"]}>
-                        <span
-                          className={styles["ps-detail"]}
-                          style={{ whiteSpace: "pre-line" }}
-                        >
-                          {spec.detail}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
+              <div className={styles["ps-right-column"]}>
+                <div className={styles["ps-table-header"]}>
+                  <span>SPECIFICATION</span>
+                  <span>DETAILS</span>
                 </div>
-              ))}
-            </div>
 
+                {groups.map((group, gIndex) => (
+                  <div key={gIndex} className={styles["ps-group"]}>
+                    {group.specs.map((spec, sIndex) => {
+                      const refIndex = globalRowIndex++;
+                      return (
+                        <div
+                          key={sIndex}
+                          className={styles["ps-row"]}
+                          ref={(el) => (rowRefs.current[refIndex] = el)}
+                        >
+                          <div className={styles["ps-row-left"]}>
+                            <span className={styles["ps-spec-label"]}>{spec.label}</span>
+                          </div>
+                          <div className={styles["ps-row-right"]}>
+                            <span
+                              className={styles["ps-detail"]}
+                              style={{ whiteSpace: "pre-line" }}
+                            >
+                              {spec.detail}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+
+            </div>
           </div>
         </div>
 

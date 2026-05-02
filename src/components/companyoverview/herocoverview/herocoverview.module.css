@@ -122,3 +122,17 @@
     }
     
 }
+@media screen and (max-height: 700px){
+      .herocoverview-section-text-wrapper{
+        bottom:0.6rem;
+      }
+      .herocoverview-section-text-wrapper h1{
+            font-size:1.8rem;
+            line-height: 110%;
+       }
+      .download-brocher {
+           margin-top: 0.6rem;
+           background: transparent;
+           z-index: 1;
+       }
+}

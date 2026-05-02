@@ -4,7 +4,7 @@
   background-color: #ffffff;
   padding-bottom: 4rem;
   padding-top: 5rem;
-  border-top:solid 0.001rem #000;
+  border-top: solid 0.001rem #000;
 }
 
 .ph-container {
@@ -63,11 +63,13 @@
   border-radius: 50%;
   overflow: hidden;
 }
-.ph-image-wrapper img{
-    height:100%!important;
-    width:100%!important;
-    object-fit: cover!important;
+
+.ph-image-wrapper img {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover !important;
 }
+
 /* ── Text ── */
 .ph-card-title {
   font-family: "NeueHaasDisplayThin";
@@ -85,4 +87,124 @@
   color: #525252;
   line-height: 170%;
   max-width: 26rem;
+}
+
+/* =================RESPONSIVE================= */
+
+/* ── 1360px ── */
+@media screen and (max-width: 1360px) {
+  .ph-cards {
+    column-gap: 6rem;
+  }
+  .ph-title {
+    font-size: 2.4rem;
+  }
+  .ph-card-title {
+    font-size: 1.4rem;
+  }
+  .ph-card-description {
+    font-size: 0.95rem;
+  }
+}
+
+/* ── 1024px ── */
+@media screen and (max-width: 1024px) {
+  .ph-wrapper {
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
+  }
+  .ph-container {
+    padding-inline: 2.5rem;
+    row-gap: 2.5rem;
+  }
+  .ph-cards {
+    column-gap: 3rem;
+  }
+  .ph-title {
+    font-size: 2rem;
+  }
+  .ph-card-title {
+    font-size: 1.3rem;
+  }
+  .ph-card-description {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+}
+
+/* ── 768px ── */
+@media screen and (max-width: 768px) {
+  .ph-wrapper {
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
+  }
+  .ph-container {
+    padding-inline: 2rem;
+    row-gap: 2rem;
+  }
+  .ph-cards {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 3rem;
+  }
+  .ph-image-wrapper {
+    width: 70%;
+    margin-inline: auto;
+  }
+  .ph-title {
+    font-size: 1.8rem;
+  }
+  .ph-card-title {
+    font-size: 1.2rem;
+  }
+  .ph-card-description {
+    font-size: 0.88rem;
+  }
+}
+
+/* ── 600px ── */
+@media screen and (max-width: 600px) {
+  .ph-wrapper {
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+  }
+  .ph-container {
+    padding-inline: 1.5rem;
+  }
+  .ph-cards {
+    row-gap: 2.5rem;
+  }
+  .ph-image-wrapper {
+    width: 80%;
+  }
+  .ph-title {
+    font-size: 1.6rem;
+  }
+  .ph-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* ── 400px ── */
+@media screen and (max-width: 400px) {
+  .ph-wrapper {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+  }
+  .ph-container {
+    padding-inline: 1.2rem;
+    row-gap: 1.5rem;
+  }
+  .ph-image-wrapper {
+    width: 90%;
+  }
+  .ph-title {
+    font-size: 1.4rem;
+  }
+  .ph-card-title {
+    font-size: 1.1rem;
+  }
+  .ph-card-description {
+    font-size: 0.85rem;
+  }
 }

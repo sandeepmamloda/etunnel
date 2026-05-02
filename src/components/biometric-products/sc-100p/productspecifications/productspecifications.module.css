@@ -4,7 +4,7 @@
   background-color: #ffffff;
   padding-block-start: 5rem;
   padding-block-end: 7rem;
-  border-top:solid 0.008rem #000;
+  border-top: solid 0.008rem #000;
 }
 
 .ps-container {
@@ -78,9 +78,11 @@
 .ps-row:last-child {
   border-bottom: none;
 }
-.ps-row:nth-last-child(2){
-  align-items:start;
+
+.ps-row:nth-last-child(2) {
+  align-items: start;
 }
+
 .ps-row-left {
   display: flex;
   align-items: center;
@@ -119,4 +121,112 @@
   font-family: 'NeueHaasGroteskMedium';
   color: #dc2626;
   font-weight: 700;
+}
+
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+
+/* ── Tablet — 1024px ── */
+@media (max-width: 1024px) {
+  .ps-wrapper {
+    padding-block-start: 4rem;
+    padding-block-end: 5.5rem;
+  }
+
+  .ps-container {
+    padding-inline: 2rem;
+    row-gap: 3rem;
+  }
+
+  .ps-title {
+    font-size: 2.4rem;
+  }
+}
+
+/* ── Small Tablet — 768px ── */
+@media (max-width: 768px) {
+  .ps-wrapper {
+    padding-block-start: 3.5rem;
+    padding-block-end: 4.5rem;
+  }
+
+  .ps-container {
+    padding-inline: 1.5rem;
+    row-gap: 2.5rem;
+  }
+
+  .ps-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .ps-table {
+    border-radius: 0.75rem;
+  }
+
+  .ps-table-header {
+    grid-template-columns: 32% 68%;
+    padding-inline: 1.25rem;
+    padding-block: 1rem;
+  }
+
+  .ps-row {
+    grid-template-columns: 32% 68%;
+    padding-inline: 1.25rem;
+    padding-block: 1.1rem;
+  }
+}
+
+/* ── Mobile — 480px ── */
+@media (max-width: 480px) {
+  .ps-wrapper {
+    padding-block-start: 3rem;
+    padding-block-end: 4rem;
+  }
+
+  .ps-container {
+    padding-inline: 1rem;
+    row-gap: 2rem;
+  }
+
+  .ps-title {
+    font-size: 1.65rem;
+    letter-spacing: 0.04rem;
+  }
+
+  .ps-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.06rem;
+  }
+
+  .ps-table {
+    border-radius: 0.6rem;
+  }
+
+  /* Mobile pe header completely hide */
+  .ps-table-header {
+    display: none;
+  }
+
+  .ps-row {
+    grid-template-columns: 1fr;
+    padding-inline: 1rem;
+    padding-block: 0.9rem;
+    row-gap: 0.25rem;
+    align-items: start !important;
+  }
+
+  .ps-row:nth-last-child(2) {
+    align-items: start;
+  }
+
+  .ps-spec-label {
+    font-size: 0.72rem;
+  }
+
+  .ps-detail {
+    font-size: 0.78rem;
+  }
 }

@@ -24,7 +24,7 @@ const Productspecifications = function ({ title = "Product Specifications", spec
         gsap.from([labelRef.current, titleRef.current], {
           opacity: 0,
           y: 30,
-          duration: 0.7,
+          duration: 1.1,
           stagger: 0.12,
           ease: "power3.out",
           scrollTrigger: {
@@ -38,7 +38,7 @@ const Productspecifications = function ({ title = "Product Specifications", spec
           opacity: 0,
           y: 40,
           scale: 0.98,
-          duration: 0.7,
+          duration: 1.1,
           ease: "power3.out",
           scrollTrigger: {
             trigger: tableRef.current,
@@ -50,7 +50,7 @@ const Productspecifications = function ({ title = "Product Specifications", spec
         gsap.from(rowsRef.current, {
           opacity: 0,
           x: -20,
-          duration: 0.45,
+          duration: 0.8,
           stagger: 0.06,
           ease: "power2.out",
           scrollTrigger: {

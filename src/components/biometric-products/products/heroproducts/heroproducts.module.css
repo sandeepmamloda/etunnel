@@ -348,7 +348,7 @@
 @media screen and (max-height: 700px) {
     .heroproducts-section-text-wrapper {
         bottom: 0.6rem;
-        row-gap: 0.4rem;
+        row-gap: 0rem;
     }
 
     .data-container {
