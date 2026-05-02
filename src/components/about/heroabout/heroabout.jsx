@@ -1,11 +1,19 @@
 "use client";
 
-import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import styles from "./heroabout.module.css";
 
-const Heroabout = function () {
+gsap.registerPlugin(ScrollTrigger);
 
+const Heroabout = function () {
+    const wrapperRef = useRef(null);
+    const h1Ref      = useRef(null);
+    const btnRef     = useRef(null);
+
+    // ── Liquid Background ──
     useEffect(() => {
         const script = document.createElement("script");
 
@@ -29,8 +37,56 @@ const Heroabout = function () {
         };
     }, []);
 
+    // ── GSAP clipPath animations ──
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            ScrollTrigger.refresh();
+
+            const ctx = gsap.context(() => {
+
+                // h1
+                gsap.from(h1Ref.current, {
+                    clipPath: "inset(100% 0% 0% 0%)",
+                    y: 40,
+                    duration: 1.1,
+                    ease: "power4.out",
+                    immediateRender: false,
+                    scrollTrigger: {
+                        trigger: h1Ref.current,
+                        start: "top 90%",
+                        once: true,
+                    },
+                });
+
+                // button
+                gsap.from(btnRef.current, {
+                    clipPath: "inset(100% 0% 0% 0%)",
+                    y: 20,
+                    duration: 1.0,
+                    ease: "power4.out",
+                    delay: 0.3,
+                    immediateRender: false,
+                    scrollTrigger: {
+                        trigger: btnRef.current,
+                        start: "top 92%",
+                        once: true,
+                    },
+                });
+
+            }, wrapperRef);
+
+            return () => {
+                ctx.revert();
+                ScrollTrigger.getAll().forEach((t) => t.kill());
+            };
+        }, 50);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <section
+            ref={wrapperRef}
             className={styles["heroabout-section"]}
             aria-label="About ETUNNEL - Biometric Authentication"
         >
@@ -49,12 +105,12 @@ const Heroabout = function () {
                 </div>
 
                 <div className={styles["heroabout-section-text-wrapper"]}>
-                    <h1>
+                    <h1 ref={h1Ref}>
                         Building a Safer Biometric Authentication Environment<br />
                         Through Continuous R&amp;D and Innovation
                     </h1>
 
-                    <div className={styles["request-a-demo"]}>
+                    <div ref={btnRef} className={styles["request-a-demo"]}>
                         <Link
                             href="/"
                             className={styles["request-a-demo-link"]}

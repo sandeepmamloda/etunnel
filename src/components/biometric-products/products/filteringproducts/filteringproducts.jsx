@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import styles from "./filteringproducts.module.css";
 
@@ -96,7 +95,6 @@ export default function FilteringProducts() {
   const [visibleKey, setVisibleKey] = useState("all");
   const [animating, setAnimating] = useState(false);
   const timeoutRef = useRef(null);
-  const pathname = usePathname(); // ← route track karne ke liye
 
   // ── Refs ──
   const wrapperRef = useRef(null);
@@ -122,113 +120,85 @@ export default function FilteringProducts() {
 
   useEffect(() => () => clearTimeout(timeoutRef.current), []);
 
-  // ── Scroll to top on every route change ──
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, [pathname]);
-
   // ── GSAP clipPath animations ──
   useEffect(() => {
-    // Pehle scroll top karo, phir ScrollTrigger refresh
-    window.scrollTo({ top: 0, behavior: "instant" });
+    const ctx = gsap.context(() => {
 
-    // Thoda wait karo taaki DOM settle ho jaye
-    const initTimer = setTimeout(() => {
-      ScrollTrigger.refresh();
+      // eyebrow
+      gsap.from(eyebrowRef.current, {
+        clipPath: "inset(100% 0% 0% 0%)",
+        y: 30,
+        duration: 1.0,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: eyebrowRef.current,
+          start: "top 85%",
+          once: true,
+        },
+      });
 
-      const ctx = gsap.context(() => {
+      // h1
+      gsap.from(titleRef.current, {
+        clipPath: "inset(100% 0% 0% 0%)",
+        y: 40,
+        duration: 1.1,
+        ease: "power4.out",
+        delay: 0.15,
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 85%",
+          once: true,
+        },
+      });
 
-        // eyebrow
-        gsap.from(eyebrowRef.current, {
-          clipPath: "inset(100% 0% 0% 0%)",
-          y: 30,
-          duration: 1.0,
-          ease: "power4.out",
-          immediateRender: false, // ← important
-          scrollTrigger: {
-            trigger: eyebrowRef.current,
-            start: "top 90%",
-            once: true,
-          },
-        });
+      // subtitle
+      gsap.from(subtitleRef.current, {
+        clipPath: "inset(100% 0% 0% 0%)",
+        y: 40,
+        duration: 1.1,
+        ease: "power4.out",
+        delay: 0.3,
+        scrollTrigger: {
+          trigger: subtitleRef.current,
+          start: "top 85%",
+          once: true,
+        },
+      });
 
-        // h1
-        gsap.from(titleRef.current, {
+      // filter tabs
+      gsap.from(filterTabsRef.current, {
+        clipPath: "inset(100% 0% 0% 0%)",
+        y: 30,
+        duration: 1.0,
+        ease: "power4.out",
+        delay: 0.45,
+        scrollTrigger: {
+          trigger: filterTabsRef.current,
+          start: "top 88%",
+          once: true,
+        },
+      });
+
+      // ── har card individually ──
+      cardRefs.current.forEach((card) => {
+        if (!card) return;
+        gsap.from(card, {
           clipPath: "inset(100% 0% 0% 0%)",
           y: 40,
-          duration: 1.1,
-          ease: "power4.out",
-          delay: 0.15,
-          immediateRender: false,
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: "top 90%",
-            once: true,
-          },
-        });
-
-        // subtitle
-        gsap.from(subtitleRef.current, {
-          clipPath: "inset(100% 0% 0% 0%)",
-          y: 40,
-          duration: 1.1,
-          ease: "power4.out",
-          delay: 0.3,
-          immediateRender: false,
-          scrollTrigger: {
-            trigger: subtitleRef.current,
-            start: "top 90%",
-            once: true,
-          },
-        });
-
-        // filter tabs
-        gsap.from(filterTabsRef.current, {
-          clipPath: "inset(100% 0% 0% 0%)",
-          y: 30,
           duration: 1.0,
           ease: "power4.out",
-          delay: 0.45,
-          immediateRender: false,
           scrollTrigger: {
-            trigger: filterTabsRef.current,
-            start: "top 92%",
+            trigger: card,
+            start: "top 88%",
             once: true,
           },
         });
+      });
 
-        // ── har card individually ──
-        cardRefs.current.forEach((card) => {
-          if (!card) return;
-          gsap.from(card, {
-            clipPath: "inset(100% 0% 0% 0%)",
-            y: 40,
-            duration: 1.0,
-            ease: "power4.out",
-            immediateRender: false,
-            scrollTrigger: {
-              trigger: card,
-              start: "top 92%",
-              once: true,
-            },
-          });
-        });
+    }, wrapperRef);
 
-      }, wrapperRef);
-
-      // Cleanup function store karo
-      wrapperRef._gsapCtx = ctx;
-    }, 50); // 50ms DOM settle hone do
-
-    return () => {
-      clearTimeout(initTimer);
-      // Properly cleanup karo
-      if (wrapperRef._gsapCtx) {
-        wrapperRef._gsapCtx.revert();
-      }
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
-  }, [pathname]); // ← pathname change hone par re-run
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section ref={wrapperRef} className={styles["product-section"]}>
