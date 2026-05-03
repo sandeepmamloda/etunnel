@@ -6,25 +6,12 @@ import styles from "./nextgeneration-autho.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const splitToChars = (el) => {
-    const text = el.innerText;
-    el.innerHTML = text
-        .split("")
-        .map(char =>
-            char === " "
-                ? `<span style="display:inline-block;">&nbsp;</span>`
-                : `<span style="display:inline-block;">${char}</span>`
-        )
-        .join("");
-    return el.querySelectorAll("span");
-};
-
 const Nextgeneration = function () {
     const wrapperRef = useRef(null);
-    const h2Ref = useRef(null);
-    const p1Ref = useRef(null);
-    const p2Ref = useRef(null);
-    const extraPRef = useRef(null);
+    const h2Ref      = useRef(null);
+    const p1Ref      = useRef(null);
+    const p2Ref      = useRef(null);
+    const extraPRef  = useRef(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -34,68 +21,37 @@ const Nextgeneration = function () {
                     trigger: wrapperRef.current,
                     start: "top 80%",
                     once: true,
-                }
+                },
+                defaults: { ease: "power4.out" },
             });
 
-            // ------h2: letter by letter wave------
-            const h2Chars = splitToChars(h2Ref.current);
-            tl.from(h2Chars, {
-                opacity: 0,
+            // ── h2: clip-path bottom reveal ──
+            tl.from(h2Ref.current, {
+                clipPath: "inset(100% 0% 0% 0%)",
                 y: 40,
-                rotation: -10,
-                transformOrigin: "50% 0%",
-                duration: 0.3,
-                stagger: {
-                    each: 0.025,
-                    ease: "power1.inOut",
-                },
-                ease: "power4.out",
+                duration: 1.2,
             });
 
-            // ------p1: letter by letter wave------
-            const p1Chars = splitToChars(p1Ref.current);
-            tl.from(p1Chars, {
-                opacity: 0,
+            // ── p1: clip-path bottom reveal ──
+            tl.from(p1Ref.current, {
+                clipPath: "inset(100% 0% 0% 0%)",
                 y: 30,
-                rotation: -8,
-                transformOrigin: "50% 0%",
-                duration: 0.45,
-                stagger: {
-                    each: 0.015,
-                    ease: "power1.inOut",
-                },
-                ease: "power4.out",
-            }, "-=0.2");
+                duration: 1.1,
+            }, "-=0.7");
 
-            // ------p2: letter by letter wave------
-            const p2Chars = splitToChars(p2Ref.current);
-            tl.from(p2Chars, {
-                opacity: 0,
+            // ── p2: clip-path bottom reveal ──
+            tl.from(p2Ref.current, {
+                clipPath: "inset(100% 0% 0% 0%)",
                 y: 30,
-                rotation: -8,
-                transformOrigin: "50% 0%",
-                duration: 0.45,
-                stagger: {
-                    each: 0.015,
-                    ease: "power1.inOut",
-                },
-                ease: "power4.out",
-            }, "-=0.2");
+                duration: 1.1,
+            }, "-=0.7");
 
-            // ------extra p: letter by letter wave------
-            const extraChars = splitToChars(extraPRef.current);
-            tl.from(extraChars, {
-                opacity: 0,
+            // ── extra p: clip-path bottom reveal ──
+            tl.from(extraPRef.current, {
+                clipPath: "inset(100% 0% 0% 0%)",
                 y: 30,
-                rotation: -8,
-                transformOrigin: "50% 0%",
-                duration: 0.45,
-                stagger: {
-                    each: 0.015,
-                    ease: "power1.inOut",
-                },
-                ease: "power4.out",
-            }, "-=0.2");
+                duration: 1.1,
+            }, "-=0.7");
 
         }, wrapperRef);
 
@@ -107,7 +63,6 @@ const Nextgeneration = function () {
             <section ref={wrapperRef} className={styles["nextgen-wrapper"]}>
                 <div className={styles["nextget-main"]}>
 
-                    {/* ------content wrapper------ */}
                     <div className={styles["nextgen-content"]}>
 
                         <div className={styles["nextgen-heading"]}>
@@ -133,7 +88,6 @@ const Nextgeneration = function () {
 
                     </div>
 
-                    {/* ------extra------ */}
                     <div className={styles["nextgen-extra"]}>
                         <p ref={extraPRef}>
                             With its excellent security, it is replacing traditional methods and emerging as the best alternative to prevent hacking and cybercrimes.

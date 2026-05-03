@@ -65,6 +65,9 @@
     border-radius:2.4rem;
     background-color:black;
 }
+.herokisacertificate-bottom-wrapper .contact-link{
+    text-decoration:none;
+}
 .herokisacertificate-bottom-wrapper span{
     font-size:1rem;
     line-height:100%;

@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslation } from "@/components/context/TranslationContext"; // ✅ ADD
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -20,9 +21,9 @@ const WHITE_TEXT_ROUTES = [
 const navLinks = [
   { label: "Company",            href: "/company/overview" },
   { label: "Core Technology",    href: "/coretech/p2n2"   },
-  { label: "Biometric Products", href: "/biometric-products/products"         },
-  { label: "Solutions",          href: "/solutions/solutions"        },
-  { label: "News & Media",       href: "/news"             },
+  { label: "Biometric Products", href: "/biometric-products/products" },
+  { label: "Solutions",          href: "/solutions/solutions" },
+  { label: "News & Media",       href: "/news" },
 ];
 
 const FlagEN = () => (
@@ -58,17 +59,24 @@ const ArrowIcon = ({ isWhite }) => (
   </svg>
 );
 
+const languages = [
+  { code: "EN", component: <FlagEN /> },
+  { code: "KO", component: <FlagKO /> },
+];
+
 const Navbar = function () {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState({
-    code: "EN",
-    component: <FlagEN />,
-  });
-
   const [isWhite, setIsWhite] = useState(false);
+
+  const { lang, isTranslating, translatePage } = useTranslation(); // ✅ ADD
+
+  // Current language ke hisaab se flag aur code
+  const selectedLang = lang === "EN"
+    ? { code: "EN", component: <FlagEN /> }
+    : { code: "KO", component: <FlagKO /> };
 
   useEffect(() => {
     const white = WHITE_TEXT_ROUTES.some((route) =>
@@ -77,9 +85,7 @@ const Navbar = function () {
     setIsWhite(white);
   }, [pathname]);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
 
   useEffect(() => {
     if (menuOpen) {
@@ -90,18 +96,39 @@ const Navbar = function () {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  const languages = [
-    { code: "EN", component: <FlagEN /> },
-    { code: "KO", component: <FlagKO /> },
-  ];
-
   const isActive = (href) => {
     if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(href + "/");
   };
 
+  // ✅ Language select handler
+  const handleLangSelect = async (langCode) => {
+    setIsOpen(false);
+    setIsMobileOpen(false);
+    await translatePage(langCode);
+  };
+
   return (
     <>
+      {/* ✅ Translating overlay — poore page pe dikhta hai */}
+      {isTranslating && (
+        <div style={{
+          position: "fixed", inset: 0, zIndex: 9999,
+          background: "rgba(0,0,0,0.5)",
+          display: "flex", flexDirection: "column",
+          alignItems: "center", justifyContent: "center", gap: "16px",
+        }}>
+          <div style={{
+            width: "40px", height: "40px", borderRadius: "50%",
+            border: "3px solid rgba(255,255,255,0.3)",
+            borderTopColor: "#fff",
+            animation: "spin 0.8s linear infinite",
+          }} />
+          <p style={{ color: "#fff", fontSize: "16px", margin: 0 }}>Translating...</p>
+          <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+        </div>
+      )}
+
       <header className={styles["header-section"]}>
         <div className={styles["header-section-wrapper"]}>
 
@@ -109,29 +136,20 @@ const Navbar = function () {
           <div className={styles["header-section-left"]}>
             <Link
               href="/"
-              className={`${styles["header-section-left-img"]} ${
-                !isWhite ? styles["logo-black"] : ""
-              }`}
+              className={`${styles["header-section-left-img"]} ${!isWhite ? styles["logo-black"] : ""}`}
             >
               <Image src="/images/logo.png" fill={true} alt="Logo" />
             </Link>
           </div>
 
-          {/* CENTER — Nav Links (desktop only) */}
+          {/* CENTER — Nav Links */}
           <nav className={styles["header-section-center"]}>
             <ul className={styles["nav-links"]}>
               {navLinks.map((link) => (
-                <li
-                  key={link.href}
-                  className={isActive(link.href) ? styles["active-li"] : ""}
-                >
+                <li key={link.href} className={isActive(link.href) ? styles["active-li"] : ""}>
                   <Link
                     href={link.href}
-                    className={
-                      isWhite
-                        ? styles["nav-link-white"]
-                        : styles["nav-link-black"]
-                    }
+                    className={isWhite ? styles["nav-link-white"] : styles["nav-link-black"]}
                   >
                     {link.label}
                   </Link>
@@ -140,35 +158,28 @@ const Navbar = function () {
             </ul>
           </nav>
 
-          {/* RIGHT — Language (desktop only) + Hamburger */}
+          {/* RIGHT — Language + Hamburger */}
           <div className={styles["header-section-right"]}>
 
-            {/* Language Selector — desktop only */}
+            {/* Desktop Language Selector */}
             <div className={styles["lang-selector-desktop"]}>
               <div
                 className={styles["lang-selector"]}
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => !isTranslating && setIsOpen(!isOpen)}
               >
                 {selectedLang.component}
-                <span
-                  className={
-                    isWhite ? styles["lang-text-white"] : styles["lang-text-black"]
-                  }
-                >
-                  {selectedLang.code}
+                <span className={isWhite ? styles["lang-text-white"] : styles["lang-text-black"]}>
+                  {isTranslating ? "..." : selectedLang.code}
                 </span>
                 <ArrowIcon isWhite={isWhite} />
 
-                {isOpen && (
+                {isOpen && !isTranslating && (
                   <div className={styles["lang-dropdown"]}>
                     {languages.map((lang) => (
                       <div
                         key={lang.code}
                         className={styles["lang-option"]}
-                        onClick={() => {
-                          setSelectedLang(lang);
-                          setIsOpen(false);
-                        }}
+                        onClick={(e) => { e.stopPropagation(); handleLangSelect(lang.code); }}
                       >
                         {lang.component}
                         <span>{lang.code}</span>
@@ -181,42 +192,30 @@ const Navbar = function () {
 
             {/* Hamburger */}
             <button
-              className={`${styles["hamburger"]} ${
-                isWhite ? styles["hamburger-white"] : styles["hamburger-black"]
-              } ${menuOpen ? styles["hamburger-active"] : ""}`}
+              className={`${styles["hamburger"]} ${isWhite ? styles["hamburger-white"] : styles["hamburger-black"]} ${menuOpen ? styles["hamburger-active"] : ""}`}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
               aria-expanded={menuOpen}
             >
-              <span></span>
-              <span></span>
-              <span></span>
+              <span></span><span></span><span></span>
             </button>
 
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
-      <div
-        className={`${styles["mobile-menu"]} ${
-          menuOpen ? styles["mobile-menu-open"] : ""
-        } ${isWhite ? styles["mobile-menu-transparent"] : styles["mobile-menu-white"]}`}
-      >
+      {/* Mobile Menu */}
+      <div className={`${styles["mobile-menu"]} ${menuOpen ? styles["mobile-menu-open"] : ""} ${isWhite ? styles["mobile-menu-transparent"] : styles["mobile-menu-white"]}`}>
         <ul className={styles["mobile-nav-links"]}>
           {navLinks.map((link, index) => (
             <li
               key={link.href}
-              className={`${styles["mobile-nav-item"]} ${
-                menuOpen ? styles["mobile-nav-item-visible"] : ""
-              }`}
+              className={`${styles["mobile-nav-item"]} ${menuOpen ? styles["mobile-nav-item-visible"] : ""}`}
               style={{ transitionDelay: menuOpen ? `${0.08 * index + 0.15}s` : "0s" }}
             >
               <Link
                 href={link.href}
-                className={`${styles["mobile-nav-link"]} ${
-                  isActive(link.href) ? styles["mobile-nav-link-active"] : ""
-                } ${isWhite ? styles["mobile-link-white"] : styles["mobile-link-black"]}`}
+                className={`${styles["mobile-nav-link"]} ${isActive(link.href) ? styles["mobile-nav-link-active"] : ""} ${isWhite ? styles["mobile-link-white"] : styles["mobile-link-black"]}`}
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
@@ -225,38 +224,31 @@ const Navbar = function () {
           ))}
         </ul>
 
-        {/* Language Selector — mobile, inside menu */}
+        {/* Mobile Language Selector */}
         <div
-          className={`${styles["lang-selector-mobile"]} ${
-            menuOpen ? styles["mobile-nav-item-visible"] : ""
-          }`}
+          className={`${styles["lang-selector-mobile"]} ${menuOpen ? styles["mobile-nav-item-visible"] : ""}`}
           style={{ transitionDelay: menuOpen ? `${0.08 * navLinks.length + 0.15}s` : "0s" }}
         >
           <div
             className={styles["lang-selector"]}
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            onClick={() => !isTranslating && setIsMobileOpen(!isMobileOpen)}
           >
             {selectedLang.component}
             <span
-              className={
-                isWhite ? styles["mobile-link-white"] : styles["mobile-link-black"]
-              }
+              className={isWhite ? styles["mobile-link-white"] : styles["mobile-link-black"]}
               style={{ fontFamily: "NeueHaasGroteskLight", fontSize: "1.14rem" }}
             >
-              {selectedLang.code}
+              {isTranslating ? "..." : selectedLang.code}
             </span>
             <ArrowIcon isWhite={isWhite} />
 
-            {isMobileOpen && (
+            {isMobileOpen && !isTranslating && (
               <div className={styles["lang-dropdown"]}>
                 {languages.map((lang) => (
                   <div
                     key={lang.code}
                     className={styles["lang-option"]}
-                    onClick={() => {
-                      setSelectedLang(lang);
-                      setIsMobileOpen(false);
-                    }}
+                    onClick={(e) => { e.stopPropagation(); handleLangSelect(lang.code); }}
                   >
                     {lang.component}
                     <span>{lang.code}</span>

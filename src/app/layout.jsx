@@ -2,6 +2,7 @@
 
 import Footer from '@/components/common/footer/footer'
 import Navbar from '@/components/common/navbar/navbar'
+import { TranslationProvider } from '@/components/context/TranslationContext'; // ✅ ADD 1
 import Lenis from 'lenis'
 import { useEffect } from 'react'
 import './globals.css'
@@ -27,9 +28,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <TranslationProvider>  {/* ✅ ADD 2 — bas yeh wrap kiya */}
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </TranslationProvider> {/* ✅ ADD 3 */}
       </body>
     </html>
   )

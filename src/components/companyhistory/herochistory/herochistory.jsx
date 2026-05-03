@@ -8,25 +8,11 @@ import styles from "./herochistory.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const splitToChars = (el) => {
-    const text = el.innerText;
-    el.innerHTML = text
-        .split("")
-        .map(char =>
-            char === " "
-                ? `<span style="display:inline-block;">&nbsp;</span>`
-                : `<span style="display:inline-block;">${char}</span>`
-        )
-        .join("");
-    return el.querySelectorAll("span");
-};
-
 const Herochistory = function () {
     const sectionRef = useRef(null);
-    const imgRef = useRef(null);
-    const h1Ref = useRef(null);
-    const pRef = useRef(null);
-    const btnRef = useRef(null);
+    const h1Ref      = useRef(null);
+    const pRef       = useRef(null);
+    const btnRef     = useRef(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -36,54 +22,30 @@ const Herochistory = function () {
                     trigger: sectionRef.current,
                     start: "top 80%",
                     once: true,
-                }
+                },
+                defaults: { ease: "power4.out" },
             });
 
-            // ------step 1: image Ken Burns------
-            tl.from(imgRef.current, {
-                scale: 1.08,
-                duration: 1.2,
-                ease: "power2.out",
+            // ── 1. H1: clip-path bottom reveal ──
+            tl.from(h1Ref.current, {
+                clipPath: "inset(100% 0% 0% 0%)",
+                y: 40,
+                duration: 1.1,
             });
 
-            // ------step 2: h1 wave — image khatam hone ke baad------
-            const h1Chars = splitToChars(h1Ref.current);
-            tl.from(h1Chars, {
-                opacity: 0,
-                y: 55,
-                rotation: -12,
-                transformOrigin: "50% 0%",
-                duration: 0.85,
-                stagger: {
-                    each: 0.04,
-                    ease: "power1.inOut",
-                },
-                ease: "power4.out",
-            }, "-=0.2");
+            // ── 2. P: clip-path bottom reveal ──
+            tl.from(pRef.current, {
+                clipPath: "inset(100% 0% 0% 0%)",
+                y: 40,
+                duration: 1.1,
+            }, "-=0.85");
 
-            // ------step 3: p wave — h1 khatam hone ke baad------
-            const pChars = splitToChars(pRef.current);
-            tl.from(pChars, {
-                opacity: 0,
-                y: 55,
-                rotation: -8,
-                transformOrigin: "50% 0%",
-                duration: 0.65,
-                stagger: {
-                    each: 0.018,
-                    ease: "power1.inOut",
-                },
-                ease: "power4.out",
-            }, "-=0.1");
-
-            // ------step 4: button — p khatam hone ke baad------
+            // ── 3. BUTTON: left-to-right clip wipe ──
             tl.from(btnRef.current, {
-                clipPath: "inset(0% 0% 100% 0%)",
-                y: -15,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power4.out",
-            }, "-=0.1");
+                clipPath: "inset(0% 100% 0% 0%)",
+                duration: 0.9,
+                ease: "expo.out",
+            }, "-=0.6");
 
         }, sectionRef);
 
@@ -91,39 +53,36 @@ const Herochistory = function () {
     }, []);
 
     return (
-        <>
-            <section
-                ref={sectionRef}
-                className={styles["herochistory-section"]}
-            >
-                <div className={styles["herochistory-section-wrapper"]}>
-                    <div className={styles["herochistory-section-img"]}>
-                        <Image
-                            ref={imgRef}
-                            src="/images/companyhistory/herohistory/herohistory.jpg"
-                            alt="Hero Image"
-                            fill={true}
-                            priority
-                            className={styles["img"]}
-                        />
-                        <div className={styles["herochistory-section-img-overlay"]}></div>
-                    </div>
-                    <div className={styles["herochistory-section-text-wrapper"]}>
-                        <h1 ref={h1Ref}>Company History</h1>
-                        <p ref={pRef}>
-                            Introducing ETUNNEL's journey towards a safer life with enhanced biometric recognition technology.
-                        </p>
-                        <Link
-                            ref={btnRef}
-                            href="/"
-                            className={styles["download-brocher"]}
-                        >
-                            <span>Download Company Brochure</span>
-                        </Link>
-                    </div>
+        <section ref={sectionRef} className={styles["herochistory-section"]}>
+            <div className={styles["herochistory-section-wrapper"]}>
+
+                <div className={styles["herochistory-section-img"]}>
+                    <Image
+                        src="/images/companyhistory/herohistory/herohistory.jpg"
+                        alt="Hero Image"
+                        fill
+                        priority
+                        className={styles["img"]}
+                    />
+                    <div className={styles["herochistory-section-img-overlay"]} />
                 </div>
-            </section>
-        </>
+
+                <div className={styles["herochistory-section-text-wrapper"]}>
+                    <h1 ref={h1Ref}>Company History</h1>
+                    <p ref={pRef}>
+                        Introducing ETUNNEL's journey towards a safer life with
+                        enhanced biometric recognition technology.
+                    </p>
+                    <Link
+                        ref={btnRef}
+                        href="/"
+                        className={styles["download-brocher"]}
+                    >
+                        <span>Download Company Brochure</span>
+                    </Link>
+                </div>
+            </div>
+        </section>
     );
 };
 

@@ -8,24 +8,10 @@ import styles from "./herocoverview.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const splitToChars = (el) => {
-    const text = el.innerText;
-    el.innerHTML = text
-        .split("")
-        .map(char =>
-            char === " "
-                ? `<span style="display:inline-block;">&nbsp;</span>`
-                : `<span style="display:inline-block;">${char}</span>`
-        )
-        .join("");
-    return el.querySelectorAll("span");
-};
-
 const Herocoverview = function () {
     const sectionRef = useRef(null);
-    const imgRef = useRef(null);
-    const h1Ref = useRef(null);
-    const btnRef = useRef(null);
+    const h1Ref      = useRef(null);
+    const btnRef     = useRef(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -35,39 +21,23 @@ const Herocoverview = function () {
                     trigger: sectionRef.current,
                     start: "top 80%",
                     once: true,
-                }
-            });
-
-            // ------step 1: image Ken Burns------
-            tl.from(imgRef.current, {
-                scale: 1.08,
-                duration: 1.2,
-                ease: "power2.out",
-            });
-
-            // ------step 2: h1 wave — image khatam hone ke baad------
-            const h1Chars = splitToChars(h1Ref.current);
-            tl.from(h1Chars, {
-                opacity: 0,
-                y: 55,
-                rotation: -12,
-                transformOrigin: "50% 0%",
-                duration: 0.7,
-                stagger: {
-                    each: 0.04,
-                    ease: "power1.inOut",
                 },
-                ease: "power4.out",
-            }, "-=0.3"); // image ke last 0.3s ke saath overlap
+                defaults: { ease: "power4.out" },
+            });
 
-            // ------step 3: button — h1 khatam hone ke baad------
+            // ── 1. H1: clip-path bottom reveal ──
+            tl.from(h1Ref.current, {
+                clipPath: "inset(100% 0% 0% 0%)",
+                y: 40,
+                duration: 1.1,
+            });
+
+            // ── 2. BUTTON: left-to-right clip wipe ──
             tl.from(btnRef.current, {
-                clipPath: "inset(0% 0% 100% 0%)",
-                y: -15,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power4.out",
-            }, "-=0.2"); // h1 ke last 0.2s ke saath overlap
+                clipPath: "inset(0% 100% 0% 0%)",
+                duration: 0.9,
+                ease: "expo.out",
+            }, "-=0.6");
 
         }, sectionRef);
 
@@ -83,7 +53,6 @@ const Herocoverview = function () {
                 <div className={styles["herocoverview-section-wrapper"]}>
                     <div className={styles["herocoverview-section-img"]}>
                         <Image
-                            ref={imgRef}
                             src="/images/companyoverview/herocoverview/herocoverview.jpg"
                             alt="Company Overview - Biometric Authentication Solutions"
                             fill={true}

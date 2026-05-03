@@ -1,33 +1,3 @@
-/* ── Image 3D unfold ── */
-.anim-img {
-  opacity: 0;
-  transform: rotateY(-70deg) rotateX(12deg) translateZ(-60px);
-  transform-origin: left center;
-  transform-style: preserve-3d;
-  animation: img-unfold 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
-}
-
-@keyframes img-unfold {
-  0%   { opacity: 0; transform: rotateY(-70deg) rotateX(12deg) translateZ(-60px); }
-  100% { opacity: 1; transform: rotateY(0deg) rotateX(0deg) translateZ(0px); }
-}
-
-/* ── Badge + Buttons drop ── */
-.anim-drop {
-  opacity: 0;
-  transform: translateY(-70px);
-}
-
-.anim-drop:nth-of-type(1) { animation: drop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s forwards; }
-.anim-drop:nth-of-type(2) { animation: drop-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.65s forwards; }
-.anim-drop:nth-of-type(3) { animation: drop-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.78s forwards; }
-
-@keyframes drop-in {
-  0%   { opacity: 0; transform: translateY(-70px); }
-  60%  { opacity: 1; transform: translateY(8px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
 .heroproduct-wrapper {
   width: 100%;
   background: linear-gradient(180deg, #FFE5CE 0%, #FFFFFF 100%);
@@ -151,7 +121,8 @@
   letter-spacing: 0.18rem;
 }
 
-.heroproduct-highlight .lc-letter {
+/* ── FIXED: direct color on highlight, lc-letter selector hata diya ── */
+.heroproduct-highlight {
   color: rgba(255, 120, 0, 1);
 }
 
@@ -271,22 +242,9 @@
   color: #fff;
 }
 
-/* ── Letter Cascade ── */
+/* ── lc-line same rakha taaki h1 span styling na tute ── */
 .lc-line {
   display: inline;
-}
-
-.lc-letter {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(16px) rotate(4deg);
-  animation: lc-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes lc-in {
-  0%   { opacity: 0; transform: translateY(16px) rotate(4deg); }
-  60%  { opacity: 1; transform: translateY(-3px) rotate(-1deg); }
-  100% { opacity: 1; transform: translateY(0) rotate(0deg); }
 }
 
 /* ─── 1360px ─────────────────────────────────────────────────────────── */
@@ -372,14 +330,16 @@
     font-size: 0.9rem;
   }
 }
-@media screen and (max-width:858px) {
+
+@media screen and (max-width:870px) {
   .heroproduct-main{
     column-gap:0rem;
     width:100%;
   }
 }
-/* ─── 768px — stack layout + buttons column ──────────────────────────── */
-@media screen and (max-width: 768px) {
+
+/* ─── 768px ──────────────────────────────────────────────────────────── */
+@media screen and (max-width: 816px) {
   .heroproduct-wrapper {
     height: fit-content;
     padding-block: 6rem 3rem;
