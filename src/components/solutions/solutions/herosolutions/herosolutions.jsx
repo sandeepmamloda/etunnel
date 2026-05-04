@@ -80,7 +80,8 @@ const Herosolutions = function () {
                         <p ref={pRef}>
                             From biometric authentication to PKI solutions, we provide a secure digital environment with powerful security technology.
                         </p>
-                        <Link ref={btnRef} href="/" className={styles["download-brocher"]}>
+                        <Link ref={btnRef} href="/brochures/demo.pdf"
+                            download="ETUNNEL-Brochure.pdf" className={styles["download-brocher"]}>
                             <span>Download Company Brochure</span>
                         </Link>
                     </div>

@@ -76,7 +76,10 @@ const Integrate = () => {
             </svg>
           </Link>
 
-          <Link href="/brochure" className={styles["btn-light"]}>
+          <Link 
+                href="/brochures/demo.pdf"
+                download="ETUNNEL-Brochure.pdf"
+                className={styles["btn-light"]}>
             <span className={styles["stair"]}></span>
             <span className={styles["stair"]}></span>
             <span className={styles["stair"]}></span>

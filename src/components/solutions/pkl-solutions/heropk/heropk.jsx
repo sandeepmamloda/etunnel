@@ -80,7 +80,7 @@ const Heropk = function () {
                         <p ref={pRef}>
                             Our PKI-based security technology creates a reliable digital authentication environment.
                         </p>
-                        <Link ref={btnRef} href="/" className={styles["download-brocher"]}>
+                        <Link ref={btnRef} href="/contact" className={styles["download-brocher"]}>
                             <span>Contact Us</span>
                         </Link>
                     </div>

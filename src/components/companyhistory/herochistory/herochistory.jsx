@@ -75,7 +75,8 @@ const Herochistory = function () {
                     </p>
                     <Link
                         ref={btnRef}
-                        href="/"
+                        href="/brochures/demo.pdf"
+                        download="ETUNNEL-Brochure.pdf"
                         className={styles["download-brocher"]}
                     >
                         <span>Download Company Brochure</span>

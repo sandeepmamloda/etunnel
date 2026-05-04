@@ -100,7 +100,8 @@ const Secure = () => {
                     </Link>
 
                     {/* ------light button------ */}
-                    <Link ref={btnLightRef} href="/brochure" className={styles["btn-light"]}>
+                    <Link ref={btnLightRef} href="/brochures/demo.pdf"
+                            download="ETUNNEL-Brochure.pdf" className={styles["btn-light"]}>
                         <span className={styles["stair"]}></span>
                         <span className={styles["stair"]}></span>
                         <span className={styles["stair"]}></span>

@@ -4,7 +4,7 @@ import { useTranslation } from "@/components/context/TranslationContext";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./navbar.module.css";
 
 const WHITE_TEXT_ROUTES = [
@@ -27,27 +27,39 @@ const navLinks = [
 ];
 
 const FlagEN = () => (
-  <svg width="20" height="20" viewBox="0 0 60 30">
-    <rect width="60" height="30" fill="#b22234" />
-    <g fill="#fff">
-      <rect y="2" width="60" height="2" />
-      <rect y="6" width="60" height="2" />
-      <rect y="10" width="60" height="2" />
-      <rect y="14" width="60" height="2" />
-      <rect y="18" width="60" height="2" />
-      <rect y="22" width="60" height="2" />
-      <rect y="26" width="60" height="2" />
-    </g>
-    <rect width="25" height="14" fill="#3c3b6e" />
-  </svg>
+  <div style={{
+    width: "20px", height: "20px", borderRadius: "50%",
+    overflow: "hidden", flexShrink: 0,
+    border: "1px solid rgba(128,128,128,0.25)"
+  }}>
+    <svg width="20" height="20" viewBox="8 0 44 30" preserveAspectRatio="xMidYMid slice" style={{ display: "block", width: "100%", height: "100%" }}>
+      <rect width="60" height="30" fill="#b22234" />
+      <g fill="#fff">
+        <rect y="2" width="60" height="2" />
+        <rect y="6" width="60" height="2" />
+        <rect y="10" width="60" height="2" />
+        <rect y="14" width="60" height="2" />
+        <rect y="18" width="60" height="2" />
+        <rect y="22" width="60" height="2" />
+        <rect y="26" width="60" height="2" />
+      </g>
+      <rect width="25" height="14" fill="#3c3b6e" />
+    </svg>
+  </div>
 );
 
 const FlagKO = () => (
-  <svg width="20" height="20" viewBox="0 0 60 40">
-    <rect width="60" height="40" fill="white" />
-    <circle cx="30" cy="20" r="10" fill="red" />
-    <path d="M30 10 A10 10 0 0 0 30 30" fill="blue" />
-  </svg>
+  <div style={{
+    width: "20px", height: "20px", borderRadius: "50%",
+    overflow: "hidden", flexShrink: 0,
+    border: "1px solid rgba(128,128,128,0.25)"
+  }}>
+    <svg width="20" height="20" viewBox="0 0 60 40" preserveAspectRatio="xMidYMid slice" style={{ display: "block", width: "100%", height: "100%" }}>
+      <rect width="60" height="40" fill="white" />
+      <circle cx="30" cy="20" r="10" fill="red" />
+      <path d="M30 10 A10 10 0 0 0 30 30" fill="blue" />
+    </svg>
+  </div>
 );
 
 const ArrowIcon = ({ isWhite }) => (
@@ -70,6 +82,9 @@ const Navbar = function () {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isWhite, setIsWhite] = useState(false);
+
+  const langDesktopRef = useRef(null);
+  const langMobileRef  = useRef(null);
 
   const { lang, isTranslating, translatePage } = useTranslation();
 
@@ -102,6 +117,9 @@ const Navbar = function () {
     const handleClickOutside = (e) => {
       if (e.target.closest("button[aria-label='Toggle menu']")) return;
       if (e.target.closest("a")) return;
+      // ✅ Language selector pe click ho to menu band mat karo
+      if (langDesktopRef.current?.contains(e.target)) return;
+      if (langMobileRef.current?.contains(e.target)) return;
       setMenuOpen(false);
     };
 
@@ -179,7 +197,7 @@ const Navbar = function () {
           <div className={styles["header-section-right"]}>
 
             {/* Desktop Language Selector */}
-            <div className={styles["lang-selector-desktop"]}>
+            <div className={styles["lang-selector-desktop"]} ref={langDesktopRef}>
               <div
                 className={styles["lang-selector"]}
                 onClick={() => !isTranslating && setIsOpen(!isOpen)}
@@ -244,6 +262,7 @@ const Navbar = function () {
         {/* Mobile Language Selector */}
         <div
           className={`${styles["lang-selector-mobile"]} ${menuOpen ? styles["mobile-nav-item-visible"] : ""}`}
+          ref={langMobileRef}
           style={{ transitionDelay: menuOpen ? `${0.08 * navLinks.length + 0.15}s` : "0s" }}
         >
           <div

@@ -19,7 +19,7 @@ const st100v=function(){
                 title="ETUNNEL"
                 highlight="ST-100V"
                 description="An embedded finger vein recognition module optimized for authentication devices. Compact, powerful, and built for seamless integration."
-                brochureUrl="/brochures/st-100v.pdf"
+                brochureUrl="/brochures/demo.pdf"
             />
             <Securitytechnology/>
             <ConvenienceReliability
@@ -59,7 +59,7 @@ const st100v=function(){
               <Requestademo
                 heading="Ready to integrate the ST-100V?"
                 description="Get in touch to learn how the ETUNNEL-ST-100V can enhance your security infrastructure with finger vein biometric authentication."
-                brochureUrl="/brochures/st-100v.pdf"
+                brochureUrl="/brochures/demo.pdf"
               />
         </>
     );

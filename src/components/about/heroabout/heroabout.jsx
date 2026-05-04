@@ -112,7 +112,8 @@ const Heroabout = function () {
 
                     <div ref={btnRef} className={styles["request-a-demo"]}>
                         <Link
-                            href="/"
+                            href="/brochures/demo.pdf"
+                            download="ETUNNEL-Brochure.pdf"
                             className={styles["request-a-demo-link"]}
                             aria-label="Download ETUNNEL Company Brochure"
                         >
