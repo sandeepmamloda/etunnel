@@ -402,7 +402,11 @@
     justify-content: center;
   }
 }
-
+@media (max-width:600px) {
+  .mobile-menu {
+    overflow-y: auto;
+  }
+}
 /* ══════════════════════════════════════
    RESPONSIVE — Short viewport (height <= 340px)
 ══════════════════════════════════════ */
@@ -410,7 +414,6 @@
 /* ══════════════════════════════════════
    RESPONSIVE — Short viewport (height <= 440px)
 ══════════════════════════════════════ */
-
 @media (max-height: 440px) {
   .mobile-menu {
     justify-content: flex-start;
