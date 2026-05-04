@@ -416,9 +416,9 @@
     gap: 2rem;
   }
 
-  .section {
+  /* .section {
     padding: 2rem 1rem;
-  }
+  } */
 
   .contentSide {
     order: -1;
