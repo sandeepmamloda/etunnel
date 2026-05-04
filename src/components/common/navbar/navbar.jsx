@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "@/components/context/TranslationContext"; // ✅ ADD
+import { useTranslation } from "@/components/context/TranslationContext";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,13 +13,13 @@ const WHITE_TEXT_ROUTES = [
   "/solutions/solutions",
   "/solutions/pkl-solutions",
   "/solutions/biometric-authentication-solutions",
-  "/company/overview",
   "/company/history",
+  "/company/overview",
   "/biometric-products/products",
 ];
 
 const navLinks = [
-  { label: "Company",            href: "/company/overview" },
+  { label: "Company",            href: "/company/history" },
   { label: "Core Technology",    href: "/coretech/p2n2"   },
   { label: "Biometric Products", href: "/biometric-products/products" },
   { label: "Solutions",          href: "/solutions/solutions" },
@@ -71,9 +71,8 @@ const Navbar = function () {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isWhite, setIsWhite] = useState(false);
 
-  const { lang, isTranslating, translatePage } = useTranslation(); // ✅ ADD
+  const { lang, isTranslating, translatePage } = useTranslation();
 
-  // Current language ke hisaab se flag aur code
   const selectedLang = lang === "EN"
     ? { code: "EN", component: <FlagEN /> }
     : { code: "KO", component: <FlagKO /> };
@@ -96,12 +95,31 @@ const Navbar = function () {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  // ✅ Click outside se menu close
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const handleClickOutside = (e) => {
+      if (e.target.closest("button[aria-label='Toggle menu']")) return;
+      if (e.target.closest("a")) return;
+      setMenuOpen(false);
+    };
+
+    const timer = setTimeout(() => {
+      document.addEventListener("click", handleClickOutside);
+    }, 10);
+
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [menuOpen]);
+
   const isActive = (href) => {
     if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(href + "/");
   };
 
-  // ✅ Language select handler
   const handleLangSelect = async (langCode) => {
     setIsOpen(false);
     setIsMobileOpen(false);
@@ -110,7 +128,6 @@ const Navbar = function () {
 
   return (
     <>
-      {/* ✅ Translating overlay — poore page pe dikhta hai */}
       {isTranslating && (
         <div style={{
           position: "fixed", inset: 0, zIndex: 9999,

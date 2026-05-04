@@ -29,7 +29,6 @@ const Footer = function () {
   useEffect(() => {
     const isMobile = window.innerWidth <= 1160;
 
-    // Immediately hide everything before paint
     gsap.set(topLinksRef.current, { opacity: 0, y: 60 });
     gsap.set(leftRef.current,      { opacity: 0, x: isMobile ? 0 : -60, y: isMobile ? 40 : 0 });
     gsap.set(logoRef.current,      { opacity: 0, scale: 0.82, filter: "blur(6px)" });
@@ -38,7 +37,6 @@ const Footer = function () {
 
     const ctx = gsap.context(() => {
 
-      // ── Top links: slow staggered rise ──
       gsap.to(topLinksRef.current, {
         opacity: 1,
         y: 0,
@@ -52,7 +50,6 @@ const Footer = function () {
         },
       });
 
-      // ── Left block ──
       gsap.to(leftRef.current, {
         opacity: 1,
         x: 0,
@@ -66,7 +63,6 @@ const Footer = function () {
         },
       });
 
-      // ── Logo: slow unblur + scale ──
       gsap.to(logoRef.current, {
         opacity: 1,
         scale: 1,
@@ -81,7 +77,6 @@ const Footer = function () {
         },
       });
 
-      // ── Right block ──
       gsap.to(rightRef.current, {
         opacity: 1,
         x: 0,
@@ -96,7 +91,6 @@ const Footer = function () {
         },
       });
 
-      // ── Bottom bar ──
       gsap.to(bottomBarRef.current, {
         opacity: 1,
         y: 0,
@@ -128,7 +122,18 @@ const Footer = function () {
             className={styles["footer-top-links"]}
           >
             <span>{item.label}</span>
-            <span>↗</span>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line x1="5" y1="19" x2="19" y2="5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <polyline points="9,5 19,5 19,15" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
           </Link>
         ))}
       </div>

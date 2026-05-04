@@ -402,3 +402,59 @@
     justify-content: center;
   }
 }
+
+/* ══════════════════════════════════════
+   RESPONSIVE — Short viewport (height <= 340px)
+══════════════════════════════════════ */
+
+/* ══════════════════════════════════════
+   RESPONSIVE — Short viewport (height <= 440px)
+══════════════════════════════════════ */
+
+@media (max-height: 440px) {
+  .mobile-menu {
+    justify-content: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 4.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .mobile-nav-links {
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .mobile-nav-link {
+    padding-block: 0.72rem;
+    font-size: 1rem;
+  }
+
+  .mobile-nav-item {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.18);
+  }
+
+  .lang-selector-mobile {
+    padding-block: 0.72rem;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+  }
+
+  /* ✅ Hamburger cross fix — short viewport pe bhi sahi kaam kare */
+  .hamburger span:nth-child(1) { width: 1.8rem; }
+  .hamburger span:nth-child(2) { width: 1.2rem; }
+  .hamburger span:nth-child(3) { width: 1.8rem; }
+
+  .hamburger-active span:nth-child(1) {
+    transform: translateY(0.48rem) rotate(45deg) !important;
+    width: 1.8rem !important;
+  }
+  .hamburger-active span:nth-child(2) {
+    opacity: 0 !important;
+    transform: scaleX(0) !important;
+  }
+  .hamburger-active span:nth-child(3) {
+    transform: translateY(-0.48rem) rotate(-45deg) !important;
+    width: 1.8rem !important;
+  }
+}
