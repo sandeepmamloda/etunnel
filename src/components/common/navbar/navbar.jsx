@@ -110,14 +110,12 @@ const Navbar = function () {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  // ✅ Click outside se menu close
   useEffect(() => {
     if (!menuOpen) return;
 
     const handleClickOutside = (e) => {
       if (e.target.closest("button[aria-label='Toggle menu']")) return;
       if (e.target.closest("a")) return;
-      // ✅ Language selector pe click ho to menu band mat karo
       if (langDesktopRef.current?.contains(e.target)) return;
       if (langMobileRef.current?.contains(e.target)) return;
       setMenuOpen(false);
@@ -138,10 +136,12 @@ const Navbar = function () {
     return pathname === href || pathname.startsWith(href + "/");
   };
 
+  // ✅ UPDATED: translatePage ke baad page reload hoga
   const handleLangSelect = async (langCode) => {
     setIsOpen(false);
     setIsMobileOpen(false);
     await translatePage(langCode);
+    window.location.reload();
   };
 
   return (
