@@ -112,7 +112,7 @@ const Heroproducts = function () {
                             </div>
                         </div>
 
-                        <Link ref={btnRef} href="/" className={styles["download-brocher"]}>
+                        <Link ref={btnRef} href="/contact" className={styles["download-brocher"]}>
                             <span>Contact Us</span>
                         </Link>
                     </div>
