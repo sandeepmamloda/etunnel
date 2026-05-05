@@ -56,7 +56,7 @@ const Contactform = function () {
   };
 
   return (
-    <div className={styles.section} id="scene">
+    <section className={styles.section} id="scene">
       <div className={styles.container}>
 
         {/* ── LEFT: ETUNNEL content ── */}
@@ -153,11 +153,11 @@ const Contactform = function () {
               <div className={styles.row2}>
                 <div className={styles.fg}>
                   <label className={styles.label}>First Name</label>
-                  <input className={styles.input} type="text" placeholder="Rahul" />
+                  <input className={styles.input} type="text" placeholder="Name" />
                 </div>
                 <div className={styles.fg}>
                   <label className={styles.label}>Last Name</label>
-                  <input className={styles.input} type="text" placeholder="Sharma" />
+                  <input className={styles.input} type="text" placeholder="Surname" />
                 </div>
               </div>
 
@@ -173,10 +173,14 @@ const Contactform = function () {
                 <label className={styles.label}>Inquiry Type</label>
                 <select className={styles.select}>
                   <option value="">Select...</option>
-                  <option>Product Demo — ST-100V</option>
-                  <option>Technical Integration</option>
-                  <option>Partnership &amp; Reseller</option>
-                  <option>General Inquiry</option>
+                  <option>ST-100V</option>
+                  <option>PL-100V</option>
+                  <option>SW-100V</option>
+                  <option>CW-100V</option>
+                  <option>SC-100V</option>
+                  <option>CC-100V</option>
+                  <option>CR-100V</option>
+                  <option>IV-100V</option>
                 </select>
               </div>
               <div className={styles.fg}>
@@ -201,7 +205,7 @@ const Contactform = function () {
         </div>
 
       </div>
-    </div>
+    </section>
   );
 };
 
