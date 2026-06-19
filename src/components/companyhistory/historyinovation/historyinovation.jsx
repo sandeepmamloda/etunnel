@@ -1,115 +1,3 @@
-// "use client"
-// import { useState } from "react";
-// import styles from "./historyinovation.module.css";
-
-// const accordionData = [
-//     {
-//         year: "2025",
-//         image: "/images/companyhistory/historyinovation/historyinovation.png",
-//         content: [
-//             {
-//                 text: "Signed a Business Agreement with RaonSecure for Biometric Authentication Platform Collaboration.",
-//                 bullets: []
-//             },
-//             {
-//                 text: "Signed a Business Agreement with G-Knot for Global Market Expansion.",
-//                 bullets: []
-//             },
-//             {
-//                 text: "Participated in CES Las Vegas U.S.",
-//                 bullets: [
-//                     "Launched a new version of finger vein authentication.",
-//                     "Launched the world's first finger vein hardware wallet."
-//                 ]
-//             }
-//         ]
-//     },
-//     { year: "2024", image: "/images/history/2024.jpg", content: [] },
-//     { year: "2023", image: "/images/history/2023.jpg", content: [] },
-//     { year: "2022", image: "/images/history/2022.jpg", content: [] },
-//     { year: "2021", image: "/images/history/2021.jpg", content: [] },
-// ];
-
-// const Historyinovation = function () {
-//     const [openYear, setOpenYear] = useState("2025");
-
-//     const handleToggle = (year) => {
-//         setOpenYear(prev => prev === year ? null : year);
-//     };
-
-//     return (
-//         <>
-//             <section className={styles["historyinovation-section"]}>
-
-//                 {/* ------top heading area------ */}
-//                 <div className={styles["historyinovation-heading-wrapper"]}>
-//                     <h2 className={styles["historyinovation-heading-title"]}>History of Innovation</h2>
-//                     <p className={styles["historyinovation-heading-desc"]}>
-//                         Continuing innovation for a safer, more convenient future with<br />
-//                         enhanced biometric technology and advanced security solutions.
-//                     </p>
-//                 </div>
-
-//                 {/* ------accordion------ */}
-//                 <div className={styles["historyinovation-section-wrapper"]}>
-//                     {accordionData.map((item) => (
-//                         <div key={item.year} className={styles["historyinovation-accordion-item"]}>
-//                             <input
-//                                 type="checkbox"
-//                                 id={`accordion-${item.year}`}
-//                                 className={styles["historyinovation-accordion-checkbox"]}
-//                                 checked={openYear === item.year}
-//                                 onChange={() => handleToggle(item.year)}
-//                             />
-//                             <label
-//                                 htmlFor={`accordion-${item.year}`}
-//                                 className={styles["historyinovation-accordion-label"]}
-//                             >
-//                                 <span className={styles["historyinovation-accordion-label-icon"]}></span>
-//                                 <span className={styles["historyinovation-accordion-label-year"]}>{item.year}</span>
-//                             </label>
-//                             <div className={styles["historyinovation-accordion-body"]}>
-//                                 <div className={styles["historyinovation-accordion-body-inner"]}>
-//                                     <div className={styles["historyinovation-accordion-body-row"]}>
-//                                         <div className={styles["historyinovation-accordion-body-img-wrapper"]}>
-//                                             <img
-//                                                 src={item.image}
-//                                                 alt={`${item.year} image`}
-//                                                 className={styles["historyinovation-accordion-body-img"]}
-//                                             />
-//                                         </div>
-//                                         <div className={styles["historyinovation-accordion-body-content"]}>
-//                                             {item.content.map((block, i) => (
-//                                                 <div key={i} className={styles["historyinovation-accordion-body-content-block"]}>
-//                                                     <p className={styles["historyinovation-accordion-body-content-text"]}>
-//                                                         {block.text}
-//                                                     </p>
-//                                                     {block.bullets.length > 0 && (
-//                                                         <ul className={styles["historyinovation-accordion-body-content-list"]}>
-//                                                             {block.bullets.map((b, j) => (
-//                                                                 <li key={j} className={styles["historyinovation-accordion-body-content-list-item"]}>
-//                                                                     {b}
-//                                                                 </li>
-//                                                             ))}
-//                                                         </ul>
-//                                                     )}
-//                                                 </div>
-//                                             ))}
-//                                         </div>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     ))}
-//                 </div>
-
-//             </section>
-//         </>
-//     );
-// };
-
-// export default Historyinovation;
-// ------------------------------------------------
 "use client"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -121,29 +9,84 @@ gsap.registerPlugin(ScrollTrigger);
 const accordionData = [
     {
         year: "2025",
-        image: "/images/companyhistory/historyinovation/historyinovation.png",
+        image: "/images/companyhistory/historyinovation/2025.png",
         content: [
             {
-                text: "Signed a Business Agreement with RaonSecure for Biometric Authentication Platform Collaboration.",
-                bullets: []
-            },
-            {
-                text: "Signed a Business Agreement with G-Knot for Global Market Expansion.",
-                bullets: []
-            },
-            {
-                text: "Participated in CES Las Vegas U.S.",
+                text: "",
                 bullets: [
-                    "Launched a new version of finger vein authentication.",
+                    "Participated in CES Las Vegas U.S.",
+                    "Launched a new version of finger vein authentication device.",
                     "Launched the world's first finger vein hardware wallet."
                 ]
             }
         ]
     },
-    { year: "2024", image: "/images/history/2024.jpg", content: [] },
-    { year: "2023", image: "/images/history/2023.jpg", content: [] },
-    { year: "2022", image: "/images/history/2022.jpg", content: [] },
-    { year: "2021", image: "/images/history/2021.jpg", content: [] },
+    {
+        year: "2024",
+        image: "/images/companyhistory/historyinovation/2024.png",
+        content: [
+            {
+                text: "",
+                bullets: [
+                    "Opened the Rosedale center.",
+                    "Participated in JAPAN IT Week Tokyo.",
+                    "Selection of supplier for fingerprint authentication smart card for employee identification of ITU (International Telecommunication Union), a UN-affiliated organization.",
+                    "Received certification from KISA for finger vein recognition algorithms.",
+                    "Participated in Identity Week Europe Amsterdam.",
+                    "Participated in InfoSecurity Europe London.",
+                    "Participated in MWC 2024 Barcelona.",
+                    "Signed a contract with GKNOT DMCC for \"the global marketing and supply of ETUNNEL's biometric authentication technology and security devices\"."
+                ]
+            }
+        ]
+    },
+    {
+        year: "2023",
+        image: "/images/companyhistory/historyinovation/2023.png",
+        content: [
+            {
+                text: "",
+                bullets: [
+                    "Developed \"Disposable fingerprint self-enrollment device\" for fingerprint payment cards.",
+                    "Received certification from KISA for facial recognition algorithms.",
+                    "Began development of the \"P2N2 AI Engine\" for integrated biometric algorithms.",
+                    "Completion of the Proof of Concept (PoC) for fingerprint authentication smart card for employee identification of ITU (International Telecommunication Union), a UN-affiliated organization."
+                ]
+            }
+        ]
+    },
+    {
+        year: "2022",
+        image: "/images/companyhistory/historyinovation/2022.png",
+        content: [
+            {
+                text: "",
+                bullets: [
+                    "Dr. Obi Onyewu, MD resigned from his position as.",
+                    "Won the Grand Prize at \"The 8th Korea Enterprise Awards\" in the field of R&D innovation.",
+                    "Won the Grand Prize at \"The 14th Seoul Success Awards\" in the field of 4th industrial economy.",
+                    "Signed an MOU with Busan for \"A leap from Smart City to Secure City\".",
+                    "Participated in BWB 2022.",
+                    "Signed an MOU with WaveOn Cor. for \"Strategic business collaboration\".",
+                    "Signed an MOU with 4th Industrial Revolution Special Committee of the Ruling Party of the Republic of Korea.",
+                    "Started development of finger vein authentication software wallet."
+                ]
+            }
+        ]
+    },
+    {
+        year: "2021",
+        image: "/images/companyhistory/historyinovation/2021.png",
+        content: [
+            {
+                text: "",
+                bullets: [
+                    "Launched the finger vein authentication security solution \"VEIN-X\".",
+                    "Established e-Tunnel Inc."
+                ]
+            }
+        ]
+    },
 ];
 
 const Historyinovation = function () {
@@ -366,9 +309,11 @@ const Historyinovation = function () {
                                                 }}
                                                 className={styles["historyinovation-accordion-body-content-block"]}
                                             >
-                                                <p className={styles["historyinovation-accordion-body-content-text"]}>
-                                                    {block.text}
-                                                </p>
+                                                {block.text && (
+                                                    <p className={styles["historyinovation-accordion-body-content-text"]}>
+                                                        {block.text}
+                                                    </p>
+                                                )}
                                                 {block.bullets.length > 0 && (
                                                     <ul className={styles["historyinovation-accordion-body-content-list"]}>
                                                         {block.bullets.map((b, j) => (

@@ -88,6 +88,8 @@ const PRODUCTS = [
     image: "/images/biometric-products/products/biometric-products/ETUNNEL-IV-100M.png",
     desc: "It is a security technology that strengthens identity verification and authentication. By utilizing AI-based validation and biometric recognition, it provides fast and accurate identity authentication.",
   },
+
+  
 ];
 
 export default function FilteringProducts() {

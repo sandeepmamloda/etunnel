@@ -2,7 +2,7 @@
 
 import Footer from '@/components/common/footer/footer'
 import Navbar from '@/components/common/navbar/navbar'
-import { TranslationProvider } from '@/components/context/TranslationContext'; // ✅ ADD 1
+import { TranslationProvider } from '@/components/context/TranslationContext'; 
 import Lenis from 'lenis'
 import { useEffect } from 'react'
 import './globals.css'
