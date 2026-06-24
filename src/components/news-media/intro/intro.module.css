@@ -1,0 +1,285 @@
+/* ------------- outer section (full-width background) ------------------- */
+.productfeatures-section {
+    width: 100%;
+    background: linear-gradient(180deg, #FFE5CE 0%, #FFFFFF 100%);
+}
+
+/* ------------- inner wrapper (constrained content) ------------------- */
+.productfeatures-wrapper {
+    height: fit-content;
+    width: 100%;
+    max-width: 106.4rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 9.6rem;
+    padding-inline: 2rem;
+    padding-block-start: 10.32rem;
+    padding-block-end: 10.32rem;
+}
+
+/* ------------- header ------------------- */
+.productfeatures-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.2rem;
+    text-align: center;
+}
+
+.productfeatures-header h2 {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 3.6rem;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+}
+
+.productfeatures-header p {
+    font-family: 'NeueHaasDisplayXThin';
+    font-size: 1.32rem;
+    font-weight: 600;
+    letter-spacing: 0.04rem;
+    max-width: 48rem;
+}
+
+/* ------------- list / rows ------------------- */
+.productfeatures-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 9.6rem;
+}
+
+.feature-row {
+    display: flex;
+    align-items: center;
+    column-gap: 9.6rem;
+}
+
+/* ------------- text column ------------------- */
+.feature-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.44rem;
+}
+
+.feature-text h3 {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 2.16rem;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+}
+
+.feature-text p {
+    font-family: 'NeueHaasDisplayXThin';
+    font-size: 1.08rem;
+    line-height: 160%;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+    max-width: 38rem;
+}
+
+/* ------------- button (same gradient-border pattern as accordion) ------------- */
+.productfeatures-toggle {
+    min-height: 3rem;
+    width: 15rem;
+    border-radius: 3.6rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.48rem;
+    position: relative;
+    z-index: 1;
+    margin-block-start: 0.6rem;
+    text-decoration: none;
+}
+
+.productfeatures-toggle::before {
+    content: "";
+    z-index: -1;
+    background: linear-gradient(#b5b5b5 -111.7%, #000 162.48%);
+    border-radius: 6rem;
+    padding: 0.12rem;
+    position: absolute;
+    inset: 0;
+    -webkit-mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+    -webkit-mask-position: 0 0, 0 0;
+    -webkit-mask-size: auto, auto;
+    -webkit-mask-repeat: repeat, repeat;
+    -webkit-mask-clip: content-box, border-box;
+    -webkit-mask-origin: content-box, border-box;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.productfeatures-toggle span {
+    font-size: 0.9rem !important;
+    line-height: 160%;
+    font-family: 'NeueHaasDisplayXThin' !important;
+    font-weight: 600;
+    letter-spacing: 0.06rem !important;
+}
+
+.productfeatures-toggle svg {
+    flex-shrink: 0;
+}
+
+/* ------------- image column ------------------- */
+.feature-image {
+    flex: 1;
+    height: 33.6rem;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* keep the finger-vein image in sync with the other two images at this breakpoint */
+.fva-image {
+    height: 33.6rem;
+}
+
+.fva-image .img {
+    object-position: center 30%;
+}
+
+.feature-image-inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.feature-image-inner .img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover;
+    object-position: center;
+    position: static !important;
+}
+
+/* --------------------------responsive-------------------------- */
+@media screen and (max-width: 1730px) {
+    .productfeatures-wrapper {
+        max-width: 90rem;
+        padding-block-start: 8.32rem;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .productfeatures-wrapper {
+        max-width: 75rem;
+        row-gap: 7.2rem;
+    }
+    .productfeatures-header h2 {
+        font-size: 2.8rem;
+    }
+    .productfeatures-header p {
+        font-size: 1.08rem;
+    }
+    .feature-row {
+        column-gap: 4rem;
+    }
+    .feature-text h3 {
+        font-size: 1.8rem;
+    }
+    .feature-text p {
+        font-size: 0.96rem;
+    }
+    .feature-image {
+        height: 28rem;
+    }
+    .fva-image {
+        height: 28rem;
+    }
+    .productfeatures-toggle {
+        min-height: 2.7rem;
+        width: 10rem;
+    }
+    .productfeatures-toggle span {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media screen and (max-width: 1116px) {
+    .productfeatures-wrapper {
+        max-width: 90rem;
+        padding-block-start: 8.32rem;
+    }
+    .feature-row {
+        column-gap: 2rem;
+    }
+    .feature-image {
+        height: 26rem;
+    }
+    .fva-image {
+        height: 26rem;
+    }
+}
+
+/* ---------- 930px — mobile layout (text on top, image below) ---------- */
+@media screen and (max-width: 930px) {
+    .productfeatures-wrapper {
+        padding-inline: 1.2rem;
+        padding-block-start: 4rem;
+        padding-block-end: 4rem;
+        row-gap: 4rem;
+    }
+    .productfeatures-list {
+        row-gap: 4rem;
+    }
+    .feature-row {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1.6rem;
+        column-gap: 0;
+    }
+    .feature-text {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    .feature-text p {
+        max-width: 100%;
+    }
+    .productfeatures-toggle {
+        margin-inline: auto;
+    }
+    .feature-image {
+        width: 100%;
+        height: 22rem;
+    }
+    .fva-image {
+        height: 22rem;
+    }
+    .productfeatures-header h2 {
+        font-size: 1.9rem;
+    }
+    .productfeatures-header p {
+        font-size: 0.85rem;
+    }
+    .feature-text h3 {
+        font-size: 1.4rem;
+    }
+    .feature-text p {
+        font-size: 0.85rem;
+    }
+    .productfeatures-toggle {
+        min-height: 2.6rem;
+        width: 10rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .productfeatures-header h2 {
+        font-size: 1.5rem;
+        letter-spacing: 0.06rem;
+    }
+    .feature-image {
+        height: 22rem;
+    }
+    .fva-image {
+        height: 22rem;
+    }
+}

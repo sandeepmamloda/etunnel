@@ -16,6 +16,8 @@ const WHITE_TEXT_ROUTES = [
   "/company/history",
   "/company/overview",
   "/biometric-products/products",
+  "/news-media",
+  "/coretech/overview",
 ];
 
 const navLinks = [
