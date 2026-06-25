@@ -1,0 +1,585 @@
+.productshowcase-section {
+    width: 100%;
+    max-width: 106.4rem;
+    margin: 0 auto;
+    padding-inline: 2rem;
+    padding-block-start: 10.32rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4.8rem;
+}
+
+/* ── Reason wrapper (full-width top row: label+heading left, CTA far right) ── */
+.reason-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1.6rem;
+    width: 100%;
+}
+
+.reason-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.6rem;
+}
+
+.reason-label {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+    color: rgba(255, 120, 0, 1);
+}
+
+.reason-heading {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+    color: rgba(0, 0, 0, 1);
+    margin: 0;
+    line-height: 110%;
+}
+
+.reason-cta {
+    flex-shrink: 0;
+    min-height: 3rem;
+    width: fit-content;
+    padding-inline: 1.2rem;
+    border-radius: 3.6rem;
+    background-color: rgba(0, 0, 0, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    white-space: nowrap;
+    display:none;
+}
+
+.reason-cta span {
+    font-size: 1.08rem;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+    color: #fff;
+}
+
+/* ── Bottom row: accordion + image ── */
+.productshowcase-wrapper {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    column-gap: 9.6rem;
+}
+
+.productshowcase-wrapper .productshowcase-left {
+    height: 36rem;
+    flex: 1;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-block-end: 2.4rem;
+}
+
+/* ------------- accordion ------------------- */
+.accordion {
+    height: fit-content;
+    width: 100%;
+    background-color: transparent;
+}
+
+.header {
+    padding-inline: 0.6rem;
+}
+
+.body {
+    padding-inline: 0.6rem;
+    padding-block-end: 0;
+}
+
+.p2n2,
+.finger-vein-authentication,
+.kisa-certification {
+    height: fit-content;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.active {
+    background: linear-gradient(to bottom, rgba(255, 210, 170, 1), rgba(255, 255, 255, 1));
+}
+
+/* ---------------- P2N2 ---------------- */
+.p2n2 .header {
+    height: 4.32rem;
+    width: 100%;
+    background-color: transparent;
+    border-top: solid 0.12rem rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.p2n2 .header h3 {
+    font-family: NeueHaasDisplayThin;
+    font-size: 1.44rem;
+    line-height: 100%;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+}
+
+.p2n2 .body {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4.8rem;
+}
+
+/* ---------------- BUTTON ---------------- */
+.productshowcase-wrapper-toggle {
+    min-height: 3rem;
+    width: 12rem;
+    border-radius: 3.6rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.2rem;
+    text-decoration: none;
+}
+
+.productshowcase-wrapper-toggle::before {
+    content: "";
+    -webkit-mask-composite: xor;
+    z-index: -1;
+    background: linear-gradient(#b5b5b5 -111.7%, #000 162.48%);
+    border-radius: 6rem;
+    padding: 0.12rem;
+    position: absolute;
+    inset: 0;
+    -webkit-mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+    -webkit-mask-position: 0 0, 0 0;
+    -webkit-mask-size: auto, auto;
+    -webkit-mask-repeat: repeat, repeat;
+    -webkit-mask-clip: content-box, border-box;
+    -webkit-mask-origin: content-box, border-box;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    -webkit-mask-source-type: auto, auto;
+    mask-mode: match-source, match-source;
+}
+
+.productshowcase-wrapper-toggle span {
+    font-size: 1.08rem !important;
+    line-height: 160%;
+    font-family: 'NeueHaasDisplayXThin' !important;
+    font-weight: 600;
+    letter-spacing: 0.06rem !important;
+}
+
+/* P2N2 body content paragraphs */
+.p2n2 .body p {
+    font-size: 1.08rem;
+    line-height: 160%;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+}
+
+/* Shared body content wrapper */
+.productshowcase-body-content {
+    height:fit-content;
+    width:100%;
+}
+
+/* ---------------- FVA ---------------- */
+.finger-vein-authentication .header {
+    height: 4.32rem;
+    width: 100%;
+    background-color: transparent;
+    border-top: solid 0.12rem rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.finger-vein-authentication .header h3 {
+    font-family: NeueHaasDisplayThin;
+    font-size: 1.44rem;
+    line-height: 100%;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+}
+
+.finger-vein-authentication .body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4.8rem;
+}
+
+.finger-vein-authentication .body p {
+    font-size: 1.08rem;
+    line-height: 160%;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+}
+
+/* ---------------- KISA ---------------- */
+.kisa-certification .header {
+    height: 4.32rem;
+    width: 100%;
+    background-color: transparent;
+    border-top: solid 0.12rem rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.kisa-certification .header h3 {
+    font-family: NeueHaasDisplayThin;
+    font-size: 1.44rem;
+    line-height: 100%;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+}
+
+.kisa-certification .body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4.8rem;
+    border-bottom: solid 0.12rem rgba(0, 0, 0, 1);
+}
+
+.kisa-certification .body p {
+    font-size: 1.08rem;
+    line-height: 160%;
+    font-family: 'NeueHaasDisplayXThin';
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+}
+
+/* ------------- body animation ------------------- */
+.body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+/* ------------ productshowcase-right ---------------- */
+.productshowcase-wrapper .productshowcase-right {
+    height: 33.6rem;
+    flex: 1;
+    border-radius: 1.2rem;
+    overflow: hidden;
+}
+
+.productshowcase-wrapper .productshowcase-right .productshowcase-right-img {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.productshowcase-wrapper .productshowcase-right .productshowcase-right-img img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover;
+    position: static !important;
+}
+
+/* + icon at the right corner */
+.toggle-icon {
+    margin-left: auto;
+    font-size: 2.16rem;
+    font-weight: thin;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* rotate 45deg to become X when active */
+.rotate {
+    transform: rotate(45deg);
+}
+
+/* ---------- mobile/desktop image visibility ---------- */
+.mobile-image {
+    display: none;
+}
+
+.desktop-image {
+    display: flex;
+}
+
+/* --------------------------responsive-------------------------- */
+@media screen and (max-width: 1730px) {
+    .productshowcase-section{
+        max-width:90rem;
+        padding-block-start: 8.32rem;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .productshowcase-section{
+        max-width:75rem;
+    }
+    .productshowcase-wrapper {
+        column-gap:4rem;
+    }
+    .reason-heading {
+        font-size: 2.2rem;
+    }
+    .reason-label {
+        font-size: 0.9rem;
+    }
+    .reason-cta {
+        min-height: 2.7rem;
+        padding-inline: 1rem;
+    }
+    .reason-cta span {
+        font-size: 0.85rem;
+    }
+    .p2n2 .header h3 {
+        font-size: 1.24rem;
+    }
+    .p2n2 .body p {
+        font-size: 0.8rem;
+    }
+    .finger-vein-authentication .header h3 {
+        font-size: 1.24rem;
+    }
+    .finger-vein-authentication .body p {
+        font-size: 0.8rem;
+    }
+    .kisa-certification .header h3{
+        font-size: 1.24rem;
+    }
+    .kisa-certification .body p{
+        font-size: 0.8rem;
+    }
+    .productshowcase-wrapper-toggle{
+        min-height:2.7rem;
+        width:10rem;
+    }
+    .productshowcase-wrapper-toggle span{
+        font-size:0.8rem!important;
+    }
+}
+
+@media screen and (max-width: 1116px) {
+    .productshowcase-section{
+        max-width:90rem;
+        padding-block-start: 8.32rem;
+    }
+    .productshowcase-wrapper {
+        column-gap:2rem;
+    }
+    .productshowcase-right{
+        height:30rem!important;
+    }
+    .productshowcase-left{
+        row-gap:0.9rem;
+    }
+}
+
+/* ---------- 930px — mobile layout ---------- */
+@media screen and (max-width: 930px) {
+    .productshowcase-section {
+        padding-inline: 1.2rem;
+        padding-block-start: 4rem;
+        row-gap: 2rem;
+        max-width: 100%;
+    }
+
+    .productshowcase-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        column-gap: 0;
+        row-gap: 1.6rem;
+    }
+
+    .productshowcase-wrapper .productshowcase-left {
+        height: fit-content !important;
+        width: 100%;
+        flex: unset;
+        justify-content: flex-start;
+        row-gap: 1.6rem;
+        padding-block-end: 0;
+    }
+
+    /* desktop image — hide karo */
+    .desktop-image {
+        display: none !important;
+    }
+
+    /* mobile image — text ke baad, accordion se pehle */
+    .mobile-image {
+        display: block !important;
+        width: 100%;
+        height: 22rem;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .mobile-image .productshowcase-right-img {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .mobile-image .productshowcase-right-img img {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover;
+        position: static !important;
+    }
+
+    .reason-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 1rem;
+    }
+
+    .reason-heading {
+        font-size: 1.9rem;
+    }
+
+    .reason-label {
+        font-size: 0.85rem;
+    }
+
+    .reason-cta {
+        min-height: 2.6rem;
+        padding-inline: 1rem;
+    }
+
+    .reason-cta span {
+        font-size: 0.8rem !important;
+    }
+
+    .p2n2 .header h3,
+    .finger-vein-authentication .header h3,
+    .kisa-certification .header h3 {
+        font-size: 1.1rem;
+    }
+
+    .p2n2 .body p,
+    .finger-vein-authentication .body p,
+    .kisa-certification .body p {
+        font-size: 0.85rem;
+    }
+
+    .productshowcase-wrapper-toggle {
+        min-height: 2.6rem;
+        width: 10rem;
+    }
+
+    .productshowcase-wrapper-toggle span {
+        font-size: 0.8rem !important;
+    }
+}
+@media screen and (max-width: 600px) {
+    .productshowcase-section {
+        padding-inline: 1.2rem;
+        padding-block-start: 4rem;
+        row-gap: 1.6rem;
+        max-width: 100%;
+    }
+
+    .productshowcase-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        column-gap: 0;
+        row-gap: 1.6rem;
+    }
+
+    .productshowcase-wrapper .productshowcase-left {
+        height: fit-content !important;
+        width: 100%;
+        flex: unset;
+        justify-content: flex-start;
+        row-gap: 1.6rem;
+        padding-block-end: 0;
+    }
+
+    .desktop-image {
+        display: none !important;
+    }
+
+    .mobile-image {
+        display: block !important;
+        width: 100%;
+        height: 22rem;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .mobile-image .productshowcase-right-img {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .mobile-image .productshowcase-right-img img {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover;
+        position: static !important;
+    }
+
+    .reason-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 0.8rem;
+    }
+
+    .reason-heading {
+        font-size: 1.5rem;
+        letter-spacing: 0.06rem;
+    }
+
+    .reason-label {
+        font-size: 0.8rem;
+    }
+
+    .reason-cta {
+        min-height: 2.4rem;
+        padding-inline: 0.9rem;
+    }
+
+    .reason-cta span {
+        font-size: 0.75rem !important;
+    }
+
+    .p2n2 .header h3,
+    .finger-vein-authentication .header h3,
+    .kisa-certification .header h3 {
+        font-size: 1.1rem;
+    }
+
+    .p2n2 .body p,
+    .finger-vein-authentication .body p,
+    .kisa-certification .body p {
+        font-size: 0.85rem;
+    }
+
+    .productshowcase-wrapper-toggle {
+        min-height: 2.6rem;
+        width: 10rem;
+    }
+
+    .productshowcase-wrapper-toggle span {
+        font-size: 0.8rem !important;
+    }
+}

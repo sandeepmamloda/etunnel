@@ -69,7 +69,7 @@ import Image from "next/image";
 const Authentication = function () {
   return (
     <>
-      <div className={styles["authentication-wrapper"]}>
+      <section className={styles["authentication-wrapper"]}>
 
         <div className={styles["authentication-main"]}>
           <div className={styles["authentication-top"]}>
@@ -121,7 +121,7 @@ const Authentication = function () {
           </div>
         </div>
 
-      </div>
+      </section>
     </>
   );
 };
