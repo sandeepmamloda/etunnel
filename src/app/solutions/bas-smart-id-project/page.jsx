@@ -3,10 +3,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 
+import Info from "@/components/solutions//bas-smart-id-project/info/info";
 import Herobassmartid from "@/components/solutions/bas-smart-id-project/herosmartid/herosmartid";
 import Nextgeneration from "@/components/solutions/bas-smart-id-project/nextgeneration/nextgeneration";
 import Productshowcase from "@/components/solutions/bas-smart-id-project/productshowcase/productshowcase";
-import Info from "@/components/solutions//bas-smart-id-project/info/info";
+import Solutioncomponents from "@/components/solutions/bas-smart-id-project/solution-components/solutions-components";
 import WorkingOfSmartid from "@/components/solutions/bas-smart-id-project/working-of-smartid/working-of-smartid";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -138,6 +139,7 @@ const P2n2 = () => {
             <Nextgeneration/>
             <Productshowcase/>
             <Info/>
+            <Solutioncomponents/>
             <WorkingOfSmartid/>
         </>
     );
