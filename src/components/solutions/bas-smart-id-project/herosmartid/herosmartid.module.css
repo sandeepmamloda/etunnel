@@ -6,6 +6,7 @@
     flex-direction: row;
     align-items: flex-end;
     padding-block-end: 8.4rem;
+    overflow:hidden;
 }
 
 .herosmartid-main {
@@ -208,7 +209,7 @@
     width: 10.8rem;
     border-radius: 3rem;
     border: solid 0.156rem rgba(0, 0, 0, 1);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     column-gap: 0.48rem;

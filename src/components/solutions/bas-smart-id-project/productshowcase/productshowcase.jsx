@@ -63,7 +63,7 @@ const Productshowcase = function () {
         <div className={`${styles["productshowcase-left"]} ${styles["manual-size"]}`}>
           <div className={styles["mobile-image"]} ref={mobileImageRef}>
             <div className={styles["productshowcase-right-img"]}>
-              <Image src="/images/solutions/bas-smart-id-project/bas-smart-id-project.png" alt="Hero Image" fill priority className={styles["img"]} />
+              <Image src="/images/solutions/bas-smart-id-project/productshowcase.png" alt="Hero Image" fill priority className={styles["img"]} />
             </div>
           </div>
 

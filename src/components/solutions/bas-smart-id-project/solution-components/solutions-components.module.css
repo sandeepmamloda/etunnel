@@ -52,7 +52,7 @@
 /* ---- Individual Card ---- */
 .solutioncomponents-items {
   border-radius: 1rem;
-  background-color: #FFD2AA;
+  background-color: rgba(255, 221, 188, 1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -160,7 +160,7 @@
     padding: 2.5rem 0;
   }
   .label {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -168,8 +168,12 @@
   .solutioncomponents-main {
     padding: 0 1.5rem;
   }
+  .solutioncomponents-top{
+    align-items:center;
+  }
   .solutioncomponents-top h2 {
     font-size: 1.4rem;
+    text-align:center;
   }
   .desc {
     font-size: 0.78rem;

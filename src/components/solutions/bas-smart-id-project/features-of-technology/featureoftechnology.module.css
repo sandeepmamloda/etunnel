@@ -200,14 +200,16 @@
 
     .header-title {
         font-size: 1.8rem;
+        text-align:center;
     }
 
     .header-sub {
         font-size: 0.52rem;
+        text-align:center;
     }
 
     .featuretechnology-header {
         padding-block-end: 2.4rem;
-        align-items: flex-start;
+        align-items: center;
     }
 }

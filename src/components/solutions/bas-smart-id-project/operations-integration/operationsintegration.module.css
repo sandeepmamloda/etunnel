@@ -11,7 +11,7 @@
     height: fit-content;
     display: flex;
     flex-direction: column;
-    padding-inline: 13rem;
+    /* padding-inline: 0rem; */
     padding-block-start: 4.8rem;
     padding-block-end: 9.6rem;
 }
@@ -43,20 +43,20 @@
 .oi-title {
     margin: 0;
     font-family: 'NeueHaasDisplayThin';
-    font-size: 1.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.2rem;
     line-height: 120%;
     color: rgba(0, 0, 0, 1);
 }
 
 .oi-subtitle {
     margin: 0;
-    font-family: 'NeueHaasDisplayXXThin';
+    font-family: 'NeueHaasDisplayXThin';
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 900;
     letter-spacing: 0.1rem;
-    line-height: 140%;
+    line-height: 180%;
     color: #000000;
 }
 
@@ -82,7 +82,7 @@
     height: fit-content;
     display: flex;
     flex-direction: column;
-    row-gap: 0.5rem;
+    row-gap: 1.5rem;
     padding: 1.6rem 2rem;
     border-right: 0.012rem solid #000;
 }
@@ -92,17 +92,17 @@
 }
 
 .oi-dash {
-    width: 1.6rem;
-    height: 0.1rem;
+    width: 2rem;
+    height: 0.12rem;
     background-color: rgba(0, 0, 0, 1);
 }
 
 .oi-card-title {
     margin: 0;
     font-family: 'NeueHaasDisplayThin';
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.08rem;
     line-height: 120%;
     color: rgba(0, 0, 0, 1);
 }
@@ -148,6 +148,12 @@
 }
 
 @media screen and (max-width: 700px) {
+    .oi-title{
+        text-align:center;
+    }
+    .oi-subtitle{
+        text-align:center;
+    }
     .operationsintegration-main {
         padding-inline: 0rem;
         padding-block-start: 3rem;

@@ -337,7 +337,7 @@
         font-size: 2.2rem;
     }
     .reason-label {
-        font-size: 0.9rem;
+        font-size: 1.6rem;
     }
     .reason-cta {
         min-height: 2.7rem;
@@ -453,9 +453,9 @@
         font-size: 1.9rem;
     }
 
-    .reason-label {
+    /* .reason-label {
         font-size: 0.85rem;
-    }
+    } */
 
     .reason-cta {
         min-height: 2.6rem;
@@ -549,9 +549,9 @@
         letter-spacing: 0.06rem;
     }
 
-    .reason-label {
+    /* .reason-label {
         font-size: 0.8rem;
-    }
+    } */
 
     .reason-cta {
         min-height: 2.4rem;
@@ -581,5 +581,15 @@
 
     .productshowcase-wrapper-toggle span {
         font-size: 0.8rem !important;
+    }
+    .reason-wrapper {
+        flex-direction: column;
+        align-items: center;       /* changed from flex-start */
+        text-align: center;        /* added */
+        row-gap: 0.8rem;
+    }
+    
+    .reason-text-wrapper {
+        align-items: center;       /* added */
     }
 }
