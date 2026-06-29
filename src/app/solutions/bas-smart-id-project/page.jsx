@@ -4,8 +4,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 
 import Info from "@/components/solutions//bas-smart-id-project/info/info";
+import Featureoftechnology from "@/components/solutions/bas-smart-id-project/features-of-technology/featureoftechnology";
 import Herobassmartid from "@/components/solutions/bas-smart-id-project/herosmartid/herosmartid";
 import Nextgeneration from "@/components/solutions/bas-smart-id-project/nextgeneration/nextgeneration";
+import Operationsintegration from "@/components/solutions/bas-smart-id-project/operations-integration/operationsintegration";
 import Productshowcase from "@/components/solutions/bas-smart-id-project/productshowcase/productshowcase";
 import Solutioncomponents from "@/components/solutions/bas-smart-id-project/solution-components/solutions-components";
 import WorkingOfSmartid from "@/components/solutions/bas-smart-id-project/working-of-smartid/working-of-smartid";
@@ -141,6 +143,8 @@ const P2n2 = () => {
             <Info/>
             <Solutioncomponents/>
             <WorkingOfSmartid/>
+            <Featureoftechnology/>
+            <Operationsintegration/>
         </>
     );
 };
