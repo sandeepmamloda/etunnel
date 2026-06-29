@@ -71,14 +71,15 @@ const Productshowcase = function () {
             {/* P2N2 */}
             <div className={`${styles["p2n2"]} ${openSection === "p2n2" ? styles["active"] : ""}`}>
               <div className={styles["header"]} onClick={() => toggle("p2n2")}>
-                <h3>Existing RF Card Access System Problems</h3>
+                <h3>Limitations of Password-based Logon</h3>
                 <span className={`${styles["toggle-icon"]} ${openSection === "p2n2" ? styles["rotate"] : ""}`}>+</span>
               </div>
               <div ref={(el) => (bodyRefs.current["p2n2"] = el)} className={`${styles["body"]} ${openSection === "p2n2" ? styles["open"] : ""}`}>
                 <div className={styles["productshowcase-body-content"]}>
-                  <p>Card Cloning Possibility· RFID card data is easy to clone or copy.· Low-cost systems lack encryption and are vulnerable to data sniffing or reader attacks.
-                     Signal Interception· Wireless data transmission allows for signal interception and theft.
-                     Lost Card· If the card is lost or stolen, it can be misused for unauthorized access.</p>
+                  <p>Password-based authentication places a heavy dependence on user memory, requiring individuals to remember and manage complex passwords on their own. This often reduces work efficiency due to frequent input errors and repeated password reset requests.
+                  In addition, passwords present significant security vulnerabilities, as they can be easily compromised through keylogging, phishing, and social engineering attacks. Once a              password is exposed externally, unauthorized users can gain access, making the authentication process ineffective.
+                  
+                  Password systems also create inconvenience for users. Regular password change policies can cause stress and frustration, while reusing the same password across multiple              services further increases security risks and the likelihood of unauthorized access.</p>
                 </div>
               </div>
             </div>
@@ -86,16 +87,17 @@ const Productshowcase = function () {
             {/* FVA */}
             <div className={`${styles["finger-vein-authentication"]} ${openSection === "fva" ? styles["active"] : ""}`}>
               <div className={styles["header"]} onClick={() => toggle("fva")}>
-                <h3>Fingerprint Recognition Access System Issues</h3>
+                <h3>Risks of Shared PC Usage / Proxy Use</h3>
                 <span className={`${styles["toggle-icon"]} ${openSection === "fva" ? styles["rotate"] : ""}`}>+</span>
               </div>
               <div ref={(el) => (bodyRefs.current["fva"] = el)} className={`${styles["body"]} ${openSection === "fva" ? styles["open"] : ""}`}>
                 <div className={styles["productshowcase-body-content"]}>
-                  <p>Security vulnerabilities in fingerprint recognition systems include fake fingerprint issues, where advanced technologies can bypass the system by duplicating or counterfeiting fingerprints. Data leaks are another major concern, as fingerprint data is highly sensitive and cannot be changed once compromised, which could lead to serious security incidents. Server hacking also poses a risk, since if fingerprint data stored on a central server is breached, it may result in data leaks and service disruptions.
-
-                 User inconvenience is also a factor, particularly regarding hygiene issues. Since multiple users often use the same fingerprint recognition sensor, this can raise hygiene concerns and cause discomfort, especially in cleanliness-sensitive environments such as hospitals and food manufacturing companies.
-                 
-                 Fingerprint recognition systems also face technical limitations. Recognition speed may decrease when multiple users access the system simultaneously, leading to longer wait times. Compatibility issues can also arise due to the use of different fingerprint recognition technologies, such as capacitive and optical systems, making integration between systems more challenging.</p>
+                  <p>Password-based authentication is often unable to verify the actual identity of the user, as passwords alone cannot confirm who is accessing the system. Proxy logins are also possible, making it difficult to maintain security accountability and accurately trace user actions.
+                  
+                  Unauthorized access becomes a major risk when passwords are shared or compromised. In such cases, unauthorized individuals can freely access the system, which can lead to                   critical security incidents, especially in environments where sensitive or confidential information is stored.
+                  
+                  Additionally, password-based systems have limitations in auditing and tracking user activities. Since activity records are not always clearly separated by individual users,                   tracing access histories becomes challenging. In the event of a security incident, identifying the root cause and the responsible party can take significant time and effort.
+                  </p>
                </div>
               </div>
             </div>
@@ -103,12 +105,21 @@ const Productshowcase = function () {
             {/* KISA */}
             <div className={`${styles["kisa-certification"]} ${openSection === "kisa" ? styles["active"] : ""}`}>
               <div className={styles["header"]} onClick={() => toggle("kisa")}>
-                <h3>Expected Benefits of Smart ID Project</h3>
+                <h3>Expected Benefits of the PC Logon Solution</h3>
                 <span className={`${styles["toggle-icon"]} ${openSection === "kisa" ? styles["rotate"] : ""}`}>+</span>
               </div>
               <div ref={(el) => (bodyRefs.current["kisa"] = el)} className={`${styles["body"]} ${openSection === "kisa" ? styles["open"] : ""}`}>
                 <div className={styles["productshowcase-body-content"]}>
-                  <p>This system provides a contactless access security solution designed for the post-COVID-19 era, replacing traditional fingerprint terminals touched by multiple users. It authenticates fingerprints through a personal smart ID card before granting access. The system offers convenience by working like an RFID card without requiring regular charging. It ensures strong security by allowing fingerprints to be registered and used only by the authorized user, preventing misuse even if the card is lost. Since fingerprint data is stored securely within the card, the risk of hacking is reduced. It also improves safety by enabling non-contact biometric authentication, reducing hygiene concerns and infection risks. Additionally, the system is highly scalable and can be integrated with various security applications, such as PC logon and NFC-based mobile office access.</p>
+                  <p>The biometric-based PC Logon Solution enables fast and seamless system access without passwords, improving both convenience and security. Using high-precision finger vein recognition, it prevents proxy usage and unauthorized access while simplifying authentication management and reducing operational costs.
+
+                  This solution enhances security by preventing unauthorized access through biometric authentication. Since finger vein data is highly difficult to counterfeit or alter, it provides a reliable and robust layer of protection.
+                  
+                  User convenience is improved as individuals can quickly log in using finger vein recognition without remembering passwords. This provides a fast and intuitive authentication experience.
+                  
+                  The solution also increases management efficiency by allowing centralized control of authentication histories and user permissions, making security policy updates easier and reducing administrative effort.
+                  
+                  Additionally, operational costs are reduced by minimizing password reset support and lowering the need for separate authentication tools such as physical keys or security cards.
+                  </p>
                 </div>
               </div>
             </div>
@@ -117,7 +128,7 @@ const Productshowcase = function () {
 
         <div ref={imageRef} className={`${styles["productshowcase-right"]} ${styles["desktop-image"]} ${styles["manual-size"]}`}>
           <div className={`${styles["productshowcase-right-img"]} ${styles["manual-size"]}`}>
-            <Image src="/images/solutions/pc-logon/productshowcase.png" alt="Hero Image" fill priority className={styles["img"]} />
+            <Image src="/images/solutions/bas-smart-id-project/productshowcase.png" alt="Hero Image" fill priority className={styles["img"]} />
           </div>
         </div>
       </div>

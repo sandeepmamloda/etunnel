@@ -1,0 +1,207 @@
+.solutioncomponents-wrapper {
+  height: fit-content;
+  width: 100%;
+  padding: 3.75rem 0;
+  margin-top: 3rem;
+}
+
+.solutioncomponents-main {
+  height: fit-content;
+  width: 100%;
+  max-width: 106.4rem;
+  margin: 0 auto;
+  padding: 0 5rem;
+}
+
+/* ---- Header ---- */
+.solutioncomponents-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.label {
+  font-size: 2rem;
+  font-family: 'NeueHaasDisplayThin';
+  font-weight: 600;
+  color: #FF7800;
+  letter-spacing: 0.13rem;
+  line-height: 100%;
+}
+
+.solutioncomponents-top h2 {
+  font-size: 2.2rem;
+  font-family: 'NeueHaasDisplayThin';
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  line-height: 130%;
+  color: #1a1a1a;
+  max-width: 55rem;
+}
+
+/* ---- Cards Grid ---- */
+.solutioncomponents-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+/* ---- Individual Card ---- */
+.solutioncomponents-items {
+  border-radius: 1rem;
+  background-color: rgba(255, 221, 188, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.5rem 1.75rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.solutioncomponents-items:hover {
+  box-shadow: 0 0.5rem 1.5rem rgba(255, 122, 26, 0.18);
+  transform: translateY(-0.125rem);
+}
+
+/* ---- Image area ---- */
+.image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.image-wrapper img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+/* ---- Card content ---- */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.title {
+  font-size: 1rem;
+  font-family: 'NeueHaasDisplayThin';
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.08rem;
+  line-height: 130%;
+}
+
+.desc {
+  font-size: 0.85rem;
+  font-family: 'NeueHaasDisplayXThin';
+  font-weight: 600;
+  color: rgba(82, 82, 82, 1);
+  letter-spacing: 0.08rem;
+  line-height: 150%;
+}
+
+/* =================RESPONSIVE================= */
+
+@media screen and (max-width: 1730px) {
+  .solutioncomponents-main {
+    max-width: 90rem;
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  .solutioncomponents-main {
+    max-width: 75rem;
+    padding: 0 3rem;
+  }
+  .solutioncomponents-top h2 {
+    font-size: 1.9rem;
+  }
+  .title {
+    font-size: 0.95rem;
+  }
+  .desc {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .solutioncomponents-main {
+    padding: 0 2rem;
+  }
+  .solutioncomponents-wrapper {
+    padding: 3rem 0;
+  }
+  .solutioncomponents-bottom {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .solutioncomponents-top h2 {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .solutioncomponents-top h2 {
+    font-size: 1.6rem;
+  }
+  .solutioncomponents-top {
+    gap: 0.5rem;
+    margin-bottom: 1.8rem;
+  }
+  .solutioncomponents-wrapper {
+    padding: 2.5rem 0;
+  }
+  .label {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .solutioncomponents-main {
+    padding: 0 1.5rem;
+  }
+  .solutioncomponents-top{
+    align-items:center;
+  }
+  .solutioncomponents-top h2 {
+    font-size: 1.4rem;
+    text-align:center;
+  }
+  .desc {
+    font-size: 0.78rem;
+    line-height: 145%;
+  }
+  .solutioncomponents-wrapper {
+    padding: 2rem 0;
+  }
+  .solutioncomponents-bottom {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+  .solutioncomponents-items {
+    padding: 1.1rem 1.1rem 1.3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .solutioncomponents-main {
+    padding: 0 1.2rem;
+  }
+  .solutioncomponents-top h2 {
+    font-size: 1.25rem;
+  }
+  .solutioncomponents-bottom {
+    grid-template-columns: 1fr;
+  }
+  .solutioncomponents-wrapper {
+    padding: 1.8rem 0;
+  }
+}

@@ -1,0 +1,100 @@
+.pls-wrapper {
+    width: 100%;
+    height: 28.8rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top:5rem;
+}
+
+.pls-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.pls-img {
+    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.pls-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+.pls-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.6rem;
+    text-align: center;
+    padding-inline: 2rem;
+}
+
+.pls-title {
+    margin: 0;
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 0.04rem;
+    line-height: 120%;
+    color: rgba(255, 255, 255, 1);
+}
+
+.pls-subtitle {
+    margin: 0;
+    font-family: 'NeueHaasDisplayXThin';
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    line-height: 160%;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+@media screen and (max-width: 1360px) {
+    .pls-wrapper {
+        height: 24rem;
+    }
+    .pls-title {
+        font-size: 2.2rem;
+    }
+    .pls-subtitle {
+        font-size: 0.94rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .pls-wrapper {
+        height: 20rem;
+    }
+    .pls-title {
+        font-size: 1.8rem;
+    }
+    .pls-subtitle {
+        font-size: 0.84rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .pls-wrapper {
+        height: 16rem;
+    }
+    .pls-title {
+        font-size: 1.5rem;
+    }
+    .pls-subtitle {
+        font-size: 0.76rem;
+    }
+}

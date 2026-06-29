@@ -1,0 +1,250 @@
+.authflow-wrapper {
+    width: 100%;
+    height: fit-content;
+    max-width: 106.4rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+
+.authflow-main {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding-block-start: 4.8rem;
+    padding-block-end: 9.6rem;
+}
+
+.af-top-line {
+    width: 100%;
+    height: 0.012rem;
+    background-color: #000000;
+}
+
+.af-content {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 5.4rem;
+}
+
+.af-header {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    padding-block: 3.2rem 2.4rem;
+}
+
+.af-title {
+    margin: 0;
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    line-height: 120%;
+    color: rgba(0, 0, 0, 1);
+}
+
+.af-subtitle {
+    margin: 0;
+    font-family: 'NeueHaasDisplayXThin';
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    line-height: 180%;
+    color: #000000;
+}
+
+/* ── Steps grid ── */
+.af-steps-grid {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 0.01rem solid #000000;
+    overflow: hidden;
+    margin-top: 1.2rem;
+}
+
+.af-step-card {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 2.4rem 2rem;
+    border-right: 0.012rem solid #000;
+}
+
+.af-step-card:last-child {
+    border-right: none;
+}
+
+.af-step-number {
+    font-family: 'NeueHaasGroteskLight';
+    font-size: 2.6rem;
+    /* font-weight: 700; */
+    letter-spacing: 0.08rem;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 0.15);
+}
+
+.af-step-title {
+    margin: 0;
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    line-height: 120%;
+    color: rgba(0, 0, 0, 1);
+}
+
+.af-step-desc {
+    margin: 0;
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 0.96rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    line-height: 170%;
+    color: rgba(115, 115, 115, 1);
+}
+
+/* ── Table ── */
+.af-table-wrapper {
+    width: 100%;
+    height: fit-content;
+    margin-top: 1.6rem;
+    overflow-x: auto;
+    border:solid 0.01rem #000;
+}
+
+.af-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.af-th {
+    text-align: left;
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 1);
+    padding: 0.96rem 1.4rem;
+    padding-left: 2rem;
+    width: 33.333%;
+}
+
+.af-tr {
+    border-bottom: 0.012rem solid #000;
+}
+
+.af-tr:last-child {
+    border-bottom: none;
+}
+
+.af-td {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 0.84rem;
+    font-weight: 600;
+    letter-spacing: 0.07rem;
+    line-height: 150%;
+    color: rgba(60, 60, 60, 1);
+    padding: 1rem 1.4rem;
+    padding-left: 2rem;
+    vertical-align: top;
+}
+
+.af-code {
+    font-family: monospace;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+}
+
+@media screen and (max-width: 1730px) {
+    .authflow-wrapper {
+        max-width: 90rem;
+    }
+    .authflow-main {
+        padding-inline: 2rem;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .authflow-wrapper {
+        max-width: 75rem;
+    }
+    .authflow-main {
+        padding-inline: 0rem;
+    }
+    .af-title {
+        font-size: 1.1rem;
+    }
+    .af-subtitle {
+        font-size: 0.74rem;
+    }
+    .af-step-title {
+        font-size: 0.94rem;
+    }
+    .af-step-desc {
+        font-size: 0.74rem;
+    }
+    .af-th {
+        font-size: 0.64rem;
+    }
+    .af-td {
+        font-size: 0.74rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .af-steps-grid {
+        grid-template-columns: 1fr;
+    }
+    .af-step-card {
+        border-right: none;
+        border-bottom: 0.012rem solid rgba(229, 229, 229, 1);
+    }
+    .af-step-card:last-child {
+        border-bottom: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .af-title {
+        text-align: center;
+    }
+    .af-subtitle {
+        text-align: center;
+    }
+    .authflow-main {
+        padding-inline: 0rem;
+        padding-block-start: 3rem;
+        padding-block-end: 5rem;
+    }
+    .af-content {
+        padding-inline: 1.2rem;
+    }
+    .af-table-wrapper {
+        overflow-x: auto;
+    }
+    .af-table {
+        table-layout: auto;
+        min-width: 600px;
+    }
+    .af-th {
+        width: auto;
+    }
+    .af-th,
+    .af-td {
+        padding: 0.8rem 1rem;
+        padding-left: 1.2rem;
+        font-size: 0.68rem;
+    }
+}
