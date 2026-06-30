@@ -1,0 +1,100 @@
+.bas-gknot-wallet-wrapper {
+    width: 100%;
+    height: 40rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top:5rem;
+}
+
+.bas-gknot-wallet-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.bas-gknot-wallet-img {
+    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.bas-gknot-wallet-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+.bas-gknot-wallet-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.6rem;
+    text-align: center;
+    padding-inline: 2rem;
+}
+
+.bas-gknot-wallet-title {
+    margin: 0;
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    line-height: 120%;
+    color: rgba(255, 255, 255, 1);
+}
+
+.bas-gknot-wallet-subtitle {
+    margin: 0;
+    font-family: 'NeueHaasDisplayXThin';
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    line-height: 160%;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+@media screen and (max-width: 1360px) {
+    .bas-gknot-wallet-wrapper {
+        height: 24rem;
+    }
+    .bas-gknot-wallet-title {
+        font-size: 2.2rem;
+    }
+    .bas-gknot-wallet-subtitle {
+        font-size: 0.94rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .bas-gknot-wallet-wrapper {
+        height: 20rem;
+    }
+    .bas-gknot-wallet-title {
+        font-size: 1.8rem;
+    }
+    .bas-gknot-wallet-subtitle {
+        font-size: 0.84rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .bas-gknot-wallet-wrapper {
+        height: 16rem;
+    }
+    .bas-gknot-wallet-title {
+        font-size: 1.5rem;
+    }
+    .bas-gknot-wallet-subtitle {
+        font-size: 0.76rem;
+    }
+}
