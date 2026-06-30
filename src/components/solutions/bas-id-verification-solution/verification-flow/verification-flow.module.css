@@ -1,0 +1,250 @@
+.verificationflow-wrapper {
+    width: 100%;
+    height: fit-content;
+    max-width: 106.4rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+
+.verificationflow-main {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding-block-start: 4.8rem;
+    padding-block-end: 9.6rem;
+}
+
+.vf-top-line {
+    width: 100%;
+    height: 0.012rem;
+    background-color: #000000;
+}
+
+.vf-content {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 5.4rem;
+}
+
+.vf-header {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    padding-block: 3.2rem 2.4rem;
+}
+
+.vf-title {
+    margin: 0;
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    line-height: 120%;
+    color: rgba(0, 0, 0, 1);
+}
+
+.vf-subtitle {
+    margin: 0;
+    font-family: 'NeueHaasDisplayXThin';
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    line-height: 180%;
+    color: #000000;
+}
+
+/* ── Steps grid ── */
+.vf-steps-grid {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 0.01rem solid #000000;
+    overflow: hidden;
+    margin-top: 1.2rem;
+}
+
+.vf-step-card {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 2.4rem 2rem;
+    border-right: 0.012rem solid #000;
+}
+
+.vf-step-card:last-child {
+    border-right: none;
+}
+
+.vf-step-number {
+    font-family: 'NeueHaasGroteskLight';
+    font-size: 2.6rem;
+    /* font-weight: 700; */
+    letter-spacing: 0.08rem;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 0.15);
+}
+
+.vf-step-title {
+    margin: 0;
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    line-height: 120%;
+    color: rgba(0, 0, 0, 1);
+}
+
+.vf-step-desc {
+    margin: 0;
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 0.96rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    line-height: 170%;
+    color: rgba(115, 115, 115, 1);
+}
+
+/* ── Table ── */
+.vf-table-wrapper {
+    width: 100%;
+    height: fit-content;
+    margin-top: 1.6rem;
+    overflow-x: auto;
+    border:solid 0.01rem #000;
+}
+
+.vf-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.vf-th {
+    text-align: left;
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 1);
+    padding: 0.96rem 1.4rem;
+    padding-left: 2rem;
+    width: 33.333%;
+}
+
+.vf-tr {
+    border-bottom: 0.012rem solid #000;
+}
+
+.vf-tr:last-child {
+    border-bottom: none;
+}
+
+.vf-td {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 0.84rem;
+    font-weight: 600;
+    letter-spacing: 0.07rem;
+    line-height: 150%;
+    color: rgba(60, 60, 60, 1);
+    padding: 1rem 1.4rem;
+    padding-left: 2rem;
+    vertical-align: top;
+}
+
+.vf-code {
+    font-family: monospace;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+}
+
+@media screen and (max-width: 1730px) {
+    .verificationflow-wrapper {
+        max-width: 90rem;
+    }
+    .verificationflow-main {
+        padding-inline: 2rem;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .verificationflow-wrapper {
+        max-width: 75rem;
+    }
+    .verificationflow-main {
+        padding-inline: 0rem;
+    }
+    .vf-title {
+        font-size: 1.1rem;
+    }
+    .vf-subtitle {
+        font-size: 0.74rem;
+    }
+    .vf-step-title {
+        font-size: 0.94rem;
+    }
+    .vf-step-desc {
+        font-size: 0.74rem;
+    }
+    .vf-th {
+        font-size: 0.64rem;
+    }
+    .vf-td {
+        font-size: 0.74rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .vf-steps-grid {
+        grid-template-columns: 1fr;
+    }
+    .vf-step-card {
+        border-right: none;
+        border-bottom: 0.012rem solid rgba(229, 229, 229, 1);
+    }
+    .vf-step-card:last-child {
+        border-bottom: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .vf-title {
+        text-align: center;
+    }
+    .vf-subtitle {
+        text-align: center;
+    }
+    .verificationflow-main {
+        padding-inline: 0rem;
+        padding-block-start: 3rem;
+        padding-block-end: 5rem;
+    }
+    .vf-content {
+        padding-inline: 1.2rem;
+    }
+    .vf-table-wrapper {
+        overflow-x: auto;
+    }
+    .vf-table {
+        table-layout: auto;
+        min-width: 600px;
+    }
+    .vf-th {
+        width: auto;
+    }
+    .vf-th,
+    .vf-td {
+        padding: 0.8rem 1rem;
+        padding-left: 1.2rem;
+        font-size: 0.68rem;
+    }
+}
