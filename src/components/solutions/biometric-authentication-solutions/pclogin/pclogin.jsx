@@ -101,7 +101,7 @@ const Pclogin = () => {
 
             <Link
               ref={btnRef}
-              href="/"
+              href="/solutions/bas-pc-logon"
               className={styles["pclogin-img-overlay-text-bottom"]}
             >
               <span>See More</span>

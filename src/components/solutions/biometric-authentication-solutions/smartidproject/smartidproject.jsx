@@ -101,7 +101,7 @@ const Smartidproject = () => {
 
             <Link
               ref={btnRef}
-              href="/"
+              href="/solutions/bas-id-verification-solution"
               className={styles["smartidproject-img-overlay-text-bottom"]}
             >
               <span>See More</span>
