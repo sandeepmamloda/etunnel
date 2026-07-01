@@ -58,7 +58,42 @@ const Herobiometric = function () {
 
         }, wrapperRef);
 
-        return () => ctx.revert();
+        // ── Redirect se wapas aane par fix ──
+        // gsap.from() ka immediateRender:true hone ki wajah se, jab bhi
+        // ye component mount hota hai (jaise back-navigation ke baad),
+        // text turant hide ho jaata hai aur ScrollTrigger par depend
+        // karta hai ki wo sahi se detect kare ki hum already is section
+        // tak scroll ho chuke hain. Browser scroll position ko
+        // asynchronously restore karta hai — kabhi-kabhi GSAP ke
+        // trigger-position calculate hone ke BAAD. Isse trigger galat
+        // calculate ho jaata hai aur reveal kabhi fire nahi hota.
+        // Fix: mount ke thodi der baad + window "load" par
+        // ScrollTrigger.refresh() call karo, taaki positions dobara
+        // sahi (final scroll + layout ke hisaab se) calculate ho jayein.
+        const refresh = () => ScrollTrigger.refresh();
+        const rafId = requestAnimationFrame(refresh);
+        const timeoutId = setTimeout(refresh, 300);
+        window.addEventListener("load", refresh);
+
+        // ── Browser back/forward cache (bfcache) fix ──
+        // Jab browser is page ko bfcache se restore karta hai (page
+        // dubara mount nahi hota), "pageshow" event ke event.persisted
+        // se pata chalta hai aur hum manually refresh trigger kar
+        // sakte hain.
+        const handlePageShow = (event) => {
+            if (event.persisted) {
+                ScrollTrigger.refresh();
+            }
+        };
+        window.addEventListener("pageshow", handlePageShow);
+
+        return () => {
+            cancelAnimationFrame(rafId);
+            clearTimeout(timeoutId);
+            window.removeEventListener("load", refresh);
+            window.removeEventListener("pageshow", handlePageShow);
+            ctx.revert();
+        };
     }, []);
 
     return (

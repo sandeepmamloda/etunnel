@@ -72,7 +72,39 @@ const Idverificationsolutions = () => {
 
     }, wrapperRef);
 
-    return () => ctx.revert();
+    // ── Redirect se wapas aane par fix ──
+    // gsap.from() ka immediateRender:true hone ki wajah se, jab bhi ye
+    // component mount hota hai (jaise back-navigation ke baad), text
+    // turant hide ho jaata hai aur ScrollTrigger par depend karta hai
+    // ki wo sahi se detect kare ki hum already is section tak scroll
+    // ho chuke hain. Browser scroll position ko asynchronously restore
+    // karta hai — kabhi-kabhi GSAP ke trigger-position calculate hone
+    // ke BAAD. Isse trigger galat calculate ho jaata hai aur reveal
+    // kabhi fire nahi hota — bilkul yehi wo section hai jisse aap
+    // "See More" click karke gaye the.
+    // Fix: mount ke thodi der baad + window "load" par
+    // ScrollTrigger.refresh() call karo, taaki positions dobara sahi
+    // (final scroll + layout ke hisaab se) calculate ho jayein.
+    const refresh = () => ScrollTrigger.refresh();
+    const rafId = requestAnimationFrame(refresh);
+    const timeoutId = setTimeout(refresh, 300);
+    window.addEventListener("load", refresh);
+
+    // ── Browser back/forward cache (bfcache) fix ──
+    const handlePageShow = (event) => {
+      if (event.persisted) {
+        ScrollTrigger.refresh();
+      }
+    };
+    window.addEventListener("pageshow", handlePageShow);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      clearTimeout(timeoutId);
+      window.removeEventListener("load", refresh);
+      window.removeEventListener("pageshow", handlePageShow);
+      ctx.revert();
+    };
   }, []);
 
   return (
@@ -101,7 +133,7 @@ const Idverificationsolutions = () => {
 
             <Link
               ref={btnRef}
-              href="/"
+              href="/solutions/bas-id-verification-solution"
               className={styles["idverificationsolutions-img-overlay-text-bottom"]}
             >
               <span>See More</span>
