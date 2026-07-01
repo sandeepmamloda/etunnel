@@ -1,0 +1,219 @@
+.featureoftechnology-wrapper {
+    width: 100%;
+    height: fit-content;
+    max-width:106.4rem;
+    margin-inline:auto;
+    padding-inline:2rem;
+}
+
+.featuretechnology-main {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 13rem;
+    padding-block-start: 4.8rem;
+    padding-block-end: 9.6rem;
+}
+
+.featuretechnology {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    column-gap: 2.4rem;
+    padding-block: 1.44rem;
+    padding-inline-start: 1.8rem;
+    margin-block-end: 0.8rem;
+    border-radius: 0 0 1.2rem 1.2rem;
+    box-shadow: 0 0.2rem 0.2rem -0.1rem rgba(0, 0, 0, 0.08);
+}
+
+
+.featureoftechnology-left {
+    width: 26%;
+    flex-shrink: 0;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    column-gap: 1.2rem;
+}
+
+.icon-wrapper {
+    height: 2.4rem;
+    width: 2.4rem;
+    border-radius: 1rem;
+    background-color:#F2F2F2;
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    width: 50% !important;
+    height: 50% !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: contain;
+}
+
+.feature-title {
+    font-family: 'NeueHaasGroteskMedium';
+    font-size: 1.08rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    line-height: 140%;
+    color: rgba(0, 0, 0, 1);
+    white-space: normal;
+    margin: 0; /* h3 ka default browser margin hataya, span jaisa hi dikhega */
+}
+
+.featuretechnology-right {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: flex-start;
+}
+
+.feature-desc {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 1.08rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    line-height: 150%;
+    color: rgba(115, 115, 115, 1);
+    margin: 0; /* p ka default browser margin hataya, span jaisa hi dikhega */
+}
+
+/* ── Naye add kiye (sirf header ke liye) ── */
+.featuretechnology-header {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.96rem;
+    padding-block-end: 4.8rem;
+}
+
+.header-sub {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.072rem;
+    line-height: 100%;
+    color: rgba(115, 115, 115, 1);
+    text-transform: uppercase;
+    margin: 0; /* p ka default browser margin hataya, span jaisa hi dikhega */
+}
+
+.header-title {
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
+    margin: 0; /* h2 ka default browser margin hataya, span jaisa hi dikhega */
+}
+
+@media screen and (max-width: 1730px) {
+    .featureoftechnology-wrapper {
+        max-width: 90rem;
+    }
+    .featuretechnology-main{
+        padding-inline:2rem;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .featureoftechnology-wrapper {
+        max-width: 75rem;
+    }
+
+    /* fonts 0.2rem minus */
+    .feature-title {
+        font-size: 0.88rem;
+    }
+    .feature-desc {
+        font-size: 0.88rem;
+    }
+    .header-sub {
+        font-size: 0.52rem;
+    }
+    .header-title {
+        font-size: 2.2rem;
+    }
+    .featuretechnology-main{
+        padding-inline:0rem;
+    }
+}
+@media screen and (max-width: 1024px){
+    .featuretechnology{
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 0.8rem;
+    }
+    .featureoftechnology-left{
+        width: 100%;
+    }
+    .featuretechnology-right {
+       max-width: 100%;
+       margin-right:0rem;
+    }
+}
+@media screen and (max-width: 700px) {
+    .featuretechnology-main {
+        padding-inline: 0rem;
+        padding-block-start: 3rem;
+        padding-block-end: 5rem;
+    }
+
+    .featuretechnology {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-inline-start: 0;
+        padding-block: 1.6rem;
+        row-gap: 0.6rem;
+    }
+
+    .featureoftechnology-left {
+        width: 100%;
+    }
+
+    .featuretechnology-right {
+        width: 100%;
+        max-width: 100%;
+        margin-right:0rem;
+    }
+
+    .feature-title {
+        font-size: 0.88rem;
+    }
+
+    .feature-desc {
+        font-size: 0.82rem;
+        line-height: 160%;
+    }
+
+    .header-title {
+        font-size: 1.8rem;
+        text-align:center;
+    }
+
+    .header-sub {
+        font-size: 0.52rem;
+        text-align:center;
+    }
+
+    .featuretechnology-header {
+        padding-block-end: 2.4rem;
+        align-items: center;
+    }
+}

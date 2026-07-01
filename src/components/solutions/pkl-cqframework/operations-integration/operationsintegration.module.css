@@ -1,0 +1,221 @@
+.operationsintegration-wrapper {
+    width: 100%;
+    height: fit-content;
+    max-width: 106.4rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+
+.operationsintegration-main {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    /* padding-inline: 0rem; */
+    padding-block-start: 4.8rem;
+    padding-block-end: 9.6rem;
+}
+
+.oi-top-line {
+    width: 100%;
+    height: 0.012rem;
+    background-color: #000000;
+}
+
+.oi-content {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 5.4rem;
+}
+
+.oi-header {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    padding-block: 1.6rem 2.4rem;
+    margin-top:3rem;
+}
+
+.oi-title {
+    margin: 0;
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    line-height: 120%;
+    color: rgba(0, 0, 0, 1);
+}
+
+.oi-subtitle {
+    margin: 0;
+    font-family: 'NeueHaasDisplayXThin';
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    line-height: 180%;
+    color: #000000;
+}
+
+.oi-border-box {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border: 0.012rem solid #000000;
+    /* border-radius: 0.4rem; */
+    overflow: hidden;
+}
+
+.oi-grid {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+}
+
+.oi-card {
+    width: 100%;
+    /* height: fit-content hataya — isse card apni row ke saath poori
+       height tak stretch hoga (grid ka default stretch behavior),
+       taaki border-left/border-top gap ke bina seamlessly milein,
+       chahe left/right card ka content-length alag hi kyun na ho */
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    padding: 1.6rem 2rem;
+    border-top: 0.012rem solid #000;
+    border-left: 0.012rem solid #000;
+}
+
+/* ── Dynamic border fix ──
+   Pehle hum hardcoded nth-child(3), nth-child(4) se border-top de rahe
+   the — jo sirf EXACTLY 4 cards ke liye kaam karta tha. Jaise hi items
+   ki count badhti/ghatti (5, 6, 7...), wo galat jagah border laga deta
+   ya bilkul nahi laga pata (jaise 5th item ke upar).
+
+   Fix: har card ko top + left border do, phir sirf PEHLI ROW (top edge)
+   aur PEHLE COLUMN (left edge) se hata do. Ye pattern kisi bhi number
+   of cards/rows ke saath khud-ba-khud sahi lines banata hai — koi bhi
+   double/missing border nahi aata. Outer edge already .oi-border-box
+   ke border se cover ho raha hai. */
+
+/* Pehli row (2-column grid, isliye pehle 2 items) — top border nahi chahiye */
+.oi-card:nth-child(-n+2) {
+    border-top: none;
+}
+
+/* Pehla column (odd positions: 1, 3, 5...) — left border nahi chahiye */
+.oi-card:nth-child(odd) {
+    border-left: none;
+}
+
+/* ── Odd-count fix ──
+   Agar total cards ODD hain (5, 7...), to last item akela apni row ke
+   left column me reh jaata hai — uska right-side divider (jo normally
+   agle/right-column item ke border-left se milta) missing ho jaata
+   hai, kyunki us row me koi right-column item hai hi nahi.
+   :last-child:nth-child(odd) sirf tabhi match karta hai jab last item
+   odd position par ho (yaani total count odd ho) — isliye ye rule sirf
+   odd-count case me hi lagta hai, even-count par koi asar nahi. */
+.oi-card:last-child:nth-child(odd) {
+    border-right: 0.012rem solid #000;
+}
+
+.oi-dash {
+    width: 2rem;
+    height: 0.12rem;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.oi-card-title {
+    margin: 0;
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    line-height: 120%;
+    color: rgba(0, 0, 0, 1);
+}
+
+/* ── Naya add kiya: har spec ki alag line, .oi-card ke row-gap ko
+   affect kiye bina — is div ke andar apna chhota row-gap hai ── */
+.oi-card-desc-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
+}
+
+.oi-card-desc {
+    margin: 0;
+    font-family: 'NeueHaasDisplayThin';
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    line-height: 150%;
+    color: rgba(115, 115, 115, 1);
+}
+
+@media screen and (max-width: 1730px) {
+    .operationsintegration-wrapper {
+        max-width: 90rem;
+    }
+    .operationsintegration-main {
+        padding-inline: 2rem;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .operationsintegration-wrapper {
+        max-width: 75rem;
+    }
+    .operationsintegration-main {
+        padding-inline: 0rem;
+    }
+    .oi-title {
+        font-size: 1.1rem;
+    }
+    .oi-subtitle {
+        font-size: 0.74rem;
+    }
+    .oi-card-title {
+        font-size: 0.84rem;
+    }
+    .oi-card-desc {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .oi-title{
+        text-align:center;
+    }
+    .oi-subtitle{
+        text-align:center;
+    }
+    .operationsintegration-main {
+        padding-inline: 0rem;
+        padding-block-start: 3rem;
+        padding-block-end: 5rem;
+    }
+    .oi-content {
+        padding-inline: 1.2rem;
+    }
+    .oi-grid {
+        grid-template-columns: 1fr;
+    }
+    .oi-card {
+        padding: 1.4rem 1.6rem;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 0.012rem solid rgba(229, 229, 229, 1);
+    }
+    .oi-card:last-child {
+        border-bottom: none;
+    }
+}
