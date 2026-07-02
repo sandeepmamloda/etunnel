@@ -22,10 +22,10 @@ const WHITE_TEXT_ROUTES = [
 
 const navLinks = [
   { label: "Company",            href: "/company/history" },
-  { label: "Core Technology",    href: "/coretech/p2n2"   },
+  { label: "Core Technology",    href: "/coretech/overview"   },
   { label: "Biometric Products", href: "/biometric-products/products" },
   { label: "Solutions",          href: "/solutions/solutions" },
-  { label: "News & Media",       href: "/news" },
+  { label: "News & Media",       href: "/news-media" },
 ];
 
 const FlagEN = () => (

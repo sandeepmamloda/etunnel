@@ -107,7 +107,8 @@ const Familysite = () => {
 
             <Link
               ref={btnRef}
-              href="/"
+              href="https://www.g-knot.io/"
+              target="_blank"
               className={styles["familysite-img-overlay-text-bottom"]}
             >
               <span>Learn More</span>

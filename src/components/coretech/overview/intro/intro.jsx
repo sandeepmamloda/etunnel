@@ -111,7 +111,7 @@ const ProductFeatures = function () {
                   href={feature.href}
                   className={styles["productfeatures-toggle"]}
                 >
-                  <span>Contact Us</span>
+                  <span>Learn more</span>
                   <svg
                     width="16"
                     height="16"

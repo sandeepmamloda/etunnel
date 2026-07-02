@@ -12,7 +12,7 @@ const FEATURES = [
     title: "Press Release",
     description:"We provide press releases containing our core technology, key activities, and future vision. Check out various articles introduced in the media to experience our reliability and innovation firsthand.",
     image: "/images/coretech/overview/p2n2.png",
-    href: "/coretech/p2n2",
+    href: "/contact",
   },
   {
     key: "notice",
@@ -20,7 +20,7 @@ const FEATURES = [
     description:
       "We provide our announcements and official notices.Check for service operation updates and the latest notice.",
     image: "/images/coretech/overview/finger-vein.jpg",
-    href: "/coretech/fingervein",
+    href: "/contact",
   },
   {
     key: "biometric-news",
@@ -28,7 +28,7 @@ const FEATURES = [
     description:
       "Check out articles from major outlets covering biometric authentication technology and market reactions.We have gathered various news about biometric authentication featured in domestic and international press.",
     image: "/images/coretech/overview/kisa-biometric-certification.jpg",
-    href: "/coretech/kisa-certification",
+    href: "/contact",
   },
   {
     key: "video",
@@ -36,7 +36,7 @@ const FEATURES = [
     description:
       "We provide various technical content to help customers understand, including product demonstrations, feature introductions, and demo videos. Watch videos to experience our security technology and products firsthand.",
     image: "/images/coretech/overview/kisa-biometric-certification.jpg",
-    href: "/coretech/kisa-certification",
+    href: "/contact",
   },
 ];
 

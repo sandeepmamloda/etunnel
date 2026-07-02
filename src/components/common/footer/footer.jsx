@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TOP_LINKS = [
   { href: "/about", label: "About Us" },
-  { href: "/coretech/p2n2", label: "Core Technology" },
+  { href: "/coretech/overview", label: "Core Technology" },
   { href: "/biometric-products/products", label: "Biometric Products" },
   { href: "/solutions/solutions", label: "Our Solutions" },
 ];
