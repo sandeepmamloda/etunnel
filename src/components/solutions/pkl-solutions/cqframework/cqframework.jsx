@@ -72,7 +72,30 @@ const Cqframework = () => {
 
     }, wrapperRef);
 
-    return () => ctx.revert();
+    // ── Niche wala code aapko naye sir se add karna hai ──
+
+    // 1. Redirect se wapas aane par fix (Layout recalculation)
+    const refresh = () => ScrollTrigger.refresh();
+    const rafId = requestAnimationFrame(refresh);
+    const timeoutId = setTimeout(refresh, 300);
+    window.addEventListener("load", refresh);
+
+    // 2. Browser back/forward cache (bfcache) fix
+    const handlePageShow = (event) => {
+      if (event.persisted) {
+        ScrollTrigger.refresh();
+      }
+    };
+    window.addEventListener("pageshow", handlePageShow);
+
+    // 3. Cleanup function (Taki memory leak na ho)
+    return () => {
+      cancelAnimationFrame(rafId);
+      clearTimeout(timeoutId);
+      window.removeEventListener("load", refresh);
+      window.removeEventListener("pageshow", handlePageShow);
+      ctx.revert(); // GSAP context ko clear karega
+    };
   }, []);
 
   return (

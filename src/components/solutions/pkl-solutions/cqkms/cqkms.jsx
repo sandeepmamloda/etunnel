@@ -72,9 +72,30 @@ const Cqkms = () => {
 
     }, wrapperRef);
 
-    return () => ctx.revert();
-  }, []);
+    // ── Redirect / Back-Navigation Fix ──
+    const refresh = () => ScrollTrigger.refresh();
+    const rafId = requestAnimationFrame(refresh);
+    const timeoutId = setTimeout(refresh, 300);
+    window.addEventListener("load", refresh);
 
+    // ── Bfcache (Browser Cache) Fix ──
+    const handlePageShow = (event) => {
+      if (event.persisted) {
+        ScrollTrigger.refresh();
+      }
+    };
+    window.addEventListener("pageshow", handlePageShow);
+
+    // ── Cleanup ──
+    return () => {
+      cancelAnimationFrame(rafId);
+      clearTimeout(timeoutId);
+      window.removeEventListener("load", refresh);
+      window.removeEventListener("pageshow", handlePageShow);
+      ctx.revert();
+    };
+  }, []);
+  
   return (
     <section ref={wrapperRef} className={styles["cqkms-wrapper"]}>
       <div className={styles["cqkms-img"]}>

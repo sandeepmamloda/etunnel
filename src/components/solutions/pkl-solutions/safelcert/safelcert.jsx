@@ -72,7 +72,28 @@ const Safelcert = () => {
 
     }, wrapperRef);
 
-    return () => ctx.revert();
+    // ── Redirect / Back-Navigation Fix ──
+    const refresh = () => ScrollTrigger.refresh();
+    const rafId = requestAnimationFrame(refresh);
+    const timeoutId = setTimeout(refresh, 300);
+    window.addEventListener("load", refresh);
+
+    // ── Bfcache (Browser Cache) Fix ──
+    const handlePageShow = (event) => {
+      if (event.persisted) {
+        ScrollTrigger.refresh();
+      }
+    };
+    window.addEventListener("pageshow", handlePageShow);
+
+    // ── Cleanup ──
+    return () => {
+      cancelAnimationFrame(rafId);
+      clearTimeout(timeoutId);
+      window.removeEventListener("load", refresh);
+      window.removeEventListener("pageshow", handlePageShow);
+      ctx.revert();
+    };
   }, []);
 
   return (
@@ -92,7 +113,7 @@ const Safelcert = () => {
               <div className={styles["safelcert-img-overlay-text-top-1"]}>
                 <h3 ref={h3Ref}>PKI Solution</h3>
                 <h2 ref={h2Ref}>SafeICert
-(Certificate Management Solution for Business)</h2>
+                (Certificate Management Solution for Business)</h2>
               </div>
 
               <div className={styles["safelcert-img-overlay-text-top-2"]}>
