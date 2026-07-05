@@ -1,10 +1,10 @@
 "use client";
-import styles from "./securityfeatures.module.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from 'next/image';
 import Link from "next/link"; // ✅ add this
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import styles from "./securityfeatures.module.css";
 
 const Securityfeatures = function () {
   const sectionRef = useRef(null);

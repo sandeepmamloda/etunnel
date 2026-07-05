@@ -21,7 +21,14 @@ const WHITE_TEXT_ROUTES = [
 ];
 
 const navLinks = [
-  { label: "Company",            href: "/company/history" },
+  {
+    label: "Company",
+    href: "/company/history",
+    children: [
+      { label: "Company Overview", href: "/company/overview" },
+      { label: "Company History", href: "/company/history" },
+    ],
+  },
   { label: "Core Technology",    href: "/coretech/overview"   },
   { label: "Biometric Products", href: "/biometric-products/products" },
   { label: "Solutions",          href: "/solutions/solutions" },
@@ -64,6 +71,20 @@ const FlagKO = () => (
   </div>
 );
 
+// ✅ NEW: Japan flag
+const FlagJA = () => (
+  <div style={{
+    width: "20px", height: "20px", borderRadius: "50%",
+    overflow: "hidden", flexShrink: 0,
+    border: "1px solid rgba(128,128,128,0.25)"
+  }}>
+    <svg width="20" height="20" viewBox="0 0 60 40" preserveAspectRatio="xMidYMid slice" style={{ display: "block", width: "100%", height: "100%" }}>
+      <rect width="60" height="40" fill="white" />
+      <circle cx="30" cy="20" r="9" fill="#BC002D" />
+    </svg>
+  </div>
+);
+
 const ArrowIcon = ({ isWhite }) => (
   <svg width="17" height="9" viewBox="0 0 17 9" fill="none">
     <path
@@ -76,6 +97,7 @@ const ArrowIcon = ({ isWhite }) => (
 const languages = [
   { code: "EN", component: <FlagEN /> },
   { code: "KO", component: <FlagKO /> },
+  { code: "JA", component: <FlagJA /> },
 ];
 
 const Navbar = function () {
@@ -85,14 +107,16 @@ const Navbar = function () {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isWhite, setIsWhite] = useState(false);
 
+  // ✅ NEW: Company dropdown states (desktop = hover, mobile = click)
+  const [companyOpen, setCompanyOpen] = useState(false);
+  const [mobileCompanyOpen, setMobileCompanyOpen] = useState(false);
+
   const langDesktopRef = useRef(null);
   const langMobileRef  = useRef(null);
 
   const { lang, isTranslating, translatePage } = useTranslation();
 
-  const selectedLang = lang === "EN"
-    ? { code: "EN", component: <FlagEN /> }
-    : { code: "KO", component: <FlagKO /> };
+  const selectedLang = languages.find((l) => l.code === lang) || languages[0];
 
   useEffect(() => {
     const white = WHITE_TEXT_ROUTES.some((route) =>
@@ -101,13 +125,17 @@ const Navbar = function () {
     setIsWhite(white);
   }, [pathname]);
 
-  useEffect(() => { setMenuOpen(false); }, [pathname]);
+  useEffect(() => {
+    setMenuOpen(false);
+    setMobileCompanyOpen(false); // ✅ NEW: route change pe submenu bhi close
+  }, [pathname]);
 
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
+      setMobileCompanyOpen(false); // ✅ NEW: menu band hone pe submenu reset
     }
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
@@ -118,6 +146,7 @@ const Navbar = function () {
     const handleClickOutside = (e) => {
       if (e.target.closest("button[aria-label='Toggle menu']")) return;
       if (e.target.closest("a")) return;
+      if (e.target.closest(`.${styles["mobile-company-toggle"]}`)) return; // ✅ NEW
       if (langDesktopRef.current?.contains(e.target)) return;
       if (langMobileRef.current?.contains(e.target)) return;
       setMenuOpen(false);
@@ -136,6 +165,14 @@ const Navbar = function () {
   const isActive = (href) => {
     if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(href + "/");
+  };
+
+  // ✅ NEW: Company jaise parent links ke liye — agar koi bhi child active hai to parent bhi active maana jayega
+  const isParentActive = (link) => {
+    if (link.children) {
+      return link.children.some((child) => isActive(child.href));
+    }
+    return isActive(link.href);
   };
 
   // ✅ UPDATED: translatePage ke baad page reload hoga
@@ -183,13 +220,44 @@ const Navbar = function () {
           <nav className={styles["header-section-center"]}>
             <ul className={styles["nav-links"]}>
               {navLinks.map((link) => (
-                <li key={link.href} className={isActive(link.href) ? styles["active-li"] : ""}>
-                  <Link
-                    href={link.href}
-                    className={isWhite ? styles["nav-link-white"] : styles["nav-link-black"]}
-                  >
-                    {link.label}
-                  </Link>
+                <li
+                  key={link.href}
+                  className={`${isParentActive(link) ? styles["active-li"] : ""} ${link.children ? styles["nav-dropdown-wrapper"] : ""}`}
+                  onMouseEnter={() => link.children && setCompanyOpen(true)}
+                  onMouseLeave={() => link.children && setCompanyOpen(false)}
+                >
+                  <div className={styles["nav-link-trigger"]}>
+                    <Link
+                      href={link.href}
+                      className={isWhite ? styles["nav-link-white"] : styles["nav-link-black"]}
+                    >
+                      {link.label}
+                    </Link>
+                    {link.children && (
+                      <span className={`${styles["nav-caret"]} ${companyOpen ? styles["nav-caret-open"] : ""}`}>
+                        <svg width="9" height="6" viewBox="0 0 9 6" fill="none">
+                          <path d="M1 1L4.5 4.5L8 1" stroke={isWhite ? "white" : "black"} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </span>
+                    )}
+                  </div>
+
+                  {/* ✅ NEW: Desktop hover dropdown */}
+                  {link.children && (
+                    <div
+                      className={`${styles["nav-dropdown"]} ${companyOpen ? styles["nav-dropdown-open"] : ""}`}
+                    >
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className={`${styles["nav-dropdown-link"]} ${isWhite ? styles["mobile-link-white"] : styles["mobile-link-black"]} ${isActive(child.href) ? styles["nav-dropdown-link-active"] : ""}`}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
@@ -215,7 +283,7 @@ const Navbar = function () {
                     {languages.map((lang) => (
                       <div
                         key={lang.code}
-                        className={styles["lang-option"]}
+                        className={`${styles["lang-option"]} ${isWhite ? styles["lang-text-white"] : styles["lang-text-black"]}`}
                         onClick={(e) => { e.stopPropagation(); handleLangSelect(lang.code); }}
                       >
                         {lang.component}
@@ -250,13 +318,43 @@ const Navbar = function () {
               className={`${styles["mobile-nav-item"]} ${menuOpen ? styles["mobile-nav-item-visible"] : ""}`}
               style={{ transitionDelay: menuOpen ? `${0.08 * index + 0.15}s` : "0s" }}
             >
-              <Link
-                href={link.href}
-                className={`${styles["mobile-nav-link"]} ${isActive(link.href) ? styles["mobile-nav-link-active"] : ""} ${isWhite ? styles["mobile-link-white"] : styles["mobile-link-black"]}`}
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
+              {link.children ? (
+                <>
+                  {/* ✅ NEW: click se toggle hone wala Company item */}
+                  <div
+                    className={`${styles["mobile-nav-link"]} ${styles["mobile-company-toggle"]} ${isParentActive(link) ? styles["mobile-nav-link-active"] : ""} ${isWhite ? styles["mobile-link-white"] : styles["mobile-link-black"]}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setMobileCompanyOpen(!mobileCompanyOpen);
+                    }}
+                  >
+                    {link.label}
+                    <span className={`${styles["mobile-nav-caret"]} ${mobileCompanyOpen ? styles["mobile-nav-caret-open"] : ""}`}>
+                      ▾
+                    </span>
+                  </div>
+                  <div className={`${styles["mobile-submenu"]} ${mobileCompanyOpen ? styles["mobile-submenu-open"] : ""}`}>
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className={`${styles["mobile-submenu-link"]} ${isWhite ? styles["mobile-link-white"] : styles["mobile-link-black"]}`}
+                        onClick={() => { setMenuOpen(false); setMobileCompanyOpen(false); }}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <Link
+                  href={link.href}
+                  className={`${styles["mobile-nav-link"]} ${isActive(link.href) ? styles["mobile-nav-link-active"] : ""} ${isWhite ? styles["mobile-link-white"] : styles["mobile-link-black"]}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

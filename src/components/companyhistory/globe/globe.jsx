@@ -6,6 +6,7 @@ const Globe = function () {
     const wrapRef = useRef(null);
     const globeWrapRef = useRef(null);
     const textRef = useRef(null);
+    const hintRef = useRef(null); // ✅ NEW: drag-hint icon ke liye ref
 
     useEffect(() => {
         // ── Globe entrance: scale + fade + translateY ──
@@ -58,6 +59,9 @@ const Globe = function () {
             const canvas = canvasRef.current;
             const wrap = wrapRef.current;
             if (!canvas || !wrap) return;
+
+            // ✅ NEW: default cursor affordance — batata hai ki globe ko grab karke rotate kiya ja sakta hai
+            wrap.style.cursor = "grab";
 
             const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
             renderer.setClearColor(0x000000, 0);
@@ -172,7 +176,14 @@ const Globe = function () {
             let velY = 0, velX = 0;
             let drag = false, pm = { x: 0, y: 0 };
 
-            function pointerDown(x, y) { drag = true; pm = { x, y }; velY = 0; velX = 0; }
+            function pointerDown(x, y) {
+                drag = true; pm = { x, y }; velY = 0; velX = 0;
+                wrap.style.cursor = "grabbing"; // ✅ NEW: drag karte waqt "grabbing" cursor
+                if (hintRef.current) {
+                    hintRef.current.style.opacity = "0"; // ✅ NEW: pehli interaction pe hint fade out
+                    hintRef.current.style.pointerEvents = "none";
+                }
+            }
             function pointerMove(x, y) {
                 if (!drag) return;
                 const dx = x - pm.x, dy = y - pm.y;
@@ -183,7 +194,10 @@ const Globe = function () {
                 targetRX = Math.max(-1.2, Math.min(1.2, targetRX));
                 pm = { x, y };
             }
-            function pointerUp() { drag = false; }
+            function pointerUp() {
+                drag = false;
+                wrap.style.cursor = "grab"; // ✅ NEW: chhodte hi wapas "grab" cursor
+            }
 
             wrap.addEventListener('mousedown', e => pointerDown(e.clientX, e.clientY));
             window.addEventListener('mouseup', pointerUp);
@@ -292,6 +306,7 @@ const Globe = function () {
                 ref={globeWrapRef}
                 style={{
                     opacity: 0,
+                    overflow:"hidden",
                     transform: "scale(0.88) translateY(40px)",
                     transition: "opacity 0.9s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1)",
                 }}
@@ -309,13 +324,48 @@ const Globe = function () {
                         background: "transparent",
                         display: "flex",
                         justifyContent: "center",
-                        alignItems: "center"
+                        alignItems: "center",
+                        cursor: "grab"
                     }}
                 >
                     <canvas
                         ref={canvasRef}
                         style={{ display: 'block', width: '100%', height: '100%' }}
                     />
+
+                    {/* ✅ NEW: Drag-hint icon — user ko batata hai ki globe ko grab karke move/rotate kiya ja sakta hai */}
+                    <div
+                        ref={hintRef}
+                        style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            pointerEvents: 'none',
+                            opacity: 0.9,
+                            transition: 'opacity 0.5s ease',
+                            animation: 'dragHintMove 1.8s ease-in-out infinite',
+                            zIndex: 5,
+                        }}
+                    >
+                        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+                            <circle cx="26" cy="26" r="25" fill="rgba(255,255,255,0.55)" stroke="rgba(180,110,50,0.35)" strokeWidth="1" />
+                            <path
+                                d="M22 15c0-1.1.9-2 2-2s2 .9 2 2v8m0-6c0-1.1.9-2 2-2s2 .9 2 2v7m0-5c0-1.1.9-2 2-2s2 .9 2 2v8m-14 1v-3c0-1.1-.9-2-2-2s-2 .9-2 2v9c0 4.4 3.6 8 8 8h3c4.4 0 7-2.5 7.6-6l1-5.5c.3-1.7-1-3.3-2.7-3.3-1.1 0-2.1.7-2.5 1.8"
+                                stroke="#8a4a1e"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </div>
+
+                    <style>{`
+                        @keyframes dragHintMove {
+                            0%, 100% { transform: translate(calc(-50% - 8px), -50%); }
+                            50% { transform: translate(calc(-50% + 8px), -50%); }
+                        }
+                    `}</style>
                     <div style={{
                         position: 'absolute',
                         bottom: '14px',
