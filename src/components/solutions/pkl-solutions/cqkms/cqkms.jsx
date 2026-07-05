@@ -124,7 +124,7 @@ const Cqkms = () => {
 
             <Link
               ref={btnRef}
-              href="/"
+              href="/solutions/pkl-cqkms"
               className={styles["cqkms-img-overlay-text-bottom"]}
             >
               <span>See More</span>

@@ -123,7 +123,7 @@ const Safelcert = () => {
 
             <Link
               ref={btnRef}
-              href="/"
+              href="/solutions/pkl-safelcert"
               className={styles["safelcert-img-overlay-text-bottom"]}
             >
               <span>See More</span>

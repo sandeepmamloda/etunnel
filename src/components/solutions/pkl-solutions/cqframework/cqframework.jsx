@@ -124,7 +124,7 @@ const Cqframework = () => {
 
             <Link
               ref={btnRef}
-              href="/"
+              href="/solutions/pkl-cqframework"
               className={styles["cqframework-img-overlay-text-bottom"]}
             >
               <span>See More</span>
