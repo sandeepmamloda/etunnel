@@ -217,7 +217,7 @@
 .lang-dropdown {
   position: absolute;
   top: calc(100% + 0.9rem);
-  right: -0.3rem;
+  right: -2.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -294,7 +294,7 @@
 ══════════════════════════════════════ */
 
 .hamburger {
-  display: flex;
+  display: none; /* ✅ default: desktop pe hidden */
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
@@ -304,6 +304,12 @@
   border: none;
   padding: 0;
   outline: none;
+}
+
+@media (max-width: 1160px) {
+  .hamburger {
+    display: flex; /* ✅ sirf mobile/tablet view me dikhega */
+  }
 }
 
 .hamburger span {
