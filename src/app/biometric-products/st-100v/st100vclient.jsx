@@ -41,6 +41,7 @@ const St100vclient = function () {
                         title: "Future Scalability",
                         description: "It operates in a contactless manner ensuring hygiene, and can be applied in various fields such as finance, security, access control, and electronic payments — scaling effortlessly with your infrastructure.",
                     },
+                    
                 ]}
             />
             <Productspecifications
