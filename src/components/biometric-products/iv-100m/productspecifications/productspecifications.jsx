@@ -18,10 +18,10 @@ const ProductspecificationsGrouped = function () {
     {
       groupLabel: "VD",
       specs: [
-        { label: "Dimension", detail: "204(W)*376(H)*214(D) mm" },
+        { label: "Dimension", detail: "204(W)*376(H)*214(D) ㎜" },
         { label: "CPU", detail: "Broadcom BCM2712 2.4GHz quad-core 64-bit Arm Cortex-A76" },
         { label: "Memory", detail: "8GB RAM + 32GB Flash" },
-        { label: "LCD", detail: '10.1" Color LCD' },
+        { label: "LCD", detail: '10.1” Color LCD' },
         { label: "LCD Resolution", detail: "800×1280" },
         { label: "Power", detail: "220VAC 60Hz 12V DC 3A" },
       ],

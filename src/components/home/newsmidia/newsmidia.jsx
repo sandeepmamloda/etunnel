@@ -61,7 +61,7 @@ const Newsmidia = function () {
           </div>
           <div className={styles["newsmidia-top-mcontent"]}>
             <p ref={descRef}>Introducing our news and media coverage from all over the world</p>
-            <Link ref={toggleRef} href="/" className={styles["newsmidia-top-toggle"]}>
+            <Link ref={toggleRef} href="/news-media" className={styles["newsmidia-top-toggle"]}>
               <span>See More News</span>
             </Link>
           </div>

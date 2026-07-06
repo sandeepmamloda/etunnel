@@ -124,7 +124,7 @@ const Herotech = function () {
                 </svg>
               </Link>
 
-              <Link href="/coretech/kisa-certification" className={styles["learn-more"]} aria-label="Learn more about Finger Vein Technology">
+              {/* <Link href="/coretech/kisa-certification" className={styles["learn-more"]} aria-label="Learn more about Finger Vein Technology">
                 <span className={styles["stair"]}></span>
                 <span className={styles["stair"]}></span>
                 <span className={styles["stair"]}></span>
@@ -133,7 +133,7 @@ const Herotech = function () {
                 <svg className={styles["arrow-dark"]} viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </Link>
+              </Link> */}
             </div>
 
           </div>
