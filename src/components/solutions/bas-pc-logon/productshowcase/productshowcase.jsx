@@ -55,7 +55,7 @@ const Productshowcase = function () {
       <div ref={textRef} className={styles["reason-wrapper"]}>
         <div className={styles["reason-text-wrapper"]}>
           <span className={styles["reason-label"]}>The Reason</span>
-          <h2 className={styles["reason-heading"]}>Why should we use a Smart ID?</h2>
+          <h2 className={styles["reason-heading"]}>A New Solution That Fills the Gaps in Traditional Authentication</h2>
         </div>
       </div>
 

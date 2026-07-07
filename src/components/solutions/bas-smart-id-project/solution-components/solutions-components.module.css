@@ -58,7 +58,7 @@
   flex-direction: column;
   padding: 1.5rem 1.5rem 1.75rem;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .solutioncomponents-items:hover {
@@ -95,7 +95,7 @@
   font-family: 'NeueHaasDisplayThin';
   font-weight: 600;
   color: #1a1a1a;
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.12rem;
   line-height: 130%;
 }
 
@@ -104,7 +104,7 @@
   font-family: 'NeueHaasDisplayXThin';
   font-weight: 600;
   color: rgba(82, 82, 82, 1);
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.09rem;
   line-height: 150%;
 }
 

@@ -100,18 +100,22 @@ const Baspclogonclient = () => {
         animateClipReveal(document.querySelector("[data-anim='ng-h2']"), 0);
         animateClipReveal(document.querySelector("[data-anim='ng-p']"), 0.15);
 
-        // ── Authentication ──
-        animateClipReveal(document.querySelector("[data-anim='auth-h2']"), 0);
-        animateFadeUp(document.querySelector("[data-anim='auth-p1']"), 0.2);
-        animateSlideLeft(document.querySelector("[data-anim='auth-img']"), 0.1);
-        animateFadeUp(document.querySelector("[data-anim='auth-p2']"), 0.3);
-        animateFadeUp(document.querySelector("[data-anim='auth-p3']"), 0.45);
+        // ── Pclogon ──
+        animateClipReveal(document.querySelector("[data-anim='pls-title']"), 0);
+        animateFadeUp(document.querySelector("[data-anim='pls-subtitle']"), 0.2);
 
         // ── P2n2info ──
         animateSlideLeft(document.querySelector("[data-anim='p2n2info-text']"), 0);
         animateSlideRight(document.querySelector("[data-anim='p2n2info-img']"), 0.2);
         animateClipReveal(document.querySelector("[data-anim='p2n2info-h2']"), 0.1);
         animateFadeUp(document.querySelector("[data-anim='p2n2info-p']"), 0.4);
+
+        // ── Authenticationflow ──
+        animateClipReveal(document.querySelector("[data-anim='af-title']"), 0);
+        animateFadeUp(document.querySelector("[data-anim='af-subtitle']"), 0.15);
+        document.querySelectorAll("[data-anim='af-step-card']").forEach((el, i) => {
+            animateFadeUp(el, 0.3 + i * 0.1);
+        });
 
         // ── Featureoftechnology ──
         animateClipReveal(document.querySelector("[data-anim='feat-title']"), 0);
@@ -120,10 +124,12 @@ const Baspclogonclient = () => {
             animateFadeUp(el, i * 0.08);
         });
 
-        // ── Integrate ──
-        animateClipReveal(document.querySelector("[data-anim='int-h2']"), 0);
-        animateFadeUp(document.querySelector("[data-anim='int-p']"), 0.2);
-        animateFadeUp(document.querySelector("[data-anim='int-btns']"), 0.35);
+        // ── Operationintegration ──
+        animateClipReveal(document.querySelector("[data-anim='oi-title']"), 0);
+        animateFadeUp(document.querySelector("[data-anim='oi-subtitle']"), 0.15);
+        document.querySelectorAll("[data-anim='oi-card']").forEach((el, i) => {
+            animateFadeUp(el, 0.3 + i * 0.1);
+        });
 
         return () => {
             ScrollTrigger.killAll();

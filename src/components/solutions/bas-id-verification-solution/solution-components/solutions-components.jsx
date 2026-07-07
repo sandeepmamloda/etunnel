@@ -97,7 +97,7 @@ const Solutioncomponents = function () {
           {/* ---- Header ---- */}
           <div className={styles["solutioncomponents-top"]}>
             <span ref={labelRef} className={styles["label"]}>Solution Components</span>
-            <h2 ref={headingRef}>ETUNNEL offers a complete hardware and software ecosystem for PC Logon Solution.</h2>
+            <h2 ref={headingRef}>ETUNNEL offers a complete hardware and software ecosystem for ID Verification Solutions.</h2>
           </div>
 
           {/* ---- Cards (dynamic) ---- */}

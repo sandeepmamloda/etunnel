@@ -12,7 +12,7 @@ const solutionComponentsData = [
     image: "/images/solutions/pc-logon/pl-101v.png",
     alt: "ETUNNEL-PL-101V",
     title: "ETUNNEL-PL-101V",
-    desc: "Identity verification withthe built-in fingerprint sensor",
+    desc: "Identity verification through finger vein recognition",
   },
   {
     id: "Credential-provider-dLL-file",
@@ -111,7 +111,7 @@ const Solutioncomponents = function () {
           {/* ---- Header ---- */}
           <div className={styles["solutioncomponents-top"]}>
             <span ref={labelRef} className={styles["label"]}>Solution Components</span>
-            <h2 ref={headingRef}>ETUNNEL offers a complete hardware and software ecosystem for PC Logon Solution.</h2>
+            <h2 ref={headingRef}>ETUNNEL offers a complete hardware and software ecosystem for PC Logon deployment.</h2>
           </div>
 
           {/* ---- Cards (dynamic) ---- */}

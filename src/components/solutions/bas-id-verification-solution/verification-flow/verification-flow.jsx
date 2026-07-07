@@ -4,17 +4,17 @@ const steps = [
   {
     id: "01",
     title: "ID Card Reading",
-    desc: "Administrator enrolls the user's finger vein data via ETL_FVMasterProgram.exe. Data is encrypted and stored securely — no raw biometric data ever leaves the managed environment.",
+    desc: "ETUNNEL-IV-100M reads the biometric data stored on the ID card chip — fingerprint, face image, or both — via secure NFC or contact interface. The chip's digital signature is verified to confirm card authenticity before any biometric comparison begins.",
   },
   {
     id: "02",
     title: "Live Biometric Capture",
-    desc: "When the PC is locked or started, the Credential Provider DLL automatically activates. The PC Logon Program launches and the ETUNNEL-PL-101V device awaits a finger scan.",
+    desc: "Simultaneously, the device captures the real user's live biometric — face via camera or fingerprint via sensor. The P2N2 AI Engine applies liveness detection to confirm a genuine human presence and prevent spoofing with photos or synthetic replicas.",
   },
   {
     id: "03",
     title: "Real-Time Dual Match",
-    desc: "The finger vein pattern is captured and matched on-device. On success, Windows receives the authentication signal and grants access. All events are logged with user identity and timestamp.",
+    desc: "The stored biometric from the card and the captured live biometric are compared in real-time by the P2N2 engine. Both the card and the person must pass simultaneously. The result is logged with full audit trail — user identity, timestamp, and match score.",
   },
 ];
 
@@ -56,10 +56,10 @@ const VerificationFlow = function () {
         <div className={styles["vf-content"]}>
           <header className={styles["vf-header"]}>
             <h2 id="vf-heading" className={styles["vf-title"]} data-anim="vf-title">
-              Authentication Flow
+              Verification Flow
             </h2>
             <p className={styles["vf-subtitle"]} data-anim="vf-subtitle">
-              From enrollment to access — a three-step process that ties every login to a verified individual.
+              A three-step dual-biometric process that ties every verification to both a confirmed document and a confirmed person.
             </p>
           </header>
 

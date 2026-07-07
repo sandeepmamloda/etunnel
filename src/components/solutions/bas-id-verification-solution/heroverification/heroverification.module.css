@@ -442,6 +442,9 @@
 
 /* ── Responsive ── */
 @media screen and (max-width: 1730px) {
+    .heroverificationlogon-wrapper{
+        padding-bottom:5rem;
+    }
     .heroverificationlogon-main {
         max-width: 90rem;
     }
@@ -451,6 +454,12 @@
     .heroverificationlogon-left {
         max-width: 45%;
     }
+    /* .finger-vein span{
+        font-size:2.5rem;
+    } */
+     .sub-heading{
+        font-size:2rem;
+     }
 }
 
 @media screen and (max-width: 1360px) {
