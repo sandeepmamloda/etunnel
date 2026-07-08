@@ -68,10 +68,9 @@ const Heronewsmedia = function () {
                 </div>
 
                 <div className={styles["heronewsmedia-section-text-wrapper"]}>
-                    <h1 ref={h1Ref}>Company History</h1>
+                    <h1 ref={h1Ref}>We share our Story</h1>
                     <p ref={pRef}>
-                        Introducing ETUNNEL's journey towards a safer life with
-                        enhanced biometric recognition technology.
+                        A media space that embodies our technology, philosophy, and future.
                     </p>
                     <Link
                         ref={btnRef}

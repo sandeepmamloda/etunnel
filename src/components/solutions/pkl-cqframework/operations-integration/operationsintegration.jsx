@@ -10,10 +10,9 @@ const cards = [
   },
   {
     id: 2,
-    title: "CQKMS Client SDK",
+    title: "CQFrameworkSVC(EXE)",
     specs: [
-      "OS : Windows 8 or later, Linux, UNIX",
-      "JAVA : JDK 8 or later",
+      "OS : Windows 8 or later",
     ],
   },
   {
@@ -35,9 +34,10 @@ const cards = [
   },
   {
     id: 5,
-    title: "Supported Formats andOther Features",
+    title: "Supported Formats and Other Features",
     specs: [
-      "DER, PKCS#8PC MAC Address Acquisition",
+      "DER, PKCS#8",
+      "PC MAC Address Acquisition"
     ],
   },
   

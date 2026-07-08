@@ -19,7 +19,7 @@
 
 .contents {
     font-family: 'NeueHaasDisplayThin';
-    font-size: 0.72rem;
+    font-size: 2rem;
     font-weight: 900;
     letter-spacing: 0.22rem;
     text-transform: uppercase;
@@ -53,6 +53,7 @@
     line-height: 130%;
     border-left: 0.18rem solid transparent;
     transition: color 0.2s ease, border-color 0.2s ease;
+     letter-spacing: 0.1rem;
 }
 
 .sidebarLink:hover {
@@ -98,7 +99,7 @@
     font-family: 'NeueHaasDisplayThin';
     font-size: 1.6rem;
     font-weight: 900;
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.1rem;
     line-height: 1.2;
     color: rgba(0, 0, 0, 1);
     margin: 0 0 2rem 0;
@@ -110,7 +111,7 @@
     line-height: 1.9;
     color: rgba(82, 82, 82, 1);
     margin-bottom: 1rem;
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.1rem;
     font-weight: 600;
 }
 
@@ -120,6 +121,7 @@
     font-family: 'NeueHaasDisplayThin';
     font-weight: 900;
     color: rgba(0, 0, 0, 1);
+    letter-spacing:0.06rem;
 }
 
 .section ul {
@@ -134,7 +136,7 @@
     line-height: 1.9;
     color: rgba(82, 82, 82, 1);
     margin-bottom: 0.6rem;
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.1rem;
 }
 
 /* ── Link ── */
@@ -143,6 +145,7 @@
     color: rgba(255, 120, 0, 1);
     text-decoration: none;
     font-weight: 600;
+    letter-spacing: 0.1rem;
 }
 
 .link:hover { text-decoration: underline; }
