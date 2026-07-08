@@ -31,7 +31,7 @@ const features = [
   {
     id: 5,
     icon: "/images/solutions/bas-smart-id-project/feature-of-technology/migration.png",
-    title: "Easy Migration from Existing RFID Systems",
+    title: "Strong Data Security",
     desc: "All data transmitted between the CQKMS Client SDK and the CQKMS Master Server, including private keys, is encrypted using the RSA 2048-bit public key encryption algorithm. In addition, SSL (Secure Socket Layer) is applied to provide an extra layer of network security.",
   },
   {

@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    padding-block-end: 5rem;
+    padding-block-end: 8rem;
     overflow:hidden;
 }
 
@@ -156,7 +156,7 @@
     margin: 0;
     font-family: 'NeueHaasDisplayThin';
     font-weight: 700;
-    font-size: 3.5rem;
+    font-size: 2.7rem;
     line-height: 110%;
     letter-spacing: 0.09rem;
     color: rgba(0, 0, 0, 1);

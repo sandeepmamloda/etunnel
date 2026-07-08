@@ -97,7 +97,7 @@ const Herocqkms = function () {
           <div className={styles["herocqkms-left-top"]}>
             <div ref={coreBtnRef} className={styles["core-tech-button"]}>
               <span aria-hidden="true"></span>
-              <span>Biometric Authentication Solution</span>
+              <span>PKI Solutions</span>
             </div>
 
             <h1 ref={h1Ref} className={styles["biometric-text"]}>

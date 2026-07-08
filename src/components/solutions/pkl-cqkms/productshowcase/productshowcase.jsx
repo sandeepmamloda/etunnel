@@ -27,7 +27,7 @@ const accordionData = [
   },
   {
     id: "CQKMS-Client-SDK",
-    className: "kisa-certification",
+    className: "finger-vein-authentication",
     title: "CQKMS Client SDK",
     content:
       "The CQKMS Client SDK is a library that provides functions enabling applications to delegate or retrieve encryption private keys to and from the CQKMS Master Server.",

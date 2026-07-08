@@ -123,6 +123,13 @@ const Pklcqframeworkclient = () => {
         animateFadeUp(document.querySelector("[data-anim='int-p']"), 0.2);
         animateFadeUp(document.querySelector("[data-anim='int-btns']"), 0.35);
 
+        // ── OperationsIntegration ──
+        animateClipReveal(document.querySelector("[data-anim='oi-title']"), 0);
+        animateFadeUp(document.querySelector("[data-anim='oi-subtitle']"), 0.15);
+        document.querySelectorAll("[data-anim='oi-card']").forEach((el, i) => {
+            animateFadeUp(el, i * 0.1);
+        });
+
         return () => {
             ScrollTrigger.killAll();
         };

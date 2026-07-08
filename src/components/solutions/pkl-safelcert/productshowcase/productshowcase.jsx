@@ -12,32 +12,32 @@ import styles from "./productshowcase.module.css";
 // design/CSS me koi bhi change nahi karna padta.
 const accordionData = [
   {
-    id: "p2n2",
+    id: "SafeICert-Server",
     className: "p2n2",
-    title: "CQKMS Master Server",
+    title: "SafeICert Server",
     content:
-      "The CQKMS Master Server is the main server of CQKMS, responsible for directly handling the delegation and retrieval requests of private keys received from applications such as the electronic bidding server and the encryption certificate server.",
+      "The SafeICert Server is an integrated server that provides functions for both the administrator web and user web, as well as agent integration. It is responsible for registering and managing business certificates that will be distributed to designated users.",
   },
   {
-    id: "CQKMS-Slave-Server",
+    id: "SafeICert-Agent",
     className: "finger-vein-authentication",
-    title: "CQKMS Slave Server",
+    title: "SafeICert Agent",
     content:
-      "The CQKMS Slave Server works in conjunction with the CQKMS Master Server to store separately divided pieces of the delegated private keys. It is a distributed storage server that allows retrieval of these keys upon administrator approval, when necessary.",
+      "This is an executable program installed and run on the user’s PC, serving as the core software of the SafeICert solution. The agent monitors the URLs of websites accessed through the browser in real time and controls whether the certificate can be used.",
   },
   {
-    id: "CQKMS-Client-SDK",
-    className: "kisa-certification",
-    title: "CQKMS Client SDK",
+    id: "SafeICert-Admin",
+    className: "finger-vein-authentication",
+    title: "SafeICert Admin",
     content:
-      "The CQKMS Client SDK is a library that provides functions enabling applications to delegate or retrieve encryption private keys to and from the CQKMS Master Server.",
+      "You can register and manage business certificates, as well as handle approvals for certificate usage by designated users and manage certificate usage policies.",
   },
   {
-    id: "CQKMS-Admin",
+    id: "SafeICert-User-Web",
     className: "kisa-certification",
-    title: "CQKMS Admin",
+    title: "SafeICert User Web",
     content:
-      "CQKMS Admin is a web interface that provides administrator functions tailored to the roles of the Master/Slave servers. It supports features such as viewing delegation/retrieval history and approving key retrievals.",
+      "You can request approval for the certificate and site you wish to use, as well as perform actions such as launching, closing, and updating the Agent.",
   },
 ];
 

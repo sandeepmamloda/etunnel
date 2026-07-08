@@ -56,7 +56,7 @@ const Featureoftechnology = function () {
         <div className={styles["featuretechnology-main"]}>
 
           <div className={styles["featuretechnology-header"]}>
-            <p className={styles["header-sub"]} data-anim="feat-sub">Smart ID Project</p>
+            <p className={styles["header-sub"]} data-anim="feat-sub">CQFramework Project</p>
             <h2 className={styles["header-title"]} data-anim="feat-title">Features of Technology</h2>
           </div>
 

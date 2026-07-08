@@ -97,7 +97,7 @@ const Herocqframework = function () {
           <div className={styles["herocqframework-left-top"]}>
             <div ref={coreBtnRef} className={styles["core-tech-button"]}>
               <span aria-hidden="true"></span>
-              <span>Biometric Authentication Solution</span>
+              <span>PKI Solutions</span>
             </div>
 
             <h1 ref={h1Ref} className={styles["biometric-text"]}>
@@ -156,7 +156,7 @@ const Herocqframework = function () {
           </div>
           <div className={styles["herocqframework-right-img"]}>
             <Image
-              src="/images/solutions/pkl-cqframework/herocqframework.png"
+              src="/images/solutions/pkl-cqframework/herocqframework.jpg"
               fill={true}
               alt="CQKMS biometric authentication module"
               priority
