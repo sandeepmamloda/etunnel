@@ -1,7 +1,6 @@
 "use client";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import styles from "./herokisacertificate.module.css";
@@ -79,17 +78,15 @@ const Herokisacertificate = function () {
           {/* BOTTOM */}
           <div ref={bottomRef} className={styles["herokisacertificate-bottom"]}>
             <div className={styles["herokisacertificate-bottom-wrapper"]}>
-              <Link href="/contact" className={styles["contact-link"]}>
-                <span>
-                  Contact Us
-                  <Image
-                    src="/images/coretech/kisa-certification/herokisacertificate/herokisacertificate.png"
-                    fill={true}
-                    alt="P2N2 AI Biometric Engine module"
-                    priority
-                    className={styles["img"]}
-                  />
-                </span>
+              <Link href="/contact" className={styles["contact-us"]} aria-label="Contact ETUNNEL">
+                <span className={styles["stair"]}></span>
+                <span className={styles["stair"]}></span>
+                <span className={styles["stair"]}></span>
+                <span className={styles["stair"]}></span>
+                <span>Contact Us</span>
+                <svg className={styles["arrow"]} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </Link>
             </div>
           </div>

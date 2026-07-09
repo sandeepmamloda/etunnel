@@ -6,6 +6,7 @@
     flex-direction: row;
     align-items: flex-end;
     padding-block-end: 8.4rem;
+    overflow:hidden;
 }
 
 .herotech-fingervein-main {

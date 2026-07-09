@@ -120,7 +120,7 @@ const Evaluationframework = function () {
           </div>
           <div className={styles["content"]}>
             <h3 className={styles["content-title"]}>False Acceptance Rate</h3>
-            <p className={styles["content-desc"]}>The rate at which the system incorrectly recognizes someone else as the user.</p>
+            <p className={styles["content-desc"]}>The rate at which the system incorrectly someone else as the user.</p>
           </div>
         </div>
 
