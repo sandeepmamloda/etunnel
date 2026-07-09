@@ -144,8 +144,7 @@ const Location = function () {
                             ref={cardAddressRef}
                             className={styles["location-card-address"]}
                         >
-                            #1011-1013, Building G, H Business Park, 26 Beopwon-ro 9-gil,
-                            Songpa-gu, Seoul 05836, South Korea
+                            #1011–1015, Building C, H Business Park, 26 Beopwon-ro 9-gil, Songpa-gu, Seoul 05836, South Korea
                         </p>
                     </div>
 

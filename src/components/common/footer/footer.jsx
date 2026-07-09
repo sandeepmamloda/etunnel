@@ -146,7 +146,7 @@ const Footer = function () {
           <div ref={leftRef} className={styles["footer-left"]}>
             <div className={styles["footer-left-item"]}>
               <span className={styles["footer-left-label"]}>CEO</span>
-              <span className={styles["footer-left-value"]}>Youngkuk Kim, Sangjoon Lee</span>
+              <span className={styles["footer-left-value"]}>Youngkug Kim, Sangjoon Lee </span>
             </div>
             <div className={styles["footer-left-item"]}>
               <span className={styles["footer-left-label"]}>Head Office</span>
@@ -156,7 +156,7 @@ const Footer = function () {
                 rel="noopener noreferrer"
                 className={styles["footer-left-value"]}
               >
-                #1011-1015, Building C, H Business Park, 26 Beopwon-ro 9-gil, Songpa-gu, Seoul 05836, South Korea
+                #1011–1015, Building C, H Business Park, 26 Beopwon-ro 9-gil, Songpa-gu, Seoul 05836, South Korea 
               </a>
             </div>
             <div className={styles["footer-left-item"]}>
@@ -214,7 +214,7 @@ const Footer = function () {
 
         {/* BOTTOM BAR */}
         <div ref={bottomBarRef} className={styles["footer-bar"]}>
-          <span>Copyright © ETUNNEL All rights reserved.</span>
+          <span>Copyright ⓒ ETUNNEL All rights reserved.</span>
           <div>
             <Link href="/privacy-policy"><span>Privacy Policy</span></Link>
             <Link href="/contact"><span>Customer Inquiry</span></Link>

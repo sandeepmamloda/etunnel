@@ -125,27 +125,35 @@
     font-size: 1.08rem !important;
 }
 
+/* ===================================================================
+   CARD WRAPPER
+   Default (<=4 cards): equal-width flex cards, no scroll.
+   .scrollable (added via JS when cards.length > 4): fixed-width cards,
+   horizontal scroll, snap.
+=================================================================== */
 .security-feature-cart-wrapper {
     height: fit-content;
     width: 100%;
     display: flex;
     column-gap: 0.84rem;
+    overflow-x: hidden;
+}
+
+.security-feature-cart-wrapper.scrollable {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* firefox */
+    -ms-overflow-style: none;
+}
+
+.security-feature-cart-wrapper.scrollable::-webkit-scrollbar {
+    display: none; /* chrome/safari/edge */
 }
 
 .security-feature-cart {
     height: 36rem;
-    flex: 1;
-    background: rgba(0, 0, 0, 1);
-    border-radius: 0.96rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-}
-
-.security-feature-cart:nth-child(1) {
-    /* height: 36rem; */
-    flex: 1;
+    flex: 1 1 0;
+    min-width: 0;
     background: rgba(0, 0, 0, 1);
     border-radius: 0.96rem;
     display: flex;
@@ -155,7 +163,24 @@
     position: relative;
 }
 
-.security-feature-cart:nth-child(1) .security-feature-cart-top {
+/* jab scrollable ho: har card fixed width le (4 per view), scroll baaki */
+.security-feature-cart-wrapper.scrollable .security-feature-cart {
+    flex: 0 0 calc((100% - (3 * 0.84rem)) / 4);
+    scroll-snap-align: start;
+}
+
+/* ===================================================================
+   REPEATING PATTERN (every 4 cards) instead of hardcoded (1)-(4)
+   4n+1 = 1st,5th,9th...  4n+2 = 2nd,6th,10th...
+   4n+3 = 3rd,7th,11th...  4n   = 4th,8th,12th...
+=================================================================== */
+
+/* -----------4n+1---------------- */
+.security-feature-cart:nth-child(4n+1) {
+    justify-content: space-between;
+}
+
+.security-feature-cart:nth-child(4n+1) .security-feature-cart-top {
     height: fit-content;
     width: 100%;
     display: flex;
@@ -166,7 +191,7 @@
     padding-inline:0.8rem;
 }
 
-.security-feature-cart:nth-child(1) .security-feature-cart-top  h3{
+.security-feature-cart:nth-child(4n+1) .security-feature-cart-top  h3{
     color: white;
     text-align: center;
     /* font-family: 'NeueHaasGroteskLight'; */
@@ -176,12 +201,12 @@
     letter-spacing: 0.084rem;
 }
 
-.security-feature-cart:nth-child(1) .security-feature-cart-top div {
+.security-feature-cart:nth-child(4n+1) .security-feature-cart-top div {
     display: flex;
     flex-direction: column;
 }
 
-.security-feature-cart:nth-child(1) .security-feature-cart-top div p {
+.security-feature-cart:nth-child(4n+1) .security-feature-cart-top div p {
     font-family: 'NeueHaasDisplayThin';
     font-size: 1.08rem;
     font-weight: 400;
@@ -192,12 +217,12 @@
     text-align: center;
 }
 
-.security-feature-cart:nth-child(1) .security-feature-cart-bottom {
+.security-feature-cart:nth-child(4n+1) .security-feature-cart-bottom {
     height: 100%;
     width: 100%;
 }
 
-.security-feature-cart:nth-child(1) .security-feature-cart-bottom img {
+.security-feature-cart:nth-child(4n+1) .security-feature-cart-bottom img {
     height: 100% !important;
     width: 100% !important;
     object-fit: contain;
@@ -205,20 +230,12 @@
     object-position: bottom;
 }
 
-/* -----------2---------------- */
-.security-feature-cart:nth-child(2) {
-    /* height: 36rem; */
-    flex: 1;
-    background: rgba(0, 0, 0, 1);
-    border-radius: 0.96rem;
-    display: flex;
-    flex-direction: column;
+/* -----------4n+2---------------- */
+.security-feature-cart:nth-child(4n+2) {
     justify-content: flex-start;
-    overflow: hidden;
-    position: relative;
 }
 
-.security-feature-cart:nth-child(2) .security-feature-cart-top {
+.security-feature-cart:nth-child(4n+2) .security-feature-cart-top {
     height: fit-content;
     width: 100%;
     display: flex;
@@ -231,7 +248,7 @@
     padding-inline:0.8rem;
 }
 
-.security-feature-cart:nth-child(2) .security-feature-cart-top h3 {
+.security-feature-cart:nth-child(4n+2) .security-feature-cart-top h3 {
     color: white;
     text-align: center;
     /* font-family: 'NeueHaasGroteskLight'; */
@@ -241,12 +258,12 @@
     letter-spacing: 0.084rem;
 }
 
-.security-feature-cart:nth-child(2) .security-feature-cart-top div {
+.security-feature-cart:nth-child(4n+2) .security-feature-cart-top div {
     display: flex;
     flex-direction: column;
 }
 
-.security-feature-cart:nth-child(2) .security-feature-cart-top div p {
+.security-feature-cart:nth-child(4n+2) .security-feature-cart-top div p {
     font-family: 'NeueHaasDisplayThin';
     font-size: 1.08rem;
     font-weight: 400;
@@ -257,14 +274,14 @@
     text-align: center;
 }
 
-.security-feature-cart:nth-child(2) .security-feature-cart-bottom {
+.security-feature-cart:nth-child(4n+2) .security-feature-cart-bottom {
     height: 70%;
     width: 100%;
     position: relative;
     /* ✅ ::after ke liye zaroori */
 }
 
-.security-feature-cart:nth-child(2) .security-feature-cart-bottom::after {
+.security-feature-cart:nth-child(4n+2) .security-feature-cart-bottom::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -278,20 +295,12 @@
     border-radius: 1.2rem;
 }
 
-/* ---------3---------------- */
-.security-feature-cart:nth-child(3) {
-    /* height: 36rem; */
-    flex: 1;
-    background: rgba(0, 0, 0, 1);
-    border-radius: 0.96rem;
-    display: flex;
-    flex-direction: column;
+/* ---------4n+3---------------- */
+.security-feature-cart:nth-child(4n+3) {
     justify-content: flex-end;
-    overflow: hidden;
-    position: relative;
 }
 
-.security-feature-cart:nth-child(3) .security-feature-cart-top {
+.security-feature-cart:nth-child(4n+3) .security-feature-cart-top {
     height: fit-content;
     width: 100%;
     display: flex;
@@ -304,7 +313,7 @@
     padding-inline:0.8rem;
 }
 
-.security-feature-cart:nth-child(3) .security-feature-cart-top h3 {
+.security-feature-cart:nth-child(4n+3) .security-feature-cart-top h3 {
     color: white;
     text-align: center;
     /* font-family: 'NeueHaasGroteskLight'; */
@@ -314,12 +323,12 @@
     letter-spacing: 0.084rem;
 }
 
-.security-feature-cart:nth-child(3) .security-feature-cart-top div {
+.security-feature-cart:nth-child(4n+3) .security-feature-cart-top div {
     display: flex;
     flex-direction: column;
 }
 
-.security-feature-cart:nth-child(3) .security-feature-cart-top div p {
+.security-feature-cart:nth-child(4n+3) .security-feature-cart-top div p {
     font-family: 'NeueHaasDisplayThin';
     font-size: 1.08rem;
     font-weight: 400;
@@ -330,14 +339,14 @@
     text-align: center;
 }
 
-.security-feature-cart:nth-child(3) .security-feature-cart-bottom {
+.security-feature-cart:nth-child(4n+3) .security-feature-cart-bottom {
     height: 88%;
     width: 100%;
     position: relative;
     /* ✅ ::after ke liye zaroori */
 }
 
-.security-feature-cart:nth-child(3) .security-feature-cart-bottom::after {
+.security-feature-cart:nth-child(4n+3) .security-feature-cart-bottom::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -351,7 +360,7 @@
     border-radius: 1.2rem;
 }
 
-.security-feature-cart:nth-child(3) .security-feature-cart-bottom img {
+.security-feature-cart:nth-child(4n+3) .security-feature-cart-bottom img {
     height: 100% !important;
     width: 100% !important;
     object-fit: cover;
@@ -359,21 +368,12 @@
     position: static !important;
 }
 
-/* ---------4---------------- */
-.security-feature-cart:nth-child(4) {
-    /* height: 36rem; */
-    flex: 1;
-    background: rgba(0, 0, 0, 1);
-    border-radius: 0.96rem;
-    display: flex;
-    flex-direction: column;
+/* ---------4n (4th, 8th, 12th...)---------------- */
+.security-feature-cart:nth-child(4n) {
     justify-content: flex-start;
-    overflow: hidden;
-    position: relative;
-    /* padding-inline:0.8rem; */
 }
 
-.security-feature-cart:nth-child(4) .security-feature-cart-top {
+.security-feature-cart:nth-child(4n) .security-feature-cart-top {
     height: fit-content;
     width: 100%;
     display: flex;
@@ -386,7 +386,7 @@
     padding-inline:0.8rem;
 }
 
-.security-feature-cart:nth-child(4) .security-feature-cart-top h3 {
+.security-feature-cart:nth-child(4n) .security-feature-cart-top h3 {
     color: white;
     text-align: center;
     /* font-family: 'NeueHaasGroteskLight'; */
@@ -396,12 +396,12 @@
     letter-spacing: 0.084rem;
 }
 
-.security-feature-cart:nth-child(4) .security-feature-cart-top div {
+.security-feature-cart:nth-child(4n) .security-feature-cart-top div {
     display: flex;
     flex-direction: column;
 }
 
-.security-feature-cart:nth-child(4) .security-feature-cart-top div p {
+.security-feature-cart:nth-child(4n) .security-feature-cart-top div p {
     font-family: 'NeueHaasDisplayThin';
     font-size: 1.08rem;
     font-weight: 400;
@@ -412,14 +412,14 @@
     text-align: center;
 }
 
-.security-feature-cart:nth-child(4) .security-feature-cart-bottom {
+.security-feature-cart:nth-child(4n) .security-feature-cart-bottom {
     height: 70%;
     width: 100%;
     position: relative;
     /* ✅ ::after ke liye zaroori */
 }
 
-.security-feature-cart:nth-child(4) .security-feature-cart-bottom::after {
+.security-feature-cart:nth-child(4n) .security-feature-cart-bottom::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -433,7 +433,7 @@
     border-radius: 1.2rem;
 }
 
-.security-feature-cart:nth-child(4) .security-feature-cart-bottom img {
+.security-feature-cart:nth-child(4n) .security-feature-cart-bottom img {
     height: 100% !important;
     width: 100% !important;
     object-fit: cover;
@@ -471,39 +471,43 @@
     .security-feature-cart{
         height:28rem;
     }
-    .security-feature-cart:nth-child(1) .security-feature-cart-top  h3{
+    .security-feature-cart:nth-child(4n+1) .security-feature-cart-top  h3{
         font-size: 1.24rem;
     }
-    .security-feature-cart:nth-child(1) .security-feature-cart-top div p {
+    .security-feature-cart:nth-child(4n+1) .security-feature-cart-top div p {
         font-size: 0.8rem;
     }
-    .security-feature-cart:nth-child(2) .security-feature-cart-top  h3{
+    .security-feature-cart:nth-child(4n+2) .security-feature-cart-top  h3{
         font-size: 1.24rem;
     }
-    .security-feature-cart:nth-child(2) .security-feature-cart-top div p {
+    .security-feature-cart:nth-child(4n+2) .security-feature-cart-top div p {
         font-size: 0.8rem;
     }
-    .security-feature-cart:nth-child(3) .security-feature-cart-top  h3{
+    .security-feature-cart:nth-child(4n+3) .security-feature-cart-top  h3{
         font-size: 1.24rem;
     }
-    .security-feature-cart:nth-child(3) .security-feature-cart-top div p {
+    .security-feature-cart:nth-child(4n+3) .security-feature-cart-top div p {
         font-size: 0.8rem;
     }
-    .security-feature-cart:nth-child(4) .security-feature-cart-top  h3{
+    .security-feature-cart:nth-child(4n) .security-feature-cart-top  h3{
         font-size: 1.24rem;
     }
-    .security-feature-cart:nth-child(4) .security-feature-cart-top div p {
+    .security-feature-cart:nth-child(4n) .security-feature-cart-top div p {
         font-size: 0.8rem;
     }
 }
 @media screen and (max-width: 1360px) {
-    .security-feature-cart{
+    /* baseline (<=4 cards) horizontal scroll fallback on smaller screens */
+    .security-feature-cart:not(.security-feature-cart-wrapper.scrollable .security-feature-cart) {
         min-width:22rem;
         height:30rem;
     }
     .security-feature-cart-wrapper{
         overflow-x:auto;
         scrollbar-width: none;
+    }
+    .security-feature-cart-wrapper.scrollable .security-feature-cart {
+        flex: 0 0 22rem;
     }
 }
 @media screen and (max-width: 930px) {
@@ -526,22 +530,24 @@
     }
     .security-feature-cart {
         min-width: 100%;
+        flex: 0 0 100% !important;
         scroll-snap-align: start;
     }
     .security-feature-cart-wrapper {
+        overflow-x: auto;
         scroll-snap-type: x mandatory;
     }
-    .security-feature-cart:nth-child(1) .security-feature-cart-bottom {
+    .security-feature-cart:nth-child(4n+1) .security-feature-cart-bottom {
         height: 100%;
         width: 100%;
 
     }
-    .security-feature-cart:nth-child(1) .security-feature-cart-bottom img {
+    .security-feature-cart:nth-child(4n+1) .security-feature-cart-bottom img {
         object-fit:cover;
     }
 }
 @media screen and (max-width: 400px) {
-    .security-feature-cart:nth-child(1) .security-feature-cart-bottom img {
+    .security-feature-cart:nth-child(4n+1) .security-feature-cart-bottom img {
         object-fit:contain;
     }
 }
